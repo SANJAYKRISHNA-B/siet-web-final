@@ -263,9 +263,66 @@ function ensureNbaFooterLink() {
   if (!accreditationGroup) return;
   const nbaLink = [...accreditationGroup.querySelectorAll("a")].find((link) => link.textContent.trim() === "NBA" || link.classList.contains("footer-nba-accreditation-link"));
   if (!nbaLink) return;
+  if (nbaLink.classList.contains("footer-nba-accreditation-link") && nbaLink.getAttribute("href") === "/nba") return;
   nbaLink.className = "footer-nba-accreditation-link";
   nbaLink.href = "/nba";
   nbaLink.innerHTML = "<span>›</span>NBA Accreditation";
+}
+
+function ensureAdmissionsNoticeLink() {
+  document.querySelectorAll(".home-notice-group").forEach((group) => {
+    const current = group.querySelector(".home-notice-open");
+    if (current) {
+      current.querySelector("b")?.remove();
+      if (current.tagName !== "A") {
+        const link = document.createElement("a");
+        link.className = "home-notice-open";
+        link.href = "/apply";
+        link.innerHTML = "<strong>ADMISSIONS 2026–27 NOW OPEN</strong>";
+        current.replaceWith(link);
+      } else {
+        current.href = "/apply";
+      }
+    }
+    [...group.querySelectorAll("span")].forEach((item) => {
+      if (!item.textContent.includes("TNEA Counselling Code")) return;
+      const previous = item.previousElementSibling;
+      const next = item.nextElementSibling;
+      if (previous?.tagName === "I") previous.remove();
+      if (next?.tagName === "I") next.remove();
+      item.remove();
+    });
+  });
+}
+
+function ensureApplyEnquiryOnly() {
+  const route = currentRoute();
+  if (route === "admission-referral" || route === "referral") {
+    window.history.replaceState(null, "", "/apply");
+    window.dispatchEvent(new PopStateEvent("popstate"));
+    return;
+  }
+
+  document.querySelectorAll('a[href="#/admission-referral"], a[href="/admission-referral"], a[href="#/referral"], a[href="/referral"]').forEach((link) => {
+    link.setAttribute("href", "/apply");
+  });
+
+  const page = document.querySelector(".apply-portal-page");
+  if (!page) return;
+  page.querySelector(".apply-tabs")?.remove();
+  page.querySelector("#apply-pane-referral")?.remove();
+  page.querySelector("#apply-pane-enquiry")?.classList.add("is-active");
+
+  const title = page.querySelector("#apply-hud-title");
+  if (title && title.innerHTML !== "Apply for <em>Sri Shakthi</em>") title.innerHTML = "Apply for <em>Sri Shakthi</em>";
+  const breadcrumb = page.querySelector("#apply-hud-breadcrumb");
+  if (breadcrumb && breadcrumb.textContent !== "Apply") breadcrumb.textContent = "Apply";
+  document.title = "Apply for Sri Shakthi | SIET";
+}
+
+function removeHomeHeroDescription() {
+  const description = document.querySelector(".home-impact-content > p");
+  if (description?.textContent.includes("Industry-aligned training")) description.remove();
 }
 
 function runPageEnhancements() {
@@ -275,6 +332,9 @@ function runPageEnhancements() {
   ensureFacultyListFooterLink();
   ensureAffiliationFooterLink();
   ensureNbaFooterLink();
+  ensureAdmissionsNoticeLink();
+  ensureApplyEnquiryOnly();
+  removeHomeHeroDescription();
 }
 
 let certificateZoom = 1;
@@ -319,7 +379,7 @@ document.addEventListener("keydown", (event) => {
   document.documentElement.classList.remove("au-modal-open");
 });
 
-const footerObserver = new MutationObserver(() => { ensureFacultyListFooterLink(); ensureAffiliationFooterLink(); ensureNbaFooterLink(); });
+const footerObserver = new MutationObserver(() => { ensureFacultyListFooterLink(); ensureAffiliationFooterLink(); ensureNbaFooterLink(); ensureAdmissionsNoticeLink(); });
 footerObserver.observe(document.documentElement, { childList: true, subtree: true });
 
 window.addEventListener("hashchange", () => window.setTimeout(runPageEnhancements, 0));
