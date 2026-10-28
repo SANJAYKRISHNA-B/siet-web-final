@@ -1,4 +1,4 @@
-const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3.5" y1="6" x2="20.5" y2="6"></line><line x1="3.5" y1="12" x2="20.5" y2="12"></line><line x1="3.5" y1="18" x2="20.5" y2="18"></line></svg>':e==="close"?'<svg class="ui-icon-svg close-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>':e==="crown"||e==="trophy"?'<svg class="ui-icon-svg crown-svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18.5h18v2.5H3zm2.5-4L2 6.5l5.5 3 4.5-6.5 4.5 6.5 5.5-3-3.5 8h-13z"/></svg>':e==="users"?'<svg class="ui-icon-svg users-svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>':e==="trend"||e==="arrow-up-right"?'<svg class="ui-icon-svg trend-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>':e==="chart"?'<svg class="ui-icon-svg chart-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="12" width="4.5" height="9" rx="1.2"/><rect x="9.75" y="7" width="4.5" height="14" rx="1.2"/><rect x="16.5" y="3" width="4.5" height="18" rx="1.2"/></svg>':e==="grad"?'<svg class="ui-icon-svg grad-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>':e==="connect"?'<svg class="ui-icon-svg connect-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>':e==="star"?'<svg class="ui-icon-svg star-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>':e==="home"?'<svg class="ui-icon-svg home-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>':e==="play"?'<svg class="ui-icon-svg play-svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>':e==="arrow"?'<svg class="ui-icon-svg arrow-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>':e==="down"?'<svg class="ui-icon-svg down-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>':e==="runner"?'<svg class="ui-icon-svg runner-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="14" cy="3.5" r="2.5"/><path d="M19.5 9.5l-3.5 3.5-2.5-2.5 1-4-4.5 2-2 4.5 1.5 1 1.5-3 2.5 2.5-3 5.5-4.5-2-.5 2 5.5 2.5 3.5-6.5 3 2.5 2-3.5-1.5-1z"/></svg>':e==="bulb"?'<svg class="ui-icon-svg bulb-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.8 3.5 6v2a1.5 1.5 0 0 0 1.5 1.5h4a1.5 1.5 0 0 0 1.5-1.5v-2c2.1-1.2 3.5-3.4 3.5-6a7 7 0 0 0-7-7zm-2 19a1.5 1.5 0 0 0 1.5 1.5h1a1.5 1.5 0 0 0 1.5-1.5v-.5h-4v.5z"/></svg>':e==="masks"?'<svg class="ui-icon-svg masks-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.5 3.5C5.8 3.5 2 6.8 2 11c0 3.8 3.1 7 7.2 7.4-.2.8-.7 1.6-1.5 2.2 1.8 0 3.5-.8 4.6-2.1 4.5-.4 7.7-3.8 7.7-7.5 0-4.2-3.8-7.5-8.5-7.5zm-3.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm7 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-3.5 5.5c-2 0-3.3-1-3.5-1.2l.8-1.2c.1.1 1.1.9 2.7.9s2.6-.8 2.7-.9l.8 1.2c-.2.2-1.5 1.2-3.5 1.2z"/></svg>':e==="leaf"?'<svg class="ui-icon-svg leaf-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>':e==="cup"||e==="trophy-cup"?'<svg class="ui-icon-svg cup-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 4h-2V3a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v1H5a3 3 0 0 0-3 3v2a4 4 0 0 0 4 4h.6A6 6 0 0 0 11 16.9V19H8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2h-3v-2.1a6 6 0 0 0 4.4-3.9H18a4 4 0 0 0 4-4V7a3 3 0 0 0-3-3zM4 9V7a1 1 0 0 1 1-1h2v4.8A2 2 0 0 1 4 9zm16 0a2 2 0 0 1-3 1.8V6h2a1 1 0 0 1 1 1z"/></svg>':e==="flask"?'<svg class="ui-icon-svg flask-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 20L14 11V5H15V3H9V5H10V11L5 20C4.2 21.3 5.2 23 6.7 23H17.3C18.8 23 19.8 21.3 19 20ZM7.5 19L11 12.7V5H13V12.7L16.5 19H7.5Z"/></svg>':e==="chip"||e==="cpu"?'<svg class="ui-icon-svg chip-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 4v8h6V8H9zm-5 2H2v2h2v-2zm0 4H2v2h2v-2zm16-4h2v2h-2v-2zm0 4h2v2h-2v-2zm-8-12V2h2v2h-2zm-4 0V2h2v2H8zm8 0V2h2v2h-2zm-8 16v2h2v-2H8zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2z"/></svg>':e==="cloud"?'<svg class="ui-icon-svg cloud-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>':e==="gear"?'<svg class="ui-icon-svg gear-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 0 0-.48-.41h-3.84c-.24 0-.45.17-.48.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>':e==="wifi"?'<svg class="ui-icon-svg wifi-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98A16.88 16.88 0 0 0 12 4zm0 4.5c3.27 0 6.27 1.24 8.54 3.29L12 20.3 3.46 11.79C5.73 9.74 8.73 8.5 12 8.5z"/></svg>':e==="vr"?'<svg class="ui-icon-svg vr-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 5H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4.5l2-2h3l2 2H20c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-12 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm8 0c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>':e==="soldering"||e==="tools"?'<svg class="ui-icon-svg soldering-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>':e==="bot"||e==="robot"?'<svg class="ui-icon-svg bot-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h4a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-8a3 3 0 0 1 3-3h4V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2zm-3 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-6 6h6v-1.5H9V16z"/></svg>':e==="prev"?'<svg class="ui-icon-svg prev-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>':e==="next"?'<svg class="ui-icon-svg next-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>':e==="industry"?'<svg class="ui-icon-svg industry-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 14H7v-2h4v2zm0-4H7v-2h4v2zm0-4H7V7h4v2zm6 8h-4v-2h4v2zm0-4h-4v-2h4v2zm0-4h-4V7h4v2z"/></svg>':e==="calendar"||e==="event"?'<svg class="ui-icon-svg calendar-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm2 4h5v5H7v-5z"/></svg>':e==="pin"||e==="location"?'<svg class="ui-icon-svg pin-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>':e==="clock"||e==="time"?'<svg class="ui-icon-svg clock-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>':e==="grid"||e==="all-apps"?'<svg class="ui-icon-svg grid-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>':e==="ps-trophy-laurel"?'<svg class="ui-icon-svg ps-trophy-svg" width="66" height="66" viewBox="0 0 72 72" fill="none" aria-hidden="true"><path d="M22 49C17.5 42 16 33 18.5 22C19.5 26.5 22.5 30 26 31M19 25C17 18.5 20.5 13.5 26.5 11C25.5 16 28 20 31 22M21 37C17 32.5 17 26.5 21 21C23 25 26 27 29.5 28M24 45C20.5 41 20 35 24 30C27 34 29.5 36.5 33.5 37.5" stroke="#f6ce62" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 49C54.5 42 56 33 53.5 22C52.5 26.5 49.5 30 46 31M53 25C55 18.5 51.5 13.5 45.5 11C46.5 16 44 20 41 22M51 37C55 32.5 55 26.5 51 21C49 25 46 27 42.5 28M48 45C51.5 41 52 35 48 30C45 34 42.5 36.5 38.5 37.5" stroke="#f6ce62" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/><rect x="29" y="52" width="14" height="4.5" rx="1.5" fill="#f8d675"/><path d="M32.5 44H39.5V52H32.5V44Z" fill="#e5af30"/><path d="M26 19H46V31C46 36.5 41.5 41 36 41C30.5 41 26 36.5 26 31V19Z" fill="url(#trophyCupGold)"/><path d="M26 22C21.5 22 19 25.5 19 29.5C19 33.5 22.5 36 26 36M46 22C50.5 22 53 25.5 53 29.5C53 33.5 49.5 36 46 36" stroke="#f6ce62" stroke-width="2.6" stroke-linecap="round"/><path d="M36 23.5L37.4 26.3L40.5 26.7L38.2 28.9L38.8 32L36 30.5L33.2 32L33.8 28.9L31.5 26.7L34.6 26.3L36 23.5Z" fill="#01331f"/><defs><linearGradient id="trophyCupGold" x1="26" y1="19" x2="46" y2="41" gradientUnits="userSpaceOnUse"><stop stop-color="#fff4b8"/><stop offset="0.35" stop-color="#f8cf5d"/><stop offset="1" stop-color="#cc8f1a"/></linearGradient></defs></svg>':e==="ps-users"?'<svg class="ui-icon-svg ps-card-icon-svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7" r="3.2"/><path d="M12 11.6C9.1 11.6 6.5 13.1 6.5 15.6V17.5H17.5V15.6C17.5 13.1 14.9 11.6 12 11.6Z"/><circle cx="6" cy="9.2" r="2.3"/><path d="M6 12.6C4.8 12.6 3 13.6 3 15.1V16.6H5.2V15.3C5.4 14.3 6.1 13.4 7.2 12.8C6.8 12.7 6.4 12.6 6 12.6Z"/><circle cx="18" cy="9.2" r="2.3"/><path d="M18 12.6C17.6 12.6 17.2 12.7 16.8 12.8C17.9 13.4 18.6 14.3 18.8 15.3V16.6H21V15.1C21 13.6 19.2 12.6 18 12.6Z"/></svg>':e==="ps-chart"?'<svg class="ui-icon-svg ps-card-icon-svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="14" width="4.4" height="7.2" rx="1.2"/><rect x="9.8" y="10" width="4.4" height="11.2" rx="1.2"/><rect x="16.6" y="6" width="4.4" height="15.2" rx="1.2"/><path d="M4.5 10.5L14 3M14 3H9M14 3V8" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>':e==="ps-diploma"?'<svg class="ui-icon-svg ps-card-icon-svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3.5C4 2.7 4.7 2 5.5 2H18.5C19.3 2 20 2.7 20 3.5V16.5C20 17.3 19.3 18 18.5 18H5.5C4.7 18 4 17.3 4 16.5V3.5Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="6.5" x2="16.5" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="7.5" y1="10.2" x2="13.5" y2="10.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="7.5" y1="13.8" x2="11.5" y2="13.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16.5" cy="15.5" r="3.2" fill="currentColor"/><path d="M15 18L14 22L16.5 20.5L19 22L18 18" fill="currentColor"/></svg>':e==="ps-briefcase"?'<svg class="ui-icon-svg ps-card-icon-svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 4.5V3C9 2.45 9.45 2 10 2H14C14.55 2 15 2.45 15 3V4.5H20C21.1 4.5 22 5.4 22 6.5V11H2V6.5C2 5.4 2.9 4.5 4 4.5H9ZM10.8 3.8H13.2V4.5H10.8V3.8ZM2 12.8V18.5C2 19.6 2.9 20.5 4 20.5H20C21.1 20.5 22 19.6 22 18.5V12.8H13.5V14.5C13.5 14.9 13.1 15.2 12.8 15.2H11.2C10.9 15.2 10.5 14.9 10.5 14.5V12.8H2Z"/></svg>':e==="ps-building"?'<svg class="ui-icon-svg ps-bar-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 7V9H22V7L12 2ZM4 11V19H7V11H4ZM9.5 11V19H12.5V11H9.5ZM15 11V19H18V11H15ZM2 21V23H22V21H2Z"/></svg>':e==="ps-support"?'<svg class="ui-icon-svg ps-bar-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 13C17.9 13 21 13.7 21 15.2V17H12V15.2C12 13.7 15.1 13 16.5 13ZM16.5 11.5C15.1 11.5 14 10.4 14 9C14 7.6 15.1 6.5 16.5 6.5C17.9 6.5 19 7.6 19 9C19 10.4 17.9 11.5 16.5 11.5ZM7.5 12C9.4 12 13 13 13 15V17H2V15C2 13 5.6 12 7.5 12ZM7.5 10.5C5.8 10.5 4.5 9.2 4.5 7.5C4.5 5.8 5.8 4.5 7.5 4.5C9.2 4.5 10.5 5.8 10.5 7.5C10.5 9.2 9.2 10.5 7.5 10.5Z"/></svg>':e==="ps-bulb"?'<svg class="ui-icon-svg ps-bar-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9C5 11.4 6.2 13.5 8 14.7V17C8 17.6 8.4 18 9 18H15C15.6 18 16 17.6 16 17V14.7C17.8 13.5 19 11.4 19 9C19 5.1 15.9 2 12 2ZM9 20C9 20.6 9.4 21 10 21H14C14.6 21 15 20.6 15 20V19H9V20Z"/></svg>':e==="ps-handshake"?'<svg class="ui-icon-svg ps-bar-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 4.2C17.4 3.8 16.7 3.8 16.3 4.2L12.5 8L11.7 7.2C11.5 7 11.2 6.9 10.9 6.9C10.6 6.9 10.3 7 10.1 7.2L6.2 11.1C6 11.3 5.9 11.6 5.9 11.9C5.9 12.2 6 12.5 6.2 12.7L7.6 14.1L3.2 18.5C2.8 18.9 2.8 19.6 3.2 20C3.6 20.4 4.3 20.4 4.7 20L9.1 15.6L10.5 17C10.7 17.2 11 17.3 11.3 17.3C11.6 17.3 11.9 17.2 12.1 17L19.8 9.3C20.2 8.9 20.2 8.2 19.8 7.8L17.8 4.2ZM15.5 11.8L14.1 13.2L12.7 11.8L14.1 10.4L15.5 11.8Z"/></svg>':`<span class="ui-icon" aria-hidden="true">${{book:"▤",building:"▥",quality:"✓",brief:"▣",compass:"◉",phone:"☎",gift:"◇"}[e]||"◆"}</span>`,i=e=>({agri:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c0-4.97 4.03-9 9-9 0 4.97-4.03 9-9 9Z"/><path d="M12 13C12 8.03 7.97 4 3 4c0 4.97 4.03 9 9 9Z"/></svg>',biomed:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H7l2-4 3 8 2-4h6.78"/></svg>',biotech:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8 8 8"/><path d="m9 5 10 10"/><path d="m5 9 10 10"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><path d="m16 8-8 8"/></svg>',civil:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16"/><path d="M6 18v-8"/><path d="M10 18v-8"/><path d="M14 18v-8"/><path d="M18 18v-8"/><path d="m3 10 9-7 9 7"/><path d="M2 22h20"/></svg>',cse:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="12" x="3" y="4" rx="2"/><line x1="2" x2="22" y1="20" y2="20"/></svg>',eee:'<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h8l-1 8 11-12h-8l1-8Z"/></svg>',ece:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.93 19.07a10 10 0 0 1 0-14.14"/><path d="M7.76 16.24a6 6 0 0 1 0-8.48"/><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.48"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>',food:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/></svg>',it:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',mech:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>',aids:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>',aiml:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="5" y="5" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v4"/><path d="M15 1v4"/><path d="M9 19v4"/><path d="M15 19v4"/><path d="M1 9h4"/><path d="M1 15h4"/><path d="M19 9h4"/><path d="M19 15h4"/></svg>',cyber:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><rect width="6" height="5" x="9" y="10" rx="1"/><path d="M10 10V8a2 2 0 0 1 4 0v2"/></svg>',vlsi:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="9" r="1" fill="currentColor"/><circle cx="9" cy="15" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/><path d="M4 9H2"/><path d="M4 15H2"/><path d="M22 9h-2"/><path d="M22 15h-2"/><path d="M9 4V2"/><path d="M15 4V2"/><path d="M9 22v-2"/><path d="M15 22v-2"/></svg>',lightning:'<svg width="18" height="18" viewBox="0 0 24 24" fill="#003c24"><path d="M13 2 3 14h8l-1 8 11-12h-8l1-8Z"/></svg>',chart:'<svg width="20" height="20" viewBox="0 0 24 24" fill="#cca01d"><rect x="3" y="12" width="4" height="8" rx="1"/><rect x="10" y="7" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="17" rx="1"/></svg>',grad:'<svg width="26" height="26" viewBox="0 0 24 24" fill="#00472b"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>'})[e]||"<span>◆</span>",r=e=>({eye:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>',target:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.2"/><path d="m15.5 8.5 5-5M16 3.5h4.5V8"/></svg>',spark:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/><path d="m19 16 .8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16Z"/></svg>',compass:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.8 8.2-2.3 5.3-5.3 2.3 2.3-5.3 5.3-2.3Z"/></svg>',arrow:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>',education:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 12.2V16c2.5 2.5 7.5 2.5 10 0v-3.8M21 10v6"/></svg>'})[e]||"",a=[["Agricultural Engineering","Sustainable solutions for a better tomorrow","agri"],["Artificial Intelligence and Data Science","From data to real-world impact","aids"],["Artificial Intelligence and Machine Learning","Building intelligent systems","aiml"],["Biomedical Engineering","Technology for healthier lives","biomed"],["Biotechnology","Innovating for a brighter future","biotech"],["Civil Engineering","Building resilient infrastructure","civil"],["Computer Science and Engineering","Driving the digital transformation","cse"],["Computer Science and Engineering (Cyber Security)","Securing the digital tomorrow","cyber"],["Electrical and Electronics","Powering the future","eee"],["Electronics and Communication","Connecting ideas to possibilities","ece"],["Food Technology","Innovating for healthy tomorrow","food"],["Information Technology","Shaping a smarter world","it"],["Mechanical Engineering","Engineering what moves the world","mech"],["VLSI Design","Designing the next generation","vlsi"]],o=[["M.E. CAD / CAM","Automated digital manufacturing & robotics","mech"],["M.E. Computer Science and Engineering","Advanced computing and machine intelligence","cse"],["M.E. Embedded Systems","Smart edge devices & connected IoT","aiml"],["M.E. Structural Engineering","Resilient modern infrastructure design","civil"],["M.E. VLSI Design","Next-generation semiconductor architectures","vlsi"],["Master of Business Administration (MBA)","Strategic leadership & global enterprise management","aids"],["Master of Computer Applications (MCA)","Enterprise software architecture & development","it"]],l=[{code:"AGRI",degree:"B.Tech",name:"Agricultural Engineering",fullName:"B.Tech - Agricultural Engineering",desc:"Smart farming, precision irrigation, agro-machinery automation and sustainable food systems.",duration:"4 Years",img:"/new-site/assets/images/category/cat1.jpg",deptSlug:"agricultural-engineering"},{code:"AI and DS",degree:"B.Tech",name:"Artificial Intelligence and Data Science",fullName:"B.Tech - Artificial Intelligence and Data Science",desc:"Mathematical foundations, predictive modeling, big data analytics, neural computing and data engineering.",duration:"4 Years",img:"/new-site/assets/images/course/3.jpg",deptSlug:"artificial-intelligence-and-data-science"},{code:"AI and ML",degree:"B.Tech",name:"Artificial Intelligence and Machine Learning",fullName:"B.Tech - Artificial Intelligence and Machine Learning",desc:"Deep learning architectures, computer vision, generative AI algorithms, NLP and intelligent robotics.",duration:"4 Years",img:"/new-site/assets/images/category/cat5.jpg",deptSlug:"artificial-intelligence-and-machine-learning"},{code:"BME",degree:"B.E",name:"Biomedical Engineering",fullName:"B.E - Biomedical Engineering",desc:"Medical instrumentation, physiological monitoring, biomaterials, diagnostic imaging and assistive healthcare robotics.",duration:"4 Years",img:"/new-site/assets/images/category/cat2.jpg",deptSlug:"biomedical-engineering"},{code:"BIOTECH",degree:"B.Tech",name:"Biotechnology",fullName:"B.Tech - Biotechnology",desc:"Molecular science, bioprocessing, genetic engineering, industrial microbiology, downstream separation and bioinformatics.",duration:"4 Years",img:"/new-site/assets/images/category/cat3.jpg",deptSlug:"biotechnology"},{code:"CIVIL",degree:"B.E",name:"Civil Engineering",fullName:"B.E - Civil Engineering",desc:"Smart structural analysis, geotechnical design, green building technology, BIM and environmental hydraulics.",duration:"4 Years",img:"/new-site/assets/images/category/cat4.jpg",deptSlug:"civil-engineering"},{code:"CSE",degree:"B.E",name:"Computer Science and Engineering",fullName:"B.E - Computer Science and Engineering",desc:"Core computer science foundations, intelligent algorithms, cloud computing, data structures and enterprise systems.",duration:"4 Years",img:"/new-site/assets/images/category/cat5.jpg",deptSlug:"computer-science-and-engineering"},{code:"CYBER",degree:"B.E",name:"Computer Science and Engineering (Cyber Security)",fullName:"B.E - Computer Science and Engineering (Cyber Security)",desc:"Digital forensics, ethical hacking, cryptographic protocols, cloud security frameworks and SOC threat intelligence.",duration:"4 Years",img:"/new-site/assets/images/course/3.jpg",deptSlug:"cyber-security"},{code:"EEE",degree:"B.E",name:"Electrical and Electronics Engineering",fullName:"B.E - Electrical and Electronics Engineering",desc:"Power systems, smart grid architectures, electric mobility, renewable energy conversion and industrial drives.",duration:"4 Years",img:"/new-site/assets/images/category/cat6.jpg",deptSlug:"electrical-and-electronics"},{code:"ECE",degree:"B.E",name:"Electronics and Communication Engineering",fullName:"B.E - Electronics and Communication Engineering",desc:"5G RF communications, embedded IoT systems, digital signal processing, microelectronics and modern telecommunication.",duration:"4 Years",img:"/new-site/assets/images/category/cat7.jpg",deptSlug:"electronics-and-communication"},{code:"FOOD",degree:"B.Tech",name:"Food Technology",fullName:"B.Tech - Food Technology",desc:"Food preservation, dairy processing, industrial packaging, safety certifications and precision nutrition formulation.",duration:"4 Years",img:"/new-site/assets/images/category/cat8.jpg",deptSlug:"food-technology"},{code:"IT",degree:"B.Tech",name:"Information Technology",fullName:"B.Tech - Information Technology",desc:"Full-stack software engineering, cloud networking, DevOps automation, enterprise database systems and cyber infrastructure.",duration:"4 Years",img:"/new-site/assets/images/course/3.jpg",deptSlug:"information-technology"},{code:"MECH",degree:"B.E",name:"Mechanical Engineering",fullName:"B.E - Mechanical Engineering",desc:"Computational mechanics, thermodynamics, additive manufacturing, automotive engineering and advanced robotics.",duration:"4 Years",img:"/new-site/assets/images/course/6.jpg",deptSlug:"mechanical-engineering"},{code:"VLSI",degree:"B.E",name:"Electronics Engineering (VLSI Design and Technology)",fullName:"B.E - Electronics Engineering (VLSI Design and Technology)",desc:"Semiconductor design, CMOS digital/analog ICs, FPGA synthesis, physical design verification and System-on-Chip (SoC).",duration:"4 Years",img:"/new-site/assets/images/category/cat7.jpg",deptSlug:"vlsi-design"}],d=[{code:"M-CSE",degree:"M.E",name:"Computer Science and Engineering",fullName:"M.E - Computer Science and Engineering",desc:"Advanced algorithms, machine learning research, distributed cloud systems and high-performance computing.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat5.jpg",deptSlug:"computer-science-and-engineering",tags:["Autonomous R2025","Intake: 18","Distributed Cloud","Research Lab"]},{code:"M-VLSI",degree:"M.E",name:"VLSI Design",fullName:"M.E - VLSI Design",desc:"Advanced semiconductor microelectronics, ASIC design flows, physical synthesis, low-power VLSI and SoC testing.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat7.jpg",deptSlug:"vlsi-design",tags:["Autonomous R2025","Intake: 18","ASIC Microelectronics","FPGA Synthesis"]},{code:"M-CAD",degree:"M.E",name:"CAD/CAM",fullName:"M.E - CAD/CAM",desc:"Advanced computer-aided design, generative modeling, CNC automation, finite element simulation and precision tooling.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/course/6.jpg",deptSlug:"mechanical-engineering",tags:["Autonomous R2025","Intake: 18","Generative Design","CNC Automation"]},{code:"M-EMB",degree:"M.E",name:"Embedded System Technologies",fullName:"M.E - Embedded System Technologies",desc:"Real-time operating systems (RTOS), IoT architectures, ARM microcontrollers, automotive electronics and firmware engineering.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat6.jpg",deptSlug:"electrical-and-electronics",tags:["Autonomous R2025","Intake: 18","RTOS & ARM","IoT Architectures"]},{code:"M-STR",degree:"M.E",name:"Structural Engineering",fullName:"M.E - Structural Engineering",desc:"Advanced earthquake-resistant design, prestressed concrete, smart materials, tall structures and structural health monitoring.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat4.jpg",deptSlug:"civil-engineering",tags:["Autonomous R2025","Intake: 18","Earthquake Design","Tall Structures"]},{code:"M-FOOD",degree:"M.Tech",name:"Food Technology",fullName:"M.Tech - Food Technology",desc:"Advanced food processing technologies, biopolymers, food biotechnology, functional food development and global quality systems.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat8.jpg",deptSlug:"food-technology",tags:["Autonomous R2025","Intake: 18","Advanced Biopolymers","Global Quality"]},{code:"M-FARM",degree:"M.Tech",name:"Farm Machinery",fullName:"M.Tech - Farm Machinery",desc:"Advanced agricultural power machinery, precision agro-robotics, bio-energy engineering and automated harvesting systems.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat1.jpg",deptSlug:"agricultural-engineering",tags:["Autonomous R2025","Intake: 18","Precision Machinery","Bio-Energy"]}],c=`<div class="programme-bottom-banner reveal"><div class="bottom-banner-cap">${i("grad")}</div><div class="bottom-banner-text"><h4>Choose a programme.</h4><p>Shape a better tomorrow.</p></div><div class="bottom-banner-line"></div></div>`,t={"Agricultural Engineering":{courses:[["B.E - Agricultural Engineering","60"],["M.Tech - Farm Machinery","18"]],overview:"The department of Agricultural Engineering was started in Sri Shakthi Institute of Engineering and Technology (SSIET), Coimbatore, in 2015. The Chairman, Dr. S Thangavelu, is himself an Agricultural Engineer and a Ph. D. degree holder in Bio Energy from Tamil Nadu Agricultural University (TNAU), Coimbatore, and worked as a faculty for 28 years in TNAU. During the past years, the department has been in the journey with SSIET to fulfil the motto, ‘Powering the Youth, Empowering the Nation’. The department offers B. E. Agriculture Engineering, focussing on widening the practical knowledge of the students thus encouraging them to solve different practical difficulties in small-landholdings. Well-qualified faculty members are the strength of the department. The department constitutes experienced and dedicated faculty and supporting staff members with excellent academic research and industrial work experience to promote research and intervention in the existing methods. Presently, the faculty consists of experts from farm machinery and power, soil and water conservation engineering, agricultural processing, civil engineering, mechanical engineering, food technology and agriculture. Further, the practical knowledge gained by them during practical field works and industrial visits has been added advantage for new technology and innovations. The department is new in offering the degree program in the institute. Despite, about 30 students have been graduated during 2019 from the department and are well placed. At present there are 375 students are admitted in the degree program, and the department is envisage more students in the future.",sections:{"Faculty Profile":`
+const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="3.5" y1="6" x2="20.5" y2="6"></line><line x1="3.5" y1="12" x2="20.5" y2="12"></line><line x1="3.5" y1="18" x2="20.5" y2="18"></line></svg>':e==="close"?'<svg class="ui-icon-svg close-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>':e==="crown"||e==="trophy"?'<svg class="ui-icon-svg crown-svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 18.5h18v2.5H3zm2.5-4L2 6.5l5.5 3 4.5-6.5 4.5 6.5 5.5-3-3.5 8h-13z"/></svg>':e==="users"?'<svg class="ui-icon-svg users-svg" width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 3s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>':e==="trend"||e==="arrow-up-right"?'<svg class="ui-icon-svg trend-svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>':e==="chart"?'<svg class="ui-icon-svg chart-svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="12" width="4.5" height="9" rx="1.2"/><rect x="9.75" y="7" width="4.5" height="14" rx="1.2"/><rect x="16.5" y="3" width="4.5" height="18" rx="1.2"/></svg>':e==="grad"?'<svg class="ui-icon-svg grad-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>':e==="connect"?'<svg class="ui-icon-svg connect-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>':e==="star"?'<svg class="ui-icon-svg star-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>':e==="home"?'<svg class="ui-icon-svg home-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>':e==="play"?'<svg class="ui-icon-svg play-svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="5 3 19 12 5 21 5 3"/></svg>':e==="arrow"?'<svg class="ui-icon-svg arrow-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>':e==="down"?'<svg class="ui-icon-svg down-svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>':e==="runner"?'<svg class="ui-icon-svg runner-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="14" cy="3.5" r="2.5"/><path d="M19.5 9.5l-3.5 3.5-2.5-2.5 1-4-4.5 2-2 4.5 1.5 1 1.5-3 2.5 2.5-3 5.5-4.5-2-.5 2 5.5 2.5 3.5-6.5 3 2.5 2-3.5-1.5-1z"/></svg>':e==="bulb"?'<svg class="ui-icon-svg bulb-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 2.6 1.4 4.8 3.5 6v2a1.5 1.5 0 0 0 1.5 1.5h4a1.5 1.5 0 0 0 1.5-1.5v-2c2.1-1.2 3.5-3.4 3.5-6a7 7 0 0 0-7-7zm-2 19a1.5 1.5 0 0 0 1.5 1.5h1a1.5 1.5 0 0 0 1.5-1.5v-.5h-4v.5z"/></svg>':e==="masks"?'<svg class="ui-icon-svg masks-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M10.5 3.5C5.8 3.5 2 6.8 2 11c0 3.8 3.1 7 7.2 7.4-.2.8-.7 1.6-1.5 2.2 1.8 0 3.5-.8 4.6-2.1 4.5-.4 7.7-3.8 7.7-7.5 0-4.2-3.8-7.5-8.5-7.5zm-3.5 6a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm7 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm-3.5 5.5c-2 0-3.3-1-3.5-1.2l.8-1.2c.1.1 1.1.9 2.7.9s2.6-.8 2.7-.9l.8 1.2c-.2.2-1.5 1.2-3.5 1.2z"/></svg>':e==="leaf"?'<svg class="ui-icon-svg leaf-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66.95-2.3c.48.17.98.3 1.34.3C19 20 22 3 22 3c-1 2-8 2.25-13 3.25S2 11.5 2 13.5s1.75 3.75 1.75 3.75C7 8 17 8 17 8z"/></svg>':e==="cup"||e==="trophy-cup"?'<svg class="ui-icon-svg cup-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 4h-2V3a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v1H5a3 3 0 0 0-3 3v2a4 4 0 0 0 4 4h.6A6 6 0 0 0 11 16.9V19H8a1 1 0 0 0 0 2h8a1 1 0 0 0 0-2h-3v-2.1a6 6 0 0 0 4.4-3.9H18a4 4 0 0 0 4-4V7a3 3 0 0 0-3-3zM4 9V7a1 1 0 0 1 1-1h2v4.8A2 2 0 0 1 4 9zm16 0a2 2 0 0 1-3 1.8V6h2a1 1 0 0 1 1 1z"/></svg>':e==="flask"?'<svg class="ui-icon-svg flask-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 20L14 11V5H15V3H9V5H10V11L5 20C4.2 21.3 5.2 23 6.7 23H17.3C18.8 23 19.8 21.3 19 20ZM7.5 19L11 12.7V5H13V12.7L16.5 19H7.5Z"/></svg>':e==="chip"||e==="cpu"?'<svg class="ui-icon-svg chip-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm3 4v8h6V8H9zm-5 2H2v2h2v-2zm0 4H2v2h2v-2zm16-4h2v2h-2v-2zm0 4h2v2h-2v-2zm-8-12V2h2v2h-2zm-4 0V2h2v2H8zm8 0V2h2v2h-2zm-8 16v2h2v-2H8zm4 0v2h2v-2h-2zm4 0v2h2v-2h-2z"/></svg>':e==="cloud"?'<svg class="ui-icon-svg cloud-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/></svg>':e==="gear"?'<svg class="ui-icon-svg gear-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 0 0-.48-.41h-3.84c-.24 0-.45.17-.48.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.49.49 0 0 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>':e==="wifi"?'<svg class="ui-icon-svg wifi-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98A16.88 16.88 0 0 0 12 4zm0 4.5c3.27 0 6.27 1.24 8.54 3.29L12 20.3 3.46 11.79C5.73 9.74 8.73 8.5 12 8.5z"/></svg>':e==="vr"?'<svg class="ui-icon-svg vr-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20 5H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h4.5l2-2h3l2 2H20c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm-12 8c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm8 0c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>':e==="soldering"||e==="tools"?'<svg class="ui-icon-svg soldering-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>':e==="bot"||e==="robot"?'<svg class="ui-icon-svg bot-svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h4a3 3 0 0 1 3 3v8a3 3 0 0 1-3 3H7a3 3 0 0 1-3-3v-8a3 3 0 0 1 3-3h4V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2zm-3 8a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm6 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-6 6h6v-1.5H9V16z"/></svg>':e==="prev"?'<svg class="ui-icon-svg prev-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>':e==="next"?'<svg class="ui-icon-svg next-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>':e==="industry"?'<svg class="ui-icon-svg industry-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-8 14H7v-2h4v2zm0-4H7v-2h4v2zm0-4H7V7h4v2zm6 8h-4v-2h4v2zm0-4h-4v-2h4v2zm0-4h-4V7h4v2z"/></svg>':e==="calendar"||e==="event"?'<svg class="ui-icon-svg calendar-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zM5 8V6h14v2H5zm2 4h5v5H7v-5z"/></svg>':e==="pin"||e==="location"?'<svg class="ui-icon-svg pin-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>':e==="clock"||e==="time"?'<svg class="ui-icon-svg clock-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>':e==="grid"||e==="all-apps"?'<svg class="ui-icon-svg grid-svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>':e==="ps-trophy-laurel"?'<svg class="ui-icon-svg ps-trophy-svg" width="66" height="66" viewBox="0 0 72 72" fill="none" aria-hidden="true"><path d="M22 49C17.5 42 16 33 18.5 22C19.5 26.5 22.5 30 26 31M19 25C17 18.5 20.5 13.5 26.5 11C25.5 16 28 20 31 22M21 37C17 32.5 17 26.5 21 21C23 25 26 27 29.5 28M24 45C20.5 41 20 35 24 30C27 34 29.5 36.5 33.5 37.5" stroke="#f6ce62" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M50 49C54.5 42 56 33 53.5 22C52.5 26.5 49.5 30 46 31M53 25C55 18.5 51.5 13.5 45.5 11C46.5 16 44 20 41 22M51 37C55 32.5 55 26.5 51 21C49 25 46 27 42.5 28M48 45C51.5 41 52 35 48 30C45 34 42.5 36.5 38.5 37.5" stroke="#f6ce62" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/><rect x="29" y="52" width="14" height="4.5" rx="1.5" fill="#f8d675"/><path d="M32.5 44H39.5V52H32.5V44Z" fill="#e5af30"/><path d="M26 19H46V31C46 36.5 41.5 41 36 41C30.5 41 26 36.5 26 31V19Z" fill="url(#trophyCupGold)"/><path d="M26 22C21.5 22 19 25.5 19 29.5C19 33.5 22.5 36 26 36M46 22C50.5 22 53 25.5 53 29.5C53 33.5 49.5 36 46 36" stroke="#f6ce62" stroke-width="2.6" stroke-linecap="round"/><path d="M36 23.5L37.4 26.3L40.5 26.7L38.2 28.9L38.8 32L36 30.5L33.2 32L33.8 28.9L31.5 26.7L34.6 26.3L36 23.5Z" fill="#01331f"/><defs><linearGradient id="trophyCupGold" x1="26" y1="19" x2="46" y2="41" gradientUnits="userSpaceOnUse"><stop stop-color="#fff4b8"/><stop offset="0.35" stop-color="#f8cf5d"/><stop offset="1" stop-color="#cc8f1a"/></linearGradient></defs></svg>':e==="ps-users"?'<svg class="ui-icon-svg ps-card-icon-svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="7" r="3.2"/><path d="M12 11.6C9.1 11.6 6.5 13.1 6.5 15.6V17.5H17.5V15.6C17.5 13.1 14.9 11.6 12 11.6Z"/><circle cx="6" cy="9.2" r="2.3"/><path d="M6 12.6C4.8 12.6 3 13.6 3 15.1V16.6H5.2V15.3C5.4 14.3 6.1 13.4 7.2 12.8C6.8 12.7 6.4 12.6 6 12.6Z"/><circle cx="18" cy="9.2" r="2.3"/><path d="M18 12.6C17.6 12.6 17.2 12.7 16.8 12.8C17.9 13.4 18.6 14.3 18.8 15.3V16.6H21V15.1C21 13.6 19.2 12.6 18 12.6Z"/></svg>':e==="ps-chart"?'<svg class="ui-icon-svg ps-card-icon-svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="3" y="14" width="4.4" height="7.2" rx="1.2"/><rect x="9.8" y="10" width="4.4" height="11.2" rx="1.2"/><rect x="16.6" y="6" width="4.4" height="15.2" rx="1.2"/><path d="M4.5 10.5L14 3M14 3H9M14 3V8" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>':e==="ps-diploma"?'<svg class="ui-icon-svg ps-card-icon-svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 3.5C4 2.7 4.7 2 5.5 2H18.5C19.3 2 20 2.7 20 3.5V16.5C20 17.3 19.3 18 18.5 18H5.5C4.7 18 4 17.3 4 16.5V3.5Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><line x1="7.5" y1="6.5" x2="16.5" y2="6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="7.5" y1="10.2" x2="13.5" y2="10.2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><line x1="7.5" y1="13.8" x2="11.5" y2="13.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16.5" cy="15.5" r="3.2" fill="currentColor"/><path d="M15 18L14 22L16.5 20.5L19 22L18 18" fill="currentColor"/></svg>':e==="ps-briefcase"?'<svg class="ui-icon-svg ps-card-icon-svg" width="30" height="30" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 4.5V3C9 2.45 9.45 2 10 2H14C14.55 2 15 2.45 15 3V4.5H20C21.1 4.5 22 5.4 22 6.5V11H2V6.5C2 5.4 2.9 4.5 4 4.5H9ZM10.8 3.8H13.2V4.5H10.8V3.8ZM2 12.8V18.5C2 19.6 2.9 20.5 4 20.5H20C21.1 20.5 22 19.6 22 18.5V12.8H13.5V14.5C13.5 14.9 13.1 15.2 12.8 15.2H11.2C10.9 15.2 10.5 14.9 10.5 14.5V12.8H2Z"/></svg>':e==="ps-building"?'<svg class="ui-icon-svg ps-bar-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L2 7V9H22V7L12 2ZM4 11V19H7V11H4ZM9.5 11V19H12.5V11H9.5ZM15 11V19H18V11H15ZM2 21V23H22V21H2Z"/></svg>':e==="ps-support"?'<svg class="ui-icon-svg ps-bar-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 13C17.9 13 21 13.7 21 15.2V17H12V15.2C12 13.7 15.1 13 16.5 13ZM16.5 11.5C15.1 11.5 14 10.4 14 9C14 7.6 15.1 6.5 16.5 6.5C17.9 6.5 19 7.6 19 9C19 10.4 17.9 11.5 16.5 11.5ZM7.5 12C9.4 12 13 13 13 15V17H2V15C2 13 5.6 12 7.5 12ZM7.5 10.5C5.8 10.5 4.5 9.2 4.5 7.5C4.5 5.8 5.8 4.5 7.5 4.5C9.2 4.5 10.5 5.8 10.5 7.5C10.5 9.2 9.2 10.5 7.5 10.5Z"/></svg>':e==="ps-bulb"?'<svg class="ui-icon-svg ps-bar-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.1 2 5 5.1 5 9C5 11.4 6.2 13.5 8 14.7V17C8 17.6 8.4 18 9 18H15C15.6 18 16 17.6 16 17V14.7C17.8 13.5 19 11.4 19 9C19 5.1 15.9 2 12 2ZM9 20C9 20.6 9.4 21 10 21H14C14.6 21 15 20.6 15 20V19H9V20Z"/></svg>':e==="ps-handshake"?'<svg class="ui-icon-svg ps-bar-icon-svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.8 4.2C17.4 3.8 16.7 3.8 16.3 4.2L12.5 8L11.7 7.2C11.5 7 11.2 6.9 10.9 6.9C10.6 6.9 10.3 7 10.1 7.2L6.2 11.1C6 11.3 5.9 11.6 5.9 11.9C5.9 12.2 6 12.5 6.2 12.7L7.6 14.1L3.2 18.5C2.8 18.9 2.8 19.6 3.2 20C3.6 20.4 4.3 20.4 4.7 20L9.1 15.6L10.5 17C10.7 17.2 11 17.3 11.3 17.3C11.6 17.3 11.9 17.2 12.1 17L19.8 9.3C20.2 8.9 20.2 8.2 19.8 7.8L17.8 4.2ZM15.5 11.8L14.1 13.2L12.7 11.8L14.1 10.4L15.5 11.8Z"/></svg>':`<span class="ui-icon" aria-hidden="true">${{book:"▤",building:"▥",quality:"✓",brief:"▣",compass:"◉",phone:"☎",gift:"◇"}[e]||"◆"}</span>`,i=e=>({agri:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-9"/><path d="M12 13c0-4.97 4.03-9 9-9 0 4.97-4.03 9-9 9Z"/><path d="M12 13C12 8.03 7.97 4 3 4c0 4.97 4.03 9 9 9Z"/></svg>',biomed:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H7l2-4 3 8 2-4h6.78"/></svg>',biotech:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 8 8 8"/><path d="m9 5 10 10"/><path d="m5 9 10 10"/><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><circle cx="18" cy="6" r="2"/><circle cx="6" cy="18" r="2"/><path d="m16 8-8 8"/></svg>',civil:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16"/><path d="M6 18v-8"/><path d="M10 18v-8"/><path d="M14 18v-8"/><path d="M18 18v-8"/><path d="m3 10 9-7 9 7"/><path d="M2 22h20"/></svg>',cse:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="12" x="3" y="4" rx="2"/><line x1="2" x2="22" y1="20" y2="20"/></svg>',eee:'<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2 3 14h8l-1 8 11-12h-8l1-8Z"/></svg>',ece:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.93 19.07a10 10 0 0 1 0-14.14"/><path d="M7.76 16.24a6 6 0 0 1 0-8.48"/><circle cx="12" cy="12" r="2"/><path d="M16.24 7.76a6 6 0 0 1 0 8.48"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>',food:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 22 16 8"/><path d="M3.47 12.53 5 11l1.53 1.53a3.5 3.5 0 0 1 0 4.94L5 19l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M7.47 8.53 9 7l1.53 1.53a3.5 3.5 0 0 1 0 4.94L9 15l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M11.47 4.53 13 3l1.53 1.53a3.5 3.5 0 0 1 0 4.94L13 11l-1.53-1.53a3.5 3.5 0 0 1 0-4.94Z"/><path d="M20 2h2v2a4 4 0 0 1-4 4h-2V6a4 4 0 0 1 4-4Z"/></svg>',it:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>',mech:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>',aids:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg>',aiml:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="5" y="5" rx="2"/><path d="M9 9h6v6H9z"/><path d="M9 1v4"/><path d="M15 1v4"/><path d="M9 19v4"/><path d="M15 19v4"/><path d="M1 9h4"/><path d="M1 15h4"/><path d="M19 9h4"/><path d="M19 15h4"/></svg>',cyber:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><rect width="6" height="5" x="9" y="10" rx="1"/><path d="M10 10V8a2 2 0 0 1 4 0v2"/></svg>',vlsi:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="16" x="4" y="4" rx="2"/><circle cx="9" cy="9" r="1" fill="currentColor"/><circle cx="15" cy="9" r="1" fill="currentColor"/><circle cx="9" cy="15" r="1" fill="currentColor"/><circle cx="15" cy="15" r="1" fill="currentColor"/><path d="M4 9H2"/><path d="M4 15H2"/><path d="M22 9h-2"/><path d="M22 15h-2"/><path d="M9 4V2"/><path d="M15 4V2"/><path d="M9 22v-2"/><path d="M15 22v-2"/></svg>',lightning:'<svg width="18" height="18" viewBox="0 0 24 24" fill="#003c24"><path d="M13 2 3 14h8l-1 8 11-12h-8l1-8Z"/></svg>',chart:'<svg width="20" height="20" viewBox="0 0 24 24" fill="#cca01d"><rect x="3" y="12" width="4" height="8" rx="1"/><rect x="10" y="7" width="4" height="13" rx="1"/><rect x="17" y="3" width="4" height="17" rx="1"/></svg>',grad:'<svg width="26" height="26" viewBox="0 0 24 24" fill="#00472b"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>'})[e]||"<span>◆</span>",r=e=>({eye:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>',target:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.2"/><path d="m15.5 8.5 5-5M16 3.5h4.5V8"/></svg>',spark:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8L12 2Z"/><path d="m19 16 .8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16Z"/></svg>',compass:'<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m15.8 8.2-2.3 5.3-5.3 2.3 2.3-5.3 5.3-2.3Z"/></svg>',arrow:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>',education:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 9 9-5 9 5-9 5-9-5Z"/><path d="M7 12.2V16c2.5 2.5 7.5 2.5 10 0v-3.8M21 10v6"/></svg>'})[e]||"",a=[["Agricultural Engineering","Sustainable solutions for a better tomorrow","agri"],["Artificial Intelligence and Data Science","From data to real-world impact","aids"],["Artificial Intelligence and Machine Learning","Building intelligent systems","aiml"],["Biomedical Engineering","Technology for healthier lives","biomed"],["Biotechnology","Innovating for a brighter future","biotech"],["Civil Engineering","Building resilient infrastructure","civil"],["Computer Science and Engineering","Driving the digital transformation","cse"],["Computer Science and Engineering (Cyber Security)","Securing the digital tomorrow","cyber"],["Electrical and Electronics","Powering the future","eee"],["Electronics and Communication","Connecting ideas to possibilities","ece"],["Food Technology","Innovating for healthy tomorrow","food"],["Information Technology","Shaping a smarter world","it"],["Mechanical Engineering","Engineering what moves the world","mech"],["VLSI Design","Designing the next generation","vlsi"]],o=[["M.E. CAD / CAM","Automated digital manufacturing & robotics","mech"],["M.E. Computer Science and Engineering","Advanced computing and machine intelligence","cse"],["M.E. Embedded Systems","Smart edge devices & connected IoT","aiml"],["M.E. Structural Engineering","Resilient modern infrastructure design","civil"],["M.E. VLSI Design","Next-generation semiconductor architectures","vlsi"],["Master of Business Administration (MBA)","Strategic leadership & global enterprise management","aids"],["Master of Computer Applications (MCA)","Enterprise software architecture & development","it"]],l=[{code:"AGRI",degree:"B.Tech",name:"Agricultural Engineering",fullName:"B.Tech - Agricultural Engineering",desc:"Smart farming, precision irrigation, agro-machinery automation and sustainable food systems.",duration:"4 Years",img:"/new-site/assets/images/category/cat1.webp",deptSlug:"agricultural-engineering"},{code:"AI and DS",degree:"B.Tech",name:"Artificial Intelligence and Data Science",fullName:"B.Tech - Artificial Intelligence and Data Science",desc:"Mathematical foundations, predictive modeling, big data analytics, neural computing and data engineering.",duration:"4 Years",img:"/new-site/assets/images/course/3.webp",deptSlug:"artificial-intelligence-and-data-science"},{code:"AI and ML",degree:"B.Tech",name:"Artificial Intelligence and Machine Learning",fullName:"B.Tech - Artificial Intelligence and Machine Learning",desc:"Deep learning architectures, computer vision, generative AI algorithms, NLP and intelligent robotics.",duration:"4 Years",img:"/new-site/assets/images/category/cat5.webp",deptSlug:"artificial-intelligence-and-machine-learning"},{code:"BME",degree:"B.E",name:"Biomedical Engineering",fullName:"B.E - Biomedical Engineering",desc:"Medical instrumentation, physiological monitoring, biomaterials, diagnostic imaging and assistive healthcare robotics.",duration:"4 Years",img:"/new-site/assets/images/category/cat2.webp",deptSlug:"biomedical-engineering"},{code:"BIOTECH",degree:"B.Tech",name:"Biotechnology",fullName:"B.Tech - Biotechnology",desc:"Molecular science, bioprocessing, genetic engineering, industrial microbiology, downstream separation and bioinformatics.",duration:"4 Years",img:"/new-site/assets/images/category/cat3.webp",deptSlug:"biotechnology"},{code:"CIVIL",degree:"B.E",name:"Civil Engineering",fullName:"B.E - Civil Engineering",desc:"Smart structural analysis, geotechnical design, green building technology, BIM and environmental hydraulics.",duration:"4 Years",img:"/new-site/assets/images/category/cat4.webp",deptSlug:"civil-engineering"},{code:"CSE",degree:"B.E",name:"Computer Science and Engineering",fullName:"B.E - Computer Science and Engineering",desc:"Core computer science foundations, intelligent algorithms, cloud computing, data structures and enterprise systems.",duration:"4 Years",img:"/new-site/assets/images/category/cat5.webp",deptSlug:"computer-science-and-engineering"},{code:"CYBER",degree:"B.E",name:"Computer Science and Engineering (Cyber Security)",fullName:"B.E - Computer Science and Engineering (Cyber Security)",desc:"Digital forensics, ethical hacking, cryptographic protocols, cloud security frameworks and SOC threat intelligence.",duration:"4 Years",img:"/new-site/assets/images/course/3.webp",deptSlug:"cyber-security"},{code:"EEE",degree:"B.E",name:"Electrical and Electronics Engineering",fullName:"B.E - Electrical and Electronics Engineering",desc:"Power systems, smart grid architectures, electric mobility, renewable energy conversion and industrial drives.",duration:"4 Years",img:"/new-site/assets/images/category/cat6.webp",deptSlug:"electrical-and-electronics"},{code:"ECE",degree:"B.E",name:"Electronics and Communication Engineering",fullName:"B.E - Electronics and Communication Engineering",desc:"5G RF communications, embedded IoT systems, digital signal processing, microelectronics and modern telecommunication.",duration:"4 Years",img:"/new-site/assets/images/category/cat7.webp",deptSlug:"electronics-and-communication"},{code:"FOOD",degree:"B.Tech",name:"Food Technology",fullName:"B.Tech - Food Technology",desc:"Food preservation, dairy processing, industrial packaging, safety certifications and precision nutrition formulation.",duration:"4 Years",img:"/new-site/assets/images/category/cat8.webp",deptSlug:"food-technology"},{code:"IT",degree:"B.Tech",name:"Information Technology",fullName:"B.Tech - Information Technology",desc:"Full-stack software engineering, cloud networking, DevOps automation, enterprise database systems and cyber infrastructure.",duration:"4 Years",img:"/new-site/assets/images/course/3.webp",deptSlug:"information-technology"},{code:"MECH",degree:"B.E",name:"Mechanical Engineering",fullName:"B.E - Mechanical Engineering",desc:"Computational mechanics, thermodynamics, additive manufacturing, automotive engineering and advanced robotics.",duration:"4 Years",img:"/new-site/assets/images/course/6.webp",deptSlug:"mechanical-engineering"},{code:"VLSI",degree:"B.E",name:"Electronics Engineering (VLSI Design and Technology)",fullName:"B.E - Electronics Engineering (VLSI Design and Technology)",desc:"Semiconductor design, CMOS digital/analog ICs, FPGA synthesis, physical design verification and System-on-Chip (SoC).",duration:"4 Years",img:"/new-site/assets/images/category/cat7.webp",deptSlug:"vlsi-design"}],d=[{code:"M-CSE",degree:"M.E",name:"Computer Science and Engineering",fullName:"M.E - Computer Science and Engineering",desc:"Advanced algorithms, machine learning research, distributed cloud systems and high-performance computing.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat5.webp",deptSlug:"computer-science-and-engineering",tags:["Autonomous R2025","Intake: 18","Distributed Cloud","Research Lab"]},{code:"M-VLSI",degree:"M.E",name:"VLSI Design",fullName:"M.E - VLSI Design",desc:"Advanced semiconductor microelectronics, ASIC design flows, physical synthesis, low-power VLSI and SoC testing.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat7.webp",deptSlug:"vlsi-design",tags:["Autonomous R2025","Intake: 18","ASIC Microelectronics","FPGA Synthesis"]},{code:"M-CAD",degree:"M.E",name:"CAD/CAM",fullName:"M.E - CAD/CAM",desc:"Advanced computer-aided design, generative modeling, CNC automation, finite element simulation and precision tooling.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/course/6.webp",deptSlug:"mechanical-engineering",tags:["Autonomous R2025","Intake: 18","Generative Design","CNC Automation"]},{code:"M-EMB",degree:"M.E",name:"Embedded System Technologies",fullName:"M.E - Embedded System Technologies",desc:"Real-time operating systems (RTOS), IoT architectures, ARM microcontrollers, automotive electronics and firmware engineering.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat6.webp",deptSlug:"electrical-and-electronics",tags:["Autonomous R2025","Intake: 18","RTOS & ARM","IoT Architectures"]},{code:"M-STR",degree:"M.E",name:"Structural Engineering",fullName:"M.E - Structural Engineering",desc:"Advanced earthquake-resistant design, prestressed concrete, smart materials, tall structures and structural health monitoring.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat4.webp",deptSlug:"civil-engineering",tags:["Autonomous R2025","Intake: 18","Earthquake Design","Tall Structures"]},{code:"M-FOOD",degree:"M.Tech",name:"Food Technology",fullName:"M.Tech - Food Technology",desc:"Advanced food processing technologies, biopolymers, food biotechnology, functional food development and global quality systems.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat8.webp",deptSlug:"food-technology",tags:["Autonomous R2025","Intake: 18","Advanced Biopolymers","Global Quality"]},{code:"M-FARM",degree:"M.Tech",name:"Farm Machinery",fullName:"M.Tech - Farm Machinery",desc:"Advanced agricultural power machinery, precision agro-robotics, bio-energy engineering and automated harvesting systems.",duration:"2 Years",intake:"18",img:"/new-site/assets/images/category/cat1.webp",deptSlug:"agricultural-engineering",tags:["Autonomous R2025","Intake: 18","Precision Machinery","Bio-Energy"]}],c=`<div class="programme-bottom-banner reveal"><div class="bottom-banner-cap">${i("grad")}</div><div class="bottom-banner-text"><h4>Choose a programme.</h4><p>Shape a better tomorrow.</p></div><div class="bottom-banner-line"></div></div>`,t={"Agricultural Engineering":{courses:[["B.E - Agricultural Engineering","60"],["M.Tech - Farm Machinery","18"]],overview:"The department of Agricultural Engineering was started in Sri Shakthi Institute of Engineering and Technology (SSIET), Coimbatore, in 2015. The Chairman, Dr. S Thangavelu, is himself an Agricultural Engineer and a Ph. D. degree holder in Bio Energy from Tamil Nadu Agricultural University (TNAU), Coimbatore, and worked as a faculty for 28 years in TNAU. During the past years, the department has been in the journey with SSIET to fulfil the motto, ‘Powering the Youth, Empowering the Nation’. The department offers B. E. Agriculture Engineering, focussing on widening the practical knowledge of the students thus encouraging them to solve different practical difficulties in small-landholdings. Well-qualified faculty members are the strength of the department. The department constitutes experienced and dedicated faculty and supporting staff members with excellent academic research and industrial work experience to promote research and intervention in the existing methods. Presently, the faculty consists of experts from farm machinery and power, soil and water conservation engineering, agricultural processing, civil engineering, mechanical engineering, food technology and agriculture. Further, the practical knowledge gained by them during practical field works and industrial visits has been added advantage for new technology and innovations. The department is new in offering the degree program in the institute. Despite, about 30 students have been graduated during 2019 from the department and are well placed. At present there are 375 students are admitted in the degree program, and the department is envisage more students in the future.",sections:{"Faculty Profile":`
         <h2 class="dept-faculty-title"><u>FACULTY LIST</u></h2>
         <div class="dept-table-wrapper">
           <table class="dept-data-table faculty-profile-table">
@@ -22,7 +22,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor</td>
                 <td>UG-Agricultural Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/agri_faculty_photos/ibrahim-sheriff.png" alt="Dr.Ibrahim Sheriff K A" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/agri_faculty_photos/ibrahim-sheriff.webp" alt="Dr.Ibrahim Sheriff K A" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -33,7 +33,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Agricultural Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/agri_faculty_photos/vijay-aravinth.png" alt="Dr.Vijay Aravinth K" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/agri_faculty_photos/vijay-aravinth.webp" alt="Dr.Vijay Aravinth K" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -44,7 +44,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Agricultural Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/agri_faculty_photos/mohammed-thousiff.png" alt="Mr.Mohammed Thousiff S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/agri_faculty_photos/mohammed-thousiff.webp" alt="Mr.Mohammed Thousiff S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -55,7 +55,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Agricultural Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/agri_faculty_photos/muthusamy.png" alt="Mr.Muthusamy K" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/agri_faculty_photos/muthusamy.webp" alt="Mr.Muthusamy K" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -66,7 +66,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Agricultural Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/agri_faculty_photos/priyanka.png" alt="Mrs.Priyanka R" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/agri_faculty_photos/priyanka.webp" alt="Mrs.Priyanka R" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -77,7 +77,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Agricultural Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/agri_faculty_photos/srijavijayalakshmi.png" alt="Ms.Srijavijayalakshmi A" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/agri_faculty_photos/srijavijayalakshmi.webp" alt="Ms.Srijavijayalakshmi A" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -88,7 +88,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Agricultural Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/agri_faculty_photos/durga.png" alt="Ms.Durga G" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/agri_faculty_photos/durga.webp" alt="Ms.Durga G" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -99,7 +99,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-General Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/agri_faculty_photos/saranya.png" alt="Mrs.Saranya J" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/agri_faculty_photos/saranya.webp" alt="Mrs.Saranya J" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -110,7 +110,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>PG-Farm Machinery</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/agri_faculty_photos/poojha.png" alt="Ms.Poojha J" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/agri_faculty_photos/poojha.webp" alt="Ms.Poojha J" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -121,7 +121,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>PG-Farm Machinery</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/agri_faculty_photos/raju-yadav.png" alt="Dr.Kommanaboyina Raju Yadav" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/agri_faculty_photos/raju-yadav.webp" alt="Dr.Kommanaboyina Raju Yadav" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -275,7 +275,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor & Head</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/kamalaveni-v-vanji-gounder.png" alt="Dr.V.Kamalaveni" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/kamalaveni-v-vanji-gounder.webp" alt="Dr.V.Kamalaveni" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -286,7 +286,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Associate Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/bala-kumar-natarajan.png" alt="Dr.Bala Kumar Natarajan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/bala-kumar-natarajan.webp" alt="Dr.Bala Kumar Natarajan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -297,7 +297,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Associate Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/buvaneswaran-balamani.png" alt="Dr.Buvaneswaran Balamani" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/buvaneswaran-balamani.webp" alt="Dr.Buvaneswaran Balamani" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -308,7 +308,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Associate Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/dhashinamoorthy-thavamani.png" alt="Dr.Dhashinamoorthy Thavamani" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/dhashinamoorthy-thavamani.webp" alt="Dr.Dhashinamoorthy Thavamani" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -319,7 +319,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/ambika.png" alt="Mrs.Ambika" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/ambika.webp" alt="Mrs.Ambika" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -330,7 +330,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/barath-kumar.png" alt="Mr.Barath Kumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/barath-kumar.webp" alt="Mr.Barath Kumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -341,7 +341,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/dhinaharan.png" alt="Mr.Dhinaharan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/dhinaharan.webp" alt="Mr.Dhinaharan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -352,7 +352,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/dhivya-m.png" alt="Mrs.M.Dhivya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/dhivya-m.webp" alt="Mrs.M.Dhivya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -363,7 +363,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/dhivya-sp.png" alt="Mrs.S.P.Dhivya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/dhivya-sp.webp" alt="Mrs.S.P.Dhivya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -374,7 +374,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/gayathiri.png" alt="Ms.Gayathiri" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/gayathiri.webp" alt="Ms.Gayathiri" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -385,7 +385,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/geethanjali-s.png" alt="Mrs.S.Geethanjali" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/geethanjali-s.webp" alt="Mrs.S.Geethanjali" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -396,7 +396,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/hari-priya-j.png" alt="Ms.J.Hari Priya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/hari-priya-j.webp" alt="Ms.J.Hari Priya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -407,7 +407,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/jayabala-surya-narayana-moorthy.png" alt="Mr.Jayabala Surya Narayana Moorthy" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/jayabala-surya-narayana-moorthy.webp" alt="Mr.Jayabala Surya Narayana Moorthy" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -418,7 +418,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/krishna-satheesh.png" alt="Mr.Krishna Satheesh" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/krishna-satheesh.webp" alt="Mr.Krishna Satheesh" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -429,7 +429,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/logeshwari-m.png" alt="Mrs.M.Logeshwari" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/logeshwari-m.webp" alt="Mrs.M.Logeshwari" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -440,7 +440,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/mayank-chauhan.png" alt="Mr.Mayank Chauhan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/mayank-chauhan.webp" alt="Mr.Mayank Chauhan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -451,7 +451,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/mugesh-chandran.png" alt="Mr.Mugesh Chandran" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/mugesh-chandran.webp" alt="Mr.Mugesh Chandran" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -462,7 +462,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/priya-dharshini-rajan.png" alt="Mrs.Priya Dharshini Rajan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/priya-dharshini-rajan.webp" alt="Mrs.Priya Dharshini Rajan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -473,7 +473,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/priya-rajaendran.png" alt="Mrs.Priya Rajaendran" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/priya-rajaendran.webp" alt="Mrs.Priya Rajaendran" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -484,7 +484,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/revathi.png" alt="Mrs.Revathi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/revathi.webp" alt="Mrs.Revathi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -495,7 +495,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/samlin-jenifer.png" alt="Mrs.Samlin Jenifer" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/samlin-jenifer.webp" alt="Mrs.Samlin Jenifer" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -506,7 +506,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/sangamithara-a.png" alt="Ms.A.Sangamithara" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/sangamithara-a.webp" alt="Ms.A.Sangamithara" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -517,7 +517,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/saranya-devi.png" alt="Mrs.Saranya Devi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/saranya-devi.webp" alt="Mrs.Saranya Devi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -528,7 +528,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/saranya-subaramani.png" alt="Mrs.Saranya Subaramani" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/saranya-subaramani.webp" alt="Mrs.Saranya Subaramani" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -539,7 +539,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/sini-prabhakar.png" alt="Mrs.Sini Prabhakar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/sini-prabhakar.webp" alt="Mrs.Sini Prabhakar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -550,7 +550,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/sivadharsini.png" alt="Ms.Sivadharsini" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/sivadharsini.webp" alt="Ms.Sivadharsini" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -561,7 +561,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/subhasri-selvaraj.png" alt="Mrs.Subhasri Selvaraj" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/subhasri-selvaraj.webp" alt="Mrs.Subhasri Selvaraj" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -572,7 +572,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/swetha.png" alt="Ms.Swetha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/swetha.webp" alt="Ms.Swetha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -583,7 +583,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Data Science</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aids-faculty-images/vijayakumar-bala-subaramani.png" alt="Mr.Vijayakumar Bala Subaramani" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aids-faculty-images/vijayakumar-bala-subaramani.webp" alt="Mr.Vijayakumar Bala Subaramani" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -853,7 +853,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor & Head</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/arulvadivu-g.png" alt="Dr.G.Arulvadivu" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/arulvadivu-g.webp" alt="Dr.G.Arulvadivu" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -864,7 +864,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Associate Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/anshuman-sinha.png" alt="Dr.Anshuman Sinha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/anshuman-sinha.webp" alt="Dr.Anshuman Sinha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -875,7 +875,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/ansline-lidiya-d.png" alt="Mrs.D.Ansline Lidiya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/ansline-lidiya-d.webp" alt="Mrs.D.Ansline Lidiya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -886,7 +886,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/arun-prasanth-g.png" alt="Mr.G.Arun Prasanth" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/arun-prasanth-g.webp" alt="Mr.G.Arun Prasanth" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -897,7 +897,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/benazir-t-a.png" alt="Mrs.T.A.Benazir" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/benazir-t-a.webp" alt="Mrs.T.A.Benazir" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -908,7 +908,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/gayathri-n.png" alt="Mrs.N.Gayathri" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/gayathri-n.webp" alt="Mrs.N.Gayathri" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -919,7 +919,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/hemalatha-s.png" alt="Mrs.S.Hemalatha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/hemalatha-s.webp" alt="Mrs.S.Hemalatha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -930,7 +930,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/karthikeyan.png" alt="Mr.Karthikeyan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/karthikeyan.webp" alt="Mr.Karthikeyan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -941,7 +941,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/keerthana-m.png" alt="Mrs.M.Keerthana" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/keerthana-m.webp" alt="Mrs.M.Keerthana" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -952,7 +952,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/kirthiga-r.png" alt="Mrs.R.Kirthiga" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/kirthiga-r.webp" alt="Mrs.R.Kirthiga" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -963,7 +963,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/madhan-ksp.png" alt="Mr.K.S.P.Madhan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/madhan-ksp.webp" alt="Mr.K.S.P.Madhan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -974,7 +974,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/narmatha.png" alt="Ms.Narmatha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/narmatha.webp" alt="Ms.Narmatha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -985,7 +985,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/niranchana-c.png" alt="Mrs.C.Niranchana" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/niranchana-c.webp" alt="Mrs.C.Niranchana" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -996,7 +996,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/nivedha-s.png" alt="Ms.S.Nivedha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/nivedha-s.webp" alt="Ms.S.Nivedha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1007,7 +1007,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/pavethra-n.png" alt="Ms.N.Pavethra" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/pavethra-n.webp" alt="Ms.N.Pavethra" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1018,7 +1018,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/perachiselvi-m.png" alt="Mrs.M.Perachiselvi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/perachiselvi-m.webp" alt="Mrs.M.Perachiselvi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1029,7 +1029,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/priya-m.png" alt="Mrs.M.Priya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/priya-m.webp" alt="Mrs.M.Priya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1040,7 +1040,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/priyanka-k.png" alt="Ms.K.Priyanka" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/priyanka-k.webp" alt="Ms.K.Priyanka" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1051,7 +1051,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/pushpa-kumari-r.png" alt="Mrs.R.Pushpa Kumari" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/pushpa-kumari-r.webp" alt="Mrs.R.Pushpa Kumari" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1062,7 +1062,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/ramitha-devi-r.png" alt="Mrs.R.Ramitha Devi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/ramitha-devi-r.webp" alt="Mrs.R.Ramitha Devi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1073,7 +1073,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/ranjitham-t.png" alt="Mrs.T.Ranjitham" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/ranjitham-t.webp" alt="Mrs.T.Ranjitham" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1084,7 +1084,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Artificial Intelligence and Machine Learning</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/aiml-faculty-images/vijay-t.png" alt="Mr.T.Vijay" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/aiml-faculty-images/vijay-t.webp" alt="Mr.T.Vijay" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -1239,19 +1239,19 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
         <p style="margin-bottom: 16px;">In addition, the department actively conducts seminars, workshops, and technical training programs to strengthen students' practical knowledge and research skills. Students also gain valuable real-world experience through sandwich programmes and industry interactions, enabling them to connect academic learning with clinical and industrial practices.</p>
         <p style="margin-bottom: 24px;">Through these initiatives, the Biomedical Engineering program at SIET aims to produce competent engineers who are capable of innovating and contributing to the advancement of healthcare technologies.</p>
         <div style="margin-top: 24px; text-align: center;">
-          <img src="/new-site/assets/images/departments/biomedical/bme-why-students-lab.jpg" alt="Biomedical Engineering students in clinical hospital laboratory" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 400px; object-fit: cover;">
+          <img src="/new-site/assets/images/departments/biomedical/bme-why-students-lab.webp" alt="Biomedical Engineering students in clinical hospital laboratory" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 400px; object-fit: cover;">
         </div>
       `,"Laboratory Facility":`
         <h2 style="text-align: center; color: #167a39;"><u>LABORATORY FACILITY</u></h2>
         <div style="margin: 0 0 24px; text-align: center;">
-          <img src="/new-site/assets/images/departments/biomedical/bme-lab-facility-overview.jpg" alt="Biomedical Engineering Laboratory Facility" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 380px; object-fit: cover;">
+          <img src="/new-site/assets/images/departments/biomedical/bme-lab-facility-overview.webp" alt="Biomedical Engineering Laboratory Facility" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 380px; object-fit: cover;">
         </div>
         <p style="margin-bottom: 16px;">Our laboratories provide a real time working environment to our students and this practical training enables faster and better understanding of the theoretical concepts. All equipments are calibrated and maintained to enable our students to enjoy their learning experience.</p>
         <p style="margin-bottom: 16px;">One such lab is <strong>Hematology laboratory</strong>, where students can analyse blood samples in the same method like hospital does to analyze blood test report. The laboratory includes Laminar air flow chamber, spectrophotometry, calorimeter, centrifuge, incubator, microscope etc.</p>
         <p style="margin-bottom: 16px;">Students perform real time testing of blood samples to assess glucose level, cholesterol level, various serum protein level, creatinine and other blood components. Students can also research on the growth of various microorganisms via the usage of incubator, centrifuge, Spectrophotometer, Colorimeter, and microscope that are calibrated and maintained in proper conditions.</p>
         <p style="margin-bottom: 20px;">Another significant laboratory is our <strong>Advanced biomedical equipments laboratory</strong>, where high level, hospital - grade equipments are maintained and used for education. Equipments such as the Ultrasound scanner, Ventilator, Dialysis machine, Defibrillator, pacemaker etc are available to provide real time demo of the same for the students.</p>
         <div style="margin: 24px 0; text-align: center;">
-          <img src="/new-site/assets/images/departments/biomedical/bme-advanced-equipments-lab.jpg" alt="Advanced Biomedical Equipments Laboratory" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 380px; object-fit: cover;">
+          <img src="/new-site/assets/images/departments/biomedical/bme-advanced-equipments-lab.webp" alt="Advanced Biomedical Equipments Laboratory" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 380px; object-fit: cover;">
         </div>
         <p style="margin-bottom: 16px;">The students are given hands on training to operate ultrasound scanner in its various mode. Different modes of Ultrasound scan and ultrasound probes along with their application are demonstrated in real time.</p>
         <p style="margin-bottom: 16px;">With the help of ventilator students are able to operate, modulate and check the functions of different modes of ventilation working function.</p>
@@ -1260,11 +1260,11 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
         <p style="margin-bottom: 24px;"><strong>Biomedical instrumentation laboratory</strong> has a wide range of medical diagnostic equipments used to analyse the parameters like EEG, ECG, ERG, EMG, SpO2 measurement, ultrasonic bloodflow meter etc. The students take measurements for themselves or their friends. They were taught to dismantle the equipment, trouble shoot the problem and assemble the setup again.</p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 24px;">
           <div style="text-align: center;">
-            <img src="/new-site/assets/images/departments/biomedical/bme-smart-glove-project.jpg" alt="Smart Sensor Glove Project" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 4/3;">
+            <img src="/new-site/assets/images/departments/biomedical/bme-smart-glove-project.webp" alt="Smart Sensor Glove Project" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 4/3;">
             <p style="font-size: 13px; font-weight: 600; color: #555; margin-top: 8px;">Smart Sensor Glove / Assistive Robotics Prototype</p>
           </div>
           <div style="text-align: center;">
-            <img src="/new-site/assets/images/departments/biomedical/bme-virtual-keyboard-project.jpg" alt="Message Conveyor Virtual Keyboard Project" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 4/3;">
+            <img src="/new-site/assets/images/departments/biomedical/bme-virtual-keyboard-project.webp" alt="Message Conveyor Virtual Keyboard Project" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 4/3;">
             <p style="font-size: 13px; font-weight: 600; color: #555; margin-top: 8px;">Message Conveyor Virtual Keyboard Diagnostic Unit</p>
           </div>
         </div>
@@ -1338,7 +1338,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor & Head</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/lekshmi-v-nair.png" alt="Dr.Lekshmi V Nair" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/lekshmi-v-nair.webp" alt="Dr.Lekshmi V Nair" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1349,7 +1349,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/am-vishali.png" alt="Ms.A.M.Vishali" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/am-vishali.webp" alt="Ms.A.M.Vishali" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1360,7 +1360,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/balaji.png" alt="Mr.Balaji" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/balaji.webp" alt="Mr.Balaji" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1371,7 +1371,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/divya.png" alt="Ms.Divya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/divya.webp" alt="Ms.Divya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1382,7 +1382,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/jasonraj.png" alt="Mr.Jasonraj" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/jasonraj.webp" alt="Mr.Jasonraj" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1393,7 +1393,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/manoj-prabu.png" alt="Mr.Manoj Prabu" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/manoj-prabu.webp" alt="Mr.Manoj Prabu" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1404,7 +1404,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/nirmalakumari.png" alt="Mrs.Nirmalakumari" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/nirmalakumari.webp" alt="Mrs.Nirmalakumari" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1415,7 +1415,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/pavithra.png" alt="Ms.Pavithra" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/pavithra.webp" alt="Ms.Pavithra" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1426,7 +1426,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/priyavarthini.png" alt="Ms.Priyavarthini" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/priyavarthini.webp" alt="Ms.Priyavarthini" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1437,7 +1437,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/rajalaxmi.png" alt="Mrs.Rajalaxmi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/rajalaxmi.webp" alt="Mrs.Rajalaxmi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1448,7 +1448,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Biomedical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/bme-faculty-images/sowkaarthiga.png" alt="Ms.Sowkaarthiga" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/bme-faculty-images/sowkaarthiga.webp" alt="Ms.Sowkaarthiga" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -1950,7 +1950,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Associate Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/bindhu-jayaprakash.png" alt="Dr.Bindhu Jayaprakash" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/bindhu-jayaprakash.webp" alt="Dr.Bindhu Jayaprakash" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1961,7 +1961,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/hari-lakshmi-s.png" alt="Dr.Hari Lakshmi S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/hari-lakshmi-s.webp" alt="Dr.Hari Lakshmi S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1972,7 +1972,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/arthe-rajarajan.png" alt="Dr.Arthe Rajarajan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/arthe-rajarajan.webp" alt="Dr.Arthe Rajarajan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1983,7 +1983,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/chandrasekar-p.png" alt="Dr.Chandrasekar P" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/chandrasekar-p.webp" alt="Dr.Chandrasekar P" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -1994,7 +1994,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/vinitha-s.png" alt="Mrs.Vinitha S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/vinitha-s.webp" alt="Mrs.Vinitha S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2005,7 +2005,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/geethanjali-k.png" alt="Ms.Geethanjali K" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/geethanjali-k.webp" alt="Ms.Geethanjali K" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2016,7 +2016,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/divya-nair.png" alt="Ms.Divya Nair" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/divya-nair.webp" alt="Ms.Divya Nair" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2027,7 +2027,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/akshaya-arulkumar.png" alt="Ms.Akshaya Arulkumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/akshaya-arulkumar.webp" alt="Ms.Akshaya Arulkumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2038,7 +2038,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/yuvarani-s.png" alt="Mrs.Yuvarani S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/yuvarani-s.webp" alt="Mrs.Yuvarani S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2049,7 +2049,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/amuthavalli-nayaki.png" alt="Ms.Amuthavalli Nayaki" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/amuthavalli-nayaki.webp" alt="Ms.Amuthavalli Nayaki" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2060,7 +2060,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Biotechnology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/preethi-saravanan.png" alt="Dr.Preethi Saravanan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/preethi-saravanan.webp" alt="Dr.Preethi Saravanan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2071,7 +2071,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>General Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/biotech-faculty-images/ramya-s.png" alt="Dr.Ramya S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/biotech-faculty-images/ramya-s.webp" alt="Dr.Ramya S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -2565,7 +2565,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/k-e-kannammal.png" alt="Dr.K.E.Kannammal" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/k-e-kannammal.webp" alt="Dr.K.E.Kannammal" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2576,7 +2576,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/s-prakash.png" alt="Dr.S.Prakash" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/s-prakash.webp" alt="Dr.S.Prakash" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2587,7 +2587,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/n-m-saravanakumar.png" alt="Dr N.M.Saravanakumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/n-m-saravanakumar.webp" alt="Dr N.M.Saravanakumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2598,7 +2598,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/r-karthiban.png" alt="Mr.R.Karthiban" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/r-karthiban.webp" alt="Mr.R.Karthiban" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2609,7 +2609,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/a-mohoana-priya.png" alt="Mrs.A.Mohoana Priya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/a-mohoana-priya.webp" alt="Mrs.A.Mohoana Priya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2620,7 +2620,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/e-subramanian.png" alt="Mr.E.Subramanian" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/e-subramanian.webp" alt="Mr.E.Subramanian" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2631,7 +2631,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/s-vinithasri.png" alt="Mrs.S.Vinithasri" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/s-vinithasri.webp" alt="Mrs.S.Vinithasri" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2642,7 +2642,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/p-sasikala.png" alt="Ms.P.Sasikala" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/p-sasikala.webp" alt="Ms.P.Sasikala" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2653,7 +2653,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/t-divya.png" alt="Ms.T.Divya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/t-divya.webp" alt="Ms.T.Divya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2664,7 +2664,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/m-sabeetha.png" alt="Mrs.M.Sabeetha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/m-sabeetha.webp" alt="Mrs.M.Sabeetha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2675,7 +2675,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/r-jenifer.png" alt="Mrs.R.Jenifer" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/r-jenifer.webp" alt="Mrs.R.Jenifer" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2686,7 +2686,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/r-nandhakumar.png" alt="Mr.R.Nandhakumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/r-nandhakumar.webp" alt="Mr.R.Nandhakumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2697,7 +2697,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/a-saranya.png" alt="Mrs.A.Saranya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/a-saranya.webp" alt="Mrs.A.Saranya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2708,7 +2708,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/m-haritha.png" alt="Ms.M.Haritha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/m-haritha.webp" alt="Ms.M.Haritha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2719,7 +2719,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/j-kanya-devi.png" alt="Mrs.J.Kanya Devi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/j-kanya-devi.webp" alt="Mrs.J.Kanya Devi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2730,7 +2730,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/s-v-hemalatha.png" alt="Mrs.S.V.Hemalatha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/s-v-hemalatha.webp" alt="Mrs.S.V.Hemalatha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2741,7 +2741,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/a-vinod-kanna.png" alt="Mr.A.Vinod kanna" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/a-vinod-kanna.webp" alt="Mr.A.Vinod kanna" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2752,7 +2752,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/r-gayathri.png" alt="Mrs.R.Gayathri" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/r-gayathri.webp" alt="Mrs.R.Gayathri" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2763,7 +2763,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/s-evangeline-aishwarya.png" alt="Ms.S.Evangeline Aishwarya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/s-evangeline-aishwarya.webp" alt="Ms.S.Evangeline Aishwarya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2774,7 +2774,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/m-karthika.png" alt="Mrs.M.Karthika" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/m-karthika.webp" alt="Mrs.M.Karthika" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2785,7 +2785,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/v-gayathri.png" alt="Ms.V.Gayathri" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/v-gayathri.webp" alt="Ms.V.Gayathri" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2796,7 +2796,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/p-brindha.png" alt="Mrs.P.Brindha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/p-brindha.webp" alt="Mrs.P.Brindha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2807,7 +2807,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/k-b-sangavi.png" alt="Mrs.K.B.Sangavi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/k-b-sangavi.webp" alt="Mrs.K.B.Sangavi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2818,7 +2818,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/p-keerthana.png" alt="Mrs.P.Keerthana" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/p-keerthana.webp" alt="Mrs.P.Keerthana" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2829,7 +2829,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/n-yuvaraj.png" alt="Dr.N.Yuvaraj" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/n-yuvaraj.webp" alt="Dr.N.Yuvaraj" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2840,7 +2840,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/m-soundarya-devi.png" alt="Mrs.M.Soundarya Devi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/m-soundarya-devi.webp" alt="Mrs.M.Soundarya Devi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2851,7 +2851,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/sri-sakthi-hamrish.png" alt="Mrs.Sri Sakthi Hamrish" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/sri-sakthi-hamrish.webp" alt="Mrs.Sri Sakthi Hamrish" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2862,7 +2862,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/s-abinaya.png" alt="Mrs.S.Abinaya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/s-abinaya.webp" alt="Mrs.S.Abinaya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2873,7 +2873,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/b-sanjay-krishna.png" alt="Mr.B.Sanjay Krishna" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/b-sanjay-krishna.webp" alt="Mr.B.Sanjay Krishna" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2884,7 +2884,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/p-deepthi-nair.png" alt="Mrs.P.Deepthi Nair" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/p-deepthi-nair.webp" alt="Mrs.P.Deepthi Nair" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2895,7 +2895,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/s-nandhini.png" alt="Mrs.S.Nandhini" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/s-nandhini.webp" alt="Mrs.S.Nandhini" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2906,7 +2906,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/s-valarmathi.png" alt="Mrs.S.Valarmathi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/s-valarmathi.webp" alt="Mrs.S.Valarmathi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2917,7 +2917,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/r-nandhini.png" alt="Mrs.R.Nandhini" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/r-nandhini.webp" alt="Mrs.R.Nandhini" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2928,7 +2928,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/m-manimegala.png" alt="Mrs.M.Manimegala" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/m-manimegala.webp" alt="Mrs.M.Manimegala" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2939,7 +2939,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/s-subhasri.png" alt="Mrs.S.Subhasri" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/s-subhasri.webp" alt="Mrs.S.Subhasri" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2950,7 +2950,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/d-brindha.png" alt="Mrs.D.Brindha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/d-brindha.webp" alt="Mrs.D.Brindha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2961,7 +2961,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/unnikuttan-k-s.png" alt="Mr.UnniKuttan K S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/unnikuttan-k-s.webp" alt="Mr.UnniKuttan K S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2972,7 +2972,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/subham-kumar.png" alt="Mr.Subham Kumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/subham-kumar.webp" alt="Mr.Subham Kumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2983,7 +2983,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>General Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/g-hemaprabha.png" alt="Mrs.G.Hemaprabha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/g-hemaprabha.webp" alt="Mrs.G.Hemaprabha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -2994,7 +2994,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>General Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/p-sharmila.png" alt="Mrs.P.Sharmila" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/p-sharmila.webp" alt="Mrs.P.Sharmila" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3005,7 +3005,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>General Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/s-shanmathi.png" alt="Ms.S.Shanmathi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/s-shanmathi.webp" alt="Ms.S.Shanmathi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3016,7 +3016,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>General Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/s-abishree.png" alt="Ms.S.Abishree" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/s-abishree.webp" alt="Ms.S.Abishree" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3027,7 +3027,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/c-rajesh-kumar.png" alt="Mr.C.Rajesh Kumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/c-rajesh-kumar.webp" alt="Mr.C.Rajesh Kumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3038,7 +3038,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/kousalya-a.png" alt="Mrs.Kousalya A" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/kousalya-a.webp" alt="Mrs.Kousalya A" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3049,7 +3049,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/t-jayasarangan.png" alt="Mr.T.Jayasarangan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/t-jayasarangan.webp" alt="Mr.T.Jayasarangan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3060,7 +3060,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor</td>
                 <td>PG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/y-baby-kalpana.png" alt="Dr.Y.Baby Kalpana" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/y-baby-kalpana.webp" alt="Dr.Y.Baby Kalpana" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3071,7 +3071,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Associate Professor</td>
                 <td>PG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/k-satheesh-kumar.png" alt="Mr.K.Satheesh Kumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/k-satheesh-kumar.webp" alt="Mr.K.Satheesh Kumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3082,7 +3082,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>PG-Computer Science and Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cse-faculty-images/m-mohana-priya.png" alt="Mrs.M.Mohana Priya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cse-faculty-images/m-mohana-priya.webp" alt="Mrs.M.Mohana Priya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -3485,7 +3485,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Associate Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/deepa-m.png" alt="Dr.Deepa.M" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/deepa-m.webp" alt="Dr.Deepa.M" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3496,7 +3496,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Associate Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/manikandan-r-p-s.png" alt="Dr.Manikandan.R.P.S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/manikandan-r-p-s.webp" alt="Dr.Manikandan.R.P.S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3507,7 +3507,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/varun-kumar-b.png" alt="Mr.Varun Kumar.B" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/varun-kumar-b.webp" alt="Mr.Varun Kumar.B" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3518,7 +3518,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/sathya-thangavel.png" alt="Ms.Sathya Thangavel" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/sathya-thangavel.webp" alt="Ms.Sathya Thangavel" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3529,7 +3529,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/jannathul-firthous.png" alt="Ms.Jannathul firthous" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/jannathul-firthous.webp" alt="Ms.Jannathul firthous" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3540,7 +3540,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/pavithra-s.png" alt="Ms.Pavithra.S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/pavithra-s.webp" alt="Ms.Pavithra.S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3551,7 +3551,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/anitha-p.png" alt="Ms.Anitha.P" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/anitha-p.webp" alt="Ms.Anitha.P" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3562,7 +3562,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/sugashini-k.png" alt="Ms.Sugashini.K" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/sugashini-k.webp" alt="Ms.Sugashini.K" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3573,7 +3573,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/buvana-m.png" alt="Ms.Buvana.M" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/buvana-m.webp" alt="Ms.Buvana.M" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3584,7 +3584,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/brinda-a.png" alt="Ms.Brinda.A" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/brinda-a.webp" alt="Ms.Brinda.A" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3595,7 +3595,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/ashok-kumar-s.png" alt="Mr.Ashok Kumar.S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/ashok-kumar-s.webp" alt="Mr.Ashok Kumar.S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3606,7 +3606,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/premalatha-e.png" alt="Ms.Premalatha.E" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/premalatha-e.webp" alt="Ms.Premalatha.E" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3617,7 +3617,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/sathyavathy-p.png" alt="Ms.Sathyavathy.P" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/sathyavathy-p.webp" alt="Ms.Sathyavathy.P" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3628,7 +3628,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/aruna-m.png" alt="Ms.Aruna.M" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/aruna-m.webp" alt="Ms.Aruna.M" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3639,7 +3639,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/suganya-v.png" alt="Ms.Suganya.V" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/suganya-v.webp" alt="Ms.Suganya.V" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3650,7 +3650,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/sandhiya-b.png" alt="Ms.Sandhiya.B" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/sandhiya-b.webp" alt="Ms.Sandhiya.B" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3661,7 +3661,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/sadhish-chinnapan.png" alt="Mr.Sadhish Chinnapan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/sadhish-chinnapan.webp" alt="Mr.Sadhish Chinnapan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3672,7 +3672,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/vijalakshmi-s.png" alt="Ms.Vijalakshmi.S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/vijalakshmi-s.webp" alt="Ms.Vijalakshmi.S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3683,7 +3683,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/esther-t.png" alt="Dr.Esther.T" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/esther-t.webp" alt="Dr.Esther.T" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3694,7 +3694,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/dharaniya-n-g.png" alt="Ms.Dharaniya N G" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/dharaniya-n-g.webp" alt="Ms.Dharaniya N G" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3705,7 +3705,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/nishmitha-k-r.png" alt="Ms.Nishmitha K R" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/nishmitha-k-r.webp" alt="Ms.Nishmitha K R" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3716,7 +3716,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/saranya-m.png" alt="Mrs.Saranya M" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/saranya-m.webp" alt="Mrs.Saranya M" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3727,7 +3727,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/kiruba-s.png" alt="Ms.Kiruba.S" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/kiruba-s.webp" alt="Ms.Kiruba.S" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3738,7 +3738,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/gayathri-devi-m.png" alt="Ms.Gayathri Devi.M" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/gayathri-devi-m.webp" alt="Ms.Gayathri Devi.M" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -3749,7 +3749,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Information Technology</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/it-faculty-images/sathya-m.png" alt="Ms.Sathya.M" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/it-faculty-images/sathya-m.webp" alt="Ms.Sathya.M" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -4187,7 +4187,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor & Head</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/s-gnanasekaran.png" alt="Dr.S.Gnanasekaran" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/s-gnanasekaran.webp" alt="Dr.S.Gnanasekaran" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4198,7 +4198,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/p-arivalagan.png" alt="Dr.P.Arivalagan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/p-arivalagan.webp" alt="Dr.P.Arivalagan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4209,7 +4209,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/g-perumalsamy.png" alt="Dr.G.Perumalsamy" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/g-perumalsamy.webp" alt="Dr.G.Perumalsamy" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4220,7 +4220,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Associate Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/b-m-balakrishnan.png" alt="Dr.B.M.Balakrishnan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/b-m-balakrishnan.webp" alt="Dr.B.M.Balakrishnan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4231,7 +4231,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/b-saravanan.png" alt="Mr.B.Saravanan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/b-saravanan.webp" alt="Mr.B.Saravanan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4242,7 +4242,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/g-mahesh.png" alt="Mr.G.Mahesh" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/g-mahesh.webp" alt="Mr.G.Mahesh" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4253,7 +4253,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/m-pradeepkumar.png" alt="Mr.M.Pradeepkumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/m-pradeepkumar.webp" alt="Mr.M.Pradeepkumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4264,7 +4264,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/m-sasikumar.png" alt="Mr.M.Sasikumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/m-sasikumar.webp" alt="Mr.M.Sasikumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4275,7 +4275,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/n-sivaprakash.png" alt="Mr.N.Sivaprakash" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/n-sivaprakash.webp" alt="Mr.N.Sivaprakash" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4286,7 +4286,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/r-karthikeyan.png" alt="Mr.R.Karthikeyan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/r-karthikeyan.webp" alt="Mr.R.Karthikeyan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4297,7 +4297,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/t-sathishkumar.png" alt="Mr.T.Sathishkumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/t-sathishkumar.webp" alt="Mr.T.Sathishkumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4308,7 +4308,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Mechanical Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/mech-faculty-images/v-vignesh.png" alt="Mr.V.Vignesh" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/mech-faculty-images/v-vignesh.webp" alt="Mr.V.Vignesh" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -4782,7 +4782,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor & Head</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/madheswaran-k.png" alt="Dr.K.Madheswaran" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/madheswaran-k.webp" alt="Dr.K.Madheswaran" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4793,7 +4793,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Associate Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/saravana-kumar-k.png" alt="Mr.K.Saravanakumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/saravana-kumar-k.webp" alt="Mr.K.Saravanakumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4804,7 +4804,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/gokul-a.png" alt="Mr.A.Gokul" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/gokul-a.webp" alt="Mr.A.Gokul" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4815,7 +4815,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/jenickson-d.png" alt="Mr.D.Jenickson" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/jenickson-d.webp" alt="Mr.D.Jenickson" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4826,7 +4826,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/lakhminarayanan-s.png" alt="Mr.S.Lakshminarayanan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/lakhminarayanan-s.webp" alt="Mr.S.Lakshminarayanan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4837,7 +4837,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/praveen-r.png" alt="Mr.R.Praveen" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/praveen-r.webp" alt="Mr.R.Praveen" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4848,7 +4848,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/ranjithkumar.png" alt="Mr.Ranjithkumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/ranjithkumar.webp" alt="Mr.Ranjithkumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4859,7 +4859,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/samuel-abraham-d.png" alt="Mr.D.Samuel Abraham" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/samuel-abraham-d.webp" alt="Mr.D.Samuel Abraham" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4870,7 +4870,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/saranya-c-v.png" alt="Mrs.C.V.Saranya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/saranya-c-v.webp" alt="Mrs.C.V.Saranya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4881,7 +4881,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/sathyakumar.png" alt="Mr.Sathyakumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/sathyakumar.webp" alt="Mr.Sathyakumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4892,7 +4892,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/sre-adethya-v.png" alt="Mr.V.Sre Adethya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/sre-adethya-v.webp" alt="Mr.V.Sre Adethya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4903,7 +4903,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/sri-ruban-d.png" alt="Mr.D.Sri Ruban" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/sri-ruban-d.webp" alt="Mr.D.Sri Ruban" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -4914,7 +4914,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Civil Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/civil-faculty-images/suresh-kumar-p.png" alt="Mr.P.Suresh Kumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/civil-faculty-images/suresh-kumar-p.webp" alt="Mr.P.Suresh Kumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -5269,7 +5269,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor & Head</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/g-sundar.png" alt="Dr.G.Sundar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/g-sundar.webp" alt="Dr.G.Sundar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5280,7 +5280,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/vankadara-sampath-kumar.png" alt="Dr.V.Sampath Kumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/vankadara-sampath-kumar.webp" alt="Dr.V.Sampath Kumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5291,7 +5291,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/c-infant-vinoth.png" alt="Mr.C.Infant Vinoth" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/c-infant-vinoth.webp" alt="Mr.C.Infant Vinoth" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5302,7 +5302,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/c-madhivadhana.png" alt="Mrs.C.Madhivadhana" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/c-madhivadhana.webp" alt="Mrs.C.Madhivadhana" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5313,7 +5313,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/g-ananda-babu.png" alt="Mr.G.Ananda Babu" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/g-ananda-babu.webp" alt="Mr.G.Ananda Babu" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5324,7 +5324,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/k-hari.png" alt="Mr.K.Hari" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/k-hari.webp" alt="Mr.K.Hari" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5335,7 +5335,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/m-a-varsha.png" alt="Ms.M.A.Varsha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/m-a-varsha.webp" alt="Ms.M.A.Varsha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5346,7 +5346,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/m-janani.png" alt="Ms.M.Janani" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/m-janani.webp" alt="Ms.M.Janani" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5357,7 +5357,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/m-priyanka-gandhi.png" alt="Mrs.M.Priyanka Gandhi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/m-priyanka-gandhi.webp" alt="Mrs.M.Priyanka Gandhi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5368,7 +5368,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/n-rajarajeswari.png" alt="Mrs.N.Rajarajeswari" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/n-rajarajeswari.webp" alt="Mrs.N.Rajarajeswari" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5379,7 +5379,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/p-kalidass.png" alt="Mr.P.Kalidass" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/p-kalidass.webp" alt="Mr.P.Kalidass" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5390,7 +5390,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/r-kathiresan.png" alt="Mr.R.Kathiresan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/r-kathiresan.webp" alt="Mr.R.Kathiresan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5401,7 +5401,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/r-madhuvanthani.png" alt="Mrs.R.Madhuvanthani" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/r-madhuvanthani.webp" alt="Mrs.R.Madhuvanthani" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5412,7 +5412,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/s-abirami-sree.png" alt="Ms.S.Abirami Sree" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/s-abirami-sree.webp" alt="Ms.S.Abirami Sree" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5423,7 +5423,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/s-ruby.png" alt="Mrs.S.Ruby" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/s-ruby.webp" alt="Mrs.S.Ruby" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5434,7 +5434,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electrical and Electronics Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/eee-faculty-images/s-saran-karthick.png" alt="Mr.S.Saran Karthick" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/eee-faculty-images/s-saran-karthick.webp" alt="Mr.S.Saran Karthick" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -5711,7 +5711,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor & Head</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/sivakumar-p.png" alt="Dr.P.Sivakumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/sivakumar-p.webp" alt="Dr.P.Sivakumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5722,7 +5722,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/remya-k-r.png" alt="Dr.K.R.Remya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/remya-k-r.webp" alt="Dr.K.R.Remya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5733,7 +5733,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/akarsh-s-kumar.png" alt="Mr.Akarsh S. Kumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/akarsh-s-kumar.webp" alt="Mr.Akarsh S. Kumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5744,7 +5744,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/arun-l.png" alt="Mr.L.Arun" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/arun-l.webp" alt="Mr.L.Arun" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5755,7 +5755,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/boopathy-s.png" alt="Mr.S.Boopathy" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/boopathy-s.webp" alt="Mr.S.Boopathy" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5766,7 +5766,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/brinda-p.png" alt="Mrs.P.Brinda" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/brinda-p.webp" alt="Mrs.P.Brinda" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5777,7 +5777,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/dhilipkumar-p.png" alt="Mr.P.Dhilipkumar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/dhilipkumar-p.webp" alt="Mr.P.Dhilipkumar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5788,7 +5788,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/eswari-p.png" alt="Mrs.P.Eswari" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/eswari-p.webp" alt="Mrs.P.Eswari" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5799,7 +5799,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/hemalatha-s.png" alt="Mrs.S.Hemalatha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/hemalatha-s.webp" alt="Mrs.S.Hemalatha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5810,7 +5810,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/karthikeyan-vairavel.png" alt="Mr.Karthikeyan Vairavel" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/karthikeyan-vairavel.webp" alt="Mr.Karthikeyan Vairavel" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5821,7 +5821,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/mahendar-r.png" alt="Mr.R.Mahendar" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/mahendar-r.webp" alt="Mr.R.Mahendar" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5832,7 +5832,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/maheswaran-t.png" alt="Mr.T.Maheswaran" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/maheswaran-t.webp" alt="Mr.T.Maheswaran" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5843,7 +5843,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/mohamed-naufal-m.png" alt="Mr.M.Mohamed Naufal" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/mohamed-naufal-m.webp" alt="Mr.M.Mohamed Naufal" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5854,7 +5854,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/packiyam-k.png" alt="Mrs.K.Packiyam" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/packiyam-k.webp" alt="Mrs.K.Packiyam" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5865,7 +5865,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/parimaladevi-k.png" alt="Mrs.K.Parimaladevi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/parimaladevi-k.webp" alt="Mrs.K.Parimaladevi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5876,7 +5876,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/prabhu-g.png" alt="Mr.G.Prabhu" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/prabhu-g.webp" alt="Mr.G.Prabhu" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5887,7 +5887,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/prasanna-mariya-l.png" alt="Mrs.L.Prasanna Mariya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/prasanna-mariya-l.webp" alt="Mrs.L.Prasanna Mariya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5898,7 +5898,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/prema-c.png" alt="Mrs.C.Prema" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/prema-c.webp" alt="Mrs.C.Prema" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5909,7 +5909,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/r-sudha.png" alt="Mrs.R.Sudha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/r-sudha.webp" alt="Mrs.R.Sudha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5920,7 +5920,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/ramalakshmi-r.png" alt="Mrs.R.Ramalakshmi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/ramalakshmi-r.webp" alt="Mrs.R.Ramalakshmi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5931,7 +5931,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/ramanan-s-v.png" alt="Mr.S.V.Ramanan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/ramanan-s-v.webp" alt="Mr.S.V.Ramanan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5942,7 +5942,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/renita-pearlin-t.png" alt="Mrs.T.Renita Pearlin" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/renita-pearlin-t.webp" alt="Mrs.T.Renita Pearlin" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5953,7 +5953,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/renukadevi-a.png" alt="Mrs.A.Renukadevi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/renukadevi-a.webp" alt="Mrs.A.Renukadevi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5964,7 +5964,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/sankar-ganesh.png" alt="Mr.Sankar Ganesh" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/sankar-ganesh.webp" alt="Mr.Sankar Ganesh" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5975,7 +5975,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/sridevi-k.png" alt="Mrs.K.Sridevi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/sridevi-k.webp" alt="Mrs.K.Sridevi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5986,7 +5986,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/thaarani-c-s.png" alt="Mrs.C.S.Thaarani" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/thaarani-c-s.webp" alt="Mrs.C.S.Thaarani" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -5997,7 +5997,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/thirumurugan-s.png" alt="Mr.S.Thirumurugan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/thirumurugan-s.webp" alt="Mr.S.Thirumurugan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -6008,7 +6008,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/thirumurugan.png" alt="Mr.Thirumurugan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/thirumurugan.webp" alt="Mr.Thirumurugan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -6019,7 +6019,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>Electronics and Communication Engineering</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-faculty-images/vasanthi-r.png" alt="Mrs.R.Vasanthi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-faculty-images/vasanthi-r.webp" alt="Mrs.R.Vasanthi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -6959,7 +6959,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor & Head</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/sureshu-s.png" alt="Dr.S.Sureshu" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/sureshu-s.webp" alt="Dr.S.Sureshu" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -6970,7 +6970,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/punnagai-n.png" alt="Mrs.N.Punnagai" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/punnagai-n.webp" alt="Mrs.N.Punnagai" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -6981,7 +6981,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/robert-kingsly-s.png" alt="Mr.S.Robert Kingsly" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/robert-kingsly-s.webp" alt="Mr.S.Robert Kingsly" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -6992,7 +6992,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/geetha-s.png" alt="Mrs.S.Geetha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/geetha-s.webp" alt="Mrs.S.Geetha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7003,7 +7003,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/dhivya-k.png" alt="Mrs.K.Dhivya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/dhivya-k.webp" alt="Mrs.K.Dhivya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7014,7 +7014,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/elamathy.png" alt="Mrs.Elamathy" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/elamathy.webp" alt="Mrs.Elamathy" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7025,7 +7025,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/hari-priya-s.png" alt="Ms.S.Hari Priya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/hari-priya-s.webp" alt="Ms.S.Hari Priya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7036,7 +7036,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/harish-a.png" alt="Mr.A.Harish" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/harish-a.webp" alt="Mr.A.Harish" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7047,7 +7047,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/hemalatha-m.png" alt="Mrs.M.Hemalatha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/hemalatha-m.webp" alt="Mrs.M.Hemalatha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7058,7 +7058,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/kiruba-sobana-j.png" alt="Mrs.J.Kiruba Sobana" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/kiruba-sobana-j.webp" alt="Mrs.J.Kiruba Sobana" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7069,7 +7069,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/madhuvarshini-m.png" alt="Ms.M.Madhuvarshini" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/madhuvarshini-m.webp" alt="Ms.M.Madhuvarshini" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7080,7 +7080,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/mathivanan.png" alt="Mr.Mathivanan" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/mathivanan.webp" alt="Mr.Mathivanan" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7091,7 +7091,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/mithun-m.png" alt="Mr.M.Mithun" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/mithun-m.webp" alt="Mr.M.Mithun" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7102,7 +7102,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/pavithra-a.png" alt="Ms.A.Pavithra" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/pavithra-a.webp" alt="Ms.A.Pavithra" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7113,7 +7113,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/sabitha-k.png" alt="Mrs.K.Sabitha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/sabitha-k.webp" alt="Mrs.K.Sabitha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7124,7 +7124,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/sai-mounishadevi.png" alt="Ms.Sai Mounishadevi" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/sai-mounishadevi.webp" alt="Ms.Sai Mounishadevi" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7135,7 +7135,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/saranya-s.png" alt="Mrs.S.Saranya" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/saranya-s.webp" alt="Mrs.S.Saranya" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7146,7 +7146,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/siva-s.png" alt="Mr.S.Siva" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/siva-s.webp" alt="Mr.S.Siva" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7157,7 +7157,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/sneka-g.png" alt="Ms.G.Sneka" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/sneka-g.webp" alt="Ms.G.Sneka" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7168,7 +7168,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/sri-thejas-n.png" alt="Mr.N.Sri Thejas" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/sri-thejas-n.webp" alt="Mr.N.Sri Thejas" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7179,7 +7179,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/varshini-j.png" alt="Ms.J.Varshini" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/varshini-j.webp" alt="Ms.J.Varshini" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7190,7 +7190,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>UG-Cyber Security</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/cyber-faculty-images/vinoth-k.png" alt="Mr.K.Vinoth" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/cyber-faculty-images/vinoth-k.webp" alt="Mr.K.Vinoth" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>
@@ -7340,7 +7340,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Professor & Head</td>
                 <td>VLSI Design</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-vlsi-ug-new-faculty-images/m-thamarai.png" alt="Dr.M.Thamarai" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-vlsi-ug-new-faculty-images/m-thamarai.webp" alt="Dr.M.Thamarai" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7351,7 +7351,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>VLSI Design</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-vlsi-ug-new-faculty-images/jeevitha-s.png" alt="Mrs.S.Jeevitha" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-vlsi-ug-new-faculty-images/jeevitha-s.webp" alt="Mrs.S.Jeevitha" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7362,7 +7362,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>VLSI Design</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-vlsi-ug-new-faculty-images/padmapriya-kiruthika.png" alt="Mrs.Padmapriya Kiruthika" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-vlsi-ug-new-faculty-images/padmapriya-kiruthika.webp" alt="Mrs.Padmapriya Kiruthika" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7373,7 +7373,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>VLSI Design</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-vlsi-ug-new-faculty-images/pravin-tv.png" alt="Mr.T.V.Pravin" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-vlsi-ug-new-faculty-images/pravin-tv.webp" alt="Mr.T.V.Pravin" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
               <tr>
@@ -7384,7 +7384,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
                 <td>Assistant Professor</td>
                 <td>VLSI Design</td>
                 <td class="center-align faculty-photo-cell">
-                  <img src="/new-site/faculty/ece-vlsi-ug-new-faculty-images/priscilla-sophia.png" alt="Mrs.Priscilla Sophia" class="faculty-passport-img" loading="lazy" />
+                  <img src="/new-site/faculty/ece-vlsi-ug-new-faculty-images/priscilla-sophia.webp" alt="Mrs.Priscilla Sophia" class="faculty-passport-img" loading="lazy" />
                 </td>
               </tr>
             </tbody>

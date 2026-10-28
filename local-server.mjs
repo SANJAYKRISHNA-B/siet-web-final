@@ -2,9 +2,10 @@ import { createReadStream, existsSync, statSync } from "node:fs";
 import { createServer } from "node:http";
 import { extname, join, normalize } from "node:path";
 
-const root = process.cwd();
+const root = import.meta.dirname || process.cwd();
 const port = Number(process.env.PORT || 4173);
 const contentTypes = {
+  ".avif": "image/avif",
   ".css": "text/css; charset=utf-8",
   ".html": "text/html; charset=utf-8",
   ".ico": "image/x-icon",
@@ -27,14 +28,32 @@ createServer((request, response) => {
 
   if (!safePath || !existsSync(filePath) || statSync(filePath).isDirectory()) {
     filePath = join(root, "index.html");
+  } else {
+    // Transparent WebP negotiation for compatible clients
+    const ext = extname(filePath).toLowerCase();
+    const acceptHeader = request.headers.accept || "";
+    if (
+      (ext === ".png" || ext === ".jpg" || ext === ".jpeg") &&
+      acceptHeader.includes("image/webp")
+    ) {
+      const webpPath = filePath.slice(0, -ext.length) + ".webp";
+      if (existsSync(webpPath)) {
+        filePath = webpPath;
+      }
+    }
   }
 
+  const isHtml = filePath.endsWith("index.html");
+  const ext = extname(filePath).toLowerCase();
+
   response.writeHead(200, {
-    "Content-Type": contentTypes[extname(filePath).toLowerCase()] || "application/octet-stream",
-    "Cache-Control": "no-store",
+    "Content-Type": contentTypes[ext] || "application/octet-stream",
+    "Cache-Control": isHtml ? "no-cache" : "public, max-age=31536000, immutable",
+    "Vary": "Accept",
   });
   createReadStream(filePath).pipe(response);
-}).listen(port, "127.0.0.1", () => {
+}).listen(port, () => {
+  console.log(`SIET local site: http://localhost:${port}/`);
   console.log(`SIET local site: http://127.0.0.1:${port}/`);
-  console.log(`DCS Summary:    http://127.0.0.1:${port}/dcs-summary`);
+  console.log(`DCS Summary:    http://localhost:${port}/dcs-summary`);
 });

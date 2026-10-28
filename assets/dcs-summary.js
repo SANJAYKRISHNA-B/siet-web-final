@@ -126,12 +126,12 @@ function affiliationPageMarkup() {
               <button type="button" data-au-zoom-out aria-label="Zoom out">−</button>
               <span data-au-zoom-label>100%</span>
               <button type="button" data-au-zoom-in aria-label="Zoom in">+</button>
-              <a href="/brand/anna-university-affiliation.jpg" download="anna-university-affiliation.jpg">Download</a>
+              <a href="/brand/anna-university-affiliation.webp" download="anna-university-affiliation.jpg">Download</a>
               <button class="au-modal-close" type="button" data-au-certificate-close aria-label="Close certificate">×</button>
             </div>
           </header>
           <div class="au-certificate-viewer" data-au-certificate-viewer>
-            <img src="/brand/anna-university-affiliation.jpg" alt="Anna University affiliation certificates issued to Sri Shakthi Institute of Engineering and Technology" data-au-certificate-image>
+            <img src="/brand/anna-university-affiliation.webp" alt="Anna University affiliation certificates issued to Sri Shakthi Institute of Engineering and Technology" data-au-certificate-image loading="lazy" decoding="async" width="800">
           </div>
         </section>
       </div>
@@ -176,12 +176,12 @@ function nbaAccreditationPageMarkup() {
       <div class="au-certificate-modal" data-au-certificate-modal aria-hidden="true">
         <div class="au-certificate-backdrop" data-au-certificate-close></div>
         <section class="au-certificate-dialog" role="dialog" aria-modal="true" aria-labelledby="nba-certificate-modal-title">
-          <header class="au-certificate-toolbar"><div><small>NATIONAL BOARD OF ACCREDITATION</small><h2 id="nba-certificate-modal-title">Programme Accreditation Letter</h2></div><div class="au-certificate-actions"><button type="button" data-au-zoom-out aria-label="Zoom out">−</button><span data-au-zoom-label>100%</span><button type="button" data-au-zoom-in aria-label="Zoom in">+</button><a href="/brand/nba-accreditation-ece-agri-ft.jpg" download="nba-accreditation-ece-agri-ft.jpg">Download</a><button class="au-modal-close" type="button" data-au-certificate-close aria-label="Close certificate">×</button></div></header>
+          <header class="au-certificate-toolbar"><div><small>NATIONAL BOARD OF ACCREDITATION</small><h2 id="nba-certificate-modal-title">Programme Accreditation Letter</h2></div><div class="au-certificate-actions"><button type="button" data-au-zoom-out aria-label="Zoom out">−</button><span data-au-zoom-label>100%</span><button type="button" data-au-zoom-in aria-label="Zoom in">+</button><a href="/brand/nba-accreditation-ece-agri-ft.webp" download="nba-accreditation-ece-agri-ft.jpg">Download</a><button class="au-modal-close" type="button" data-au-certificate-close aria-label="Close certificate">×</button></div></header>
           <div class="au-certificate-viewer nba-certificate-pages" data-au-certificate-viewer>
-            <figure><figcaption><span>Current Accreditation Letter</span><strong>ECE, Agricultural Engineering &amp; Food Technology — Page 1</strong></figcaption><img src="/brand/nba-accreditation-ece-agri-ft.jpg" alt="NBA programme accreditation letter for ECE, Agricultural Engineering, and Food Technology, page 1" data-au-certificate-image></figure>
-            <figure><figcaption><span>Current Accreditation Letter</span><strong>ECE, Agricultural Engineering &amp; Food Technology — Page 2</strong></figcaption><img src="/brand/nba-accreditation-ece-agri-ft-page-2.jpg" alt="NBA programme accreditation letter continuation page" data-au-certificate-image loading="lazy"></figure>
-            <figure><figcaption><span>Official Annexure</span><strong>Food Technology — Revised Grades and Marks</strong></figcaption><img src="/brand/nba-accreditation-ece-agri-ft-annexure.jpg" alt="NBA accreditation annexure for Food Technology" data-au-certificate-image loading="lazy"></figure>
-            <figure><figcaption><span>Accreditation Archive</span><strong>Mechanical Engineering — 2022 to 2025</strong></figcaption><img src="/brand/nba-accreditation-mechanical-engineering.jpg" alt="NBA accreditation letter for Mechanical Engineering" data-au-certificate-image loading="lazy"></figure>
+            <figure><figcaption><span>Current Accreditation Letter</span><strong>ECE, Agricultural Engineering &amp; Food Technology — Page 1</strong></figcaption><img src="/brand/nba-accreditation-ece-agri-ft.webp" alt="NBA programme accreditation letter for ECE, Agricultural Engineering, and Food Technology, page 1" data-au-certificate-image loading="lazy" decoding="async" width="800"></figure>
+            <figure><figcaption><span>Current Accreditation Letter</span><strong>ECE, Agricultural Engineering &amp; Food Technology — Page 2</strong></figcaption><img src="/brand/nba-accreditation-ece-agri-ft-page-2.webp" alt="NBA programme accreditation letter continuation page" data-au-certificate-image loading="lazy"></figure>
+            <figure><figcaption><span>Official Annexure</span><strong>Food Technology — Revised Grades and Marks</strong></figcaption><img src="/brand/nba-accreditation-ece-agri-ft-annexure.webp" alt="NBA accreditation annexure for Food Technology" data-au-certificate-image loading="lazy"></figure>
+            <figure><figcaption><span>Accreditation Archive</span><strong>Mechanical Engineering — 2022 to 2025</strong></figcaption><img src="/brand/nba-accreditation-mechanical-engineering.webp" alt="NBA accreditation letter for Mechanical Engineering" data-au-certificate-image loading="lazy"></figure>
           </div>
         </section>
       </div>
