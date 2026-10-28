@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022114"/>
+      <stop offset="50%" stop-color="#053320"/>
+      <stop offset="100%" stop-color="#01180e"/>
+    </linearGradient>
+    <linearGradient id="lineG1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00e676"/>
+      <stop offset="100%" stop-color="#00b0ff"/>
+    </linearGradient>
+    <linearGradient id="lineG2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffb300"/>
+      <stop offset="100%" stop-color="#ff1744"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd54f"/>
+      <stop offset="100%" stop-color="#ff8f00"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="480" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Grid Lines -->
+  <g stroke="rgba(255,255,255,0.06)" stroke-width="1">
+    <line x1="80" y1="0" x2="80" y2="480"/>
+    <line x1="160" y1="0" x2="160" y2="480"/>
+    <line x1="240" y1="0" x2="240" y2="480"/>
+    <line x1="320" y1="0" x2="320" y2="480"/>
+    <line x1="400" y1="0" x2="400" y2="480"/>
+    <line x1="480" y1="0" x2="480" y2="480"/>
+    <line x1="560" y1="0" x2="560" y2="480"/>
+    <line x1="640" y1="0" x2="640" y2="480"/>
+    <line x1="720" y1="0" x2="720" y2="480"/>
+    <line x1="0" y1="60" x2="800" y2="60"/>
+    <line x1="0" y1="120" x2="800" y2="120"/>
+    <line x1="0" y1="180" x2="800" y2="180"/>
+    <line x1="0" y1="240" x2="800" y2="240"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="0" y1="360" x2="800" y2="360"/>
+    <line x1="0" y1="420" x2="800" y2="420"/>
+  </g>
+
+  <!-- Title & HUD Header -->
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <rect x="30" y="24" width="240" height="24" rx="4" fill="rgba(0,230,118,0.12)" stroke="#00e676" stroke-width="1"/>
+    <circle cx="44" cy="36" r="4" fill="#00e676" filter="url(#glow)"/>
+    <text x="56" y="40" fill="#00e676" font-size="11" font-weight="800" letter-spacing="1.5">TELEMATICS FLEET ROUTE MATRIX</text>
+    
+    <text x="30" y="76" fill="#ffffff" font-size="20" font-weight="900" letter-spacing="0.5">5-ZONE REGIONAL TRANSIT GRID</text>
+    <text x="30" y="96" fill="#80cbc4" font-size="12" font-weight="600">60+ GPS-Monitored Bus Corridors Across Western Tamil Nadu</text>
+  </g>
+
+  <!-- Route Arterials -->
+  <!-- Arterial 1: City Central Corridor -->
+  <path d="M 80,180 C 160,140 260,200 400,230" fill="none" stroke="url(#lineG1)" stroke-width="4" stroke-dasharray="6,4"/>
+  <!-- Arterial 2: Tirupur Express -->
+  <path d="M 400,230 C 520,180 620,160 720,170" fill="none" stroke="#ffd54f" stroke-width="4"/>
+  <!-- Arterial 3: Pollachi South -->
+  <path d="M 400,230 C 360,320 280,380 200,420" fill="none" stroke="#29b6f6" stroke-width="4"/>
+  <!-- Arterial 4: Erode-Perundurai -->
+  <path d="M 400,230 C 480,290 600,340 700,390" fill="none" stroke="#ff7043" stroke-width="4" stroke-dasharray="8,4"/>
+  <!-- Arterial 5: Mettupalayam North -->
+  <path d="M 180,80 C 260,110 330,160 400,230" fill="none" stroke="#ab47bc" stroke-width="3"/>
+
+  <!-- SIET Central Campus Hub Node -->
+  <g transform="translate(400, 230)">
+    <circle r="46" fill="rgba(0, 230, 118, 0.12)" stroke="#00e676" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <circle r="34" fill="rgba(0, 230, 118, 0.25)" filter="url(#glow)"/>
+    <circle r="20" fill="#00e676"/>
+    <text x="0" y="5" text-anchor="middle" fill="#003314" font-size="10" font-weight="900" font-family="system-ui">SIET</text>
+    <rect x="-65" y="32" width="130" height="24" rx="12" fill="#022114" stroke="#00e676" stroke-width="1.5"/>
+    <text x="0" y="48" text-anchor="middle" fill="#ffffff" font-size="11" font-weight="800" font-family="system-ui">CENTRAL CAMPUS</text>
+  </g>
+
+  <!-- Node 1: Gandhipuram City -->
+  <g transform="translate(80, 180)">
+    <circle r="12" fill="#00b0ff" filter="url(#glow)"/>
+    <circle r="5" fill="#ffffff"/>
+    <text x="0" y="-18" text-anchor="middle" fill="#81d4fa" font-size="11" font-weight="700" font-family="system-ui">Zone 1: Gandhipuram</text>
+    <text x="0" y="26" text-anchor="middle" fill="#b0bec5" font-size="9" font-family="system-ui">Peelamedu • Hope College</text>
+  </g>
+
+  <!-- Node 2: Tirupur -->
+  <g transform="translate(720, 170)">
+    <circle r="12" fill="#ffd54f" filter="url(#glow)"/>
+    <circle r="5" fill="#ffffff"/>
+    <text x="0" y="-18" text-anchor="middle" fill="#ffe082" font-size="11" font-weight="700" font-family="system-ui">Zone 2: Tirupur &amp; Avinashi</text>
+    <text x="0" y="26" text-anchor="middle" fill="#b0bec5" font-size="9" font-family="system-ui">Old &amp; New Stand • Perumanallur</text>
+  </g>
+
+  <!-- Node 3: Pollachi -->
+  <g transform="translate(200, 420)">
+    <circle r="12" fill="#29b6f6" filter="url(#glow)"/>
+    <circle r="5" fill="#ffffff"/>
+    <text x="0" y="-16" text-anchor="middle" fill="#80d8ff" font-size="11" font-weight="700" font-family="system-ui">Zone 3: Pollachi &amp; Kinathukadavu</text>
+    <text x="0" y="26" text-anchor="middle" fill="#b0bec5" font-size="9" font-family="system-ui">Eachanari • Othakkalmandapam</text>
+  </g>
+
+  <!-- Node 4: Erode -->
+  <g transform="translate(700, 390)">
+    <circle r="12" fill="#ff7043" filter="url(#glow)"/>
+    <circle r="5" fill="#ffffff"/>
+    <text x="0" y="-16" text-anchor="middle" fill="#ffab91" font-size="11" font-weight="700" font-family="system-ui">Zone 4: Erode &amp; Perundurai</text>
+    <text x="0" y="26" text-anchor="middle" fill="#b0bec5" font-size="9" font-family="system-ui">Vijayamangalam • Kaniyur Toll</text>
+  </g>
+
+  <!-- Node 5: Mettupalayam -->
+  <g transform="translate(180, 80)">
+    <circle r="10" fill="#ab47bc" filter="url(#glow)"/>
+    <circle r="4" fill="#ffffff"/>
+    <text x="0" y="-14" text-anchor="middle" fill="#ce93d8" font-size="11" font-weight="700" font-family="system-ui">Zone 5: Mettupalayam &amp; Annur</text>
+    <text x="0" y="24" text-anchor="middle" fill="#b0bec5" font-size="9" font-family="system-ui">Thudiyalur • Saravanampatti</text>
+  </g>
+
+  <!-- Metric Badges Bottom Bar -->
+  <g transform="translate(30, 430)" font-family="system-ui, sans-serif">
+    <rect x="0" y="0" width="130" height="34" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)"/>
+    <text x="12" y="16" fill="#80cbc4" font-size="9" font-weight="700">ACTIVE FLEET</text>
+    <text x="12" y="29" fill="#ffffff" font-size="12" font-weight="900">60+ BUSES</text>
+
+    <rect x="145" y="0" width="130" height="34" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)"/>
+    <text x="157" y="16" fill="#80cbc4" font-size="9" font-weight="700">COMMUTE CORRIDORS</text>
+    <text x="157" y="29" fill="#ffffff" font-size="12" font-weight="900">50+ ROUTES</text>
+
+    <rect x="290" y="0" width="130" height="34" rx="8" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)"/>
+    <text x="302" y="16" fill="#80cbc4" font-size="9" font-weight="700">DAILY COMMUTERS</text>
+    <text x="302" y="29" fill="#ffffff" font-size="12" font-weight="900">4,000+ SCHOLARS</text>
+  </g>
+</svg>

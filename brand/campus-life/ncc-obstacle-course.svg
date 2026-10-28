@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgNcc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141a10"/>
+      <stop offset="60%" stop-color="#212a19"/>
+      <stop offset="100%" stop-color="#0f150c"/>
+    </linearGradient>
+    <linearGradient id="goldNcc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffd54f"/>
+      <stop offset="100%" stop-color="#ff8f00"/>
+    </linearGradient>
+    <filter id="nccGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="480" fill="url(#bgNcc)"/>
+
+  <!-- Header -->
+  <g font-family="system-ui, sans-serif">
+    <rect x="30" y="24" width="260" height="24" rx="4" fill="rgba(255,213,79,0.15)" stroke="#ffd54f" stroke-width="1"/>
+    <circle cx="44" cy="36" r="4" fill="#ffd54f" filter="url(#nccGlow)"/>
+    <text x="56" y="40" fill="#ffd54f" font-size="11" font-weight="800" letter-spacing="1.5">NCC 4(TN) BN MILITARY CADRE</text>
+    
+    <text x="30" y="76" fill="#ffffff" font-size="20" font-weight="900">OBSTACLE COURSE &amp; DRILL TRAINING</text>
+    <text x="30" y="96" fill="#d7ccc8" font-size="12" font-weight="600">Standard Military Obstacles &bull; 0.22 Rifle Range &bull; Direct SSB Interview Mentorship</text>
+  </g>
+
+  <!-- Obstacle Modules Grid -->
+  <g transform="translate(30, 120)">
+    <rect width="470" height="320" rx="12" fill="#182213" stroke="rgba(255,213,79,0.25)" stroke-width="1.5"/>
+
+    <!-- Module 1: Straight Balance & Wall -->
+    <g transform="translate(20, 20)">
+      <rect width="430" height="60" rx="8" fill="#24331d" stroke="rgba(255,213,79,0.2)"/>
+      <text x="16" y="26" fill="#ffd54f" font-size="13" font-weight="800" font-family="system-ui">01 &bull; 6-FOOT CLEAR WALL &amp; STRAIGHT BALANCE</text>
+      <text x="16" y="46" fill="#dcedc8" font-size="11" font-family="system-ui">Cadets clear vertical wooden barriers and narrow balancing logs under time pressure.</text>
+    </g>
+
+    <!-- Module 2: Commando Net & Monkey Crawl -->
+    <g transform="translate(20, 92)">
+      <rect width="430" height="60" rx="8" fill="#24331d" stroke="rgba(255,213,79,0.2)"/>
+      <text x="16" y="26" fill="#ffd54f" font-size="13" font-weight="800" font-family="system-ui">02 &bull; COMMANDO NET &amp; MONKEY CRAWL ROPE</text>
+      <text x="16" y="46" fill="#dcedc8" font-size="11" font-family="system-ui">Vertical high-tensile rope netting and horizontal cable traversing building upper body agility.</text>
+    </g>
+
+    <!-- Module 3: Firing Range & Map Reading -->
+    <g transform="translate(20, 164)">
+      <rect width="430" height="60" rx="8" fill="#24331d" stroke="rgba(255,213,79,0.2)"/>
+      <text x="16" y="26" fill="#ffd54f" font-size="13" font-weight="800" font-family="system-ui">03 &bull; 0.22 CALIBRE FIRING &amp; MAP READING PRISMATIC COMPASS</text>
+      <text x="16" y="46" fill="#dcedc8" font-size="11" font-family="system-ui">Precision rifle shooting at army certified firing ranges and military topographic contour reading.</text>
+    </g>
+
+    <!-- Module 4: Ceremonial Drill -->
+    <g transform="translate(20, 236)">
+      <rect width="430" height="60" rx="8" fill="#24331d" stroke="rgba(255,213,79,0.2)"/>
+      <text x="16" y="26" fill="#ffd54f" font-size="13" font-weight="800" font-family="system-ui">04 &bull; CEREMONIAL GUARD OF HONOR &amp; ARMS DRILL</text>
+      <text x="16" y="46" fill="#dcedc8" font-size="11" font-family="system-ui">Sync marching, rifle handling, and national guard protocol for dignitaries and national days.</text>
+    </g>
+  </g>
+
+  <!-- Right: SSB Commissioning Badges -->
+  <g transform="translate(520, 120)">
+    <rect width="250" height="320" rx="12" fill="#182213" stroke="rgba(255,213,79,0.25)" stroke-width="1.5"/>
+    <text x="18" y="30" fill="#ffd54f" font-size="12" font-weight="800" font-family="system-ui">DEFENSE ENTRY PIPELINE</text>
+    
+    <g transform="translate(18, 50)" font-family="system-ui">
+      <!-- Badge 1 -->
+      <rect width="214" height="68" rx="8" fill="#24331d" stroke="rgba(255,213,79,0.3)"/>
+      <text x="12" y="24" fill="#ffffff" font-size="12" font-weight="800">NCC 'C' CERTIFICATE</text>
+      <text x="12" y="40" fill="#dcedc8" font-size="10">Direct SSB Interview Calls</text>
+      <text x="12" y="54" fill="#ffd54f" font-size="9" font-weight="700">Written Exam Exemption (CDS/OTA)</text>
+
+      <!-- Badge 2 -->
+      <rect y="80" width="214" height="68" rx="8" fill="#24331d" stroke="rgba(255,213,79,0.3)"/>
+      <text x="12" y="104" fill="#ffffff" font-size="12" font-weight="800">REPUBLIC DAY CAMP (RDC)</text>
+      <text x="12" y="120" fill="#dcedc8" font-size="10">Kartavya Path New Delhi</text>
+      <text x="12" y="134" fill="#ffd54f" font-size="9" font-weight="700">National Youth Ambassador Selection</text>
+
+      <!-- Badge 3 -->
+      <rect y="160" width="214" height="88" rx="8" fill="#24331d" stroke="rgba(255,213,79,0.3)"/>
+      <text x="12" y="184" fill="#ffffff" font-size="12" font-weight="800">VETERAN SSB MENTORSHIP</text>
+      <text x="12" y="202" fill="#dcedc8" font-size="10">&bull; Group Testing Officer (GTO) Grounds</text>
+      <text x="12" y="218" fill="#dcedc8" font-size="10">&bull; Psychological &amp; Interview Prep</text>
+      <text x="12" y="234" fill="#ffd54f" font-size="9" font-weight="700">100% Institutional Sponsor Support</text>
+    </g>
+  </g>
+</svg>
