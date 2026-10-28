@@ -1,5 +1,6 @@
 node_modules/
 siet-web-final-main/
 chrome-profile*
+scratch/
 .DS_Store
 Thumbs.db
