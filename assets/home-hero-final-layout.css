@@ -1,0 +1,212 @@
+/* Final desktop hero composition: keeps the complete admissions panel visible. */
+@media (min-width: 901px) {
+  .home-impact-hero {
+    height: calc(100vh - 135px) !important;
+    height: calc(100dvh - 135px) !important;
+    min-height: 0 !important;
+    max-height: none !important;
+  }
+
+  .home-impact-content {
+    height: 100% !important;
+    min-height: 0 !important;
+    padding: clamp(42px, 6vh, 62px) 0 16px !important;
+    justify-content: flex-start !important;
+  }
+
+  .home-impact-kicker {
+    display: flex !important;
+    margin-bottom: 16px !important;
+  }
+
+  .home-impact-content h1 {
+    gap: 3px !important;
+    font-size: clamp(43px, 3.15vw, 50px) !important;
+    line-height: 0.95 !important;
+  }
+
+  .home-impact-rule {
+    width: 58px !important;
+    margin: 16px 0 0 !important;
+  }
+
+  .home-impact-info-grid {
+    display: block !important;
+    width: min(700px, 100%) !important;
+    margin: 16px 0 0 !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .home-admission-enquiry {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .home-admission-enquiry > .home-info-heading,
+  .home-admission-enquiry > .home-admission-contacts {
+    margin-top: 9px !important;
+  }
+
+  .home-admission-enquiry > .home-institution-meta {
+    display: grid !important;
+    margin-top: 10px !important;
+  }
+}
+
+@media (min-width: 901px) and (max-height: 800px) {
+  .home-impact-hero {
+    height: auto !important;
+    min-height: 650px !important;
+    max-height: none !important;
+    overflow: hidden !important;
+  }
+
+  .home-impact-content {
+    height: auto !important;
+    min-height: 650px !important;
+    padding: 24px 0 20px !important;
+  }
+
+  .home-impact-kicker {
+    margin-bottom: 9px !important;
+  }
+
+  .home-impact-content h1 {
+    gap: 2px !important;
+    font-size: 38px !important;
+    line-height: 0.93 !important;
+  }
+
+  .home-impact-rule,
+  .home-impact-info-grid {
+    margin-top: 9px !important;
+  }
+
+  .home-admission-enquiry > .home-tnea-highlight {
+    min-height: 82px !important;
+  }
+
+  .home-admission-enquiry > .home-info-heading,
+  .home-admission-enquiry > .home-admission-contacts,
+  .home-admission-enquiry > .home-institution-meta {
+    margin-top: 6px !important;
+  }
+}
+
+/* Spacious admissions panel with a focused glass TNEA treatment. */
+.home-admission-enquiry > .home-tnea-highlight {
+  padding: 16px 22px !important;
+  gap: 18px !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.86) !important;
+  background:
+    linear-gradient(135deg, rgba(0, 68, 46, 0.94), rgba(0, 49, 34, 0.9)) !important;
+  box-shadow:
+    0 16px 36px rgba(0, 23, 15, 0.34),
+    inset 0 1px 0 rgba(255, 255, 255, 0.28) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(145%) !important;
+  backdrop-filter: blur(16px) saturate(145%) !important;
+}
+
+.home-admission-enquiry > .home-tnea-highlight:hover {
+  border-color: #ffd12e !important;
+  background:
+    linear-gradient(135deg, rgba(0, 78, 52, 0.96), rgba(0, 54, 37, 0.93)) !important;
+  box-shadow:
+    0 18px 42px rgba(0, 23, 15, 0.42),
+    0 0 22px rgba(255, 209, 46, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.34) !important;
+}
+
+.home-admission-enquiry > .home-tnea-highlight small {
+  display: inline-flex !important;
+  width: fit-content;
+  padding: 0 !important;
+  border: 0;
+  border-radius: 0;
+  color: #fff !important;
+  background: transparent !important;
+  box-shadow: none;
+  font-weight: 900 !important;
+  letter-spacing: 0.075em !important;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.34) !important;
+}
+
+.home-admission-enquiry > .home-tnea-highlight strong {
+  color: #ffd12e !important;
+  background: linear-gradient(180deg, #fff175 0%, #ffd12e 48%, #ffae00 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.34));
+}
+
+.home-admission-enquiry > .home-tnea-highlight em {
+  color: #063d27 !important;
+  background: linear-gradient(135deg, #ffdd3d, #ffc515) !important;
+  border: 1px solid rgba(255, 236, 132, 0.85);
+  font-weight: 900 !important;
+  box-shadow: 0 4px 12px rgba(255, 197, 21, 0.2);
+}
+
+.home-admission-enquiry > .home-tnea-highlight .home-tnea-icon {
+  color: #063d27 !important;
+  background: linear-gradient(135deg, #ffdd3d, #ffc515) !important;
+  border: 1px solid rgba(255, 239, 151, 0.9) !important;
+  box-shadow: 0 6px 16px rgba(0, 24, 16, 0.28) !important;
+}
+
+.home-admission-enquiry > .home-info-heading {
+  margin-top: 15px !important;
+}
+
+.home-admission-enquiry > .home-info-heading p {
+  margin-top: 6px !important;
+}
+
+.home-admission-enquiry > .home-admission-contacts {
+  margin-top: 15px !important;
+  padding-block: 2px !important;
+}
+
+.home-admission-enquiry > .home-admission-contacts .home-contact-item {
+  gap: 11px !important;
+}
+
+.home-admission-enquiry > .home-institution-meta {
+  margin-top: 16px !important;
+  padding-block: 11px !important;
+}
+
+@media (max-width: 900px) {
+  .home-admission-enquiry > .home-tnea-highlight {
+    padding: 15px 18px !important;
+    gap: 14px !important;
+  }
+}
+
+@media (min-width: 901px) and (max-height: 800px) {
+  .home-admission-enquiry > .home-tnea-highlight {
+    padding: 10px 15px !important;
+    gap: 11px !important;
+  }
+
+  .home-admission-enquiry > .home-info-heading,
+  .home-admission-enquiry > .home-admission-contacts,
+  .home-admission-enquiry > .home-institution-meta {
+    margin-top: 7px !important;
+  }
+}
+
+@media (min-width: 901px) and (max-height: 560px) {
+  .home-impact-hero,
+  .home-impact-content {
+    min-height: 620px !important;
+  }
+
+  .home-impact-content {
+    padding-top: 18px !important;
+  }
+}
