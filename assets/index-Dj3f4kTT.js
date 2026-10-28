@@ -622,12 +622,27 @@ import{r as Ee,j as ce,c as $a,R as ja}from"./vendor-react-DhEz86-d.js";import{i
     </h1>
     <div class="home-impact-rule" aria-hidden="true"></div>
     <p>Industry-aligned training, hands-on learning and a vibrant placement ecosystem that transforms engineering potential into meaningful careers.</p>
-    <div class="home-impact-actions">
-      <button type="button" class="home-impact-360-btn js-open-techpark-360" aria-label="Explore Tech Park 360 View">
-        <span class="impact-360-badge">360°</span>
-        <span>Explore Tech Park 360°</span>
-        <span class="impact-360-arrow" aria-hidden="true">→</span>
-      </button>
+    <div class="home-impact-info-grid">
+      <section class="home-admission-enquiry" aria-labelledby="home-admission-title">
+        <a class="home-tnea-highlight" href="#/admission-enquiry" aria-label="TNEA Code 2727 — Open admission enquiry">
+          <span class="home-tnea-icon" aria-hidden="true">${v("grad")}</span>
+          <span><small>TNEA COUNSELLING CODE</small><strong>2727</strong><em>Admissions 2026–27 <b aria-hidden="true">→</b></em></span>
+        </a>
+        <div class="home-info-heading">
+          <span class="home-info-icon" aria-hidden="true">${v("grad")}</span>
+          <div><h2 id="home-admission-title">Admission <em style="color:#ffd12e;font-style:normal">Enquiry</em></h2><p>Get in touch for admissions, courses and more.</p></div>
+        </div>
+        <div class="home-admission-contacts">
+          <div class="home-contact-item"><span aria-hidden="true">☎</span><div><strong>+91 73737 44444</strong><small>Call for quick assistance</small></div></div>
+          <a class="home-contact-item" href="https://wa.me/917373744444" target="_blank" rel="noopener noreferrer"><span class="home-whatsapp-icon" aria-hidden="true">◉</span><div><strong>+91 73737 44444</strong><small>Chat on WhatsApp</small></div></a>
+          <a class="home-contact-item home-contact-email" href="mailto:admissions@siet.ac.in"><span aria-hidden="true">✉</span><div><strong>admissions@siet.ac.in</strong><small>Send us your queries</small></div></a>
+        </div>
+        <div class="home-institution-meta" aria-label="Institution approval and location details">
+          <div><span class="home-meta-symbol" aria-hidden="true">✓</span><p><strong>Approved by AICTE, New Delhi</strong><b>Autonomous Institution</b></p></div>
+          <div><span class="home-meta-symbol" aria-hidden="true">▥</span><p><strong>Affiliated to Anna University, Chennai</strong><small>L&amp;T By-Pass, Chinniyampalayam, Coimbatore – 641062</small></p></div>
+          <div class="home-meta-telephone"><span class="home-meta-symbol" aria-hidden="true">●</span><p><strong>Tel: +91 422 2369900</strong><small>100 Lines</small></p></div>
+        </div>
+      </section>
     </div>
   </div>
 </section>
