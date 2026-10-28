@@ -48,7 +48,7 @@ createServer((request, response) => {
 
   response.writeHead(200, {
     "Content-Type": contentTypes[ext] || "application/octet-stream",
-    "Cache-Control": isHtml ? "no-cache" : "public, max-age=31536000, immutable",
+    "Cache-Control": (isHtml || ext === ".js" || ext === ".css" || ext === ".mjs") ? "no-cache, no-store, must-revalidate" : "public, max-age=31536000, immutable",
     "Vary": "Accept",
   });
   createReadStream(filePath).pipe(response);
