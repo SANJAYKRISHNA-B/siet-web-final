@@ -1,0 +1,482 @@
+.programme-accreditation-panel {
+  display: grid !important;
+  grid-column: 1 / -1 !important;
+  grid-template-columns: minmax(150px, 0.62fr) minmax(340px, 1.38fr) !important;
+  gap: clamp(18px, 2vw, 30px) !important;
+  width: 100% !important;
+  margin-top: 4px !important;
+  padding: clamp(20px, 2.2vw, 30px) 0 0 !important;
+  align-items: center !important;
+  color: #fff !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  text-align: left !important;
+}
+
+.programme-section-index {
+  display: flex;
+  margin: 0 0 clamp(18px, 2vw, 26px);
+  align-items: center;
+  gap: clamp(14px, 1.5vw, 24px);
+  color: #d8a900;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: clamp(11px, 0.9vw, 14px);
+  font-weight: 900;
+  letter-spacing: 0.18em;
+}
+
+.programme-section-index i {
+  display: block;
+  width: clamp(52px, 6vw, 92px);
+  height: 2px;
+  background: #d8a900;
+}
+
+.programme-section-index strong {
+  color: #075b36;
+  font: inherit;
+}
+
+.programme-accreditation-heading small {
+  display: block;
+  margin-bottom: 8px;
+  color: #ffd12e;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+}
+
+.programme-accreditation-heading h3 {
+  margin: 0 0 8px;
+  color: #fff;
+  font-size: clamp(20px, 1.8vw, 28px);
+  line-height: 1.08;
+}
+
+.programme-accreditation-heading p {
+  max-width: 430px;
+  margin: 0;
+  color: #d7ebe1;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.programme-accreditation-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+}
+
+.programme-accreditation-card {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) auto;
+  gap: 10px;
+  min-width: 0;
+  padding: 13px;
+  align-items: center;
+  color: #073b28;
+  background: #fff;
+  border: 1px solid rgba(255, 209, 46, 0.68);
+  border-radius: 14px;
+  box-shadow: 0 8px 22px rgba(0, 26, 17, 0.16);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.programme-accreditation-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0, 26, 17, 0.24);
+}
+
+.programme-accreditation-logo {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  padding: 5px;
+  place-items: center;
+  overflow: hidden;
+  background: #f7faf8;
+  border: 1px solid #dce8e1;
+  border-radius: 12px;
+}
+
+.programme-accreditation-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.programme-accreditation-card span:nth-child(2) {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+}
+
+.programme-accreditation-card small {
+  color: #9a7600;
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+}
+
+.programme-accreditation-card strong {
+  margin: 4px 0 3px;
+  color: #063d27;
+  font-size: 15px;
+}
+
+.programme-accreditation-card em {
+  overflow: hidden;
+  color: #587064;
+  font-size: 10px;
+  font-style: normal;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.programme-accreditation-card > b {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  color: #063d27;
+  background: #ffd12e;
+  border-radius: 50%;
+}
+
+@media (max-width: 1180px) {
+  .programme-accreditation-panel {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .programme-accreditation-panel {
+    padding-top: 20px !important;
+  }
+
+  .programme-accreditation-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .programme-accreditation-card {
+    grid-template-columns: 52px minmax(0, 1fr) auto;
+    padding: 13px;
+  }
+
+  .programme-accreditation-logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .programme-section-index {
+    justify-content: center;
+  }
+}
+
+/* Reference composition: editorial copy left, premium programme card right. */
+@media (min-width: 1101px) {
+  .programmes-showcase .programmes-hero-v2 {
+    grid-template-columns: minmax(360px, 0.78fr) minmax(650px, 1.22fr) !important;
+    gap: clamp(46px, 5vw, 82px) !important;
+    align-items: center !important;
+  }
+
+  .programmes-showcase .programmes-feature-card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 0.95fr) minmax(280px, 1.05fr) !important;
+    gap: clamp(24px, 2.5vw, 40px) !important;
+    padding: clamp(34px, 3vw, 50px) !important;
+    align-items: center !important;
+    text-align: left !important;
+    border-radius: 30px !important;
+    background:
+      radial-gradient(circle at 78% 15%, rgba(15, 119, 73, 0.42), transparent 42%),
+      linear-gradient(135deg, #00412b 0%, #005538 54%, #003a27 100%) !important;
+  }
+
+  .programmes-feature-card .feature-card-content {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .programmes-feature-card .feature-icon-badge {
+    margin-inline: 0 !important;
+  }
+
+  .programmes-feature-card .feature-card-title {
+    max-width: 430px;
+    margin-inline: 0 !important;
+    font-size: clamp(32px, 2.6vw, 44px) !important;
+    line-height: 1.04 !important;
+    text-align: left !important;
+  }
+
+  .programmes-feature-card .feature-card-desc {
+    max-width: 440px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+    font-size: 14px !important;
+    text-align: left !important;
+  }
+
+  .programmes-feature-card .feature-action-btn {
+    min-width: 250px;
+    margin-inline: 0 !important;
+    padding: 12px 20px !important;
+    justify-content: center !important;
+    color: #063d27 !important;
+    background: linear-gradient(135deg, #ffdf55, #ffc928) !important;
+    border: 1px solid rgba(255, 239, 159, 0.9) !important;
+    border-radius: 999px !important;
+    box-shadow: 0 8px 20px rgba(255, 197, 21, 0.2) !important;
+  }
+
+  .programmes-feature-card .feature-arrow-btn {
+    order: 2;
+    width: auto !important;
+    height: auto !important;
+    margin-left: auto;
+    color: #063d27 !important;
+    background: transparent !important;
+  }
+
+  .programmes-feature-card .feature-arch-frame {
+    max-width: 330px !important;
+    border-color: #e7b900 !important;
+  }
+
+  .programmes-feature-card .programme-accreditation-panel {
+    grid-column: 1 / -1 !important;
+    grid-template-columns: minmax(170px, 0.56fr) minmax(460px, 1.44fr) !important;
+    padding-top: 24px !important;
+  }
+
+  .programme-accreditation-heading h3 {
+    max-width: 220px;
+    font-size: clamp(24px, 2vw, 32px);
+  }
+
+  .programme-accreditation-heading p {
+    display: none;
+  }
+
+  .programme-accreditation-card {
+    grid-template-columns: 66px minmax(0, 1fr) !important;
+    min-height: 116px;
+    padding: 17px 18px !important;
+  }
+
+  .programme-accreditation-logo {
+    width: 66px;
+    height: 66px;
+  }
+
+  .programme-accreditation-card strong {
+    font-size: 18px;
+  }
+
+  .programme-accreditation-card em {
+    font-size: 10px;
+  }
+
+  .programme-accreditation-card > b {
+    display: none;
+  }
+}
+
+@media (min-width: 1101px) and (max-width: 1320px) {
+  .programmes-showcase .programmes-hero-v2 {
+    grid-template-columns: minmax(320px, 0.72fr) minmax(570px, 1.28fr) !important;
+    gap: 38px !important;
+  }
+
+  .programmes-showcase .programmes-feature-card {
+    padding: 30px !important;
+  }
+
+  .programmes-feature-card .programme-accreditation-panel {
+    grid-template-columns: 1fr !important;
+  }
+
+  .programme-accreditation-heading h3 {
+    max-width: none;
+  }
+}
+
+/* Department facts and NBA status within programme cards. */
+.programme-card-v2 {
+  min-height: 112px !important;
+  padding: 13px 15px !important;
+  grid-template-columns: 40px minmax(0, 1fr) 28px !important;
+  gap: 10px !important;
+  border-radius: 15px !important;
+  align-items: center !important;
+}
+
+.programme-grid-v2 {
+  gap: 12px !important;
+}
+
+.programme-card-v2 .prog-icon-wrap {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 11px !important;
+}
+
+.programme-card-v2 .prog-arrow-circle {
+  width: 28px !important;
+  height: 28px !important;
+  margin: 0 !important;
+  font-size: 12px !important;
+}
+
+.programme-card-v2 .prog-info h4 {
+  margin-bottom: 3px !important;
+  font-size: clamp(12.5px, 0.9vw, 14px) !important;
+  line-height: 1.18 !important;
+}
+
+.programme-card-v2 .prog-info p {
+  font-size: 10px !important;
+  line-height: 1.3 !important;
+  -webkit-line-clamp: 1 !important;
+  line-clamp: 1 !important;
+}
+
+.programme-card-v2.is-nba-accredited {
+  border-color: rgba(20, 174, 207, 0.34) !important;
+  box-shadow: 0 10px 26px rgba(10, 126, 154, 0.1) !important;
+}
+
+.programme-card-v2.is-nba-accredited::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 18px;
+  left: 18px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #22b5cf, transparent);
+}
+
+.programme-card-v2 .prog-info {
+  min-width: 0;
+}
+
+.programme-card-meta {
+  display: flex;
+  margin-top: 7px;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.programme-fact {
+  display: inline-flex;
+  padding: 3px 6px;
+  align-items: center;
+  gap: 4px;
+  color: #315b48;
+  background: #edf7f1;
+  border: 1px solid #d8eadf;
+  border-radius: 6px;
+  line-height: 1;
+}
+
+.programme-fact small {
+  color: #70877b;
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+
+.programme-fact b {
+  color: #075b36;
+  font-size: 9px;
+}
+
+.programme-nba-badge {
+  display: inline-flex;
+  padding: 3px 7px 3px 4px;
+  align-items: center;
+  gap: 5px;
+  color: #07516a;
+  background: linear-gradient(135deg, #eafaff, #d9f5fb);
+  border: 1px solid #9edeea;
+  border-radius: 999px;
+  font-size: 7.5px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.programme-nba-badge img {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+}
+
+@media (min-width: 1201px) {
+  .programme-grid-v2 {
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+  .programme-grid-v2 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (min-width: 521px) and (max-width: 768px) {
+  .programme-grid-v2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 650px) {
+  .programme-card-v2 {
+    min-height: 108px !important;
+  }
+
+  .programme-card-meta {
+    margin-top: 6px;
+  }
+
+  .programme-card-v2 .prog-info {
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+
+  .programme-card-v2 .prog-info p {
+    margin-inline: 0 !important;
+    text-align: left !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .programme-grid-v2 {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .programme-card-v2 {
+    min-height: 102px !important;
+    padding: 11px 12px !important;
+    grid-template-columns: 38px minmax(0, 1fr) 26px !important;
+    gap: 9px !important;
+  }
+
+  .programme-card-v2 .prog-icon-wrap {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .programme-card-v2 .prog-arrow-circle {
+    width: 26px !important;
+    height: 26px !important;
+  }
+}

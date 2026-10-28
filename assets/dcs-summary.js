@@ -313,6 +313,17 @@ function ensureApplyEnquiryOnly() {
   page.querySelector("#apply-pane-referral")?.remove();
   page.querySelector("#apply-pane-enquiry")?.classList.add("is-active");
 
+  page.querySelectorAll(".quick-chips-wrapper").forEach((topics) => topics.remove());
+  page.querySelectorAll(".form-consent-section").forEach((consentSection) => consentSection.remove());
+  page.querySelectorAll('form[data-form-type="admission-enquiry"]').forEach((form) => {
+    if (form.querySelector('input[type="hidden"][name="consent"]')) return;
+    const consentValue = document.createElement("input");
+    consentValue.type = "hidden";
+    consentValue.name = "consent";
+    consentValue.value = "1";
+    form.append(consentValue);
+  });
+
   const title = page.querySelector("#apply-hud-title");
   if (title && title.innerHTML !== "Apply for <em>Sri Shakthi</em>") title.innerHTML = "Apply for <em>Sri Shakthi</em>";
   const breadcrumb = page.querySelector("#apply-hud-breadcrumb");
@@ -354,6 +365,104 @@ function ensureHomeAdmissionEnquiry() {
   content.querySelector(".home-impact-rule")?.after(panel);
 }
 
+function enhanceProgrammeAccreditation() {
+  document.querySelectorAll(".section-kicker").forEach((kicker) => {
+    if (kicker.textContent.includes("FIND YOUR FIELD")) kicker.remove();
+  });
+
+  document.querySelectorAll(".programmes-left-col").forEach((column) => {
+    if (column.querySelector(".programme-section-index")) return;
+    const marker = document.createElement("div");
+    marker.className = "programme-section-index";
+    marker.innerHTML = '<span>02</span><i aria-hidden="true"></i><strong>PROGRAMMES</strong>';
+    column.prepend(marker);
+  });
+
+  const fillerBanners = [...document.querySelectorAll(".programme-bottom-banner:not(.programme-accreditation-panel)")];
+  let panel = document.querySelector(".programme-accreditation-panel");
+  if (!panel) {
+    panel = document.createElement("section");
+    panel.className = "programme-accreditation-panel reveal is-visible";
+    panel.setAttribute("aria-label", "Institutional accreditations");
+    panel.innerHTML = `
+      <div class="programme-accreditation-heading">
+        <small>QUALITY ASSURANCE</small>
+        <h3>Recognised academic standards</h3>
+        <p>Accreditations that reflect sustained institutional quality and programme excellence.</p>
+      </div>
+      <div class="programme-accreditation-cards">
+        <a class="programme-accreditation-card" href="/nba" aria-label="View NBA accreditation details">
+          <span class="programme-accreditation-logo"><img src="/brand/nba-full-logo.webp" alt="National Board of Accreditation"></span>
+          <span><small>PROGRAMME ACCREDITATION</small><strong>NBA Accredited</strong><em>Eligible UG engineering programmes</em></span>
+          <b aria-hidden="true">→</b>
+        </a>
+        <a class="programme-accreditation-card" href="/naac" aria-label="View NAAC accreditation details">
+          <span class="programme-accreditation-logo"><img src="/brand/naac-grade-logo.webp" alt="NAAC Grade A"></span>
+          <span><small>INSTITUTIONAL ACCREDITATION</small><strong>NAAC Grade A</strong><em>National quality recognition</em></span>
+          <b aria-hidden="true">→</b>
+        </a>
+      </div>`;
+  } else {
+    panel.classList.remove("programme-bottom-banner");
+    const nbaLogo = panel.querySelector('a[href="/nba"] img');
+    const naacLogo = panel.querySelector('a[href="/naac"] img');
+    if (nbaLogo) nbaLogo.src = "/brand/nba-full-logo.webp";
+    if (naacLogo) naacLogo.src = "/brand/naac-grade-logo.webp";
+  }
+
+  const featureCard = document.querySelector(".programmes-feature-card");
+  if (featureCard) featureCard.append(panel);
+  else if (fillerBanners[0]) fillerBanners[0].replaceWith(panel);
+  fillerBanners.forEach((banner) => {
+    if (banner.isConnected) banner.remove();
+  });
+}
+
+const programmeDepartmentFacts = {
+  "B.Tech - Agricultural Engineering": { established: "2015", intake: "60", nba: true },
+  "B.Tech - Artificial Intelligence and Data Science": { established: "2021", intake: "240", nba: false },
+  "B.Tech - Artificial Intelligence and Machine Learning": { established: "2021", intake: "120", nba: false },
+  "B.E - Biomedical Engineering": { established: "2016", intake: "60", nba: true },
+  "B.Tech - Biotechnology": { established: "2019", intake: "60", nba: true },
+  "B.E - Civil Engineering": { established: "2010", intake: "60", nba: false },
+  "B.E - Computer Science and Engineering": { established: "2006", intake: "240", nba: true },
+  "B.E - Computer Science and Engineering (Cyber Security)": { established: "2022", intake: "120", nba: false },
+  "B.E - Electrical and Electronics Engineering": { established: "2006", intake: "60", nba: true },
+  "B.E - Electronics and Communication Engineering": { established: "2006", intake: "120", nba: true },
+  "B.Tech - Food Technology": { established: "2016", intake: "60", nba: false },
+  "B.Tech - Information Technology": { established: "2006", intake: "180", nba: true },
+  "B.E - Mechanical Engineering": { established: "2009", intake: "60", nba: true },
+  "B.E - Electronics Engineering (VLSI Design & Technology)": { established: "2023", intake: "60", nba: false },
+  "M.E - Computer Science and Engineering": { intake: "18", nba: false },
+  "M.E - VLSI Design": { intake: "18", nba: false },
+  "M.E - CAD/CAM": { intake: "12", nba: false },
+  "M.E - Embedded System Technologies": { intake: "18", nba: false },
+  "M.E - Structural Engineering": { intake: "18", nba: false },
+  "M.Tech - Food Technology": { established: "2016", intake: "18", nba: false },
+  "M.Tech - Farm Machinery": { established: "2015", intake: "18", nba: false },
+};
+
+function enhanceProgrammeDepartmentCards() {
+  document.querySelectorAll(".programme-card-v2[data-course]").forEach((card) => {
+    const facts = programmeDepartmentFacts[card.dataset.course];
+    const info = card.querySelector(".prog-info");
+    if (!facts || !info) return;
+
+    let meta = info.querySelector(".programme-card-meta");
+    if (!meta) {
+      meta = document.createElement("div");
+      meta.className = "programme-card-meta";
+      info.append(meta);
+    }
+    const metaMarkup = `
+      ${facts.established ? `<span class="programme-fact"><small>EST.</small><b>${facts.established}</b></span>` : ""}
+      <span class="programme-fact"><small>INTAKE</small><b>${facts.intake}</b></span>
+      ${facts.nba ? '<span class="programme-nba-badge"><img src="/brand/nba-logo.webp" alt=""> NBA Accredited</span>' : ""}`;
+    if (meta.innerHTML !== metaMarkup) meta.innerHTML = metaMarkup;
+    card.classList.toggle("is-nba-accredited", facts.nba);
+  });
+}
+
 function runPageEnhancements() {
   renderDcsSummary();
   renderAffiliationPage();
@@ -364,6 +473,8 @@ function runPageEnhancements() {
   ensureAdmissionsNoticeLink();
   ensureApplyEnquiryOnly();
   ensureHomeAdmissionEnquiry();
+  enhanceProgrammeAccreditation();
+  enhanceProgrammeDepartmentCards();
 }
 
 let certificateZoom = 1;
@@ -408,7 +519,13 @@ document.addEventListener("keydown", (event) => {
   document.documentElement.classList.remove("au-modal-open");
 });
 
-const footerObserver = new MutationObserver(() => { ensureFacultyListFooterLink(); ensureAffiliationFooterLink(); ensureNbaFooterLink(); ensureAdmissionsNoticeLink(); });
+const footerObserver = new MutationObserver(() => {
+  ensureFacultyListFooterLink();
+  ensureAffiliationFooterLink();
+  ensureNbaFooterLink();
+  ensureAdmissionsNoticeLink();
+  enhanceProgrammeDepartmentCards();
+});
 footerObserver.observe(document.documentElement, { childList: true, subtree: true });
 
 window.addEventListener("hashchange", () => window.setTimeout(runPageEnhancements, 0));
