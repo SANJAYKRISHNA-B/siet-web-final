@@ -1,0 +1,17 @@
+.home-impact-photo{
+  background-image:url("/new-site/brand/techpark-local-desktop.webp")!important;
+  background-size:cover;
+  background-position:center;
+}
+
+@media (max-width: 1024px){
+  .home-impact-photo{
+    background-image:url("/new-site/brand/techpark-local-tablet.webp")!important;
+  }
+}
+
+@media (max-width: 640px){
+  .home-impact-photo{
+    background-image:url("/new-site/brand/techpark-local-mobile.webp")!important;
+  }
+}
