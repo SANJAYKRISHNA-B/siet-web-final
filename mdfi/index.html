@@ -44,7 +44,7 @@
       padding: 0;
       font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       color: var(--mdi-text-dark);
-      background: #f8faf9;
+      background: #f1eadb;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
@@ -54,14 +54,74 @@
       background: var(--mdi-green-main);
       border-bottom: 3px solid var(--mdi-gold);
       position: sticky;
-      top: 0;
+      top: 33px;
+      height: 95px;
+      min-height: 95px;
+      max-height: 95px;
       z-index: 1000;
       box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Use the same warm institutional surface introduced on SSSM. */
+    .mdi-section,
+    .mdi-portal-section,
+    .mdi-heritage-strip {
+      background-color: #f1eadb;
+    }
+
+    .mdi-card,
+    .mdi-topic-card,
+    .mdi-portal-card,
+    .mdi-grand-box {
+      background-color: #fffaf0;
+      border-color: #ded2bb;
+    }
+
+    .mdi-admission-notice {
+      position: relative;
+      z-index: 1001;
+      overflow: hidden;
+      height: 33px;
+      min-height: 33px;
+      display: flex;
+      align-items: center;
+      background: #043f27;
+      color: #fff;
+      border-bottom: 2px solid #f3c515;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .mdi-admission-track {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      width: max-content;
+      padding-left: 24px;
+      animation: mdiNoticeMove 24s linear infinite;
+    }
+
+    .mdi-admission-track span { display: inline-flex; align-items: center; gap: 14px; }
+    .mdi-admission-track i { width: 2px; height: 20px; background: #f3c515; }
+    .mdi-admission-track a {
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: #f3c515;
+      color: #043f27;
+      font-weight: 900;
+    }
+
+    @keyframes mdiNoticeMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-34%); }
     }
     .mdi-nav-shell {
       max-width: 1240px;
       margin: 0 auto;
-      padding: 12px 24px;
+      height: 90px;
+      min-height: 90px;
+      padding: 0 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -74,8 +134,8 @@
       color: #fff;
     }
     .mdi-brand img {
-      width: 44px;
-      height: 44px;
+      width: 58px;
+      height: 58px;
       object-fit: contain;
     }
     .mdi-brand-text strong {
@@ -97,7 +157,7 @@
     .mdi-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 16px;
     }
     .mdi-link {
       color: #ffffff;
@@ -211,6 +271,54 @@
       gap: 16px;
       flex-wrap: wrap;
       margin-bottom: 48px;
+    }
+    .mdi-hero-poster {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      padding: 5px;
+      border-radius: 18px;
+      background: #fffaf0;
+      box-shadow: 0 24px 58px rgba(0, 20, 10, 0.38);
+      text-decoration: none;
+      transform: rotate(0.7deg);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .mdi-hero-poster:hover {
+      transform: rotate(0) translateY(-4px);
+      box-shadow: 0 30px 64px rgba(0, 20, 10, 0.46);
+    }
+    .mdi-hero-poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 425px;
+      object-fit: contain;
+      border-radius: 13px;
+    }
+    .mdi-hero-poster span {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 12px 7px;
+      color: #17432f;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    @media (min-width: 1101px) {
+      .mdi-hero-shell { padding-right: 340px; }
+    }
+    @media (max-width: 1100px) {
+      .mdi-hero-poster {
+        position: relative;
+        top: auto;
+        right: auto;
+        display: block;
+        width: min(300px, 82vw);
+        margin: -14px auto 34px;
+      }
     }
     .mdi-btn-primary {
       background: var(--mdi-gold);
@@ -793,33 +901,55 @@
     @media (max-width: 900px) {
       .mdi-grand-box { grid-template-columns: 1fr; padding: 28px; }
       .mdi-links { display: none; }
+      .mdi-header,
+      .mdi-header.institution-header-v4.exact-image-header { height: 64px; min-height: 64px; max-height: 64px; }
+      .mdi-nav-shell { height: 64px; min-height: 64px; }
+      .mdi-brand img { width: 46px; height: 46px; }
     }
   </style>
 </head>
 <body>
 
+  <div class="mdi-admission-notice" role="region" aria-label="Admissions announcement">
+    <div class="mdi-admission-track">
+      <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+      <span>Begin your journey at Sri Shakthi</span><i></i>
+      <a href="/apply">ADMISSIONS 2026–27 NOW OPEN</a><i></i>
+      <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+      <span>Begin your journey at Sri Shakthi</span><i></i>
+      <a href="/apply">ADMISSIONS 2026–27 NOW OPEN</a>
+    </div>
+  </div>
+
   <!-- GLOBAL INSTITUTIONAL HEADER -->
-  <header class="mdi-header" role="banner">
-    <div class="mdi-nav-shell">
-      <a href="/#/" class="mdi-brand" aria-label="Sri Shakthi Institute of Engineering and Technology Home">
-        <img src="/brand/siet-institution-logo.webp" alt="Sri Shakthi Logo" width="44" height="44">
-        <div class="mdi-brand-text">
-          <strong>SRI SHAKTHI</strong>
-          <small>INSTITUTE OF ENGINEERING AND TECHNOLOGY</small>
-        </div>
+  <header class="institution-header-v4 exact-image-header mdi-header" role="banner">
+    <div class="institution-navbar">
+      <a class="siet-inline-brand" href="/" aria-label="Sri Shakthi Autonomous Institution home">
+        <span class="siet-brand-emblem">
+          <img src="/new-site/brand/siet-institution-logo.webp" alt="Sri Shakthi Logo" class="siet-brand-logo" width="48" height="48">
+        </span>
+        <span class="siet-brand-text">
+          <span class="siet-brand-name">SRI SHAKTHI</span>
+          <span class="siet-brand-sub">INSTITUTE OF ENGINEERING</span>
+          <span class="siet-brand-sub">AND TECHNOLOGY</span>
+        </span>
       </a>
-      <nav class="mdi-links" aria-label="Main Navigation">
-        <a href="/#/" class="mdi-link">Home</a>
-        <a href="/#/about" class="mdi-link">About</a>
-        <a href="/#/programmes" class="mdi-link">Academics</a>
-        <a href="/ssm/" class="mdi-link">Space Mission</a>
-        <a href="/icchi/" class="mdi-link">ICCHI 2027</a>
-        <a href="#topics" class="mdi-link">Essay Topics</a>
-        <a href="#expedition" class="mdi-link">Wellington Award</a>
-        <a href="#portal" class="mdi-header-cta">
-          Submit Essay / Register ✍
-        </a>
+
+      <nav class="institution-menu" aria-label="Institutional navigation">
+        <a class="institution-nav-link" href="/">Home</a>
+        <a class="institution-nav-link" href="/vision-mission">About</a>
+        <a class="institution-nav-link" href="/programmes">Academics</a>
+        <a class="institution-nav-link" href="/campus-life">Campus</a>
+        <a class="institution-nav-link" href="/coe">COE</a>
+        <a class="institution-nav-link" href="/accreditations">Accreditation</a>
+        <a class="institution-nav-link" href="/placements">Placements</a>
+        <a class="institution-nav-link is-active-nav" href="/mdfi/">Explore</a>
+        <a class="institution-nav-link" href="/careers">Careers</a>
       </nav>
+
+      <a class="institution-nav-apply" href="/apply" aria-label="Apply Now for Admissions">
+        Apply Now <span aria-hidden="true">→</span>
+      </a>
     </div>
   </header>
 
@@ -855,6 +985,11 @@
           View Essay Topics 📜
         </a>
       </div>
+
+      <a class="mdi-hero-poster" href="/brand/dream-india-poster.png" target="_blank" rel="noopener noreferrer" aria-label="View the official Dream India Essay Contest 2026 poster">
+        <img src="/brand/dream-india-poster.png" alt="Official Dream India Essay Contest 2026 poster" width="1056" height="1479" fetchpriority="high">
+        <span>Official Contest Poster <b>View ↗</b></span>
+      </a>
 
       <!-- Quick Facts Strip -->
       <div class="mdi-facts-grid" role="region" aria-label="Competition Quick Facts">

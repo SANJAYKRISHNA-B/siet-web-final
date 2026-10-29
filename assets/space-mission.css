@@ -1,12 +1,12 @@
 /* Space Whiz 2026 & Sri Shakthi Space Mission Stylesheet
-   White Theme: Crisp White, Emerald Green (#004d2c), Solar Gold (#ffd12e), Rose Magenta (#e11d48), Cyan (#0284c7)
+   Warm institutional theme: forest green, ivory, sand and solar gold.
 */
 
 :root {
-  --space-bg-deep: #f8fafc;
-  --space-bg-surface: #ffffff;
-  --space-bg-card: #ffffff;
-  --space-border: #e2e8f0;
+  --space-bg-deep: #f1eadb;
+  --space-bg-surface: #fffaf0;
+  --space-bg-card: #fffaf0;
+  --space-border: #ded2bb;
   --space-border-glow: rgba(0, 77, 44, 0.2);
   --space-gold: #d97706;
   --space-gold-accent: #ffd12e;
@@ -14,14 +14,14 @@
   --space-cyan: #0284c7;
   --space-green: #004d2c;
   --space-green-light: #067242;
-  --space-magenta: #e11d48;
-  --space-magenta-glow: rgba(225, 29, 72, 0.25);
+  --space-magenta: #c2410c;
+  --space-magenta-glow: rgba(194, 65, 12, 0.24);
   --space-purple: #7c3aed;
   --space-blue: #2563eb;
   --space-silver: #64748b;
   --space-text-dim: #64748b;
-  --space-text-bright: #0f172a;
-  --space-navy-card: #ffffff;
+  --space-text-bright: #153a29;
+  --space-navy-card: #fffaf0;
 }
 
 /* Page Container - White Theme */
@@ -40,11 +40,11 @@
   position: fixed;
   inset: 0;
   background-image: 
-    radial-gradient(circle at 15% 15%, rgba(0, 77, 44, 0.035) 0%, transparent 40%),
-    radial-gradient(circle at 85% 35%, rgba(225, 29, 72, 0.03) 0%, transparent 40%),
-    radial-gradient(circle at 50% 85%, rgba(2, 132, 199, 0.035) 0%, transparent 50%),
-    linear-gradient(rgba(0, 77, 44, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 77, 44, 0.025) 1px, transparent 1px);
+    radial-gradient(circle at 15% 15%, rgba(0, 77, 44, 0.09) 0%, transparent 40%),
+    radial-gradient(circle at 85% 35%, rgba(217, 119, 6, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(194, 65, 12, 0.05) 0%, transparent 50%),
+    linear-gradient(rgba(0, 77, 44, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 77, 44, 0.04) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
   pointer-events: none;
   z-index: 0;
@@ -66,8 +66,8 @@
 .space-hero {
   position: relative;
   padding: 76px 24px 60px;
-  background: linear-gradient(180deg, #ffffff 0%, #f0fdf4 55%, #f8fafc 100%);
-  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(145deg, #fff7df 0%, #f3ead3 48%, #e6eddf 100%);
+  border-bottom: 1px solid #d8c9aa;
   overflow: hidden;
   text-align: center;
 }
@@ -79,9 +79,9 @@
   transform: translateX(-50%);
   width: 1400px;
   height: 600px;
-  background: radial-gradient(circle at 50% 15%, rgba(0, 77, 44, 0.06) 0%, transparent 65%),
-              radial-gradient(circle at 80% 35%, rgba(225, 29, 72, 0.04) 0%, transparent 55%),
-              radial-gradient(circle at 20% 45%, rgba(2, 132, 199, 0.05) 0%, transparent 55%);
+  background: radial-gradient(circle at 50% 15%, rgba(0, 77, 44, 0.13) 0%, transparent 65%),
+              radial-gradient(circle at 80% 35%, rgba(217, 119, 6, 0.12) 0%, transparent 55%),
+              radial-gradient(circle at 20% 45%, rgba(194, 65, 12, 0.07) 0%, transparent 55%);
   pointer-events: none;
 }
 
@@ -98,7 +98,7 @@
   align-items: center;
   gap: 12px;
   padding: 8px 22px;
-  background: #ffffff;
+  background: rgba(255, 250, 240, 0.9);
   border: 1.5px solid var(--space-green);
   border-radius: 9999px;
   font-size: 12.5px;
@@ -131,13 +131,13 @@
   line-height: 1.05;
   letter-spacing: -0.02em;
   margin: 0 0 14px;
-  color: #0f172a;
+  color: #123c29;
   text-transform: uppercase;
 }
 
 .space-hero h1 em {
   font-style: normal;
-  background: linear-gradient(135deg, #004d2c 0%, #e11d48 55%, #0284c7 100%);
+  background: linear-gradient(135deg, #004d2c 0%, #b77900 58%, #c2410c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -167,6 +167,64 @@
   justify-content: center;
   gap: 16px;
   margin-bottom: 44px;
+}
+
+.space-hero-poster {
+  position: absolute;
+  top: 18px;
+  right: 0;
+  width: 270px;
+  overflow: hidden;
+  border: 5px solid #fffaf0;
+  border-radius: 18px;
+  background: #fffaf0;
+  box-shadow: 0 22px 48px rgba(54, 40, 14, 0.24);
+  color: #17432f;
+  text-decoration: none;
+  transform: rotate(1deg);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.space-hero-poster:hover {
+  transform: rotate(0) translateY(-5px);
+  box-shadow: 0 28px 58px rgba(54, 40, 14, 0.3);
+}
+
+.space-hero-poster img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 390px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.space-hero-poster span {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 11px 14px;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.space-hero-poster b { color: #b77900; }
+
+@media (min-width: 1101px) {
+  .space-hero-shell { padding-right: 315px; }
+}
+
+@media (max-width: 1100px) {
+  .space-hero-poster {
+    position: relative;
+    top: auto;
+    right: auto;
+    display: block;
+    width: min(270px, 82vw);
+    margin: -12px auto 34px;
+  }
 }
 
 .space-btn-magenta {
@@ -245,8 +303,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 16px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #fffaf0;
+  border: 1px solid #ded2bb;
   border-radius: 18px;
   padding: 24px;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.06);
@@ -360,8 +418,8 @@
 
 /* Left: Poster Box */
 .space-poster-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
+  background: #fffaf0;
+  border: 1.5px solid #ded2bb;
   border-radius: 20px;
   padding: 24px;
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.08);
@@ -425,8 +483,8 @@
 
 /* The Grand 100 Rewards Card - White Theme */
 .space-reward-grand-card {
-  background: linear-gradient(145deg, #fff1f2 0%, #ffffff 50%, #fdf4ff 100%);
-  border: 2px solid #e11d48;
+  background: linear-gradient(145deg, #fff3d8 0%, #fffaf0 52%, #f4ead4 100%);
+  border: 2px solid #c87910;
   border-radius: 20px;
   padding: 36px 32px;
   box-shadow: 0 16px 40px rgba(225, 29, 72, 0.12);
@@ -438,7 +496,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #e11d48;
+  background: #b8610b;
   color: #ffffff;
   font-size: 12px;
   font-weight: 900;
@@ -514,8 +572,8 @@
 }
 
 .space-info-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: #fffaf0;
+  border: 1px solid #ded2bb;
   border-radius: 16px;
   padding: 24px;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
@@ -547,7 +605,7 @@
 
 /* REGISTER CTA CARD - White Theme */
 .space-register-cta-card {
-  background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 50%, #eff6ff 100%);
+  background: linear-gradient(135deg, #fff8e7 0%, #edf2e7 52%, #f4e7cf 100%);
   border: 2px solid var(--space-green);
   border-radius: 24px;
   padding: 56px 36px;
@@ -597,7 +655,7 @@
 
 .space-query-help > p {
   margin: 0;
-  color: #ffffff;
+  color: #17432f;
   font-size: clamp(16px, 1.6vw, 20px);
   font-weight: 700;
   line-height: 1.55;
@@ -624,7 +682,7 @@
 }
 
 .helpline-card {
-  background: #ffffff;
+  background: #fffaf0;
   border: 1.5px solid #e2e8f0;
   border-radius: 14px;
   padding: 20px;
@@ -662,7 +720,7 @@
 .helpline-card span {
   display: block;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: #17432f;
   font-size: 18px;
   font-weight: 800;
 }

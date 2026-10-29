@@ -10924,6 +10924,11 @@ function spaceMissionMarkup() {
           </a>
         </div>
 
+        <a class="space-hero-poster" href="/brand/space-whiz-poster.png" target="_blank" rel="noopener noreferrer" aria-label="View the official Space Whiz 2026 poster">
+          <img src="/brand/space-whiz-poster.png" alt="Official Space Whiz 2026 quiz poster" width="280" height="396" fetchpriority="high">
+          <span>Official Poster <b>View ↗</b></span>
+        </a>
+
         <!-- Schedule & Eligibility Strip -->
         <div class="space-schedule-strip" role="region" aria-label="Contest Schedule and Eligibility">
           <div class="schedule-item pink">
