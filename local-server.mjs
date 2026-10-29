@@ -21,6 +21,27 @@ const contentTypes = {
 };
 
 createServer((request, response) => {
+  if (request.url.startsWith("/api/admission-enquiries") || request.url.startsWith("/api/enquiries")) {
+    let body = "";
+    request.on("data", chunk => body += chunk);
+    request.on("end", () => {
+      response.writeHead(200, {
+        "Content-Type": "application/json; charset=utf-8",
+        "Access-Control-Allow-Origin": "*"
+      });
+      response.end(JSON.stringify({
+        success: true,
+        message: "Thank you! Your admission enquiry has been recorded successfully. Our academic counseling team will contact you shortly.",
+        data: {
+          id: Date.now(),
+          studentName: "Applicant",
+          course: "UG",
+          department: "Engineering"
+        }
+      }));
+    });
+    return;
+  }
   const requestPath = decodeURIComponent(new URL(request.url, `http://${request.headers.host}`).pathname);
   const relativePath = requestPath.replace(/^\/new-site\/?/, "");
   const safePath = normalize(relativePath).replace(/^(\.\.(\/|\\|$))+/, "");
@@ -48,7 +69,7 @@ createServer((request, response) => {
 
   response.writeHead(200, {
     "Content-Type": contentTypes[ext] || "application/octet-stream",
-    "Cache-Control": isHtml ? "no-cache" : "public, max-age=31536000, immutable",
+    "Cache-Control": "no-cache, no-store, must-revalidate",
     "Vary": "Accept",
   });
   createReadStream(filePath).pipe(response);
