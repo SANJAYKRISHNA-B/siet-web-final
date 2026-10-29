@@ -15,10 +15,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=League+Spartan:wght@700;800;900&display=swap" rel="stylesheet">
   <title>My Dream India | Sri Shakthi India Leadership &amp; Career Conclave (SSILCC) | SIET</title>
-  
+
   <link rel="stylesheet" crossorigin href="/assets/index-BOwYVr40.css?v=20261029-v8">
   <link rel="stylesheet" href="/assets/space-mission.css?v=20261029-v12">
-  <link rel="stylesheet" href="/assets/footer-map.css?v=20261029-v8">
+  <link rel="stylesheet" href="/assets/footer-map.css?v=20261029-v10">
 
   <style>
     /* =========================================================
@@ -50,6 +50,10 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
+    }
+
+    body.mdi-loading {
+      overflow: hidden;
     }
 
     /* REMOVE FIXED STATE FROM HEADER & NOTICE: Sits naturally at top */
@@ -403,7 +407,12 @@
     }
   </style>
 </head>
-<body>
+<body class="mdi-loading">
+  <div class="siet-logo-splash" id="mdi-page-loader" role="status" aria-label="Loading My Dream India website">
+    <div class="siet-logo-preloader">
+      <img src="/brand/siet-logo.webp" alt="Sri Shakthi college emblem">
+    </div>
+  </div>
 
   <!-- 1. NOTIFICATION BANNER (NON-FIXED) -->
   <div class="notice notice-home" role="region" aria-label="Admissions Announcements">
@@ -452,7 +461,7 @@
         <!-- Desktop Navigation Menu -->
         <div class="institution-menu">
           <a class="institution-nav-link" href="/">Home</a>
-          
+
           <div class="institution-nav-group">
             <button type="button" aria-expanded="false">
               About
@@ -486,22 +495,6 @@
               <a href="/curriculum">Curriculum</a>
               <a href="/library">Library</a>
               <a href="/downloads/siet-faculty-list-au-affiliation-2026-27.pdf" target="_blank" rel="noopener noreferrer">Faculty List</a>
-            </div>
-          </div>
-
-          <div class="institution-nav-group">
-            <button type="button" aria-expanded="false">
-              Campus
-              <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:4px;"><path d="m6 9 6 6 6-6"/></svg>
-            </button>
-            <div>
-              <a href="/campus-life">Campus Life</a>
-              <a href="/facilities">Facilities</a>
-              <a href="/hostel">Hostel</a>
-              <a href="/transport">Transport</a>
-              <a href="/sports">Sports</a>
-              <a href="/clubs">Student Clubs</a>
-              <a href="/ncc">NCC &amp; NSS</a>
             </div>
           </div>
 
@@ -562,7 +555,7 @@
   <main>
     <section class="mdi-hero" id="home" aria-labelledby="hero-title">
       <div class="mdi-hero-shell">
-        
+
         <div class="mdi-hero-badge-strip">
           <span class="mdi-badge-pill">★ SRI SHAKTHI INDIA LEADERSHIP &amp; CAREER CONCLAVE ★</span>
           <span class="mdi-badge-pill saffron">STATE-LEVEL ESSAY COMPETITION 2026-27</span>
@@ -581,8 +574,11 @@
         </p>
 
         <div class="mdi-hero-actions">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1IgandPCQMSBz4i_lZKCBsVYKMsYmu4SeFvBogz4GrzLLPg/viewform" target="_blank" rel="noopener noreferrer" class="mdi-btn-primary">
+          <a href="https://shorturl.at/yjDYF" target="_blank" rel="noopener noreferrer" class="mdi-btn-primary">
             Register for Competition ✍
+          </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNR52tMtgpJom85_jCxyUdIbt2RabJ9cLQ7rbo8eqY5rkaMg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="mdi-btn-outline">
+            Already Registered? Upload Essay ↗
           </a>
           <a href="/brand/dream-india-poster.png" target="_blank" rel="noopener noreferrer" class="mdi-btn-outline">
             View Official Poster 📜
@@ -707,16 +703,6 @@
           <a href="/downloads/siet-faculty-list-au-affiliation-2026-27.pdf" target="_blank" rel="noopener noreferrer"><span>›</span>Faculty List</a>
         </div>
         <div class="footer-link-group">
-          <b>Campus</b>
-          <a href="/#/campus-life"><span>›</span>Campus Life</a>
-          <a href="/#/facilities"><span>›</span>Facilities</a>
-          <a href="/#/hostel"><span>›</span>Hostel</a>
-          <a href="/#/transport"><span>›</span>Transport</a>
-          <a href="/#/sports"><span>›</span>Sports</a>
-          <a href="/#/clubs"><span>›</span>Student Clubs</a>
-          <a href="/#/ncc"><span>›</span>NCC &amp; NSS</a>
-        </div>
-        <div class="footer-link-group">
           <b>Accreditation</b>
           <a href="/#/governance"><span>›</span>Governance / Committees</a>
           <a href="/#/mandatory-disclosure"><span>›</span>Mandatory Disclosure</a>
@@ -764,6 +750,27 @@
   </footer>
 
   <script>
+    // Keep the MDFI refresh experience consistent with the main SIET website.
+    (() => {
+      const loader = document.getElementById('mdi-page-loader');
+      if (!loader) return;
+
+      const dismissLoader = () => {
+        loader.classList.add('is-exiting');
+        document.body.classList.remove('mdi-loading');
+        window.setTimeout(() => loader.remove(), 450);
+      };
+
+      // Give the logo animation enough time to be visible, even on cached refreshes.
+      const startedAt = performance.now();
+      window.addEventListener('load', () => {
+        window.setTimeout(dismissLoader, Math.max(0, 700 - (performance.now() - startedAt)));
+      }, { once: true });
+
+      // Safety fallback so a failed third-party asset can never leave the page blocked.
+      window.setTimeout(dismissLoader, 3000);
+    })();
+
     // Navigation hover and click handlers for standalone page
     document.querySelectorAll('.institution-nav-group').forEach(group => {
       let timer = null;
