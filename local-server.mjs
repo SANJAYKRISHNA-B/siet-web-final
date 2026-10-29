@@ -47,7 +47,10 @@ createServer((request, response) => {
   const safePath = normalize(relativePath).replace(/^(\.\.(\/|\\|$))+/, "");
   let filePath = join(root, safePath);
 
-  if (!safePath || !existsSync(filePath) || statSync(filePath).isDirectory()) {
+  if (safePath && existsSync(filePath) && statSync(filePath).isDirectory()) {
+    const directoryIndex = join(filePath, "index.html");
+    filePath = existsSync(directoryIndex) ? directoryIndex : join(root, "index.html");
+  } else if (!safePath || !existsSync(filePath)) {
     filePath = join(root, "index.html");
   } else {
     // Transparent WebP negotiation for compatible clients
