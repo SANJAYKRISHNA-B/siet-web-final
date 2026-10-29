@@ -1,0 +1,206 @@
+/* ==========================================================================
+   AI Laboratory National & International Achievements Section (2026)
+   ========================================================================== */
+
+.lab-achieve-section {
+  padding: 80px 0;
+  background: #fbfdfc;
+  border-top: 1px solid #e1ece5;
+  border-bottom: 1px solid #e1ece5;
+}
+
+.lab-achieve-timeline-header {
+  margin-bottom: 28px;
+}
+
+.lab-achieve-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 30px 0;
+  align-items: center;
+}
+
+.lab-achieve-filter-btn {
+  background: #ffffff;
+  border: 1px solid #cfe0d7;
+  color: #1a4d36;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 8px 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lab-achieve-filter-btn:hover {
+  background: #e8f5ec;
+  border-color: #064e32;
+  color: #064e32;
+}
+
+.lab-achieve-filter-btn.active {
+  background: #064e32 !important;
+  border-color: #064e32 !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(6, 78, 50, 0.25);
+}
+
+.lab-achieve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .lab-achieve-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.lab-achieve-card {
+  background: #ffffff;
+  border: 1px solid #d9e6df;
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.lab-achieve-card:hover {
+  transform: translateY(-4px);
+  border-color: #10b981;
+  box-shadow: 0 12px 28px rgba(6, 78, 50, 0.09);
+}
+
+.lab-achieve-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: #10b981;
+}
+
+.achieve-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.achieve-month-badge {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #064e32;
+  background: #e8f5ec;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.achieve-cat-badge {
+  font-size: 11px;
+  font-weight: 700;
+  color: #854d0e;
+  background: #fef9c3;
+  padding: 4px 9px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.achieve-award-banner {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  font-size: 13.5px;
+  font-weight: 800;
+  padding: 9px 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  line-height: 1.4;
+}
+
+.achieve-award-banner.gold-tier {
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+  border-color: #fde047;
+  color: #854d0e;
+}
+
+.achieve-title {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #0f2d1e;
+  line-height: 1.35;
+  margin: 0 0 12px 0;
+}
+
+.achieve-meta-box {
+  background: #f7faf8;
+  border: 1px solid #e7efe9;
+  border-radius: 10px;
+  padding: 11px 13px;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 13px;
+}
+
+.achieve-meta-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  color: #334e40;
+  line-height: 1.45;
+}
+
+.achieve-meta-row strong {
+  color: #0f2d1e;
+  flex-shrink: 0;
+}
+
+.achieve-desc {
+  font-size: 13.5px;
+  color: #4b6354;
+  line-height: 1.6;
+  margin: 0 0 16px 0;
+  flex-grow: 1;
+}
+
+.achieve-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed #e2ede7;
+}
+
+.achieve-pill {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #2b5742;
+  background: #edf5f0;
+  padding: 3px 9px;
+  border-radius: 6px;
+}
+

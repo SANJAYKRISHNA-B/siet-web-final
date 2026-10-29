@@ -217,7 +217,7 @@
   background: rgba(4, 52, 30, 0.94) !important;
   border: 1.5px solid #f3c515 !important;
   border-radius: 10px !important;
-  padding: 12px 14px 10px !important;
+  padding: 13px 15px 12px !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: space-between !important;
@@ -234,12 +234,12 @@
 .footer-addr-header {
   display: flex !important;
   align-items: center !important;
-  gap: 7px !important;
+  gap: 8px !important;
 }
 
 .footer-addr-icon-circle {
-  width: 22px !important;
-  height: 22px !important;
+  width: 25px !important;
+  height: 25px !important;
   border-radius: 50% !important;
   background: #f3c515 !important;
   color: #032a19 !important;
@@ -251,9 +251,9 @@
 .footer-addr-title {
   margin: 0 !important;
   font-family: "League Spartan", "Plus Jakarta Sans", sans-serif !important;
-  font-size: 13.5px !important;
+  font-size: 15px !important;
   font-weight: 800 !important;
-  letter-spacing: 0.03em !important;
+  letter-spacing: 0.035em !important;
   color: #f3c515 !important;
 }
 
@@ -261,50 +261,51 @@
   width: 100% !important;
   height: 1px !important;
   background: rgba(243, 197, 21, 0.35) !important;
-  margin: 5px 0 6px !important;
+  margin: 6px 0 8px !important;
 }
 
 .footer-addr-body {
   display: flex !important;
   align-items: flex-start !important;
-  gap: 8px !important;
+  gap: 10px !important;
   flex-grow: 1 !important;
 }
 
 .footer-addr-pin-white {
-  width: 15px !important;
-  height: 15px !important;
+  width: 20px !important;
+  height: 20px !important;
   color: #ffffff !important;
   flex-shrink: 0 !important;
-  margin-top: 1px !important;
+  margin-top: 2px !important;
 }
 
 .footer-addr-text {
   font-style: normal !important;
   display: flex !important;
   flex-direction: column !important;
-  gap: 1.5px !important;
+  gap: 6px !important;
   color: #ffffff !important;
   font-family: "Montserrat", "DM Sans", sans-serif !important;
-  font-size: 10.5px !important;
-  font-weight: 500 !important;
-  line-height: 1.35 !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  line-height: 1.5 !important;
+  letter-spacing: 0.012em !important;
 }
 
 .footer-addr-actions {
-  margin-top: 5px !important;
-  padding-top: 5px !important;
-  border-top: 1px solid rgba(243, 197, 21, 0.22) !important;
+  margin-top: auto !important;
+  padding-top: 8px !important;
+  border-top: 1px solid rgba(243, 197, 21, 0.28) !important;
 }
 
 .footer-directions-btn {
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 7px !important;
   color: #f3c515 !important;
   text-decoration: none !important;
   font-family: "Montserrat", "Plus Jakarta Sans", sans-serif !important;
-  font-size: 11px !important;
+  font-size: 12.5px !important;
   font-weight: 700 !important;
   letter-spacing: 0.02em !important;
   transition: transform 0.2s ease, color 0.2s ease !important;
@@ -323,8 +324,8 @@
 }
 
 .footer-directions-icon-circle {
-  width: 22px !important;
-  height: 22px !important;
+  width: 23px !important;
+  height: 23px !important;
   border-radius: 50% !important;
   background: #f3c515 !important;
   color: #032a19 !important;
@@ -503,5 +504,64 @@
   .footer-directions-btn {
     transition: none !important;
     transform: none !important;
+  }
+}
+
+
+/* 7-Card Grid Layout for Special Labs */
+.home-page .labs-gallery-grid {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 1.25vw, 20px) !important;
+  align-items: stretch !important;
+}
+.home-page .labs-gallery-grid .lab-card:nth-child(-n+4) {
+  grid-column: span 3 !important;
+}
+.home-page .labs-gallery-grid .lab-card:nth-child(n+5) {
+  grid-column: span 4 !important;
+}
+.home-page .labs-gallery-grid .lab-card.card-01 {
+  border-radius: 56px 20px 20px 20px !important;
+}
+.home-page .labs-gallery-grid .lab-card.card-02,
+.home-page .labs-gallery-grid .lab-card.card-03 {
+  border-radius: 20px !important;
+}
+.home-page .labs-gallery-grid .lab-card.card-04 {
+  border-radius: 20px 56px 20px 20px !important;
+}
+.home-page .labs-gallery-grid .lab-card.card-05 {
+  border-radius: 20px 20px 20px 56px !important;
+}
+.home-page .labs-gallery-grid .lab-card.card-06 {
+  border-radius: 20px !important;
+}
+.home-page .labs-gallery-grid .lab-card.card-07 {
+  border-radius: 20px 20px 56px 20px !important;
+}
+@media (max-width: 1024px) {
+  .home-page .labs-gallery-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+  .home-page .labs-gallery-grid .lab-card:nth-child(-n+4),
+  .home-page .labs-gallery-grid .lab-card:nth-child(n+5) {
+    grid-column: auto !important;
+  }
+  .home-page .labs-gallery-grid .lab-card:nth-child(7) {
+    grid-column: span 2 !important;
+    max-width: 50% !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+}
+@media (max-width: 640px) {
+  .home-page .labs-gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .home-page .labs-gallery-grid .lab-card:nth-child(7) {
+    grid-column: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
   }
 }
