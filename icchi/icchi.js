@@ -68,4 +68,4 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { rootMargin: "-28% 0px -58% 0px", threshold: [0, 0.2, 0.5] });
 
 observedSections.forEach((section) => sectionObserver.observe(section));
-setActiveLink("icchi-title");
+setActiveLink("home");

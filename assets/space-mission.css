@@ -55,7 +55,14 @@
   z-index: 1;
 }
 
-/* HERO SECTION - White Theme */
+/* Keep the shared footer wave continuous with the SSSM space background.
+   Its SVG has a transparent upper curve which otherwise exposes the
+   website's default white page background. */
+.siet-space-page + .siet-curr-bottom-decor {
+  background: var(--space-bg-deep);
+}
+
+/* HERO SECTION */
 .space-hero {
   position: relative;
   padding: 76px 24px 60px;
@@ -579,11 +586,29 @@
 }
 
 /* HELPLINE CARDS - White Theme */
+.space-query-help {
+  max-width: 920px;
+  margin: 38px auto 0;
+  padding: 28px;
+  border: 1px solid rgba(255, 209, 46, 0.28);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 209, 46, 0.09), rgba(0, 229, 163, 0.05));
+}
+
+.space-query-help > p {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(16px, 1.6vw, 20px);
+  font-weight: 700;
+  line-height: 1.55;
+  text-align: center;
+}
+
 .space-helpline-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 40px;
+  margin-top: 22px;
 }
 
 @media (max-width: 800px) {
@@ -629,9 +654,17 @@
 
 .helpline-card strong {
   display: block;
-  font-size: 16.5px;
+  font-size: 16px;
   font-weight: 800;
-  color: var(--space-green);
+  color: var(--space-gold);
+}
+
+.helpline-card span {
+  display: block;
+  margin-bottom: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
 }
 
 /* MISSION HERITAGE BANNER - Deep Forest Green Arch */

@@ -10961,12 +10961,8 @@ function spaceMissionMarkup() {
         
         <!-- Left: Official Poster Preview (Direct Click-to-Open in High Res) -->
         <article class="space-poster-card" aria-label="Space Whiz 2026 Poster Preview">
-          <a href="/brand/space-whiz-poster.png" target="_blank" rel="noopener noreferrer" class="space-poster-img-wrap" title="Click to open high-resolution poster in new tab">
+          <a href="/brand/space-whiz-poster.png" target="_blank" rel="noopener noreferrer" class="space-poster-img-wrap" aria-label="View the Space Whiz 2026 poster">
             <img src="/brand/space-whiz-poster.png" alt="Space Whiz 2026 Online Quiz Contest on Space Technology Official Poster" class="space-poster-img" width="600" height="850" loading="eager">
-            <span class="poster-zoom-hint">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
-              Click to Open Full Poster in New Tab ↗
-            </span>
           </a>
           <div class="space-poster-actions">
             <a href="/brand/space-whiz-poster.png" target="_blank" rel="noopener noreferrer" class="space-btn-outline" style="padding: 12px 20px; font-size: 14px;">
@@ -11040,24 +11036,21 @@ function spaceMissionMarkup() {
         </div>
       </div>
 
-      <!-- Helplines Grid from Poster -->
-      <div class="space-helpline-grid" role="region" aria-label="Official Helpdesk Numbers">
-        <a href="tel:+919444620505" class="helpline-card">
-          <small>HELPLINE 1</small>
-          <strong>+91 94446 20505</strong>
-        </a>
-        <a href="tel:+917305631539" class="helpline-card">
-          <small>HELPLINE 2</small>
-          <strong>+91 73056 31539</strong>
-        </a>
-        <a href="tel:+916385690950" class="helpline-card">
-          <small>HELPLINE 3</small>
-          <strong>+91 63856 90950</strong>
-        </a>
-        <a href="tel:+917550090276" class="helpline-card">
-          <small>HELPLINE 4</small>
-          <strong>+91 75500 90276</strong>
-        </a>
+      <!-- Quiz enquiries -->
+      <div class="space-query-help" role="region" aria-labelledby="space-query-title">
+        <p id="space-query-title">For any queries related to the quiz, kindly contact either of the numbers below.</p>
+        <div class="space-helpline-grid">
+          <a href="tel:+919444620505" class="helpline-card">
+            <small>QUIZ COORDINATOR</small>
+            <span>Saranya</span>
+            <strong>+91 94446 20505</strong>
+          </a>
+          <a href="tel:+919443538743" class="helpline-card">
+            <small>QUIZ COORDINATOR</small>
+            <span>Ahithya</span>
+            <strong>+91 94435 38743</strong>
+          </a>
+        </div>
       </div>
     </section>
 
