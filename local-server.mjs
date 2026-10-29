@@ -88,6 +88,18 @@ createServer((request, response) => {
   const requestPath = decodeURIComponent(new URL(request.url, `http://${request.headers.host}`).pathname);
   const relativePath = requestPath.replace(/^\/new-site\/?/, "");
   const safePath = normalize(relativePath).replace(/^(\.\.(\/|\\|$))+/, "");
+    const cleanPath = safePath.toLowerCase().replace(/^[\\/]+|[\\/]+$/g, "");
+  if (cleanPath === "mydreamindia" || cleanPath === "my-dream-india") {
+    response.writeHead(302, { Location: "/mdfi/" });
+    response.end();
+    return;
+  }
+  if (cleanPath === "sri-shakthi-space-mission" || cleanPath === "sri shakthi space mission" || cleanPath === "space-mission") {
+    response.writeHead(302, { Location: "/ssm/" });
+    response.end();
+    return;
+  }
+
   let filePath = join(root, safePath);
 
   if (safePath && existsSync(filePath) && statSync(filePath).isDirectory()) {

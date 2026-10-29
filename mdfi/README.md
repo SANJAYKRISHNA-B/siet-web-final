@@ -2,7 +2,7 @@
 ### Sri Shakthi India Leadership & Career Conclave (SSILCC) — State-Level Essay Competition
 
 **Institution:** Sri Shakthi Institute of Engineering and Technology (Autonomous), Coimbatore  
-**Official Portal Route:** `/myDreamIndia` (or `/myDreamIndia/`)  
+**Official Portal Route:** `/mdfi` (or `/mdfi/`)  
 **TNEA Counselling Code:** 2727  
 **Accreditation:** NAAC Grade ‘A’, NBA Tier-I (Washington Accord)
 
