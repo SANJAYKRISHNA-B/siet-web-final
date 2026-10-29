@@ -1,7 +1,38 @@
+# Dependencies
 node_modules/
+.pnp/
+.pnp.js
+
+# Build and distribution
+dist/
+build/
+
+# Runtime and local storage
+data/
+scratch/
 siet-web-final-main/
 chrome-profile*
-scratch/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Operating System files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
 Thumbs.db
-data/
+ehthumbs.db
+desktop.ini
+
+# Editor temporary files
+*.swp
+*.swo
+*~
+.idea/
+*.sublime-project
+*.sublime-workspace

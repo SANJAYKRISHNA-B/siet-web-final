@@ -89,6 +89,21 @@ createServer((request, response) => {
   const relativePath = requestPath.replace(/^\/new-site\/?/, "");
   const safePath = normalize(relativePath).replace(/^(\.\.(\/|\\|$))+/, "");
     const cleanPath = safePath.toLowerCase().replace(/^[\\/]+|[\\/]+$/g, "");
+  const legacyAliases = {
+    "superstars.jpg": "/brand/placement-superstars-2025-26.webp",
+    "superstars.webp": "/brand/placement-superstars-2025-26.webp",
+    "sietlogo.png": "/brand/siet-logo.png",
+    "sietlogo.webp": "/brand/siet-logo.webp",
+    "naac logo.jpg": "/brand/naac-grade-logo.webp",
+    "naac logo.webp": "/brand/naac-grade-logo.webp",
+    "nba logo.png": "/brand/nba-logo.webp",
+    "nba logo.webp": "/brand/nba-logo.webp"
+  };
+  if (legacyAliases[cleanPath]) {
+    response.writeHead(301, { Location: legacyAliases[cleanPath] });
+    response.end();
+    return;
+  }
   if (cleanPath === "mydreamindia" || cleanPath === "my-dream-india") {
     response.writeHead(302, { Location: "/mdfi/" });
     response.end();
