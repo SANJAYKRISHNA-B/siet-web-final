@@ -349,6 +349,7 @@ import{r as Ee,j as ce,c as $a,R as ja}from"./vendor-react-DhEz86-d.js";import{i
           <a class="institution-nav-link ${a?"is-active-nav":""}" href="#/">Home</a>
           ${$e.map(n=>{const r=n.items.some(([o])=>o===e||o==="governance"&&e==="committees"||o==="ariia"&&e==="ariia-report"||n.label==="Accreditation"&&e==="accreditations"||n.label==="Admission"&&(e==="admission"||e==="admissions"||e.startsWith("admission")||e==="apply"));return`${n.label==="Accreditation"?`<a class="institution-nav-link ${i?"is-active-nav":""}" href="#/coe">COE</a>`:""}${n.label==="Explore"?`<a class="institution-nav-link ${t?"is-active-nav":""}" href="#/placements">Placements</a>`:""}<div class="institution-nav-group"><button type="button" class="${r?"is-active-nav":""}" aria-expanded="false">${n.label}${v("down")}</button><div>${n.items.map(([o,m])=>`<a href="#/${o}">${m}</a>`).join("")}</div></div>`}).join("")}
           
+          <a class="institution-nav-link ${e==="dcs-summary"?"is-active-nav":""}" href="#/dcs-summary">DCS Summary</a>
           <a class="institution-nav-link ${e==="careers"?"is-active-nav":""}" href="#/careers">Careers</a>
         </div>
 
@@ -401,6 +402,7 @@ import{r as Ee,j as ce,c as $a,R as ja}from"./vendor-react-DhEz86-d.js";import{i
         </div>
       `).join("")}
       
+      <a class="mobile-nav-link ${e==="dcs-summary"?"is-active-nav":""}" href="#/dcs-summary">DCS Summary</a>
       <a class="mobile-nav-link ${e==="careers"?"is-active-nav":""}" href="#/careers">Careers @ SIET</a>
     </div>
   </div>

@@ -417,8 +417,24 @@ function ensureAdmissionNav() {
   // 1. Desktop Nav
   const desktopMenu = document.querySelector(".institution-menu");
   if (desktopMenu) {
-    // Remove DCS Summary if present
-    desktopMenu.querySelectorAll('a[href*="dcs-summary"]').forEach(el => el.remove());
+    // Ensure DCS Summary is present in desktop menu before Careers
+    if (!desktopMenu.querySelector('a[href*="dcs-summary"]')) {
+      const careersLink = desktopMenu.querySelector('a[href*="careers"]');
+      const dcsLink = document.createElement("a");
+      const isDcsActive = isDcsSummaryRoute();
+      dcsLink.className = `institution-nav-link ${isDcsActive ? "is-active-nav" : ""}`;
+      dcsLink.href = "#/dcs-summary";
+      dcsLink.textContent = "DCS Summary";
+      if (careersLink) {
+        careersLink.before(dcsLink);
+      } else {
+        desktopMenu.append(dcsLink);
+      }
+    } else {
+      desktopMenu.querySelectorAll('a[href*="dcs-summary"]').forEach(el => {
+        el.classList.toggle("is-active-nav", isDcsSummaryRoute());
+      });
+    }
 
     // Check if Admission group exists
     const hasAdmission = [...desktopMenu.querySelectorAll(".institution-nav-group > button")].some(
@@ -484,8 +500,24 @@ function ensureAdmissionNav() {
   // 2. Mobile Nav
   const mobileAccordion = document.querySelector(".mobile-nav-accordion");
   if (mobileAccordion) {
-    // Remove DCS Summary
-    mobileAccordion.querySelectorAll('a[href*="dcs-summary"]').forEach(el => el.remove());
+    // Ensure DCS Summary is present in mobile menu before Careers
+    if (!mobileAccordion.querySelector('a[href*="dcs-summary"]')) {
+      const mobileCareersLink = mobileAccordion.querySelector('a[href*="careers"]');
+      const dcsMobileLink = document.createElement("a");
+      const isDcsActive = isDcsSummaryRoute();
+      dcsMobileLink.className = `mobile-nav-link ${isDcsActive ? "is-active-nav" : ""}`;
+      dcsMobileLink.href = "#/dcs-summary";
+      dcsMobileLink.textContent = "DCS Summary";
+      if (mobileCareersLink) {
+        mobileCareersLink.before(dcsMobileLink);
+      } else {
+        mobileAccordion.append(dcsMobileLink);
+      }
+    } else {
+      mobileAccordion.querySelectorAll('a[href*="dcs-summary"]').forEach(el => {
+        el.classList.toggle("is-active-nav", isDcsSummaryRoute());
+      });
+    }
 
     const hasMobileAdmission = [...mobileAccordion.querySelectorAll(".mobile-nav-group-toggle")].some(
       b => b.textContent.trim().toLowerCase().startsWith("admission")
