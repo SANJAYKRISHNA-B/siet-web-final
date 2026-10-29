@@ -365,6 +365,211 @@ function ensureHomeAdmissionEnquiry() {
   content.querySelector(".home-impact-rule")?.after(panel);
 }
 
+
+
+/* 
+==================================================================
+   ADMISSIONS & MANAGEMENT QUOTA MODULE (DATA MATCHING SIET.AC.IN SOURCE)
+   ========================================================================== */
+
+const ugCoursesData = [
+  { no: "01", name: "Agricultural Engineering", degree: "B.Tech", intake: 60, deptHref: "#/department/agri", badge: "course-degree-btech" },
+  { no: "02", name: "Artificial Intelligence and Data Science", degree: "B.Tech", intake: 240, deptHref: "#/department/aids", badge: "course-degree-btech" },
+  { no: "03", name: "Artificial Intelligence and Machine Learning", degree: "B.Tech", intake: 120, deptHref: "#/department/aiml", badge: "course-degree-btech" },
+  { no: "04", name: "Biomedical Engineering", degree: "B.E", intake: 60, deptHref: "#/department/bme", badge: "course-degree-be" },
+  { no: "05", name: "Biotechnology", degree: "B.Tech", intake: 60, deptHref: "#/department/biotech", badge: "course-degree-btech" },
+  { no: "06", name: "Civil Engineering", degree: "B.E", intake: 60, deptHref: "#/department/civil", badge: "course-degree-be" },
+  { no: "07", name: "Computer Science and Engineering", degree: "B.E", intake: 240, deptHref: "#/department/cse", badge: "course-degree-be" },
+  { no: "08", name: "Computer Science and Engineering ( Cyber Security )", degree: "B.E", intake: 120, deptHref: "#/department/cyber", badge: "course-degree-be" },
+  { no: "09", name: "Electrical and Electronics Engineering", degree: "B.E", intake: 60, deptHref: "#/department/eee", badge: "course-degree-be" },
+  { no: "10", name: "Electronics and Communication Engineering", degree: "B.E", intake: 120, deptHref: "#/department/ece", badge: "course-degree-be" },
+  { no: "11", name: "Food Technology", degree: "B.Tech", intake: 60, deptHref: "#/department/food-tech", badge: "course-degree-btech" },
+  { no: "12", name: "Information Technology", degree: "B.Tech", intake: 180, deptHref: "#/department/it", badge: "course-degree-btech" },
+  { no: "13", name: "Mechanical Engineering", degree: "B.E", intake: 60, deptHref: "#/department/mech", badge: "course-degree-be" },
+  { no: "14", name: "Electronics Engineering ( VLSI Design & Technology)", degree: "B.E", intake: 60, deptHref: "#/department/ece-vlsi", badge: "course-degree-be" }
+];
+
+const pgCoursesData = [
+  { no: "01", name: "Computer Science and Engineering", degree: "M.E", intake: 18, deptHref: "#/department/cse", badge: "course-degree-pg" },
+  { no: "02", name: "VLSI Design", degree: "M.E", intake: 18, deptHref: "#/department/ece-vlsi", badge: "course-degree-pg" },
+  { no: "03", name: "CAD/CAM", degree: "M.E", intake: 12, deptHref: "#/department/mech", badge: "course-degree-pg" },
+  { no: "04", name: "Embedded System Technologies", degree: "M.E", intake: 18, deptHref: "#/department/eee", badge: "course-degree-pg" },
+  { no: "05", name: "Structural Engineering", degree: "M.E", intake: 18, deptHref: "#/department/civil", badge: "course-degree-pg" },
+  { no: "06", name: "Food Technology", degree: "M.Tech", intake: 18, deptHref: "#/department/food-tech", badge: "course-degree-pg" },
+  { no: "07", name: "Farm Machinery", degree: "M.Tech", intake: 18, deptHref: "#/department/agri", badge: "course-degree-pg" }
+];
+
+function isAdmissionRoute() {
+  const r = currentRoute().toLowerCase();
+  return (
+    r === "admission" ||
+    r === "admissions" ||
+    r === "admission-overview" ||
+    r.startsWith("admission") ||
+    r === "undergraduateprograms" ||
+    r === "postgraduateprograms" ||
+    r === "undergraduate-programs" ||
+    r === "postgraduate-programs"
+  );
+}
+
+function ensureAdmissionNav() {
+  // 1. Desktop Nav
+  const desktopMenu = document.querySelector(".institution-menu");
+  if (desktopMenu) {
+    // Ensure DCS Summary is present in desktop menu before Careers
+    if (!desktopMenu.querySelector('a[href*="dcs-summary"]')) {
+      const careersLink = desktopMenu.querySelector('a[href*="careers"]');
+      const dcsLink = document.createElement("a");
+      const isDcsActive = isDcsSummaryRoute();
+      dcsLink.className = `institution-nav-link ${isDcsActive ? "is-active-nav" : ""}`;
+      dcsLink.href = "#/dcs-summary";
+      dcsLink.textContent = "DCS Summary";
+      if (careersLink) {
+        careersLink.before(dcsLink);
+      } else {
+        desktopMenu.append(dcsLink);
+      }
+    } else {
+      desktopMenu.querySelectorAll('a[href*="dcs-summary"]').forEach(el => {
+        el.classList.toggle("is-active-nav", isDcsSummaryRoute());
+      });
+    }
+
+    // Check if Admission group exists
+    const hasAdmission = [...desktopMenu.querySelectorAll(".institution-nav-group > button")].some(
+      b => b.textContent.trim().toLowerCase().startsWith("admission")
+    );
+
+    const existingAdmBtn = [...desktopMenu.querySelectorAll(".institution-nav-group > button")].find(
+      b => b.textContent.trim().toLowerCase().startsWith("admission")
+    );
+    if (existingAdmBtn) {
+      const dropDiv = existingAdmBtn.closest(".institution-nav-group")?.querySelector(":scope > div");
+      const currentLinks = dropDiv ? [...dropDiv.querySelectorAll("a")] : [];
+      if (dropDiv && currentLinks.length !== 2) {
+        dropDiv.innerHTML = `
+          <a href="#/admission">Admission Overview</a>
+          <a href="#/apply">Admission Enquiry</a>
+        `;
+      }
+    } else {
+      const aboutGroup = [...desktopMenu.children].find(child => {
+        const btn = child.querySelector(":scope > button");
+        return btn && btn.textContent.trim().toLowerCase().startsWith("about");
+      });
+
+      const admGroup = document.createElement("div");
+      admGroup.className = "institution-nav-group adm-nav-group";
+      const isAdmActive = isAdmissionRoute();
+      admGroup.innerHTML = `
+        <button type="button" class="${isAdmActive ? 'is-active-nav' : ''}" aria-expanded="false">
+          Admission
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="margin-left:4px;"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div>
+          <a href="#/admission">Admission Overview</a>
+          <a href="#/apply">Admission Enquiry</a>
+        </div>
+      `;
+
+      if (aboutGroup) {
+        aboutGroup.after(admGroup);
+      } else {
+        const homeLink = desktopMenu.querySelector('a[href="#/"]');
+        if (homeLink) homeLink.after(admGroup);
+        else desktopMenu.prepend(admGroup);
+      }
+
+      // Add hover handlers to the newly injected group
+      let hideTimer = null;
+      admGroup.addEventListener("mouseenter", () => {
+        if (hideTimer) clearTimeout(hideTimer);
+        admGroup.classList.add("open");
+        admGroup.querySelector("button")?.setAttribute("aria-expanded", "true");
+      });
+      admGroup.addEventListener("mouseleave", () => {
+        hideTimer = setTimeout(() => {
+          admGroup.classList.remove("open");
+          admGroup.querySelector("button")?.setAttribute("aria-expanded", "false");
+        }, 140);
+      });
+    }
+  }
+
+  // 2. Mobile Nav
+  const mobileAccordion = document.querySelector(".mobile-nav-accordion");
+  if (mobileAccordion) {
+    // Ensure DCS Summary is present in mobile menu before Careers
+    if (!mobileAccordion.querySelector('a[href*="dcs-summary"]')) {
+      const mobileCareersLink = mobileAccordion.querySelector('a[href*="careers"]');
+      const dcsMobileLink = document.createElement("a");
+      const isDcsActive = isDcsSummaryRoute();
+      dcsMobileLink.className = `mobile-nav-link ${isDcsActive ? "is-active-nav" : ""}`;
+      dcsMobileLink.href = "#/dcs-summary";
+      dcsMobileLink.textContent = "DCS Summary";
+      if (mobileCareersLink) {
+        mobileCareersLink.before(dcsMobileLink);
+      } else {
+        mobileAccordion.append(dcsMobileLink);
+      }
+    } else {
+      mobileAccordion.querySelectorAll('a[href*="dcs-summary"]').forEach(el => {
+        el.classList.toggle("is-active-nav", isDcsSummaryRoute());
+      });
+    }
+
+    const hasMobileAdmission = [...mobileAccordion.querySelectorAll(".mobile-nav-group-toggle")].some(
+      b => b.textContent.trim().toLowerCase().startsWith("admission")
+    );
+
+    const existingMobileBtn = [...mobileAccordion.querySelectorAll(".mobile-nav-group-toggle")].find(
+      b => b.textContent.trim().toLowerCase().startsWith("admission")
+    );
+    if (existingMobileBtn) {
+      const mobileSub = existingMobileBtn.closest(".mobile-nav-group")?.querySelector(".mobile-nav-subitems");
+      const currentMobileLinks = mobileSub ? [...mobileSub.querySelectorAll("a")] : [];
+      if (mobileSub && currentMobileLinks.length !== 2) {
+        mobileSub.innerHTML = `
+          <a href="#/admission" class="mobile-nav-sublink">Admission Overview</a>
+          <a href="#/apply" class="mobile-nav-sublink">Admission Enquiry</a>
+        `;
+      }
+    } else {
+      const aboutMobileGroup = [...mobileAccordion.children].find(child => {
+        const btn = child.querySelector(".mobile-nav-group-toggle");
+        return btn && btn.textContent.trim().toLowerCase().startsWith("about");
+      });
+
+      const admMobileGroup = document.createElement("div");
+      admMobileGroup.className = "mobile-nav-group adm-mobile-nav-group";
+      admMobileGroup.innerHTML = `
+        <button type="button" class="mobile-nav-group-toggle" aria-expanded="false">
+          <span>Admission</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="m6 9 6 6 6-6"/></svg>
+        </button>
+        <div class="mobile-nav-subitems">
+          <a href="#/admission" class="mobile-nav-sublink">Admission Overview</a>
+          <a href="#/apply" class="mobile-nav-sublink">Admission Enquiry</a>
+        </div>
+      `;
+
+      if (aboutMobileGroup) {
+        aboutMobileGroup.after(admMobileGroup);
+      } else {
+        mobileAccordion.prepend(admMobileGroup);
+      }
+
+      admMobileGroup.querySelector(".mobile-nav-group-toggle")?.addEventListener("click", (e) => {
+        const btn = e.currentTarget;
+        const expanded = btn.getAttribute("aria-expanded") === "true";
+        btn.setAttribute("aria-expanded", !expanded);
+        admMobileGroup.classList.toggle("open", !expanded);
+      });
+    }
+  }
+}
+
 function enhanceProgrammeAccreditation() {
   document.querySelectorAll(".section-kicker").forEach((kicker) => {
     if (kicker.textContent.includes("FIND YOUR FIELD")) kicker.remove();
@@ -433,11 +638,11 @@ const programmeDepartmentFacts = {
   "B.Tech - Information Technology": { established: "2006", intake: "180", nba: true },
   "B.E - Mechanical Engineering": { established: "2009", intake: "60", nba: true },
   "B.E - Electronics Engineering (VLSI Design & Technology)": { established: "2023", intake: "60", nba: false },
-  "M.E - Computer Science and Engineering": { intake: "18", nba: false },
-  "M.E - VLSI Design": { intake: "18", nba: false },
-  "M.E - CAD/CAM": { intake: "12", nba: false },
-  "M.E - Embedded System Technologies": { intake: "18", nba: false },
-  "M.E - Structural Engineering": { intake: "18", nba: false },
+  "M.E - Computer Science and Engineering": { established: "2006", intake: "18", nba: false },
+  "M.E - VLSI Design": { established: "2006", intake: "18", nba: false },
+  "M.E - CAD/CAM": { established: "2009", intake: "12", nba: false },
+  "M.E - Embedded System Technologies": { established: "2006", intake: "18", nba: false },
+  "M.E - Structural Engineering": { established: "2010", intake: "18", nba: false },
   "M.Tech - Food Technology": { established: "2016", intake: "18", nba: false },
   "M.Tech - Farm Machinery": { established: "2015", intake: "18", nba: false },
 };
@@ -461,6 +666,7 @@ function enhanceProgrammeDepartmentCards() {
     if (meta.innerHTML !== metaMarkup) meta.innerHTML = metaMarkup;
     card.classList.toggle("is-nba-accredited", facts.nba);
   });
+
 }
 
 function runPageEnhancements() {
@@ -520,6 +726,7 @@ document.addEventListener("keydown", (event) => {
 });
 
 const footerObserver = new MutationObserver(() => {
+  ensureAdmissionNav();
   ensureFacultyListFooterLink();
   ensureAffiliationFooterLink();
   ensureNbaFooterLink();

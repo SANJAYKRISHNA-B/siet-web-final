@@ -1,0 +1,1468 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#004d2c">
+  <meta name="description" content="My Dream India — Sri Shakthi India Leadership & Career Conclave (SSILCC) State-Level Essay Competition. Top 100 students win a fully sponsored leadership expedition to The Madras Regimental Centre, Wellington via the Nilgiri Mountain Train!">
+  <meta property="og:title" content="My Dream India | Sri Shakthi India Leadership & Career Conclave">
+  <meta property="og:description" content="State-level essay and leadership competition for 10th, 11th & 12th students. 100% sponsored Wellington Nilgiri Mountain Railway trip for top 100 ranking students!">
+  <meta property="og:image" content="/brand/siet-institution-logo.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/brand/siet-logo.webp" type="image/webp">
+  <link rel="alternate icon" href="/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=League+Spartan:wght@700;800;900&display=swap" rel="stylesheet">
+  <title>My Dream India | Sri Shakthi India Leadership &amp; Career Conclave (SSILCC) | SIET</title>
+  
+  <link rel="stylesheet" crossorigin href="/assets/index-BOwYVr40.css?v=20261029-v7">
+  <link rel="stylesheet" href="/assets/space-mission.css?v=20261029-v7">
+
+  <style>
+    /* =========================================================
+       MY DREAM INDIA (SSILCC) MODERN UI THEME
+       Palette: Deep Forest Green (#004d2c), Tricolor Saffron (#ff6b35),
+       Solar Gold (#ffd12e), Crisp Pure White & Slate Dark (#0b1f14)
+       ========================================================= */
+    :root {
+      --mdi-green-deep: #00381e;
+      --mdi-green-main: #004d2c;
+      --mdi-green-light: #067242;
+      --mdi-gold: #ffd12e;
+      --mdi-gold-hover: #ffdf60;
+      --mdi-saffron: #ff6b35;
+      --mdi-saffron-light: #fff2ec;
+      --mdi-card-bg: rgba(255, 255, 255, 0.98);
+      --mdi-border: rgba(0, 77, 44, 0.12);
+      --mdi-text-dark: #0f241a;
+      --mdi-text-muted: #4b6357;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      color: var(--mdi-text-dark);
+      background: #f1eadb;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Standalone Header */
+    .mdi-header {
+      background: var(--mdi-green-main);
+      border-bottom: 3px solid var(--mdi-gold);
+      position: sticky;
+      top: 33px;
+      height: 95px;
+      min-height: 95px;
+      max-height: 95px;
+      z-index: 1000;
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Use the same warm institutional surface introduced on SSSM. */
+    .mdi-section,
+    .mdi-portal-section,
+    .mdi-heritage-strip {
+      background-color: #f1eadb;
+    }
+
+    .mdi-card,
+    .mdi-topic-card,
+    .mdi-portal-card,
+    .mdi-grand-box {
+      background-color: #fffaf0;
+      border-color: #ded2bb;
+    }
+
+    .mdi-admission-notice {
+      position: relative;
+      z-index: 1001;
+      overflow: hidden;
+      height: 33px;
+      min-height: 33px;
+      display: flex;
+      align-items: center;
+      background: #043f27;
+      color: #fff;
+      border-bottom: 2px solid #f3c515;
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .mdi-admission-track {
+      display: flex;
+      align-items: center;
+      gap: 34px;
+      width: max-content;
+      padding-left: 24px;
+      animation: mdiNoticeMove 24s linear infinite;
+    }
+
+    .mdi-admission-track span { display: inline-flex; align-items: center; gap: 14px; }
+    .mdi-admission-track i { width: 2px; height: 20px; background: #f3c515; }
+    .mdi-admission-track a {
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: #f3c515;
+      color: #043f27;
+      font-weight: 900;
+    }
+
+    @keyframes mdiNoticeMove {
+      from { transform: translateX(0); }
+      to { transform: translateX(-34%); }
+    }
+    .mdi-nav-shell {
+      max-width: 1240px;
+      margin: 0 auto;
+      height: 90px;
+      min-height: 90px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .mdi-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: #fff;
+    }
+    .mdi-brand img {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+    }
+    .mdi-brand-text strong {
+      display: block;
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      color: #fff;
+      line-height: 1.1;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .mdi-brand-text small {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--mdi-gold);
+      letter-spacing: 0.05em;
+    }
+    .mdi-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .mdi-link {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 700;
+      transition: color 0.2s ease;
+    }
+    .mdi-link:hover {
+      color: var(--mdi-gold);
+    }
+    .mdi-header-cta {
+      background: var(--mdi-gold);
+      color: #00381e;
+      font-weight: 800;
+      font-size: 13.5px;
+      padding: 9px 20px;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 3px 12px rgba(255, 209, 46, 0.35);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mdi-header-cta:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Hero Section */
+    .mdi-hero {
+      position: relative;
+      background: linear-gradient(135deg, #002e1a 0%, #004d2c 50%, #03361e 100%);
+      color: #ffffff;
+      padding: 64px 20px 80px;
+      overflow: hidden;
+    }
+    .mdi-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 80% 20%, rgba(255, 107, 53, 0.15) 0%, transparent 60%),
+                  radial-gradient(circle at 10% 80%, rgba(255, 209, 46, 0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    .mdi-hero-shell {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+    .mdi-hero-badge-strip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .mdi-badge-pill {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      color: var(--mdi-gold);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mdi-badge-pill.saffron {
+      background: rgba(255, 107, 53, 0.2);
+      border-color: rgba(255, 107, 53, 0.4);
+      color: #ffaa85;
+    }
+    .mdi-hero-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(38px, 6vw, 64px);
+      font-weight: 900;
+      line-height: 1.08;
+      margin: 0 0 16px;
+      letter-spacing: -0.02em;
+    }
+    .mdi-hero-title em {
+      font-style: normal;
+      color: var(--mdi-gold);
+      background: linear-gradient(90deg, #ffd12e, #ffaa33);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .mdi-hero-tamil-subtitle {
+      font-size: clamp(17px, 2.4vw, 22px);
+      font-weight: 700;
+      color: #cdecd8;
+      margin-bottom: 20px;
+      letter-spacing: 0.02em;
+    }
+    .mdi-hero-lead {
+      max-width: 820px;
+      font-size: clamp(16px, 1.8vw, 18.5px);
+      line-height: 1.65;
+      color: #e2f4ea;
+      margin: 0 0 36px;
+    }
+    .mdi-hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .mdi-hero-poster {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      padding: 5px;
+      border-radius: 18px;
+      background: #fffaf0;
+      box-shadow: 0 24px 58px rgba(0, 20, 10, 0.38);
+      text-decoration: none;
+      transform: rotate(0.7deg);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .mdi-hero-poster:hover {
+      transform: rotate(0) translateY(-4px);
+      box-shadow: 0 30px 64px rgba(0, 20, 10, 0.46);
+    }
+    .mdi-hero-poster img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 425px;
+      object-fit: contain;
+      border-radius: 13px;
+    }
+    .mdi-hero-poster span {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 12px 7px;
+      color: #17432f;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    @media (min-width: 1101px) {
+      .mdi-hero-shell { padding-right: 340px; }
+    }
+    @media (max-width: 1100px) {
+      .mdi-hero-poster {
+        position: relative;
+        top: auto;
+        right: auto;
+        display: block;
+        width: min(300px, 82vw);
+        margin: -14px auto 34px;
+      }
+    }
+    .mdi-btn-primary {
+      background: var(--mdi-gold);
+      color: #00381e;
+      font-weight: 800;
+      font-size: 16px;
+      padding: 14px 32px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 6px 20px rgba(255, 209, 46, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mdi-btn-primary:hover {
+      background: #ffffff;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.3);
+    }
+    .mdi-btn-outline {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 15.5px;
+      padding: 13px 28px;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mdi-btn-outline:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* Key Facts Strip */
+    .mdi-facts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+    .mdi-fact-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 14px;
+      padding: 20px 24px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .mdi-fact-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--mdi-gold);
+    }
+    .mdi-fact-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--mdi-gold);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+    .mdi-fact-value {
+      font-size: 17px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.3;
+    }
+    .mdi-fact-sub {
+      font-size: 12.5px;
+      color: #b5dac3;
+      margin-top: 4px;
+    }
+
+    /* Section Shells */
+    .mdi-section {
+      padding: 72px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .mdi-section-header {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 48px;
+    }
+    .mdi-section-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: var(--mdi-green-main);
+      text-transform: uppercase;
+      background: #e5f4ec;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+    }
+    .mdi-section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 900;
+      color: #0b291a;
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+    .mdi-section-title em {
+      font-style: normal;
+      color: var(--mdi-green-light);
+    }
+    .mdi-section-desc {
+      font-size: 16px;
+      color: var(--mdi-text-muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Grand Wellington Reward Feature Box */
+    .mdi-grand-box {
+      background: linear-gradient(135deg, #022b19 0%, #004d2c 100%);
+      border-radius: 20px;
+      padding: 44px;
+      color: #ffffff;
+      box-shadow: 0 16px 40px rgba(0, 77, 44, 0.18);
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 40px;
+      align-items: center;
+      border: 1px solid rgba(255, 209, 46, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+    .mdi-grand-box::after {
+      content: '🚂';
+      position: absolute;
+      right: -20px;
+      bottom: -40px;
+      font-size: 160px;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+    .mdi-grand-copy h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(24px, 3.2vw, 34px);
+      font-weight: 900;
+      line-height: 1.2;
+      color: #ffffff;
+      margin: 12px 0 18px;
+    }
+    .mdi-grand-copy h3 span {
+      color: var(--mdi-gold);
+    }
+    .mdi-grand-copy p {
+      font-size: 15.5px;
+      line-height: 1.65;
+      color: #d1ebd9;
+      margin-bottom: 22px;
+    }
+    .mdi-perks-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mdi-perks-list li {
+      font-size: 14.5px;
+      color: #f0fdf4;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.45;
+    }
+    .mdi-perks-list li span.tick {
+      background: var(--mdi-gold);
+      color: #00381e;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 900;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .mdi-grand-stats-panel {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 16px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .mdi-grand-stat-item strong {
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--mdi-gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .mdi-grand-stat-item span {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: #cbe6d4;
+      line-height: 1.3;
+      display: block;
+    }
+
+    /* Essay Topics Grid */
+    .mdi-topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .mdi-topic-card {
+      background: #ffffff;
+      border: 1px solid #e1ebe5;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.03);
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .mdi-topic-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--mdi-green-main);
+      box-shadow: 0 12px 30px rgba(0, 77, 44, 0.1);
+    }
+    .mdi-topic-num {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 900;
+      color: var(--mdi-green-main);
+      background: #ebf5ee;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      margin-bottom: 14px;
+      align-self: flex-start;
+    }
+    .mdi-topic-card h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 18px;
+      font-weight: 800;
+      color: #0c2b1c;
+      margin: 0 0 12px;
+      line-height: 1.35;
+    }
+    .mdi-topic-card p {
+      font-size: 14px;
+      color: var(--mdi-text-muted);
+      margin: 0 0 18px;
+      line-height: 1.55;
+    }
+    .mdi-topic-meta {
+      font-size: 12px;
+      font-weight: 700;
+      color: #09723c;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Rules & Guidelines Grid */
+    .mdi-rules-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .mdi-rule-card {
+      background: #ffffff;
+      border-left: 4px solid var(--mdi-green-main);
+      padding: 22px 24px;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.03);
+    }
+    .mdi-rule-card h5 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15.5px;
+      font-weight: 800;
+      color: #0b2c1c;
+      margin: 0 0 8px;
+    }
+    .mdi-rule-card p {
+      font-size: 13.5px;
+      color: var(--mdi-text-muted);
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    /* Registration & Submission Interactive Portal Card */
+    .mdi-portal-container {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 16px 50px rgba(0, 77, 44, 0.08);
+      border: 1px solid #d5e5db;
+      overflow: hidden;
+      margin: 0 auto;
+      max-width: 900px;
+    }
+    .mdi-portal-tabs {
+      display: flex;
+      background: #f1f7f3;
+      border-bottom: 1px solid #d5e5db;
+    }
+    .mdi-tab-btn {
+      flex: 1;
+      padding: 18px 24px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: #435e50;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+    .mdi-tab-btn.is-active {
+      color: var(--mdi-green-main);
+      background: #ffffff;
+    }
+    .mdi-tab-btn.is-active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--mdi-green-main);
+    }
+    .mdi-tab-pane {
+      padding: 36px 40px;
+      display: none;
+    }
+    .mdi-tab-pane.is-active {
+      display: block;
+    }
+    .mdi-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 640px) {
+      .mdi-form-row { grid-template-columns: 1fr; gap: 14px; }
+      .mdi-tab-pane { padding: 24px 20px; }
+    }
+    .mdi-form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      margin-bottom: 20px;
+    }
+    .mdi-form-group label {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #143725;
+    }
+    .mdi-form-group label b {
+      color: #d9381e;
+    }
+    .mdi-form-group input,
+    .mdi-form-group select,
+    .mdi-form-group textarea {
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1.5px solid #c7dcd0;
+      font-family: inherit;
+      font-size: 14.5px;
+      color: #0d281a;
+      background: #fbfdfc;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+    .mdi-form-group input:focus,
+    .mdi-form-group select:focus,
+    .mdi-form-group textarea:focus {
+      outline: none;
+      border-color: var(--mdi-green-main);
+      box-shadow: 0 0 0 3px rgba(0, 77, 44, 0.15);
+      background: #fff;
+    }
+    .mdi-submit-btn {
+      background: var(--mdi-green-main);
+      color: #ffffff;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 16px;
+      font-weight: 800;
+      padding: 14px 32px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+    }
+    .mdi-submit-btn:hover {
+      background: #026038;
+      box-shadow: 0 6px 20px rgba(0, 77, 44, 0.25);
+    }
+    .mdi-alert-box {
+      background: #ecfdf3;
+      border: 1px solid #a6f4c5;
+      padding: 16px 20px;
+      border-radius: 12px;
+      color: #027a48;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .mdi-result-box {
+      display: none;
+      background: #f0fdf4;
+      border: 2px solid #86efac;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      margin-top: 24px;
+    }
+    .mdi-result-box strong {
+      display: block;
+      font-size: 20px;
+      color: #14532d;
+      margin-bottom: 8px;
+    }
+    .mdi-result-box .reg-code {
+      display: inline-block;
+      font-family: monospace;
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--mdi-green-main);
+      background: #ffffff;
+      padding: 8px 24px;
+      border-radius: 8px;
+      border: 1.5px dashed var(--mdi-green-main);
+      margin: 12px 0;
+    }
+
+    /* Helplines Grid */
+    .mdi-helpline-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-top: 36px;
+    }
+    .mdi-helpline-card {
+      background: #ffffff;
+      border: 1px solid #d9e6df;
+      padding: 16px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.2s ease;
+    }
+    .mdi-helpline-card:hover {
+      border-color: var(--mdi-green-main);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+    .mdi-helpline-card small {
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--mdi-green-light);
+      letter-spacing: 0.05em;
+    }
+    .mdi-helpline-card strong {
+      font-size: 16px;
+      font-weight: 800;
+      color: #0b2a1a;
+      margin-top: 4px;
+    }
+
+    /* Heritage Strip */
+    .mdi-heritage-strip {
+      background: #ffffff;
+      border-top: 1px solid #e2ebe6;
+      border-bottom: 1px solid #e2ebe6;
+      padding: 44px 20px;
+    }
+    .mdi-heritage-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .mdi-heritage-brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .mdi-heritage-brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+    .mdi-heritage-brand h4 {
+      margin: 0 0 4px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 17px;
+      font-weight: 900;
+      color: #004d2c;
+    }
+    .mdi-heritage-brand p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--mdi-text-muted);
+    }
+    .mdi-badges-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .mdi-cert-tag {
+      background: #f1f8f4;
+      border: 1px solid #c8e0d2;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      font-weight: 800;
+      color: #085a31;
+    }
+
+    /* Footer */
+    .mdi-footer {
+      background: #021a10;
+      color: #94b8a3;
+      padding: 48px 20px 32px;
+      text-align: center;
+      font-size: 13.5px;
+    }
+    .mdi-footer p {
+      margin: 0 0 10px;
+    }
+    .mdi-footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .mdi-footer-links a {
+      color: #cbe6d5;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.2s ease;
+    }
+    .mdi-footer-links a:hover {
+      color: var(--mdi-gold);
+    }
+
+    @media (max-width: 900px) {
+      .mdi-grand-box { grid-template-columns: 1fr; padding: 28px; }
+      .mdi-links { display: none; }
+      .mdi-header,
+      .mdi-header.institution-header-v4.exact-image-header { height: 64px; min-height: 64px; max-height: 64px; }
+      .mdi-nav-shell { height: 64px; min-height: 64px; }
+      .mdi-brand img { width: 46px; height: 46px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="mdi-admission-notice" role="region" aria-label="Admissions announcement">
+    <div class="mdi-admission-track">
+      <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+      <span>Begin your journey at Sri Shakthi</span><i></i>
+      <a href="/apply">ADMISSIONS 2026–27 NOW OPEN</a><i></i>
+      <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+      <span>Begin your journey at Sri Shakthi</span><i></i>
+      <a href="/apply">ADMISSIONS 2026–27 NOW OPEN</a>
+    </div>
+  </div>
+
+  <!-- GLOBAL INSTITUTIONAL HEADER -->
+  <header class="institution-header-v4 exact-image-header mdi-header" role="banner">
+    <div class="institution-navbar">
+      <a class="siet-inline-brand" href="/" aria-label="Sri Shakthi Autonomous Institution home">
+        <span class="siet-brand-emblem">
+          <img src="/new-site/brand/siet-institution-logo.webp" alt="Sri Shakthi Logo" class="siet-brand-logo" width="48" height="48">
+        </span>
+        <span class="siet-brand-text">
+          <span class="siet-brand-name">SRI SHAKTHI</span>
+          <span class="siet-brand-sub">INSTITUTE OF ENGINEERING</span>
+          <span class="siet-brand-sub">AND TECHNOLOGY</span>
+        </span>
+      </a>
+
+      <nav class="institution-menu" aria-label="Institutional navigation">
+        <a class="institution-nav-link" href="/">Home</a>
+        <a class="institution-nav-link" href="/vision-mission">About</a>
+        <a class="institution-nav-link" href="/programmes">Academics</a>
+        <a class="institution-nav-link" href="/campus-life">Campus</a>
+        <a class="institution-nav-link" href="/coe">COE</a>
+        <a class="institution-nav-link" href="/accreditations">Accreditation</a>
+        <a class="institution-nav-link" href="/placements">Placements</a>
+        <a class="institution-nav-link is-active-nav" href="/mdfi/">Explore</a>
+        <a class="institution-nav-link" href="/careers">Careers</a>
+      </nav>
+
+      <a class="institution-nav-apply" href="/apply" aria-label="Apply Now for Admissions">
+        Apply Now <span aria-hidden="true">→</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- MAIN HERO SECTION -->
+  <section class="mdi-hero" id="home" aria-labelledby="hero-title">
+    <div class="mdi-hero-shell">
+      
+      <div class="mdi-hero-badge-strip">
+        <span class="mdi-badge-pill">★ SRI SHAKTHI INDIA LEADERSHIP &amp; CAREER CONCLAVE ★</span>
+        <span class="mdi-badge-pill saffron">STATE-LEVEL ESSAY COMPETITION 2026-27</span>
+      </div>
+
+      <h1 id="hero-title" class="mdi-hero-title">
+        My Dream <em>India</em>
+      </h1>
+
+      <div class="mdi-hero-tamil-subtitle">
+        என் கனவு பாரதம் · Statewide Youth Leadership &amp; Essay Competition
+      </div>
+
+      <p class="mdi-hero-lead">
+        Empowering school students across India to envision the future of our nation. Write your vision, demonstrate your leadership, and win a 100% institution-sponsored leadership expedition to <strong>The Madras Regimental Centre, Wellington</strong> via the UNESCO World Heritage <strong>Nilgiri Mountain Railway (Toy Train)</strong>!
+      </p>
+
+      <div class="mdi-hero-actions">
+        <a href="#portal" class="mdi-btn-primary">
+          Register &amp; Upload Essay Online ✍
+        </a>
+        <a href="#expedition" class="mdi-btn-outline">
+          Wellington &amp; Nilgiri Award 🚂
+        </a>
+        <a href="#topics" class="mdi-btn-outline">
+          View Essay Topics 📜
+        </a>
+      </div>
+
+      <a class="mdi-hero-poster" href="/brand/dream-india-poster.png" target="_blank" rel="noopener noreferrer" aria-label="View the official Dream India Essay Contest 2026 poster">
+        <img src="/brand/dream-india-poster.png" alt="Official Dream India Essay Contest 2026 poster" width="1056" height="1479" fetchpriority="high">
+        <span>Official Contest Poster <b>View ↗</b></span>
+      </a>
+
+      <!-- Quick Facts Strip -->
+      <div class="mdi-facts-grid" role="region" aria-label="Competition Quick Facts">
+        <div class="mdi-fact-card">
+          <div class="mdi-fact-label">ELIGIBILITY</div>
+          <div class="mdi-fact-value">10th, 11th &amp; 12th STD</div>
+          <div class="mdi-fact-sub">All school streams &amp; boards across India</div>
+        </div>
+        <div class="mdi-fact-card">
+          <div class="mdi-fact-label">LANGUAGES</div>
+          <div class="mdi-fact-value">English &amp; Tamil</div>
+          <div class="mdi-fact-sub">ஆங்கிலம் &amp; தமிழ் மொழிகளில் சமர்ப்பிக்கலாம்</div>
+        </div>
+        <div class="mdi-fact-card">
+          <div class="mdi-fact-label">GRAND EXCELLENCE REWARD</div>
+          <div class="mdi-fact-value">Top 100 to Wellington, Ooty</div>
+          <div class="mdi-fact-sub">Nilgiri Mountain Train · 100% Sponsored</div>
+        </div>
+        <div class="mdi-fact-card">
+          <div class="mdi-fact-label">RECOGNITION FOR ALL</div>
+          <div class="mdi-fact-value">Certificates of Participation</div>
+          <div class="mdi-fact-sub">Appreciation certificate for faculty mentors</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 1: THE WELLINGTON & NILGIRI EXPEDITION -->
+  <section class="mdi-section" id="expedition" aria-labelledby="expedition-title">
+    <div class="mdi-section-header">
+      <span class="mdi-section-tag">THE 100 REWARDS FOR EXCELLENCE</span>
+      <h2 id="expedition-title" class="mdi-section-title">An Unforgettable <em>Leadership Expedition</em></h2>
+      <p class="mdi-section-desc">
+        Rather than a conventional certificate alone, Sri Shakthi Institute rewards the top 100 student visionaries with a transformative real-world leadership and heritage journey.
+      </p>
+    </div>
+
+    <div class="mdi-grand-box">
+      <div class="mdi-grand-copy">
+        <span class="mdi-badge-pill" style="color: #ffd12e; border-color: rgba(255,209,46,0.4);">★ FULLY SPONSORED EDUCATIONAL AWARD ★</span>
+        <h3>Journey to <span>The Madras Regimental Centre, Wellington</span> via Nilgiri Toy Train</h3>
+        <p>
+          The top 100 ranking students will travel aboard the legendary UNESCO World Heritage <strong>Nilgiri Mountain Railway (Toy Train)</strong> to Wellington (Coonoor / Ooty) to visit the historic <strong>Madras Regimental Centre</strong> — the oldest infantry regiment of the Indian Army.
+        </p>
+
+        <ul class="mdi-perks-list">
+          <li>
+            <span class="tick">✓</span>
+            <span><strong>100% Borne by Sri Shakthi:</strong> Total travel, Nilgiri Mountain Railway tickets, accommodation, and food fully sponsored by SIET.</span>
+          </li>
+          <li>
+            <span class="tick">✓</span>
+            <span><strong>Exclusive Military Heritage Tour:</strong> Visit the War Memorial, Regimental Museum, and experience firsthand the discipline and courage of our armed forces.</span>
+          </li>
+          <li>
+            <span class="tick">✓</span>
+            <span><strong>Leadership Mentorship Sessions:</strong> Direct interaction with distinguished defense officers, academicians, and nation-builders.</span>
+          </li>
+          <li>
+            <span class="tick">✓</span>
+            <span><strong>Honoring Faculty Mentors:</strong> All guiding teachers from participating schools receive special Certificates of Appreciation.</span>
+          </li>
+        </ul>
+
+        <a href="#portal" class="mdi-btn-primary" style="font-size: 15px; padding: 12px 28px;">
+          Submit Your Essay Now 🚀
+        </a>
+      </div>
+
+      <div class="mdi-grand-stats-panel">
+        <div class="mdi-grand-stat-item">
+          <strong>100</strong>
+          <span>STUDENT WINNERS SELECTED</span>
+        </div>
+        <div class="mdi-grand-stat-item">
+          <strong>100%</strong>
+          <span>FULLY SPONSORED BY SRI SHAKTHI</span>
+        </div>
+        <div class="mdi-grand-stat-item">
+          <strong>1758</strong>
+          <span>MADRAS REGIMENT HERITAGE</span>
+        </div>
+        <div class="mdi-grand-stat-item">
+          <strong>UNESCO</strong>
+          <span>NILGIRI MOUNTAIN RAILWAY EXPEDITION</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: ESSAY TOPICS & THEMES -->
+  <section class="mdi-section" id="topics" style="background: #ffffff; max-width: 100%; border-top: 1px solid #e2ebe6; border-bottom: 1px solid #e2ebe6;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      
+      <div class="mdi-section-header">
+        <span class="mdi-section-tag">CONTEST THEMES &amp; TOPICS</span>
+        <h2 class="mdi-section-title">Themes for <em>My Dream India</em></h2>
+        <p class="mdi-section-desc">
+          Choose any one of the following themes to express your vision, research, and actionable roadmap for a prosperous, self-reliant India.
+        </p>
+      </div>
+
+      <div class="mdi-topics-grid">
+        
+        <article class="mdi-topic-card">
+          <div>
+            <span class="mdi-topic-num">THEME 01</span>
+            <h4>India 2047: Technology, Innovation &amp; Youth Leadership</h4>
+            <p>How artificial intelligence, clean technology, and youthful enterprise can propel India to become a global superpower by its centenary year of independence.</p>
+          </div>
+          <div class="mdi-topic-meta"><span>💡</span> Focus: Tech Sovereignty &amp; Innovation</div>
+        </article>
+
+        <article class="mdi-topic-card">
+          <div>
+            <span class="mdi-topic-num">THEME 02</span>
+            <h4>Empowering Rural India through Smart Engineering</h4>
+            <p>Innovative solutions in precision agriculture, water preservation, affordable rural healthcare, and local renewable energy microgrids.</p>
+          </div>
+          <div class="mdi-topic-meta"><span>🌾</span> Focus: Sustainable Rural Progress</div>
+        </article>
+
+        <article class="mdi-topic-card">
+          <div>
+            <span class="mdi-topic-num">THEME 03</span>
+            <h4>Atmanirbhar Defense, Space &amp; Aerospace Leadership</h4>
+            <p>Reflecting on India's defense valor and indigenous milestones (such as Sri Shakthi's own SriShakthiSat launch via ISRO) to safeguard national sovereignty.</p>
+          </div>
+          <div class="mdi-topic-meta"><span>🛰️</span> Focus: Defense &amp; Space Self-Reliance</div>
+        </article>
+
+        <article class="mdi-topic-card">
+          <div>
+            <span class="mdi-topic-num">THEME 04</span>
+            <h4>Universal Quality Education &amp; Equal Opportunities</h4>
+            <p>Bridging urban-rural digital divides, nurturing STEM research among youth, and cultivating critical thinking in schools across all communities.</p>
+          </div>
+          <div class="mdi-topic-meta"><span>📚</span> Focus: Value-Based Modern Education</div>
+        </article>
+
+        <article class="mdi-topic-card">
+          <div>
+            <span class="mdi-topic-num">THEME 05</span>
+            <h4>Clean, Green &amp; Climate-Resilient Nation</h4>
+            <p>Strategies to eliminate single-use plastics, accelerate electric mobility, protect Indian biodiversity, and lead global climate-positive stewardship.</p>
+          </div>
+          <div class="mdi-topic-meta"><span>🌱</span> Focus: Environment &amp; Sustainability</div>
+        </article>
+
+        <article class="mdi-topic-card">
+          <div>
+            <span class="mdi-topic-num">THEME 06</span>
+            <h4>என் கனவு பாரதம்: தமிழ் வழியில் சமர்ப்பிப்பு</h4>
+            <p>பாரதியாரின் கனவு மெய்ப்பட இளைஞர்களின் பங்கு, அறிவியல் வளர்ச்சி, மற்றும் நாட்டின் தன்னிறைவுக்கான செயல் திட்டங்கள்.</p>
+          </div>
+          <div class="mdi-topic-meta"><span>🇮🇳</span> Focus: Tamil Essay Submission</div>
+        </article>
+
+      </div>
+
+      <!-- Guidelines Strip -->
+      <div class="mdi-rules-grid">
+        <div class="mdi-rule-card">
+          <h5>Word Limit</h5>
+          <p>1,000 to 1,500 words. Essays can be typed or neatly handwritten &amp; scanned.</p>
+        </div>
+        <div class="mdi-rule-card">
+          <h5>Languages Accepted</h5>
+          <p>English or Tamil. Both mediums receive equal evaluation weightage.</p>
+        </div>
+        <div class="mdi-rule-card">
+          <h5>Accepted File Formats</h5>
+          <p>PDF, DOC, DOCX, or high-clarity image scan (PNG/JPG up to 10MB).</p>
+        </div>
+        <div class="mdi-rule-card">
+          <h5>Originality Mandate</h5>
+          <p>Submissions must be original thoughts of the student. AI or copied text is disqualified.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: INTERACTIVE REGISTRATION & ESSAY UPLOAD PORTAL -->
+  <section class="mdi-section" id="portal" aria-labelledby="portal-title">
+    <div class="mdi-section-header">
+      <span class="mdi-section-tag">ONLINE COMPETITION PORTAL</span>
+      <h2 id="portal-title" class="mdi-section-title">Register &amp; <em>Submit Your Essay</em></h2>
+      <p class="mdi-section-desc">
+        Complete your registration to receive a unique <strong>SIETMDI ID</strong>, or upload your essay directly if you are already registered.
+      </p>
+    </div>
+
+    <div class="mdi-portal-container">
+      
+      <!-- Tab Controls -->
+      <div class="mdi-portal-tabs" role="tablist">
+        <button type="button" class="mdi-tab-btn is-active" id="tab-btn-register" role="tab" aria-selected="true" aria-controls="pane-register">
+          <span>✍ 1. New Student Registration</span>
+        </button>
+        <button type="button" class="mdi-tab-btn" id="tab-btn-upload" role="tab" aria-selected="false" aria-controls="pane-upload">
+          <span>📤 2. Upload Essay (Existing ID)</span>
+        </button>
+      </div>
+
+      <!-- PANE 1: NEW REGISTRATION -->
+      <div class="mdi-tab-pane is-active" id="pane-register" role="tabpanel" aria-labelledby="tab-btn-register">
+        
+        <div class="mdi-alert-box">
+          <span>ℹ️ Registration is completely <strong>free</strong> for all 10th, 11th &amp; 12th standard students.</span>
+        </div>
+
+        <form id="mdi-registration-form">
+          <div class="mdi-form-row">
+            <div class="mdi-form-group">
+              <label for="reg-name">Student Full Name <b>*</b></label>
+              <input type="text" id="reg-name" name="name" placeholder="e.g. A. Kavin Kumar" required>
+            </div>
+            <div class="mdi-form-group">
+              <label for="reg-standard">Current Class / Standard <b>*</b></label>
+              <select id="reg-standard" name="standard" required>
+                <option value="">Select Standard</option>
+                <option value="10th STD">10th Standard (SSLC / CBSE / ICSE)</option>
+                <option value="11th STD">11th Standard (+1 Higher Secondary)</option>
+                <option value="12th STD">12th Standard (+2 Higher Secondary)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mdi-form-row">
+            <div class="mdi-form-group">
+              <label for="reg-school">School Name with Place <b>*</b></label>
+              <input type="text" id="reg-school" name="school" placeholder="e.g. Sri Shakthi International School, Coimbatore" required>
+            </div>
+            <div class="mdi-form-group">
+              <label for="reg-city">City / District &amp; State <b>*</b></label>
+              <input type="text" id="reg-city" name="city" placeholder="e.g. Coimbatore, Tamil Nadu" required>
+            </div>
+          </div>
+
+          <div class="mdi-form-row">
+            <div class="mdi-form-group">
+              <label for="reg-phone">Student / Parent Mobile Number <b>*</b></label>
+              <input type="tel" id="reg-phone" name="phone" placeholder="e.g. 9876543210" pattern="[0-9]{10}" required>
+            </div>
+            <div class="mdi-form-group">
+              <label for="reg-email">Email Address <b>*</b></label>
+              <input type="email" id="reg-email" name="email" placeholder="e.g. kavinkumar@gmail.com" required>
+            </div>
+          </div>
+
+          <div class="mdi-form-row">
+            <div class="mdi-form-group">
+              <label for="reg-language">Essay Language Medium <b>*</b></label>
+              <select id="reg-language" name="language" required>
+                <option value="English">English</option>
+                <option value="Tamil">தமிழ் (Tamil)</option>
+              </select>
+            </div>
+            <div class="mdi-form-group">
+              <label for="reg-mentor">Guiding Teacher / Mentor Name (Optional)</label>
+              <input type="text" id="reg-mentor" name="mentor" placeholder="e.g. Mrs. S. Revathi, PGT English">
+            </div>
+          </div>
+
+          <button type="submit" class="mdi-submit-btn" id="reg-submit-btn">
+            Generate Registration ID &amp; Continue 🚀
+          </button>
+        </form>
+
+        <div class="mdi-result-box" id="reg-result-box">
+          <strong>🎉 Registration Successful!</strong>
+          <p>Your official registration ID for My Dream India (SSILCC) is:</p>
+          <div class="reg-code" id="display-reg-code">SIETMDI-2027</div>
+          <p style="font-size: 13.5px; color: #4b6357;">Please save this ID. You can now proceed to the <strong>Upload Essay</strong> tab to submit your essay file.</p>
+          <button type="button" class="mdi-btn-primary" id="btn-switch-to-upload" style="margin-top: 10px; font-size: 14px;">
+            Proceed to Upload Essay 📤
+          </button>
+        </div>
+
+      </div>
+
+      <!-- PANE 2: ESSAY UPLOAD -->
+      <div class="mdi-tab-pane" id="pane-upload" role="tabpanel" aria-labelledby="tab-btn-upload">
+        
+        <div class="mdi-alert-box">
+          <span>📄 Enter your <strong>SIETMDI ID</strong> or registered email address to submit your essay.</span>
+        </div>
+
+        <form id="mdi-upload-form">
+          <div class="mdi-form-row">
+            <div class="mdi-form-group">
+              <label for="upload-regid">Registration ID or Registered Email <b>*</b></label>
+              <input type="text" id="upload-regid" name="regid" placeholder="e.g. SIETMDI-1082 or student@gmail.com" required>
+            </div>
+            <div class="mdi-form-group">
+              <label for="upload-topic">Chosen Theme / Topic <b>*</b></label>
+              <select id="upload-topic" name="topic" required>
+                <option value="">Select Topic</option>
+                <option value="India 2047: Technology & Innovation">Theme 1: India 2047 - Technology &amp; Innovation</option>
+                <option value="Empowering Rural India through Engineering">Theme 2: Empowering Rural India through Engineering</option>
+                <option value="Atmanirbhar Defense & Space Leadership">Theme 3: Atmanirbhar Defense &amp; Space Leadership</option>
+                <option value="Universal Quality Education">Theme 4: Universal Quality Education &amp; Opportunities</option>
+                <option value="Clean, Green & Climate-Resilient Nation">Theme 5: Clean, Green &amp; Climate-Resilient Nation</option>
+                <option value="என் கனவு பாரதம் (தமிழ் கட்டுரை)">Theme 6: என் கனவு பாரதம் (தமிழ் கட்டுரை)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="mdi-form-group">
+            <label for="upload-title">Essay Title <b>*</b></label>
+            <input type="text" id="upload-title" name="essay_title" placeholder="Give your essay an inspiring title" required>
+          </div>
+
+          <div class="mdi-form-group">
+            <label for="upload-file">Upload Essay Document (PDF, DOCX, or Scan) <b>*</b></label>
+            <input type="file" id="upload-file" name="essay_file" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">
+            <small style="color: #6a8275; font-size: 12px; margin-top: 4px;">Max file size: 15MB. You can also paste your essay text directly below if preferred.</small>
+          </div>
+
+          <div class="mdi-form-group">
+            <label for="upload-text">Or Paste Essay Content Directly (Optional)</label>
+            <textarea id="upload-text" name="essay_text" rows="5" placeholder="Write or paste your essay content here..."></textarea>
+          </div>
+
+          <button type="submit" class="mdi-submit-btn" id="upload-submit-btn">
+            Submit Final Essay 📬
+          </button>
+        </form>
+
+        <div class="mdi-result-box" id="upload-result-box">
+          <strong>✅ Essay Submitted Successfully!</strong>
+          <p>Thank you for participating in <strong>My Dream India</strong>. Your submission has been securely recorded.</p>
+          <div class="reg-code" id="display-receipt-code">RECEIPT #MDI-SUCCESS</div>
+          <p style="font-size: 13.5px; color: #4b6357;">The evaluation committee will review your submission. Results and Top 100 Wellington trip announcements will be communicated to your registered email &amp; phone.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Helpdesk Numbers -->
+    <div class="mdi-helpline-grid" role="region" aria-label="Official Helplines">
+      <a href="tel:+919444620505" class="mdi-helpline-card">
+        <small>MDI HELPLINE 1</small>
+        <strong>+91 94446 20505</strong>
+      </a>
+      <a href="tel:+917305631539" class="mdi-helpline-card">
+        <small>MDI HELPLINE 2</small>
+        <strong>+91 73056 31539</strong>
+      </a>
+      <a href="mailto:mydreamindia@siet.ac.in" class="mdi-helpline-card">
+        <small>EMAIL QUERIES</small>
+        <strong>mydreamindia@siet.ac.in</strong>
+      </a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd1IgandPCQMSBz4i_lZKCBsVYKMsYmu4SeFvBogz4GrzLLPg/viewform" target="_blank" rel="noopener noreferrer" class="mdi-helpline-card" style="border-color: #ffd12e;">
+        <small>ALTERNATIVE GOOGLE FORM</small>
+        <strong>Open Direct Form ↗</strong>
+      </a>
+    </div>
+
+  </section>
+
+  <!-- INSTITUTIONAL HERITAGE STRIP -->
+  <section class="mdi-heritage-strip" aria-label="Sri Shakthi Institutional Credentials">
+    <div class="mdi-heritage-inner">
+      <div class="mdi-heritage-brand">
+        <img src="/brand/siet-logo.webp" alt="Sri Shakthi emblem">
+        <div>
+          <h4>Sri Shakthi Institute of Engineering and Technology</h4>
+          <p>Autonomous Institution · Approved by AICTE, New Delhi · Affiliated to Anna University, Chennai</p>
+        </div>
+      </div>
+      <div class="mdi-badges-row">
+        <span class="mdi-cert-tag">NAAC GRADE ‘A’</span>
+        <span class="mdi-cert-tag">NBA TIER-I ACCREDITED</span>
+        <span class="mdi-cert-tag">TNEA COUNSELLING CODE: 2727</span>
+        <span class="mdi-cert-tag">ISRO SATELLITE LAUNCHED (PSLV-C51)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="mdi-footer" role="contentinfo">
+    <p style="color: #ffffff; font-weight: 800; font-size: 15px;">
+      Sri Shakthi Institute of Engineering and Technology (Autonomous)
+    </p>
+    <p>
+      Sri Shakthi Nagar, L&amp;T By-Pass, Chinniampalayam Post, Coimbatore - 641062, Tamil Nadu, India.
+    </p>
+    <div class="mdi-footer-links">
+      <a href="/#/">SIET Home</a>
+      <a href="/ssm/">Space Mission</a>
+      <a href="/icchi/">ICCHI 2027 Conference</a>
+      <a href="/#/programmes">Academic Degrees</a>
+      <a href="/#/admission">Admissions 2026-27</a>
+      <a href="/#/contact">Contact</a>
+    </div>
+    <p style="font-size: 12px; color: #5c7e6b; margin-top: 16px;">
+      &copy; 2026-2027 Sri Shakthi Institute of Engineering and Technology. All Rights Reserved. TNEA Code: 2727.
+    </p>
+  </footer>
+
+  <!-- INTERACTIVE PORTAL SCRIPTS -->
+  <script>
+    // Tab switching logic
+    const tabRegister = document.getElementById('tab-btn-register');
+    const tabUpload = document.getElementById('tab-btn-upload');
+    const paneRegister = document.getElementById('pane-register');
+    const paneUpload = document.getElementById('pane-upload');
+
+    function switchTab(target) {
+      if (target === 'register') {
+        tabRegister.classList.add('is-active');
+        tabRegister.setAttribute('aria-selected', 'true');
+        tabUpload.classList.remove('is-active');
+        tabUpload.setAttribute('aria-selected', 'false');
+        paneRegister.classList.add('is-active');
+        paneUpload.classList.remove('is-active');
+      } else {
+        tabUpload.classList.add('is-active');
+        tabUpload.setAttribute('aria-selected', 'true');
+        tabRegister.classList.remove('is-active');
+        tabRegister.setAttribute('aria-selected', 'false');
+        paneUpload.classList.add('is-active');
+        paneRegister.classList.remove('is-active');
+      }
+    }
+
+    tabRegister?.addEventListener('click', () => switchTab('register'));
+    tabUpload?.addEventListener('click', () => switchTab('upload'));
+
+    // Handle Registration Form
+    const regForm = document.getElementById('mdi-registration-form');
+    const regResultBox = document.getElementById('reg-result-box');
+    const displayRegCode = document.getElementById('display-reg-code');
+    const btnSwitchUpload = document.getElementById('btn-switch-to-upload');
+    const uploadRegIdInput = document.getElementById('upload-regid');
+
+    regForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const randomNum = Math.floor(1000 + Math.random() * 9000);
+      const generatedCode = 'SIETMDI-' + randomNum;
+      
+      displayRegCode.textContent = generatedCode;
+      regForm.style.display = 'none';
+      regResultBox.style.display = 'block';
+
+      // Pre-fill upload input
+      if (uploadRegIdInput) {
+        uploadRegIdInput.value = generatedCode;
+      }
+    });
+
+    btnSwitchUpload?.addEventListener('click', () => {
+      switchTab('upload');
+      document.getElementById('portal')?.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Handle Upload Form
+    const uploadForm = document.getElementById('mdi-upload-form');
+    const uploadResultBox = document.getElementById('upload-result-box');
+    const displayReceiptCode = document.getElementById('display-receipt-code');
+
+    uploadForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const receiptNo = 'RECEIPT #MDI-' + Math.floor(10000 + Math.random() * 90000);
+      displayReceiptCode.textContent = receiptNo;
+      uploadForm.style.display = 'none';
+      uploadResultBox.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>

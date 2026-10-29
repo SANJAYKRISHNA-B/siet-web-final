@@ -154,6 +154,57 @@
   }
 }
 
+/* Academic regulations modal: always centre against the visible viewport. */
+body > .siet-lib-modal.js-curr-modal {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  display: grid !important;
+  place-items: center !important;
+  padding: clamp(12px, 3vw, 28px) !important;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
+}
+
+body > .siet-lib-modal.js-curr-modal .siet-lib-modal-box {
+  width: min(680px, 100%) !important;
+  max-height: min(85dvh, 820px) !important;
+  margin: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+}
+
+body > .siet-lib-modal.js-curr-modal .siet-lib-modal-header {
+  flex: 0 0 auto;
+}
+
+body > .siet-lib-modal.js-curr-modal .siet-lib-modal-body {
+  min-height: 0;
+  overflow-y: auto !important;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 650px) {
+  body > .siet-lib-modal.js-curr-modal {
+    padding: 10px !important;
+  }
+
+  body > .siet-lib-modal.js-curr-modal .siet-lib-modal-box {
+    width: 100% !important;
+    max-height: calc(100dvh - 20px) !important;
+    border-radius: 15px !important;
+  }
+
+  body > .siet-lib-modal.js-curr-modal .siet-lib-modal-header,
+  body > .siet-lib-modal.js-curr-modal .siet-lib-modal-body {
+    padding: 18px !important;
+  }
+}
+
 @media (max-width: 650px) {
   .programme-accreditation-panel {
     padding-top: 20px !important;
@@ -478,5 +529,58 @@
   .programme-card-v2 .prog-arrow-circle {
     width: 26px !important;
     height: 26px !important;
+  }
+}
+
+/* Global footer development credit. */
+.footer-cse-credit {
+  display: block;
+  margin: 0;
+  color: #f3c82f;
+  font-weight: 700;
+  text-align: center;
+}
+
+.site-footer .footer-legal {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr) !important;
+  align-items: center !important;
+  column-gap: clamp(1.5rem, 3vw, 4rem) !important;
+  min-height: 76px;
+}
+
+.site-footer .footer-legal > small {
+  justify-self: start;
+  text-align: left;
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
+.site-footer .footer-legal > nav {
+  display: flex !important;
+  align-items: center !important;
+  justify-self: end;
+  flex-wrap: nowrap !important;
+  text-align: right;
+  white-space: nowrap;
+}
+
+@media (max-width: 1180px) {
+  .site-footer .footer-legal {
+    grid-template-columns: 1fr !important;
+    justify-items: center !important;
+    gap: 0.7rem !important;
+    padding-block: 1rem !important;
+  }
+
+  .site-footer .footer-legal > small,
+  .site-footer .footer-legal > nav {
+    justify-self: center;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .footer-cse-credit {
+    margin: 0;
   }
 }
