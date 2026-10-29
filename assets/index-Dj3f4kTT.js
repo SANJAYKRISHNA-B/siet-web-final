@@ -320,7 +320,7 @@ import{r as Ee,j as ce,c as $a,R as ja}from"./vendor-react-DhEz86-d.js";import{i
           <span class="chk-icon">${I.done?"✓":"○"}</span>
           <span>${I.item}</span>
         </li>
-      `).join(""))}n&&n.addEventListener("submit",async y=>{y.preventDefault();const k=(r.value||"").trim();if(k)try{(await(await fetch("/api/admin/verify",{method:"POST",headers:{"Content-Type":"application/json","x-admin-key":k}})).json()).success?(c=k,sessionStorage.setItem("siet_admin_key",k),o&&(o.style.display="none"),x()):o&&(o.style.display="block",o.textContent="Invalid administrator passkey.")}catch{o&&(o.style.display="block",o.textContent="Unable to connect to verification service.")}}),e.querySelectorAll(".admin-pill").forEach(y=>{y.addEventListener("click",()=>{e.querySelectorAll(".admin-pill").forEach(k=>k.classList.remove("is-active")),y.classList.add("is-active"),g=y.getAttribute("data-status")||"all",x()})}),l&&l.addEventListener("click",x),e.addEventListener("click",async y=>{const k=y.target.closest('[data-action="admin-retry"]');if(!k)return;const F=k.getAttribute("data-call-sid");if(F)try{k.disabled=!0,k.textContent="Retrying…";const C=await(await fetch(`/api/admin/calls/${F}/retry`,{method:"POST",headers:{"Content-Type":"application/json","x-admin-key":c}})).json();C.success?x():alert(C.message||"Retry failed.")}catch($){alert("Failed to retry call: "+$.message)}finally{k.disabled=!1,k.textContent="Retry"}}),c&&x()}const $e=[{label:"About",icon:"users",items:[["vision-mission","Vision And Mission"],["chairman","The Chairman's desk"],["principal","From the Principal"]]},{label:"Admission",icon:"grad",items:[["admission","Admission Overview"],["apply","Admission Enquiry"]]},{label:"Academics",icon:"book",items:[["programmes","UG & PG Programmes"],["curriculum","Curriculum"],["library","Library"]]},{label:"Campus",icon:"building",items:[["campus-life","Campus Life"],["facilities","Facilities"],["hostel","Hostel"],["transport","Transport"],["sports","Sports"],["clubs","Student Clubs"],["ncc","NCC & NSS"]]},{label:"Accreditation",icon:"quality",items:[["governance","Governance / Committees"],["mandatory-disclosure","Mandatory Disclosure"],["statutory-declaration","Statutory Declaration"],["nirf","NIRF"],["naac","NAAC"],["nba","NBA"],["iqac","IQAC"],["ariia","ARIIA Report"]]},{label:"Explore",icon:"compass",items:[["training","Career Development"],["research","Research & Development"],["innovation","Innovation & Incubation"],["centres-of-excellence","Centres of Excellence"],["alumni","Alumni"],["contact","Contact Us"]]}],ni={governance:["Governance & Committees","Statutory Councils & Administrative Committees","Governing Council, Academic Council, Anti-Ragging Committee, Internal Complaints Committee and administrative bodies overseeing institutional governance."],committees:["Governance & Committees","Statutory Councils & Administrative Committees","Governing Council, Academic Council, Anti-Ragging Committee, Internal Complaints Committee and administrative bodies overseeing institutional governance."],"mandatory-disclosure":["AICTE Mandatory Disclosure","Official Public Compliance & Institutional Information","Public disclosure of governance, faculty profiles, sanctioned student intake, infrastructure assets, and financial audit disclosures."],"statutory-declaration":["Statutory Declaration","Right to Information (RTI) Act 2005 · Section 4(1)(b)","Official statutory declaration in compliance with Section 4(1)(b) of the Right to Information Act 2005."],nirf:["NIRF Submissions","National Institutional Ranking Framework","Ministry of Education certified institutional data submissions across Engineering, Innovation, and Overall categories."],naac:["NAAC Accreditation","Grade ‘A’ Institutional Accreditation","Evaluated and accredited with Grade ‘A’ by the National Assessment and Accreditation Council."],nba:["NBA Accreditation","Tier-I Washington Accord Programmes","Eight eligible undergraduate engineering disciplines accredited under the prestigious Washington Accord Tier-I standard."],iqac:["Internal Quality Assurance Cell","Sustaining Quality & Academic Excellence","Nodal quality engine driving academic audits, outcome-based education benchmarks, and AQAR reports."],ariia:["ARIIA & Innovation","Atal Ranking of Institutions on Innovation Achievements","Institutional ranking disclosures under ARIIA and Ministry of Education Innovation Cell (MIC)."],"ariia-report":["ARIIA & Innovation","Atal Ranking of Institutions on Innovation Achievements","Institutional ranking disclosures under ARIIA and Ministry of Education Innovation Cell (MIC)."],coe:["Office of the Controller of Examinations","Autonomous Academic Assessment & Examination Cell","The Office of the Controller of Examinations (COE) oversees all internal evaluations, autonomous semester examinations, result processing, grade cards, and official transcripts."],"coe-result":["COE Result Portal","Autonomous Semester Examination Results","Access your autonomous semester examination marks and results securely by entering your Register Number and Date of Birth."],"coe-transcript":["Official Transcripts","Academic Transcripts for Higher Studies & Global Evaluation","Official procedure and online requisition for certified academic transcripts, WES verification, and credential evaluation."],"admission-referral":["Admission Referral","Recommend an aspiring student to Sri Shakthi.","Support prospective engineers by connecting them with our admissions team through the institutional referral programme."],"core-beliefs":["Core Beliefs","Enduring principles that guide our mission.","Achieving academic success is our gateway, employability is our milestone, confident citizenship is our destination, discipline provides willpower, and education is our weapon to change the world."],academics:["Academic Overview","Autonomous Engineering Education · Anna University Affiliated","Explore our 21 specialized undergraduate and postgraduate programmes, innovative Regulations 2025 (R2025) 168-credit framework, state-of-the-art laboratories, and experiential learning ecosystem."],departments:["Departments","21 Specialized UG & PG Disciplines. One culture of discovery.","Explore our 14 undergraduate and 7 postgraduate engineering and technology departments offering focused learning, world-class laboratories, research and industry engagement."],curriculum:["Curriculum","Current, connected and outcome-driven.","The curriculum combines disciplinary depth, professional skills, multidisciplinary electives, projects and experiential learning."],"academic-calendar":["Academic Calendar","Plan the academic year.","Semester schedules bring together instruction, assessment, events, examinations and academic milestones."],library:["Central Library","A connected knowledge centre.","Print and digital resources, journals, databases and focused study environments support teaching, learning and research."],examinations:["Examinations","Clear processes. Fair assessment.","The Controller of Examinations coordinates schedules, evaluation, results and academic records for autonomous programmes."],programmes:["UG & PG Programmes","Choose the field you want to shape.","Undergraduate and postgraduate pathways connect engineering foundations with emerging technologies and real-world practice."],eligibility:["Eligibility","Your pathway to Sri Shakthi.","Admission eligibility follows applicable Government of Tamil Nadu, AICTE and Anna University norms."],scholarships:["Scholarships","Talent deserves opportunity.","Merit and need-based scholarship pathways help ambitious learners access high-quality engineering education."],fees:["Fee Information","Clear guidance for applicants.","Contact the admissions office for programme-specific fee structure, counselling and scholarship guidance."],"campus-life":["Campus Life","Learn. Build. Belong.","A vibrant 45-acre eco-friendly campus brings together academics, culture, sport, entrepreneurship and community."],"student-life":["Student Life","A campus that inspires every day.","At Sri Shakthi, campus life is an enriching journey that extends far beyond lecture halls and laboratories, fostering vibrant student communities, leadership, and cultural exchange."],facilities:["Facilities","Spaces made for exploration.","Advanced laboratories, collaborative classrooms, seminar halls, digital infrastructure and student support facilities."],hostel:["Hostel","A welcoming campus home.","Student residences support safe, comfortable living, shared learning and a strong sense of community."],transport:["Transport","Connected to Coimbatore.","College transport supports convenient travel across major routes in and around the city."],sports:["Sports","Energy beyond academics.","With 26+ activities and a proud competitive record, sport is central to student wellbeing and leadership."],"sports-recreation":["Sports & Recreation","Victory is a habit here.","Nurturing champions and promoting physical wellness with Olympic-standard athletic tracks, championship multi-sport courts, modern conditioning gyms, and expert coaching."],"culture-arts":["Culture & Arts","Tradition. Creativity. Every performance.","Celebrating cultural diversity, performing arts, musical ensembles, theatrical societies, and signature festivals like DHRUVA and Sangamam."],"learning-growth":["Learning & Growth","Today’s learners. Tomorrow’s leaders.","Autonomous CBCS curriculum, industry certifications, project-based engineering mastery, student mentorship circles, and comprehensive career development."],"our-campus":["Our Campus","A greener, brighter tomorrow.","A vibrant 45-acre eco-friendly smart campus in Coimbatore featuring iconic Sri Shakthi Tech Park, modern research complexes, botanical avenues, and sustainable infrastructure."],clubs:["Student Clubs","Find your people. Build your voice.","Technical, cultural, social and professional clubs turn interests into projects, events and leadership experience."],ncc:["NCC & NSS","Unity, discipline and service.","Student service programmes develop character, citizenship, teamwork and responsibility."],placements:["Placements","Preparing talent for meaningful careers.","Career readiness spans aptitude, communication, technical training, internships, industry interaction and recruitment."],training:["Career Development","Skills that move careers forward.","Dedicated training helps students build technical confidence, professional communication and placement readiness."],research:["Research & Development","Ideas engineered into impact.","Faculty and students pursue applied research, publications, prototypes, consultancy and interdisciplinary collaboration."],innovation:["Innovation & Incubation","From problem to prototype.","Mentoring, maker culture and entrepreneurial support help student ideas grow into useful solutions and ventures."],"centres-of-excellence":["Centres of Excellence","Advanced tools. Industry contexts.","Specialist centres connect learners with contemporary platforms, domain expertise and practical challenges."],accreditations:["Approvals & Accreditations","Quality recognised. Standards sustained.","An autonomous institution approved by AICTE, affiliated to Anna University, accredited by NAAC and with eligible programmes accredited by NBA."],alumni:["Alumni","Shakthians around the world.","A growing network of 10,273+ alumni strengthens mentorship, opportunity and lifelong institutional connection."],contact:["Contact Us","We are here to help.","Visit the campus, speak with admissions, or connect with the institute office using the details below."],"privacy-policy":["Privacy Policy","Data Protection & Student Privacy Standards","Sri Shakthi Institute of Engineering and Technology is dedicated to safeguarding user information, student academic privacy, and data security."],terms:["Terms of Use","Institutional Portal & Website Usage Guidelines","Terms, fair use conditions, intellectual property guidelines, and code of conduct governing access to Sri Shakthi digital services."],sitemap:["Institutional Sitemap","Comprehensive Directory of Sri Shakthi Digital Portals","Quick overview and direct navigation to all academic, admission, examination, laboratory, and campus services across SIET."]},Le='<span class="home-notice-open"><b aria-hidden="true">⌁</b><strong>ADMISSIONS 2026–27 NOW OPEN</strong></span><i></i><span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i><span>Begin your journey at Sri Shakthi</span><i></i><span>TNEA Counselling Code: 2727</span><i></i>',ri=()=>`<div class="notice notice-home" role="region" aria-label="Admissions Announcements"><div class="home-notice-track"><div class="home-notice-group">${Le}</div><div class="home-notice-group" aria-hidden="true">${Le}</div><div class="home-notice-group" aria-hidden="true">${Le}</div><div class="home-notice-group" aria-hidden="true">${Le}</div></div></div>`;function Ta(){const e=T(),a=!e||e==="home",i=e==="coe"||e==="coe-portal"||e==="examinations"||e==="coe-result"||e==="result"||e==="coe-transcript"||e==="transcript",t=e==="placements"||e==="placement"||e.startsWith("placements")||e==="entrepreneurship",s=e==="apply"||e==="admission-enquiry"||e==="admission-referral"||e==="referral";return`
+      `).join(""))}n&&n.addEventListener("submit",async y=>{y.preventDefault();const k=(r.value||"").trim();if(k)try{(await(await fetch("/api/admin/verify",{method:"POST",headers:{"Content-Type":"application/json","x-admin-key":k}})).json()).success?(c=k,sessionStorage.setItem("siet_admin_key",k),o&&(o.style.display="none"),x()):o&&(o.style.display="block",o.textContent="Invalid administrator passkey.")}catch{o&&(o.style.display="block",o.textContent="Unable to connect to verification service.")}}),e.querySelectorAll(".admin-pill").forEach(y=>{y.addEventListener("click",()=>{e.querySelectorAll(".admin-pill").forEach(k=>k.classList.remove("is-active")),y.classList.add("is-active"),g=y.getAttribute("data-status")||"all",x()})}),l&&l.addEventListener("click",x),e.addEventListener("click",async y=>{const k=y.target.closest('[data-action="admin-retry"]');if(!k)return;const F=k.getAttribute("data-call-sid");if(F)try{k.disabled=!0,k.textContent="Retrying…";const C=await(await fetch(`/api/admin/calls/${F}/retry`,{method:"POST",headers:{"Content-Type":"application/json","x-admin-key":c}})).json();C.success?x():alert(C.message||"Retry failed.")}catch($){alert("Failed to retry call: "+$.message)}finally{k.disabled=!1,k.textContent="Retry"}}),c&&x()}const $e=[{label:"About",icon:"users",items:[["vision-mission","Vision And Mission"],["chairman","The Chairman's desk"],["principal","From the Principal"]]},{label:"Admission",icon:"grad",items:[["admission","Admission Overview"],["apply","Admission Enquiry"]]},{label:"Academics",icon:"book",items:[["programmes","UG & PG Programmes"],["curriculum","Curriculum"],["library","Library"]]},{label:"Campus",icon:"building",items:[["campus-life","Campus Life"],["facilities","Facilities"],["hostel","Hostel"],["transport","Transport"],["sports","Sports"],["clubs","Student Clubs"],["ncc","NCC & NSS"]]},{label:"Accreditation",icon:"quality",items:[["governance","Governance / Committees"],["mandatory-disclosure","Mandatory Disclosure"],["statutory-declaration","Statutory Declaration"],["nirf","NIRF"],["naac","NAAC"],["nba","NBA"],["iqac","IQAC"],["ariia","ARIIA Report"]]},{label:"Explore",icon:"compass",items:[["sri-shakthi-space-mission","Space Mission"],["training","Career Development"],["research","Research & Development"],["innovation","Innovation & Incubation"],["centres-of-excellence","Centres of Excellence"],["alumni","Alumni"],["contact","Contact Us"]]}],ni={governance:["Governance & Committees","Statutory Councils & Administrative Committees","Governing Council, Academic Council, Anti-Ragging Committee, Internal Complaints Committee and administrative bodies overseeing institutional governance."],committees:["Governance & Committees","Statutory Councils & Administrative Committees","Governing Council, Academic Council, Anti-Ragging Committee, Internal Complaints Committee and administrative bodies overseeing institutional governance."],"mandatory-disclosure":["AICTE Mandatory Disclosure","Official Public Compliance & Institutional Information","Public disclosure of governance, faculty profiles, sanctioned student intake, infrastructure assets, and financial audit disclosures."],"statutory-declaration":["Statutory Declaration","Right to Information (RTI) Act 2005 · Section 4(1)(b)","Official statutory declaration in compliance with Section 4(1)(b) of the Right to Information Act 2005."],nirf:["NIRF Submissions","National Institutional Ranking Framework","Ministry of Education certified institutional data submissions across Engineering, Innovation, and Overall categories."],naac:["NAAC Accreditation","Grade ‘A’ Institutional Accreditation","Evaluated and accredited with Grade ‘A’ by the National Assessment and Accreditation Council."],nba:["NBA Accreditation","Tier-I Washington Accord Programmes","Eight eligible undergraduate engineering disciplines accredited under the prestigious Washington Accord Tier-I standard."],iqac:["Internal Quality Assurance Cell","Sustaining Quality & Academic Excellence","Nodal quality engine driving academic audits, outcome-based education benchmarks, and AQAR reports."],ariia:["ARIIA & Innovation","Atal Ranking of Institutions on Innovation Achievements","Institutional ranking disclosures under ARIIA and Ministry of Education Innovation Cell (MIC)."],"ariia-report":["ARIIA & Innovation","Atal Ranking of Institutions on Innovation Achievements","Institutional ranking disclosures under ARIIA and Ministry of Education Innovation Cell (MIC)."],coe:["Office of the Controller of Examinations","Autonomous Academic Assessment & Examination Cell","The Office of the Controller of Examinations (COE) oversees all internal evaluations, autonomous semester examinations, result processing, grade cards, and official transcripts."],"coe-result":["COE Result Portal","Autonomous Semester Examination Results","Access your autonomous semester examination marks and results securely by entering your Register Number and Date of Birth."],"coe-transcript":["Official Transcripts","Academic Transcripts for Higher Studies & Global Evaluation","Official procedure and online requisition for certified academic transcripts, WES verification, and credential evaluation."],"admission-referral":["Admission Referral","Recommend an aspiring student to Sri Shakthi.","Support prospective engineers by connecting them with our admissions team through the institutional referral programme."],"core-beliefs":["Core Beliefs","Enduring principles that guide our mission.","Achieving academic success is our gateway, employability is our milestone, confident citizenship is our destination, discipline provides willpower, and education is our weapon to change the world."],academics:["Academic Overview","Autonomous Engineering Education · Anna University Affiliated","Explore our 21 specialized undergraduate and postgraduate programmes, innovative Regulations 2025 (R2025) 168-credit framework, state-of-the-art laboratories, and experiential learning ecosystem."],departments:["Departments","21 Specialized UG & PG Disciplines. One culture of discovery.","Explore our 14 undergraduate and 7 postgraduate engineering and technology departments offering focused learning, world-class laboratories, research and industry engagement."],curriculum:["Curriculum","Current, connected and outcome-driven.","The curriculum combines disciplinary depth, professional skills, multidisciplinary electives, projects and experiential learning."],"academic-calendar":["Academic Calendar","Plan the academic year.","Semester schedules bring together instruction, assessment, events, examinations and academic milestones."],library:["Central Library","A connected knowledge centre.","Print and digital resources, journals, databases and focused study environments support teaching, learning and research."],examinations:["Examinations","Clear processes. Fair assessment.","The Controller of Examinations coordinates schedules, evaluation, results and academic records for autonomous programmes."],programmes:["UG & PG Programmes","Choose the field you want to shape.","Undergraduate and postgraduate pathways connect engineering foundations with emerging technologies and real-world practice."],eligibility:["Eligibility","Your pathway to Sri Shakthi.","Admission eligibility follows applicable Government of Tamil Nadu, AICTE and Anna University norms."],scholarships:["Scholarships","Talent deserves opportunity.","Merit and need-based scholarship pathways help ambitious learners access high-quality engineering education."],fees:["Fee Information","Clear guidance for applicants.","Contact the admissions office for programme-specific fee structure, counselling and scholarship guidance."],"campus-life":["Campus Life","Learn. Build. Belong.","A vibrant 45-acre eco-friendly campus brings together academics, culture, sport, entrepreneurship and community."],"student-life":["Student Life","A campus that inspires every day.","At Sri Shakthi, campus life is an enriching journey that extends far beyond lecture halls and laboratories, fostering vibrant student communities, leadership, and cultural exchange."],facilities:["Facilities","Spaces made for exploration.","Advanced laboratories, collaborative classrooms, seminar halls, digital infrastructure and student support facilities."],hostel:["Hostel","A welcoming campus home.","Student residences support safe, comfortable living, shared learning and a strong sense of community."],transport:["Transport","Connected to Coimbatore.","College transport supports convenient travel across major routes in and around the city."],sports:["Sports","Energy beyond academics.","With 26+ activities and a proud competitive record, sport is central to student wellbeing and leadership."],"sports-recreation":["Sports & Recreation","Victory is a habit here.","Nurturing champions and promoting physical wellness with Olympic-standard athletic tracks, championship multi-sport courts, modern conditioning gyms, and expert coaching."],"culture-arts":["Culture & Arts","Tradition. Creativity. Every performance.","Celebrating cultural diversity, performing arts, musical ensembles, theatrical societies, and signature festivals like DHRUVA and Sangamam."],"learning-growth":["Learning & Growth","Today’s learners. Tomorrow’s leaders.","Autonomous CBCS curriculum, industry certifications, project-based engineering mastery, student mentorship circles, and comprehensive career development."],"our-campus":["Our Campus","A greener, brighter tomorrow.","A vibrant 45-acre eco-friendly smart campus in Coimbatore featuring iconic Sri Shakthi Tech Park, modern research complexes, botanical avenues, and sustainable infrastructure."],clubs:["Student Clubs","Find your people. Build your voice.","Technical, cultural, social and professional clubs turn interests into projects, events and leadership experience."],ncc:["NCC & NSS","Unity, discipline and service.","Student service programmes develop character, citizenship, teamwork and responsibility."],placements:["Placements","Preparing talent for meaningful careers.","Career readiness spans aptitude, communication, technical training, internships, industry interaction and recruitment."],training:["Career Development","Skills that move careers forward.","Dedicated training helps students build technical confidence, professional communication and placement readiness."],research:["Research & Development","Ideas engineered into impact.","Faculty and students pursue applied research, publications, prototypes, consultancy and interdisciplinary collaboration."],innovation:["Innovation & Incubation","From problem to prototype.","Mentoring, maker culture and entrepreneurial support help student ideas grow into useful solutions and ventures."],"centres-of-excellence":["Centres of Excellence","Advanced tools. Industry contexts.","Specialist centres connect learners with contemporary platforms, domain expertise and practical challenges."],accreditations:["Approvals & Accreditations","Quality recognised. Standards sustained.","An autonomous institution approved by AICTE, affiliated to Anna University, accredited by NAAC and with eligible programmes accredited by NBA."],alumni:["Alumni","Shakthians around the world.","A growing network of 10,273+ alumni strengthens mentorship, opportunity and lifelong institutional connection."],contact:["Contact Us","We are here to help.","Visit the campus, speak with admissions, or connect with the institute office using the details below."],"privacy-policy":["Privacy Policy","Data Protection & Student Privacy Standards","Sri Shakthi Institute of Engineering and Technology is dedicated to safeguarding user information, student academic privacy, and data security."],terms:["Terms of Use","Institutional Portal & Website Usage Guidelines","Terms, fair use conditions, intellectual property guidelines, and code of conduct governing access to Sri Shakthi digital services."],sitemap:["Institutional Sitemap","Comprehensive Directory of Sri Shakthi Digital Portals","Quick overview and direct navigation to all academic, admission, examination, laboratory, and campus services across SIET."]},Le='<span class="home-notice-open"><b aria-hidden="true">⌁</b><strong>ADMISSIONS 2026–27 NOW OPEN</strong></span><i></i><span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i><span>Begin your journey at Sri Shakthi</span><i></i><span>TNEA Counselling Code: 2727</span><i></i>',ri=()=>`<div class="notice notice-home" role="region" aria-label="Admissions Announcements"><div class="home-notice-track"><div class="home-notice-group">${Le}</div><div class="home-notice-group" aria-hidden="true">${Le}</div><div class="home-notice-group" aria-hidden="true">${Le}</div><div class="home-notice-group" aria-hidden="true">${Le}</div></div></div>`;function Ta(){const e=T(),a=!e||e==="home",i=e==="coe"||e==="coe-portal"||e==="examinations"||e==="coe-result"||e==="result"||e==="coe-transcript"||e==="transcript",t=e==="placements"||e==="placement"||e.startsWith("placements")||e==="entrepreneurship",s=e==="apply"||e==="admission-enquiry"||e==="admission-referral"||e==="referral";return`
 <div class="siet-fixed-header-wrapper" id="siet-fixed-header-wrapper">
   ${ri()}
   <header class="institution-header-v4 exact-image-header" role="banner">
@@ -10882,6 +10882,240 @@ function initAdmTabLogic() {
     });
   }
 }
+
+// Test space mission markup generator
+// Space Whiz 2026 & Sri Shakthi Space Mission Page View
+// Space Whiz 2026 & Sri Shakthi Space Mission Page View
+// Space Whiz 2026 & Sri Shakthi Space Mission Page View with Official Google Form
+// Space Whiz 2026 & Sri Shakthi Space Mission Page View (Button-based Registration)
+function spaceMissionMarkup() {
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSd1IgandPCQMSBz4i_lZKCBsVYKMsYmu4SeFvBogz4GrzLLPg/viewform";
+
+  return `
+  <main class="siet-space-page" id="siet-space-main">
+    
+    <!-- SECTION A: HERO -->
+    <section class="space-hero" id="space-hero" aria-label="Space Whiz 2026 Hero">
+      <div class="space-hero-mesh" aria-hidden="true"></div>
+      <div class="space-hero-shell">
+        
+        <div class="space-hero-presents">
+          <span class="space-pulse-beacon" aria-hidden="true"></span>
+          <span>SRI SHAKTHI PRESENTS • 21 YEARS OF CREATING EMPOWERED ENGINEERS</span>
+        </div>
+
+        <div class="space-hero-kicker">ONLINE QUIZ CONTEST ON SPACE TECHNOLOGY</div>
+        <h1>Space <em>Whiz 2026</em></h1>
+        
+        <p class="space-hero-lead">
+          Sri Shakthi is the only private engineering college in India who had launched their own satellite through ISRO. We invite students of 10th, 11th &amp; 12th STD to participate in the Space Whiz 2026 National Quiz and win a fully sponsored visit to ISRO Sriharikota!
+        </p>
+
+        <div class="space-hero-actions">
+          <a href="${googleFormUrl}" target="_blank" rel="noopener noreferrer" class="space-btn-magenta" id="space-hero-reg-btn" style="font-size: 16px;">
+            Open Registration Form ↗
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </a>
+          <a href="/brand/space-whiz-poster.png" target="_blank" rel="noopener noreferrer" class="space-btn-outline" style="font-size: 15px;">
+            View Official Poster 🔍
+          </a>
+          <a href="/brand/space-whiz-poster.png" download="Space-Whiz-2026-Poster.png" class="space-btn-primary" style="font-size: 15px;">
+            Download Poster 📥
+          </a>
+        </div>
+
+        <!-- Schedule & Eligibility Strip -->
+        <div class="space-schedule-strip" role="region" aria-label="Contest Schedule and Eligibility">
+          <div class="schedule-item pink">
+            <div class="schedule-label">ELIGIBILITY</div>
+            <div class="schedule-val">Open to <strong>10th, 11th &amp; 12th STD</strong></div>
+          </div>
+          <div class="schedule-item">
+            <div class="schedule-label">REGISTRATION DEADLINE</div>
+            <div class="schedule-val"><strong>10th August 2026</strong></div>
+          </div>
+          <div class="schedule-item cyan">
+            <div class="schedule-label">ONLINE EXAM DATE</div>
+            <div class="schedule-val"><strong>21st September 2026</strong></div>
+          </div>
+          <div class="schedule-item purple">
+            <div class="schedule-label">GRAND EXCELLENCE REWARD</div>
+            <div class="schedule-val"><strong>Top 100 to ISRO Sriharikota</strong></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION B: POSTER & 100 REWARDS SHOWCASE -->
+    <section class="space-section" id="space-showcase" aria-labelledby="showcase-title">
+      <header class="space-section-header">
+        <span class="space-section-tag">NATIONAL QUIZ COMPETITION</span>
+        <h2 id="showcase-title" class="space-section-title">Space Whiz 2026 <em>Official Announcement &amp; Rewards</em></h2>
+        <p class="space-section-sub">
+          Everything you need to know about eligibility, examination milestones, sponsored ISRO launch visits, and official recognition.
+        </p>
+      </header>
+
+      <div class="space-showcase-grid">
+        
+        <!-- Left: Official Poster Preview (Direct Click-to-Open in High Res) -->
+        <article class="space-poster-card" aria-label="Space Whiz 2026 Poster Preview">
+          <a href="/brand/space-whiz-poster.png" target="_blank" rel="noopener noreferrer" class="space-poster-img-wrap" title="Click to open high-resolution poster in new tab">
+            <img src="/brand/space-whiz-poster.png" alt="Space Whiz 2026 Online Quiz Contest on Space Technology Official Poster" class="space-poster-img" width="600" height="850" loading="eager">
+            <span class="poster-zoom-hint">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+              Click to Open Full Poster in New Tab ↗
+            </span>
+          </a>
+          <div class="space-poster-actions">
+            <a href="/brand/space-whiz-poster.png" target="_blank" rel="noopener noreferrer" class="space-btn-outline" style="padding: 12px 20px; font-size: 14px;">
+              View Full Poster 🔍
+            </a>
+            <a href="/brand/space-whiz-poster.png" download="Space-Whiz-2026-Poster.png" class="space-btn-primary" style="padding: 12px 20px; font-size: 14px;">
+              Download Poster Image 📥
+            </a>
+          </div>
+        </article>
+
+        <!-- Right: The 100 Rewards & Information -->
+        <div class="space-rewards-column">
+          
+          <!-- Grand 100 Rewards Box -->
+          <article class="space-reward-grand-card">
+            <span class="grand-card-badge">★ 100 REWARDS FOR EXCELLENCE ★</span>
+            <h3>Witness an ISRO Satellite Launch <em>Live at Sriharikota!</em></h3>
+            <p>
+              The top 100 ranking students from across the country will be taken to Satish Dhawan Space Centre (SDSC SHAR), Sriharikota to witness the thunderous launch of a satellite firsthand.
+            </p>
+            <ul class="reward-perks-list">
+              <li><strong>100% Fully Sponsored by SIET:</strong> Total cost of air travel &amp; accommodation will be entirely borne by Sri Shakthi Institute of Engineering and Technology.</li>
+              <li><strong>Special Chennai Space &amp; Science Visit:</strong> A curated local science visit will also be arranged at Chennai for all 100 student achievers.</li>
+              <li><strong>Exclusive ISRO Interaction:</strong> Meet aerospace scientists and experience mission launch control facilities up close.</li>
+            </ul>
+          </article>
+
+          <!-- Secondary Perks Cards Grid -->
+          <div class="space-subcards-grid">
+            <div class="space-info-card">
+              <h4><span>🏅</span> Certificates for All</h4>
+              <p>Every participating student will receive an official Certificate of Participation from Sri Shakthi Space Mission to honor their enthusiasm for space science.</p>
+            </div>
+            <div class="space-info-card">
+              <h4><span>📜</span> Faculty Mentors Honored</h4>
+              <p>Faculty mentors guiding students will receive an official 'Certificate of Appreciation' recognizing their leadership in inspiring young space minds.</p>
+            </div>
+            <div class="space-info-card">
+              <h4><span>📅</span> Important Deadlines</h4>
+              <p><strong>Registration Deadline:</strong> 10th August 2026<br><strong>Online Exam Date:</strong> 21st September 2026</p>
+            </div>
+            <div class="space-info-card">
+              <h4><span>💻</span> Quiz Topics &amp; Format</h4>
+              <p>Online test covering space science, satellite fundamentals, astronomy, Indian space milestones, and applied physics.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION C: BUTTON-BASED REGISTRATION CALL TO ACTION -->
+    <section class="space-section" id="register" aria-labelledby="register-title">
+      <div class="space-register-cta-card">
+        <span class="space-section-tag" style="color: #ffd12e;">OFFICIAL GOOGLE REGISTRATION FORM</span>
+        <h2 id="register-title" class="space-section-title">Ready to Test Your <em>Space Knowledge?</em></h2>
+        <p class="space-section-sub">
+          Registration is completely <strong>free</strong> and open to all students currently studying in <strong>10th, 11th &amp; 12th Standard</strong> across India.<br>Click the button below to fill out the official registration form directly on Google Forms.
+        </p>
+
+        <div class="register-cta-actions">
+          <a href="${googleFormUrl}" target="_blank" rel="noopener noreferrer" class="space-btn-magenta" style="font-size: 18px; padding: 18px 44px; border-radius: 12px; box-shadow: 0 8px 32px rgba(255, 42, 133, 0.45); text-decoration: none;">
+            Open Space Whiz Registration Form 🚀
+          </a>
+        </div>
+
+        <div class="register-portal-meta">
+          <span>Official Registration Link: <a href="${googleFormUrl}" target="_blank" rel="noopener noreferrer">${googleFormUrl}</a></span>
+        </div>
+      </div>
+
+      <!-- Helplines Grid from Poster -->
+      <div class="space-helpline-grid" role="region" aria-label="Official Helpdesk Numbers">
+        <a href="tel:+919444620505" class="helpline-card">
+          <small>HELPLINE 1</small>
+          <strong>+91 94446 20505</strong>
+        </a>
+        <a href="tel:+917305631539" class="helpline-card">
+          <small>HELPLINE 2</small>
+          <strong>+91 73056 31539</strong>
+        </a>
+        <a href="tel:+916385690950" class="helpline-card">
+          <small>HELPLINE 3</small>
+          <strong>+91 63856 90950</strong>
+        </a>
+        <a href="tel:+917550090276" class="helpline-card">
+          <small>HELPLINE 4</small>
+          <strong>+91 75500 90276</strong>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION D: INSTITUTIONAL HERITAGE (WHY SRI SHAKTHI) -->
+    <section class="space-section" style="padding-top: 20px;" aria-labelledby="heritage-title">
+      <div class="space-heritage-card">
+        <div class="space-heritage-copy">
+          <span class="space-section-tag" style="color: #ffd12e;">AUTHENTIC SPACE HERITAGE</span>
+          <h3 id="heritage-title">Sri Shakthi Space Mission</h3>
+          <p>
+            <strong>SRI SHAKTHI IS THE ONLY PRIVATE ENGINEERING COLLEGE IN INDIA, WHO HAD LAUNCHED THEIR OWN SATELLITE THROUGH ISRO.</strong>
+            Our student-built nano-satellite, <strong>SriShakthiSat (460g)</strong>, was placed into a 505 km Sun-Synchronous Orbit aboard ISRO's PSLV-C51 mission on February 28, 2021. Sri Shakthi also operates a state-of-the-art satellite ground station on campus, formally inaugurated by former ISRO Chairman Dr. K. Sivan.
+          </p>
+        </div>
+        <div class="space-heritage-stats">
+          <div class="heritage-stat-box">
+            <strong>PSLV-C51</strong>
+            <span>ISRO LAUNCH</span>
+          </div>
+          <div class="heritage-stat-box">
+            <strong>460 g</strong>
+            <span>SRISHAKTHISAT</span>
+          </div>
+          <div class="heritage-stat-box">
+            <strong>NAAC 'A'</strong>
+            <span>&amp; NBA TIER-I</span>
+          </div>
+          <div class="heritage-stat-box">
+            <strong>2727</strong>
+            <span>TNEA CODE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  `;
+}
+
+function initSpaceMissionEvents() {
+  // Smooth scroll links if any
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", (e) => {
+      const targetId = link.getAttribute("href").replace(/^#/, "");
+      if (!targetId) return;
+      const targetEl = document.getElementById(targetId);
+      if (targetEl) {
+        e.preventDefault();
+        targetEl.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  });
+}
+
+// Export test
+if (typeof module !== 'undefined') {
+  module.exports = { spaceMissionMarkup, initSpaceMissionEvents };
+}
 function Ae(){if(ge(),!Me)return;const e=T(),i=!e||e==="special-labs";
  const isAdm = e==="admission"||e==="admissions"||e==="admission-overview"||(e.startsWith("admission")&&e!=="apply"&&e!=="admission-enquiry"&&e!=="admission-referral"&&e!=="referral")||e==="admission-enquiry-engineering-college-management-quota-coimbatore-tamilnadu"||e==="admission-enquiry-engineering-college-management-quota-coimbatore-tamilnadu.php"||e==="undergraduateprograms"||e==="postgraduateprograms"||e==="undergraduate-programs"||e==="postgraduate-programs";
 if(isAdm){
@@ -10892,6 +11126,16 @@ if(isAdm){
   scrollTo(0, 0);
   return;
 }
+const isSpace = e==="sri-shakthi-space-mission"||e==="sssm"||e==="space-whiz"||e==="spacewhiz"||e==="sssm"||e==="space-whiz"||e==="spacewhiz"||e==="sssm"||e==="space-whiz"||e==="spacewhiz"||e==="sssm"||e==="space-whiz"||e==="spacewhiz"||e==="space-mission"||e==="shakthisat"||e==="srishakthisat"||e==="space"||e==="sri-shakthi-space-mission.php";
+if(isSpace){
+  Me.innerHTML = oi(spaceMissionMarkup(), e);
+  document.title = "Sri Shakthi Space Mission (SriShakthiSat) | Sri Shakthi Institute of Engineering & Technology";
+  initSpaceMissionEvents();
+  ba();
+  scrollTo(0, 0);
+  return;
+}
+
 const t=e==="apply"||e==="admission-enquiry"||e==="admission-referral"||e==="referral";if(t){const c=e==="admission-referral"||e==="referral"||Ie().get("tab")==="referral",g=c?"referral":"enquiry";Me.innerHTML=ci(It(g)),document.title=c?"Admission Referral | Sri Shakthi Institute of Engineering & Technology":"Apply for Sri Shakthi | SIET",ba(),scrollTo(0,0);return}let s=i?gi():e==="vision-mission"||e==="about"?bi():e==="core-beliefs"?wi():e==="program-outcomes"?Si():e==="core-values"?Ci():e==="philosophy"?Ai():e==="chairman"?ki():e==="principal"?Ti():e==="programmes"?Pi():e==="departments"?Li():e==="careers"?Lt():e==="library"?dt():e==="contact"?Rt():e==="curriculum"?Ni():e==="academic-calendar"?ct():e==="academics"?lt():e==="coe"||e==="coe-portal"||e==="examinations"?Pe(Ie().get("tab")||"about"):e==="coe-downloads"||e==="downloads"||e==="download"||e==="forms"?Pe("forms"):e==="coe-regulations"||e==="regulations"?Pe("regulations"):e==="coe-result"||e==="result"?za():e==="coe-transcript"||e==="transcript"?Pe("transcripts"):e==="governance"||e==="committees"?Ga(Ie().get("tab")||"all"):e==="mandatory-disclosure"||e==="disclosure"?qa():e==="statutory-declaration"||e==="rti"?Va():e==="nirf"?Ua():e==="naac"?Ya():e==="nba"?Wa():e==="iqac"?Ka():e==="ariia"||e==="ariia-report"?Ja():e==="accreditations"||e==="accreditation"||e==="approvals"?Za():e==="placements"||e==="placement"||e.startsWith("placements/")||e==="entrepreneurship"||e==="career-support/entrepreneurship"?os(e):e==="labs"||e==="all-labs"?ys():e.startsWith("labs/")||e.startsWith("lab/")?bs(e.replace(/^labs?\//,"")):e==="student-life"?oa():e==="sports-recreation"?ca():e==="innovation"?bt():e==="culture-arts"?yt():e==="learning-growth"?St():e==="our-campus"?Et():e==="campus"||e==="campus-life"?oa():e==="sports"?ca():e==="explore"||e==="explore-overview"?Nt(Ie().get("tab")||"all"):e==="training"||e==="career-development"?Ft():e==="research"||e==="research-development"?Ht():e==="incubation"||e==="tbi"?Gt():e==="centres-of-excellence"||e==="coe-labs"||e==="centers-of-excellence"?Vt():e==="alumni"||e==="alumni-network"?Wt():e.startsWith("faculty/")?nt(e.slice(8)):e.startsWith("department/")?Ke(Fe(e.slice(11).replaceAll("-"," ")).replaceAll(" And "," & ")):fa.has(e)||e.startsWith("club/")?ft(e):Ct(e);Me.innerHTML=oi(s,e);const n=e.startsWith("labs/")||e.startsWith("lab/")?Fa(e.replace(/^labs?\//,"")):null,r=e.startsWith("faculty/")?_e(e.slice(8)):null,o=e.startsWith("department/");let m=o?Fe(e.slice(11).replaceAll("-"," ")).replaceAll(" And "," & "):"";m.toLowerCase().includes("cyber")&&(m="Computer Science and Engineering (Cyber Security)");const l=e==="student-life"||e==="campus-life"?"Student Life & Campus Community | Sri Shakthi (SIET)":e==="sports-recreation"||e==="sports"?"Sports & Recreation | Sri Shakthi (SIET)":e==="innovation"?"Innovation & Incubation | Sri Shakthi (SIET)":e==="culture-arts"?"Culture & Arts | Sri Shakthi (SIET)":e==="learning-growth"?"Learning & Growth | Sri Shakthi (SIET)":e==="our-campus"||e==="campus"?"Our Campus & Facilities | Sri Shakthi (SIET)":null;if(document.title=r?`${r.name} - Faculty Profile | SIET`:n?`${n.name} | Specialized Laboratories | SIET`:e==="labs"?"Specialized Laboratories | Sri Shakthi (SIET)":o?`Department of ${m} | Sri Shakthi (SIET)`:l||(!fa.has(e)&&!i&&!t&&!e.startsWith("club/")&&e?"Page Not Found | Sri Shakthi (SIET)":`${e?Fe(e.replaceAll("-"," ")):"Sri Shakthi"} | SIET`),ba(),i)if(e==="special-labs"){const c=()=>{const g=document.getElementById("special-labs");if(g){const x=g.getBoundingClientRect().top+window.pageYOffset-95;window.scrollTo({top:x>0?x:0,behavior:"smooth"})}};setTimeout(c,60),setTimeout(c,250)}else scrollTo(0,0);else scrollTo(0,0)}function Es(e,a){const i=e("#transport-stop-search");if(i){const t=s=>{const n=(s.target.value||"").trim().toLowerCase(),r=a(".stop-chip"),o=a(".route-zone-card"),m=e("#stop-search-count");let l=0;if(!n){r.forEach(c=>c.classList.remove("stop-highlight")),o.forEach(c=>{c.style.opacity="1",c.classList.remove("has-matching-stop")}),m&&(m.style.display="none");return}r.forEach(c=>{const h=(c.textContent||"").toLowerCase().includes(n);c.classList.toggle("stop-highlight",h),h&&l++}),o.forEach(c=>{const g=c.querySelectorAll(".stop-chip.stop-highlight").length>0;c.style.opacity=g?"1":"0.35",c.classList.toggle("has-matching-stop",g)}),m&&(m.style.display="inline-block",m.textContent=l>0?`Found ${l} matching stop${l>1?"s":""}`:"No matching stops found")};i.addEventListener("input",t)}a(".club-filter-pill").forEach(t=>{t.addEventListener("click",()=>{a(".club-filter-pill").forEach(n=>n.classList.toggle("is-active",n===t));const s=t.dataset.clubCat;a(".club-cat-card").forEach(n=>{s==="all"||n.dataset.clubCat===s?(n.style.display="",n.style.opacity="1"):n.style.display="none"})})}),a(".hostel-menu-day-btn").forEach(t=>{t.addEventListener("click",()=>{a(".hostel-menu-day-btn").forEach(n=>n.classList.toggle("is-active",n===t));const s=t.dataset.day;a(".hostel-menu-pane").forEach(n=>{n.classList.toggle("is-active",n.dataset.day===s)})})}),a(".sports-filter-pill").forEach(t=>{t.addEventListener("click",()=>{a(".sports-filter-pill").forEach(n=>n.classList.toggle("is-active",n===t));const s=t.dataset.sportCat;a(".sport-arena-card").forEach(n=>{s==="all"||n.dataset.sportCat===s?(n.style.display="",n.style.opacity="1"):n.style.display="none"})})}),a(".facility-filter-pill").forEach(t=>{t.addEventListener("click",()=>{a(".facility-filter-pill").forEach(n=>n.classList.toggle("is-active",n===t));const s=t.dataset.facilityCat;a(".facility-showcase-card").forEach(n=>{s==="all"||n.dataset.facilityCat===s?(n.style.display="",n.style.opacity="1"):n.style.display="none"})})})}function ba(){var S,M,E,P,N,V,J,z,U,te,G,X,j,Z,W,_;if(T()==="academics"&&(document.title="Academic Overview | Sri Shakthi Institute of Engineering & Technology"),(T()==="coe"||T()==="coe-portal"||T()==="examinations")&&(document.title="Office of the Controller of Examinations | Sri Shakthi Institute of Engineering & Technology"),(T()==="coe-result"||T()==="result")&&(document.title="Autonomous Examination Results Portal | Office of the COE | SIET"),(T()==="coe-transcript"||T()==="transcript")&&(document.title="Official Academic Transcripts | Office of the COE | SIET"),(T()==="governance"||T()==="committees")&&(document.title="Governance & Statutory Committees | Sri Shakthi Institute of Engineering & Technology"),(T()==="mandatory-disclosure"||T()==="disclosure")&&(document.title="AICTE Mandatory Disclosure | Sri Shakthi Institute of Engineering & Technology"),(T()==="statutory-declaration"||T()==="rti")&&(document.title="Statutory Declaration (RTI Act) | Sri Shakthi Institute of Engineering & Technology"),T()==="nirf"&&(document.title="NIRF Institutional Submissions | Sri Shakthi Institute of Engineering & Technology"),T()==="naac"&&(document.title="NAAC Grade ‘A’ Accreditation | Sri Shakthi Institute of Engineering & Technology"),T()==="nba"&&(document.title="NBA Tier-I Accredited Programmes | Sri Shakthi Institute of Engineering & Technology"),T()==="iqac"&&(document.title="Internal Quality Assurance Cell (IQAC) | Sri Shakthi Institute of Engineering & Technology"),(T()==="ariia"||T()==="ariia-report")&&(document.title="ARIIA Ranking & Innovation Cell | Sri Shakthi Institute of Engineering & Technology"),(T()==="accreditations"||T()==="accreditation"||T()==="approvals")&&(document.title="Approvals & Accreditations | Sri Shakthi Institute of Engineering & Technology"),(T()==="placements"||T()==="placement"||(S=T())!=null&&S.startsWith("placements")||T()==="entrepreneurship")&&((M=T())!=null&&M.includes("entrepreneurship")?document.title="Entrepreneurship Development Cell (EDC / E-Cell) | SIET":(E=T())!=null&&E.includes("higher-education")?document.title="Higher Education & Admissions | SIET":(P=T())!=null&&P.includes("government-services")?document.title="Civil Services & Public Sector Coaching | SIET":document.title="Training & Placement Cell | Sri Shakthi Institute of Engineering & Technology"),Qa(f,w),cs(),Xa(f,w),Es(f,w),At(f,w),Kt(f,w),(T()==="explore"||T()==="explore-overview")&&(document.title="Explore Sri Shakthi | Innovation, Research, Training & Alumni | SIET"),(T()==="training"||T()==="career-development")&&(document.title="Career Development & Training | Sri Shakthi Institute of Engineering & Technology"),(T()==="research"||T()==="research-development")&&(document.title="Research & Development (R&D) | Sri Shakthi Institute of Engineering & Technology"),(T()==="incubation"||T()==="tbi")&&(document.title="Innovation & Incubation (TBI) | Sri Shakthi Institute of Engineering & Technology"),(T()==="centres-of-excellence"||T()==="coe-labs"||T()==="centers-of-excellence")&&(document.title="Centres of Excellence & Special Labs | Sri Shakthi Institute of Engineering & Technology"),(T()==="alumni"||T()==="alumni-network")&&(document.title="Shakthians Global Alumni Network | Sri Shakthi Institute of Engineering & Technology"),T()==="transport"&&ht(),T(),Bi(f,w),T()==="chairman"&&((N=f(".siet-cd-kicker"))==null||N.replaceChildren("THE CHAIRMAN'S DESK"),document.title="The Chairman's Desk | SIET"),T()==="principal"&&(document.title="From the Principal | SIET"),T()==="core-beliefs"&&(document.title="Core Beliefs | SIET"),T()==="library"&&(document.title="Central Library | Sri Shakthi Institute of Engineering & Technology"),T()==="curriculum"){const d=pe(Ss);document.title=`${d.degree} ${d.name} Curriculum | Sri Shakthi Institute of Engineering & Technology`}T()==="academic-calendar"&&(document.title="Academic Calendar | Sri Shakthi Institute of Engineering & Technology"),T()==="departments"&&(document.title="Departments | Sri Shakthi Institute of Engineering & Technology"),T()==="programmes"&&(document.title="UG & PG Programmes | Sri Shakthi Institute of Engineering & Technology"),w(".apply-portal-tab-btn").forEach(d=>{d.addEventListener("click",()=>{const p=d.dataset.portalTab;if(!p)return;w(".apply-portal-tab-btn").forEach(O=>{const K=O===d;O.classList.toggle("active",K),O.classList.toggle("is-active",K),O.setAttribute("aria-selected",K?"true":"false")});const u=f("#apply-pane-enquiry"),b=f("#apply-pane-referral");u&&b&&(u.classList.toggle("is-active",p==="enquiry"),b.classList.toggle("is-active",p==="referral"));const B=f("#apply-hud-title"),L=f("#apply-hud-breadcrumb");B&&(B.innerHTML=p==="referral"?"Student Admission <em>Referral</em>":"Apply for <em>Sri Shakthi</em>"),L&&(L.textContent=p==="referral"?"Referral":"Apply"),window.history&&window.history.replaceState&&window.history.replaceState(null,"",p==="referral"?"#/admission-referral":"#/apply"),document.title=p==="referral"?"Admission Referral | Sri Shakthi Institute of Engineering & Technology":"Apply for Sri Shakthi | SIET"})});const e=f("#open-admin-console-btn");e&&e.addEventListener("click",()=>{let d=f("#admin-console-modal-mount");d||(d=document.createElement("div"),d.id="admin-console-modal-mount",document.body.appendChild(d)),si(d)}),w(".quick-chip-btn").forEach(d=>{d.addEventListener("click",()=>{const p=d.dataset.topic,u=f("#enquiry-message-area");if(!u||!p)return;d.classList.toggle("is-selected"),d.classList.contains("is-selected")?u.value.includes(p)||(u.value=u.value.trim()?`${u.value.trim()}
 • ${p}`:`Please provide details regarding:
 • ${p}`):u.value=u.value.replace(`

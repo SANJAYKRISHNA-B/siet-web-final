@@ -4,3 +4,4 @@ chrome-profile*
 scratch/
 .DS_Store
 Thumbs.db
+data/
