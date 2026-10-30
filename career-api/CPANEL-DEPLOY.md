@@ -5,7 +5,8 @@
 3. Keep or create `public_html/webportal/resume`. The handler automatically stores resumes there. Recommended directory permission is `0755` or the lowest permission that allows your cPanel PHP process to write; avoid `0777`.
 4. The main website Careers page is served by `/new-site/` and posts to `/new-site/career-api/career-submit.php`. If you maintain the legacy standalone `career.html` page, configure it separately to use the deployed API path.
 5. Your existing `applicant` table can be used directly when it contains the listed legacy columns. Only import `applicant-table.sql` when the table does not already exist.
-6. Open `https://YOUR-DOMAIN/new-site/careers`, submit one application, and verify the new row in phpMyAdmin under `applicant` and the resume in `webportal/resume`.
+6. For an existing `applicant` table, run `add-district-column.sql` once in phpMyAdmin so the new District field can be saved. If creating the table from `applicant-table.sql`, it already includes the column.
+7. Open `https://YOUR-DOMAIN/new-site/careers`, submit one application, and verify the new row in phpMyAdmin under `applicant` and the resume in `webportal/resume`.
 
 Create `public_html/new-site/career-api/career-config.php` from `career-config.example.php` and set `mail_webhook_url` and `mail_webhook_token` even when the database comes from `webportal/masterdb_config.php`. The file is blocked from direct web access by `.htaccess`. If the legacy database file is unavailable, also fill in the database settings. If you store the config outside `public_html`, set `CAREER_CONFIG_PATH` in PHP and set `upload_dir` to the absolute `public_html/webportal/resume` path.
 

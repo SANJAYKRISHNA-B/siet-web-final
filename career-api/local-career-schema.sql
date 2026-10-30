@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS career_applications (
   country TEXT NOT NULL,
   state TEXT,
   city TEXT,
+  district TEXT,
   institution TEXT NOT NULL,
   category TEXT NOT NULL,
   position TEXT NOT NULL,

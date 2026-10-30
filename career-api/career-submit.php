@@ -112,6 +112,7 @@ $data = [
     'current_institution' => value('currentInstitution', 'current_institution'),
     'current_position' => value('currentPosition', 'current_position'),
     'city' => value('city'),
+    'district' => value('district'),
     'state' => value('state'),
     'country' => value('country'),
     'mobile' => value('phone', 'mobile'),
@@ -180,12 +181,12 @@ try {
         );
     }
     $db->set_charset('utf8mb4');
-    $sql = 'INSERT INTO `applicant` (`fullname`,`dept`,`position`,`high_qualification`,`social_cat`,`current_institution`,`current_position`,`city`,`state`,`country`,`mobile`,`email`,`dob`,`teaching`,`industry`,`research`,`current_salary_range`,`expected_salary_range`,`notice_period`,`resume`,`why_change`,`source`,`institute`,`created_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())';
+    $sql = 'INSERT INTO `applicant` (`fullname`,`dept`,`position`,`high_qualification`,`social_cat`,`current_institution`,`current_position`,`city`,`district`,`state`,`country`,`mobile`,`email`,`dob`,`teaching`,`industry`,`research`,`current_salary_range`,`expected_salary_range`,`notice_period`,`resume`,`why_change`,`source`,`institute`,`created_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())';
     $stmt = $db->prepare($sql);
     $stmt->bind_param(
-        str_repeat('s', 23),
+        str_repeat('s', 24),
         $data['fullname'], $data['dept'], $data['position'], $data['high_qualification'], $data['social_cat'],
-        $data['current_institution'], $data['current_position'], $data['city'], $data['state'], $data['country'],
+        $data['current_institution'], $data['current_position'], $data['city'], $data['district'], $data['state'], $data['country'],
         $data['mobile'], $data['email'], $data['dob'], $data['teaching'], $data['industry'], $data['research'],
         $data['current_salary_range'], $data['expected_salary_range'], $data['notice_period'], $storedName,
         $data['why_change'], $data['source'], $data['institute']
@@ -203,6 +204,7 @@ try {
         'position' => $data['position'],
         'highQualification' => $data['high_qualification'],
         'city' => $data['city'],
+        'district' => $data['district'],
         'state' => $data['state'],
         'country' => $data['country'],
         'teaching' => $data['teaching'],

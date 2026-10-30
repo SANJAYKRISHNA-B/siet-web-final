@@ -13,16 +13,20 @@ const careerUploadDir = join(careerDataDir, "career-resumes");
 mkdirSync(careerUploadDir, { recursive: true });
 const careerDb = new DatabaseSync(join(careerDataDir, "career-applications.sqlite"));
 careerDb.exec(readFileSync(join(root, "career-api", "local-career-schema.sql"), "utf8"));
+const careerColumns = careerDb.prepare("PRAGMA table_info(career_applications)").all();
+if (!careerColumns.some(column => column.name === "district")) {
+  careerDb.exec("ALTER TABLE career_applications ADD COLUMN district TEXT");
+}
 const insertCareerApplication = careerDb.prepare(`
   INSERT INTO career_applications (
-    application_no, name, phone, email, date_of_birth, country, state, city,
+    application_no, name, phone, email, date_of_birth, country, state, city, district,
     institution, category, position, department, qualification, social_category,
     current_institution, current_position, current_salary, expected_salary,
     notice_period, teaching_experience, industrial_experience, research_experience,
     opening_source, message, resume_original_name, resume_stored_name,
     resume_mime_type, resume_size, ip_address
   ) VALUES (
-    @applicationNo, @name, @phone, @email, @dateOfBirth, @country, @state, @city,
+    @applicationNo, @name, @phone, @email, @dateOfBirth, @country, @state, @city, @district,
     @institution, @category, @position, @department, @qualification, @socialCategory,
     @currentInstitution, @currentPosition, @currentSalary, @expectedSalary,
     @noticePeriod, @teachingExperience, @industrialExperience, @researchExperience,
@@ -102,7 +106,7 @@ function handleLocalCareerSubmission(request, response) {
       writeFileSync(join(careerUploadDir, storedName), resume.content, { flag: "wx" });
       const values = {
         applicationNo, name: fields.name.trim(), phone: fields.phone.trim(), email: fields.email.trim().toLowerCase(),
-        dateOfBirth: fields.dateOfBirth, country: fields.country, state: fields.state || "", city: fields.city || "",
+        dateOfBirth: fields.dateOfBirth, country: fields.country, state: fields.state || "", city: fields.city || "", district: fields.district || "",
         institution: fields.institution, category: fields.category, position: fields.position, department: fields.department,
         qualification: fields.qualification, socialCategory: fields.socialCategory, currentInstitution: fields.currentInstitution || "",
         currentPosition: fields.currentPosition || "", currentSalary: fields.currentSalary || "", expectedSalary: fields.expectedSalary,
@@ -127,7 +131,7 @@ function handleLocalCareerSubmission(request, response) {
             body: JSON.stringify({
               applicationNo: finalApplicationNo, fullname: values.name, email: values.email, mobile: values.phone,
               institute: values.institution, dept: values.department, position: values.position,
-              highQualification: values.qualification, city: values.city, state: values.state,
+              highQualification: values.qualification, city: values.city, district: values.district, state: values.state,
               country: values.country, teaching: values.teachingExperience,
               industry: values.industrialExperience, research: values.researchExperience,
               expectedSalary: values.expectedSalary, noticePeriod: values.noticePeriod,
