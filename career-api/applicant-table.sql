@@ -8,7 +8,6 @@ CREATE TABLE IF NOT EXISTS `applicant` (
   `current_institution` VARCHAR(200) DEFAULT NULL,
   `current_position` VARCHAR(150) DEFAULT NULL,
   `city` VARCHAR(100) DEFAULT NULL,
-  `district` VARCHAR(100) DEFAULT NULL,
   `state` VARCHAR(100) DEFAULT NULL,
   `country` VARCHAR(100) NOT NULL,
   `mobile` VARCHAR(25) NOT NULL,

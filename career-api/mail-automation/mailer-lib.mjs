@@ -49,7 +49,7 @@ function buildHrHtml(application) {
     ["Email", application.email], ["Mobile", application.mobile], ["Institute", application.institute],
     ["Department", application.dept], ["Position", application.position],
     ["Qualification", application.highQualification],
-    ["Location", [application.city, application.district, application.state, application.country].filter(Boolean).join(", ")],
+    ["Location", [application.city, application.state, application.country].filter(Boolean).join(", ")],
     ["Teaching experience", application.teaching], ["Industry experience", application.industry],
     ["Research experience", application.research], ["Expected salary", application.expectedSalary],
     ["Notice period", application.noticePeriod], ["Source", application.source]

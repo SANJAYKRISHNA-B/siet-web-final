@@ -112,7 +112,6 @@ $data = [
     'current_institution' => value('currentInstitution', 'current_institution'),
     'current_position' => value('currentPosition', 'current_position'),
     'city' => value('city'),
-    'district' => value('district'),
     'state' => value('state'),
     'country' => value('country'),
     'mobile' => value('phone', 'mobile'),
@@ -181,32 +180,16 @@ try {
         );
     }
     $db->set_charset('utf8mb4');
-    $baseColumns = [
-        'fullname', 'dept', 'position', 'high_qualification', 'social_cat', 'current_institution',
-        'current_position', 'city', 'state', 'country', 'mobile', 'email', 'dob', 'teaching',
-        'industry', 'research', 'current_salary_range', 'expected_salary_range', 'notice_period',
-        'resume', 'why_change', 'source', 'institute',
-    ];
-    $baseValues = [
+    $sql = 'INSERT INTO `applicant` (`fullname`,`dept`,`position`,`high_qualification`,`social_cat`,`current_institution`,`current_position`,`city`,`state`,`country`,`mobile`,`email`,`dob`,`teaching`,`industry`,`research`,`current_salary_range`,`expected_salary_range`,`notice_period`,`resume`,`why_change`,`source`,`institute`,`created_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())';
+    $stmt = $db->prepare($sql);
+    $stmt->bind_param(
+        str_repeat('s', 23),
         $data['fullname'], $data['dept'], $data['position'], $data['high_qualification'], $data['social_cat'],
         $data['current_institution'], $data['current_position'], $data['city'], $data['state'], $data['country'],
         $data['mobile'], $data['email'], $data['dob'], $data['teaching'], $data['industry'], $data['research'],
         $data['current_salary_range'], $data['expected_salary_range'], $data['notice_period'], $storedName,
-        $data['why_change'], $data['source'], $data['institute'],
-    ];
-    $districtColumn = $db->query("SHOW COLUMNS FROM `applicant` LIKE 'district'");
-    if ($districtColumn instanceof mysqli_result && $districtColumn->num_rows > 0) {
-        array_splice($baseColumns, 8, 0, ['district']);
-        array_splice($baseValues, 8, 0, [$data['district']]);
-    }
-    if ($districtColumn instanceof mysqli_result) $districtColumn->free();
-    $quotedColumns = array_map(static fn(string $column): string => '`' . $column . '`', $baseColumns);
-    $sql = 'INSERT INTO `applicant` (' . implode(',', [...$quotedColumns, '`created_at`']) . ') VALUES (' . implode(',', array_fill(0, count($baseValues), '?')) . ',NOW())';
-    $stmt = $db->prepare($sql);
-    $bindArguments = [str_repeat('s', count($baseValues))];
-    foreach ($baseValues as &$baseValue) $bindArguments[] = &$baseValue;
-    call_user_func_array([$stmt, 'bind_param'], $bindArguments);
-    unset($baseValue);
+        $data['why_change'], $data['source'], $data['institute']
+    );
     $stmt->execute();
     $id = $stmt->insert_id;
     $applicationNo = sprintf('SIET-%s-%s-%06d', institutionCode($data['institute']), date('Ymd'), (int)$id);
@@ -220,7 +203,6 @@ try {
         'position' => $data['position'],
         'highQualification' => $data['high_qualification'],
         'city' => $data['city'],
-        'district' => $data['district'],
         'state' => $data['state'],
         'country' => $data['country'],
         'teaching' => $data['teaching'],
