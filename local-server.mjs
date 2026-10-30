@@ -13,6 +13,17 @@ const careerUploadDir = join(careerDataDir, "career-resumes");
 mkdirSync(careerUploadDir, { recursive: true });
 const careerDb = new DatabaseSync(join(careerDataDir, "career-applications.sqlite"));
 careerDb.exec(readFileSync(join(root, "career-api", "local-career-schema.sql"), "utf8"));
+const applyDb = new DatabaseSync(join(careerDataDir, "apply-applications.sqlite"));
+applyDb.exec(readFileSync(join(root, "apply-api", "local-application-schema.sql"), "utf8"));
+const insertApplyApplication = applyDb.prepare(`
+  INSERT INTO applications (
+    name, mobile, email, location, course, message, other,
+    previous_qualification, course_level, academic_qualification_marks
+  ) VALUES (
+    @name, @mobile, @email, @location, @course, @message, @other,
+    @previousQualification, @courseLevel, @academicMarks
+  )
+`);
 const insertCareerApplication = careerDb.prepare(`
   INSERT INTO career_applications (
     application_no, name, phone, email, date_of_birth, country, state, city,
@@ -34,6 +45,57 @@ const insertCareerApplication = careerDb.prepare(`
 function sendJson(response, status, payload) {
   response.writeHead(status, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" });
   response.end(JSON.stringify(payload));
+}
+
+function handleLocalApplySubmission(request, response) {
+  const chunks = [];
+  let requestSize = 0;
+  request.on("data", chunk => {
+    requestSize += chunk.length;
+    if (requestSize > MAX_BODY_SIZE) request.destroy();
+    else chunks.push(chunk);
+  });
+  request.on("end", () => {
+    try {
+      const input = JSON.parse(Buffer.concat(chunks).toString("utf8"));
+      const location = [input.city, input.district, input.state, input.country]
+        .map(value => String(value || "").trim()).filter(Boolean).join(", ");
+      const level = String(input.course || "").trim();
+      const department = String(input.department || "").trim();
+      const values = {
+        name: String(input.studentName || input.name || "").trim(),
+        mobile: String(input.mobileNumber || input.mobile || "").trim(),
+        email: String(input.email || "").trim().toLowerCase(),
+        location,
+        course: level,
+        message: String(input.remarks || input.message || "").trim(),
+        other: String(input.other || input.source || "Website").trim(),
+        previousQualification: String(input.previousQualification || "").trim(),
+        courseLevel: `${level} - ${department}`.trim().replace(/^ - | - $/g, ""),
+        academicMarks: String(input.academicQualificationMarks || "").trim()
+      };
+      const required = ["name", "mobile", "email", "location", "course", "message", "other"];
+      const missing = required.filter(key => !values[key]);
+      if (missing.length) return sendJson(response, 422, { success: false, message: "Please complete all required fields.", fields: missing });
+      if (!/^\S+@\S+\.\S+$/.test(values.email)) return sendJson(response, 422, { success: false, message: "Enter a valid email address." });
+      const limits = { name: 50, mobile: 20, email: 50, location: 50, course: 30, other: 30, previousQualification: 150, courseLevel: 100, academicMarks: 150 };
+      const tooLong = Object.entries(limits).filter(([key, max]) => [...values[key]].length > max).map(([key]) => key);
+      if (tooLong.length) return sendJson(response, 422, { success: false, message: "Some answers exceed the database field limits. Please shorten them and try again.", fields: tooLong });
+      if (input.consent !== true) return sendJson(response, 422, { success: false, message: "Please provide consent to submit your enquiry." });
+      const result = insertApplyApplication.run(values);
+      const id = Number(result.lastInsertRowid);
+      return sendJson(response, 201, {
+        success: true,
+        message: "Your admission enquiry has been submitted successfully. Our admissions team will contact you shortly.",
+        id,
+        data: { id, studentName: values.name, mobileNumber: values.mobile, course: level, department }
+      });
+    } catch (error) {
+      if (error instanceof SyntaxError) return sendJson(response, 400, { success: false, message: "Invalid JSON request." });
+      console.error("Admission enquiry error:", error);
+      return sendJson(response, 500, { success: false, message: "Unable to save your admission enquiry." });
+    }
+  });
 }
 
 function institutionCode(institution) {
@@ -184,6 +246,11 @@ createServer((request, response) => {
   // Career Application Submissions
   const requestUrl = new URL(request.url, `http://${request.headers.host}`);
   const localApiPath = requestUrl.pathname.replace(/^\/new-site(?=\/)/, "");
+  if (localApiPath === "/apply-api/apply-submit.php") {
+    if (request.method === "POST") handleLocalApplySubmission(request, response);
+    else sendJson(response, 405, { success: false, message: "POST method required." });
+    return;
+  }
   if (localApiPath === "/career-api/career-submit.php") {
     if (request.method === "POST") {
       handleLocalCareerSubmission(request, response);
@@ -326,6 +393,7 @@ createServer((request, response) => {
     cleanPath.startsWith(".vscode") ||
     cleanPath.startsWith(".env") ||
     cleanPath.startsWith("package") ||
+      cleanPath.endsWith(".sql") ||
     cleanPath.includes("/.") ||
     cleanPath.includes("\\.") ||
     cleanPath.startsWith(".")
