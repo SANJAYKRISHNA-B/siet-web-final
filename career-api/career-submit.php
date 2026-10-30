@@ -16,6 +16,14 @@ function respond(int $status, array $payload): void
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     respond(405, ['success' => false, 'message' => 'POST method required.']);
 }
+if (!empty($_SERVER['HTTP_ORIGIN'])) {
+    $originHost = parse_url((string)$_SERVER['HTTP_ORIGIN'], PHP_URL_HOST);
+    $originPort = parse_url((string)$_SERVER['HTTP_ORIGIN'], PHP_URL_PORT);
+    $requestHost = strtolower((string)($_SERVER['HTTP_HOST'] ?? ''));
+    if (!is_string($originHost) || strtolower($originHost . ($originPort ? ':' . $originPort : '')) !== $requestHost) {
+        respond(403, ['success' => false, 'message' => 'Cross-origin form submissions are not allowed.']);
+    }
+}
 
 /*
  * cPanel production connection order:
@@ -57,6 +65,17 @@ function value(string $newName, string $legacyName = ''): string
 {
     $raw = $_POST[$newName] ?? ($legacyName !== '' ? ($_POST[$legacyName] ?? '') : '');
     return trim(is_string($raw) ? $raw : '');
+}
+
+function textLength(string $value): int
+{
+    return function_exists('mb_strlen') ? mb_strlen($value, 'UTF-8') : strlen($value);
+}
+
+function hasControlCharacters(string $value, bool $allowNewlines = false): bool
+{
+    $pattern = $allowNewlines ? '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/' : '/[\x00-\x1F\x7F]/';
+    return preg_match($pattern, $value) === 1;
 }
 
 function institutionCode(string $institution): string
@@ -126,16 +145,22 @@ $data = [
     'why_change' => value('message', 'why_change'),
     'source' => value('openingSource', 'source'),
     'institute' => value('institution', 'institute'),
+    'category' => value('category'),
 ];
 
-$required = ['fullname', 'dept', 'position', 'high_qualification', 'social_cat', 'country', 'mobile', 'email', 'dob', 'expected_salary_range', 'institute'];
+$required = ['fullname', 'dept', 'position', 'high_qualification', 'social_cat', 'country', 'state', 'city', 'mobile', 'email', 'dob', 'expected_salary_range', 'institute', 'category'];
 $missing = [];
 foreach ($required as $field) {
     if ($data[$field] === '') $missing[] = $field;
 }
 if ($missing) respond(422, ['success' => false, 'message' => 'Please complete all required fields.', 'fields' => $missing]);
 if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) respond(422, ['success' => false, 'message' => 'Enter a valid email address.']);
-if (!preg_match('/^\+?[0-9 ()-]{10,18}$/', $data['mobile'])) respond(422, ['success' => false, 'message' => 'Enter a valid contact number.']);
+if (!preg_match('/^[0-9]{10}$/D', $data['mobile'])) respond(422, ['success' => false, 'message' => 'Enter a 10-digit contact number using numbers only.']);
+if (!preg_match('/^[\p{L}\p{M} .\x27-]{2,100}$/u', $data['fullname'])) respond(422, ['success' => false, 'message' => 'Enter a valid full name using letters only.']);
+if (textLength($data['why_change']) > 2000 || hasControlCharacters($data['why_change'], true)) respond(422, ['success' => false, 'message' => 'The reason for changing position must be 2,000 characters or fewer.']);
+foreach (['dept', 'position', 'high_qualification', 'social_cat', 'country', 'state', 'city', 'current_institution', 'current_position', 'current_salary_range', 'expected_salary_range', 'notice_period', 'source', 'institute'] as $field) {
+    if (textLength($data[$field]) > 200 || hasControlCharacters($data[$field])) respond(422, ['success' => false, 'message' => 'One or more fields are too long or contain invalid control characters.']);
+}
 
 $date = DateTimeImmutable::createFromFormat('Y-m-d', $data['dob']);
 if (!$date) $date = DateTimeImmutable::createFromFormat('d/m/Y', $data['dob']);
@@ -152,7 +177,7 @@ if (!isset($_FILES['resume']) || $_FILES['resume']['error'] !== UPLOAD_ERR_OK) {
 }
 
 $resume = $_FILES['resume'];
-$maxBytes = (int)($config['max_upload_bytes'] ?? 2097152);
+$maxBytes = min(2097152, max(1, (int)($config['max_upload_bytes'] ?? 2097152)));
 if ((int)$resume['size'] > $maxBytes) respond(413, ['success' => false, 'message' => 'Resume must not exceed 2 MB.']);
 if ((int)$resume['size'] < 100) respond(422, ['success' => false, 'message' => 'Resume file is empty or corrupted (minimum 100 bytes required).']);
 

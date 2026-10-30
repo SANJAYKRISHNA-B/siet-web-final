@@ -23,8 +23,22 @@ function textLength(string $value): int
     return function_exists('mb_strlen') ? mb_strlen($value, 'UTF-8') : strlen($value);
 }
 
+function hasControlCharacters(string $value, bool $allowNewlines = false): bool
+{
+    $pattern = $allowNewlines ? '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/' : '/[\x00-\x1F\x7F]/';
+    return preg_match($pattern, $value) === 1;
+}
+
 if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     respond(405, ['success' => false, 'message' => 'POST method required.']);
+}
+if (!empty($_SERVER['HTTP_ORIGIN'])) {
+    $originHost = parse_url((string)$_SERVER['HTTP_ORIGIN'], PHP_URL_HOST);
+    $originPort = parse_url((string)$_SERVER['HTTP_ORIGIN'], PHP_URL_PORT);
+    $requestHost = strtolower((string)($_SERVER['HTTP_HOST'] ?? ''));
+    if (!is_string($originHost) || strtolower($originHost . ($originPort ? ':' . $originPort : '')) !== $requestHost) {
+        respond(403, ['success' => false, 'message' => 'Cross-origin form submissions are not allowed.']);
+    }
 }
 
 $contentType = strtolower((string)($_SERVER['CONTENT_TYPE'] ?? ''));
@@ -43,8 +57,10 @@ $name = inputText($input, 'studentName') ?: inputText($input, 'name');
 $mobile = inputText($input, 'mobileNumber') ?: inputText($input, 'mobile');
 $email = strtolower(inputText($input, 'email'));
 $locationParts = [];
+$locationInput = [];
 foreach (['city', 'district', 'state', 'country'] as $locationKey) {
     $part = inputText($input, $locationKey);
+    $locationInput[$locationKey] = $part;
     if ($part !== '') $locationParts[] = $part;
 }
 $location = implode(', ', $locationParts);
@@ -56,6 +72,9 @@ $previousQualification = inputText($input, 'previousQualification');
 $courseLevel = trim($level . ($department !== '' ? ' - ' . $department : ''));
 $academicMarks = inputText($input, 'academicQualificationMarks');
 
+if (!in_array($level, ['UG', 'PG', 'Ph.D'], true)) respond(422, ['success' => false, 'message' => 'Select a valid course level.']);
+if (!in_array($previousQualification, ['12th', 'Diploma'], true)) respond(422, ['success' => false, 'message' => 'Select a valid previous qualification.']);
+
 $required = [
     'name' => $name,
     'mobile' => $mobile,
@@ -64,11 +83,21 @@ $required = [
     'course' => $level,
     'message' => $message,
     'other' => $other,
+    'previous qualification' => $previousQualification,
+    'department' => $department,
+    'academic qualification / marks' => $academicMarks,
+    'district' => $locationInput['district'],
+    'state' => $locationInput['state'],
+    'country' => $locationInput['country'],
 ];
 $missing = array_keys(array_filter($required, static fn(string $value): bool => $value === ''));
 if ($missing) respond(422, ['success' => false, 'message' => 'Please complete all required fields.', 'fields' => $missing]);
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) respond(422, ['success' => false, 'message' => 'Enter a valid email address.']);
-if (!preg_match('/^[0-9+() -]{7,20}$/', $mobile)) respond(422, ['success' => false, 'message' => 'Enter a valid mobile number.']);
+if (!preg_match('/^[0-9]{10}$/D', $mobile)) respond(422, ['success' => false, 'message' => 'Enter a 10-digit mobile number using numbers only.']);
+if (!preg_match('/^[\p{L}\p{M} .\x27-]{2,50}$/u', $name)) respond(422, ['success' => false, 'message' => 'Enter a valid name using letters only.']);
+if (!in_array($level, ['UG', 'PG', 'Ph.D'], true)) respond(422, ['success' => false, 'message' => 'Select a valid course level.']);
+if (!in_array($previousQualification, ['12th', 'Diploma'], true)) respond(422, ['success' => false, 'message' => 'Select a valid previous qualification.']);
+if (textLength($message) < 5 || textLength($message) > 5000 || hasControlCharacters($message, true)) respond(422, ['success' => false, 'message' => 'Enter a query between 5 and 5,000 characters.']);
 if (($input['consent'] ?? false) !== true) respond(422, ['success' => false, 'message' => 'Please provide consent to submit your enquiry.']);
 
 $limits = [
@@ -81,6 +110,7 @@ $limits = [
     'previous_qualification' => 150,
     'course_level' => 100,
     'academic_qualification_marks' => 150,
+    'department' => 100,
 ];
 $valuesToCheck = [
     'name' => $name,
@@ -92,12 +122,17 @@ $valuesToCheck = [
     'previous_qualification' => $previousQualification,
     'course_level' => $courseLevel,
     'academic_qualification_marks' => $academicMarks,
+    'department' => $department,
 ];
 $tooLong = [];
 foreach ($limits as $field => $limit) {
     if (textLength($valuesToCheck[$field]) > $limit) $tooLong[] = $field;
 }
+if (textLength($message) > 5000) respond(422, ['success' => false, 'message' => 'Your query must be 5,000 characters or fewer.']);
 if ($tooLong) respond(422, ['success' => false, 'message' => 'Some answers exceed the database field limits. Please shorten them and try again.', 'fields' => $tooLong]);
+foreach ([$name, $email, $location, $department, $previousQualification, $level, $academicMarks, $other] as $value) {
+    if (hasControlCharacters($value)) respond(422, ['success' => false, 'message' => 'Remove control characters from the form fields.']);
+}
 
 $publicHtmlDirectory = basename(dirname(__DIR__)) === 'new-site' ? dirname(__DIR__, 2) : dirname(__DIR__);
 $legacyConfigPath = $publicHtmlDirectory . '/webportal/masterdb_config.php';

@@ -43,8 +43,22 @@ const insertCareerApplication = careerDb.prepare(`
 `);
 
 function sendJson(response, status, payload) {
-  response.writeHead(status, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" });
+  response.writeHead(status, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", "X-Content-Type-Options": "nosniff" });
   response.end(JSON.stringify(payload));
+}
+
+function containsControlCharacters(value, allowNewlines = false) {
+  return (allowNewlines ? /[\x00-\x08\x0b\x0c\x0e-\x1f\x7f]/ : /[\x00-\x1f\x7f]/).test(value);
+}
+
+function isSameOriginRequest(request) {
+  const origin = request.headers.origin;
+  if (!origin) return true;
+  try {
+    return new URL(origin).host.toLowerCase() === String(request.headers.host || "").toLowerCase();
+  } catch {
+    return false;
+  }
 }
 
 function handleLocalApplySubmission(request, response) {
@@ -58,6 +72,7 @@ function handleLocalApplySubmission(request, response) {
   request.on("end", () => {
     try {
       const input = JSON.parse(Buffer.concat(chunks).toString("utf8"));
+      if (!input || typeof input !== "object" || Array.isArray(input)) return sendJson(response, 400, { success: false, message: "Invalid JSON request." });
       const location = [input.city, input.district, input.state, input.country]
         .map(value => String(value || "").trim()).filter(Boolean).join(", ");
       const level = String(input.course || "").trim();
@@ -72,12 +87,19 @@ function handleLocalApplySubmission(request, response) {
         other: String(input.other || input.source || "Website").trim(),
         previousQualification: String(input.previousQualification || "").trim(),
         courseLevel: `${level} - ${department}`.trim().replace(/^ - | - $/g, ""),
-        academicMarks: String(input.academicQualificationMarks || "").trim()
+        academicMarks: String(input.academicQualificationMarks || "").trim(),
+        district: String(input.district || "").trim(), state: String(input.state || "").trim(), country: String(input.country || "").trim()
       };
-      const required = ["name", "mobile", "email", "location", "course", "message", "other"];
+      const required = ["name", "mobile", "email", "location", "course", "message", "other", "previousQualification", "department", "academicMarks", "district", "state", "country"];
       const missing = required.filter(key => !values[key]);
       if (missing.length) return sendJson(response, 422, { success: false, message: "Please complete all required fields.", fields: missing });
       if (!/^\S+@\S+\.\S+$/.test(values.email)) return sendJson(response, 422, { success: false, message: "Enter a valid email address." });
+      if (!/^[0-9]{10}$/.test(values.mobile)) return sendJson(response, 422, { success: false, message: "Enter a 10-digit mobile number using numbers only." });
+      if (!/^[\p{L}\p{M} .'’-]{2,50}$/u.test(values.name)) return sendJson(response, 422, { success: false, message: "Enter a valid name using letters only." });
+      if (!["UG", "PG", "Ph.D"].includes(level)) return sendJson(response, 422, { success: false, message: "Select a valid course level." });
+      if (!["12th", "Diploma"].includes(values.previousQualification)) return sendJson(response, 422, { success: false, message: "Select a valid previous qualification." });
+      if ([...values.message].length < 5 || [...values.message].length > 5000 || containsControlCharacters(values.message, true)) return sendJson(response, 422, { success: false, message: "Enter a query between 5 and 5,000 characters." });
+      if (Object.entries(values).some(([key, value]) => key !== "message" && containsControlCharacters(value))) return sendJson(response, 422, { success: false, message: "Remove control characters from the form fields." });
       const limits = { name: 50, mobile: 20, email: 50, location: 50, course: 30, other: 30, previousQualification: 150, courseLevel: 100, academicMarks: 150 };
       const tooLong = Object.entries(limits).filter(([key, max]) => [...values[key]].length > max).map(([key]) => key);
       if (tooLong.length) return sendJson(response, 422, { success: false, message: "Some answers exceed the database field limits. Please shorten them and try again.", fields: tooLong });
@@ -205,12 +227,14 @@ function handleLocalCareerSubmission(request, response) {
   if (!boundary) return sendJson(response, 415, { success: false, message: "multipart/form-data is required" });
   const chunks = [];
   let requestSize = 0;
+  let oversized = false;
   request.on("data", chunk => {
     requestSize += chunk.length;
-    if (requestSize > 3 * 1024 * 1024) request.destroy();
+    if (requestSize > 3 * 1024 * 1024) oversized = true;
     else chunks.push(chunk);
   });
   request.on("end", async () => {
+    if (oversized) return sendJson(response, 413, { success: false, message: "Upload request is too large." });
     try {
       const { fields, files } = parseMultipart(Buffer.concat(chunks), boundary);
       const resume = files.resume;
@@ -222,20 +246,29 @@ function handleLocalCareerSubmission(request, response) {
 
       // 2. Name validation
       const name = String(fields.name || "").trim();
-      if (name.length < 2 || !/^[a-zA-Z\s\.\-']{2,100}$/.test(name)) {
+      if ([...name].length < 2 || [...name].length > 100 || !/^[\p{L}\p{M}\s.\-']+$/u.test(name)) {
         return sendJson(response, 422, { success: false, message: "Enter a valid full name (letters only, minimum 2 characters)." });
       }
 
       // 3. Contact number validation
-      const phoneDigits = String(fields.phone || "").replace(/\D/g, "");
-      if (phoneDigits.length < 10 || phoneDigits.length > 15) {
-        return sendJson(response, 422, { success: false, message: "Enter a valid 10 to 15 digit contact telephone number." });
+      const phoneDigits = String(fields.phone || "").trim();
+      if (!/^[0-9]{10}$/.test(phoneDigits)) {
+        return sendJson(response, 422, { success: false, message: "Enter a 10-digit contact number using numbers only." });
       }
 
       // 4. Email validation
       const email = String(fields.email || "").trim().toLowerCase();
       if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
         return sendJson(response, 422, { success: false, message: "Enter a valid email address." });
+      }
+
+      const message = String(fields.message || "").trim();
+      if ([...message].length > 2000 || containsControlCharacters(message, true)) {
+        return sendJson(response, 422, { success: false, message: "The reason for changing position must be 2,000 characters or fewer." });
+      }
+      const boundedFields = ["department", "position", "qualification", "socialCategory", "country", "state", "city", "institution", "category", "currentInstitution", "currentPosition", "currentSalary", "expectedSalary", "noticePeriod", "openingSource"];
+      if (boundedFields.some(key => [...String(fields[key] || "")].length > 200 || containsControlCharacters(String(fields[key] || "")))) {
+        return sendJson(response, 422, { success: false, message: "One or more fields are too long or contain invalid control characters." });
       }
 
       // 5. Date of Birth & Age validation (must be 18 to 75 years old)
@@ -273,7 +306,7 @@ function handleLocalCareerSubmission(request, response) {
         currentPosition: fields.currentPosition || "", currentSalary: fields.currentSalary || "", expectedSalary: fields.expectedSalary,
         noticePeriod: fields.noticePeriod || "", teachingExperience: fields.teachingExperience || "0",
         industrialExperience: fields.industrialExperience || "0", researchExperience: fields.researchExperience || "0",
-        openingSource: fields.openingSource || "", message: fields.message || "", resumeOriginalName: resume.filename,
+        openingSource: fields.openingSource || "", message, resumeOriginalName: resume.filename,
         resumeStoredName: storedName, resumeMimeType: resume.type, resumeSize: resume.content.length,
         ipAddress: request.socket.remoteAddress || ""
       };
@@ -350,12 +383,14 @@ createServer((request, response) => {
   const requestUrl = new URL(request.url, `http://${request.headers.host}`);
   const localApiPath = requestUrl.pathname.replace(/^\/new-site(?=\/)/, "");
   if (localApiPath === "/apply-api/apply-submit.php") {
-    if (request.method === "POST") handleLocalApplySubmission(request, response);
+    if (!isSameOriginRequest(request)) sendJson(response, 403, { success: false, message: "Cross-origin form submissions are not allowed." });
+    else if (request.method === "POST") handleLocalApplySubmission(request, response);
     else sendJson(response, 405, { success: false, message: "POST method required." });
     return;
   }
   if (localApiPath === "/career-api/career-submit.php") {
-    if (request.method === "POST") {
+    if (!isSameOriginRequest(request)) sendJson(response, 403, { success: false, message: "Cross-origin form submissions are not allowed." });
+    else if (request.method === "POST") {
       handleLocalCareerSubmission(request, response);
     } else {
       sendJson(response, 405, { success: false, message: "POST method required" });

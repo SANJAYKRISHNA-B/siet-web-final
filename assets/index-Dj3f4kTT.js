@@ -218,7 +218,7 @@ async function ai(e) {
   // 1. CAREERS FORM CLIENT VALIDATION
   if (isCareer) {
     const cName = String(o.name || "").trim();
-    const cPhoneDigits = String(o.phone || "").replace(/\D/g, "");
+    const cPhoneDigits = String(o.phone || "").trim();
     const cEmail = String(o.email || "").trim().toLowerCase();
     const cDob = String(o.dateOfBirth || "").trim();
     const cCountry = String(o.country || "").trim();
@@ -233,12 +233,12 @@ async function ai(e) {
     const cSalary = String(o.expectedSalary || "").trim();
     const resumeFile = a.elements.resume?.files?.[0];
 
-    if (!cName || cName.length < 2 || !/^[a-zA-Z\s\.\-']{2,100}$/.test(cName)) {
+    if (!cName || cName.length < 2 || !/^[\p{L}\p{M}\s.\-']{2,100}$/u.test(cName)) {
       showError(a.elements.name, "Please enter your full name (letters only, minimum 2 characters).");
       return;
     }
-    if (cPhoneDigits.length < 10 || cPhoneDigits.length > 15) {
-      showError(a.elements.phone, "Please enter a valid 10 to 15 digit contact telephone number.");
+    if (!/^[0-9]{10}$/.test(cPhoneDigits)) {
+      showError(a.elements.phone, "Enter a 10-digit mobile number using numbers only.");
       return;
     }
     if (!cEmail || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(cEmail)) {
@@ -284,7 +284,7 @@ async function ai(e) {
   // 2. APPLY NOW (ADMISSION ENQUIRY) CLIENT VALIDATION
   if (n) {
     const sName = String(o.name || "").trim();
-    const sPhone = String(o.phone || "").replace(/\D/g, "");
+    const sPhone = String(o.phone || "").trim();
     const sEmail = String(o.email || "").trim().toLowerCase();
     const sCourse = String(o.level || "").trim();
     const sDept = String(o.course || "").trim();
@@ -292,17 +292,23 @@ async function ai(e) {
     const sMessage = String(o.message || "").trim();
     const sConsent = r.get("consent");
 
-    if (!sName || sName.length < 2 || !/^[a-zA-Z\s\.\-']{2,100}$/.test(sName)) {
+    if (!sName || sName.length < 2 || !/^[\p{L}\p{M}\s.\-']{2,50}$/u.test(sName)) {
       showError(a.querySelector('input[name="name"]'), "Please enter your full name (minimum 2 characters, letters only).");
       return;
     }
-    if (sPhone.length !== 10) {
-      showError(a.querySelector('input[name="phone"]'), "Please enter a valid 10-digit mobile number.");
+    if (!/^[0-9]{10}$/.test(sPhone)) {
+      showError(a.querySelector('input[name="phone"]'), "Please enter a valid 10-digit mobile number using numbers only.");
       return;
     }
     if (!sEmail || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(sEmail)) {
       showError(a.querySelector('input[name="email"]'), "Please enter a valid email address.");
       return;
+    }
+    for (const key of ["country", "state", "district"]) {
+      if (!String(o[key] || "").trim()) {
+        showError(a.querySelector(`[name="${key}"]`), `Please enter your ${key}.`);
+        return;
+      }
     }
     if (!sPrevQual) {
       showError(a.querySelector('select[name="previous_qualification"]'), "Please select your previous qualification (12th or Diploma).");
@@ -316,8 +322,16 @@ async function ai(e) {
       showError(a.querySelector('select[name="course"]'), "Please select your preferred department.");
       return;
     }
+    if (!String(o.qualification || "").trim() || String(o.qualification).trim().length > 150) {
+      showError(a.querySelector('input[name="qualification"]'), "Enter your academic qualification / marks (up to 150 characters).");
+      return;
+    }
     if (!sMessage || sMessage.length < 5) {
       showError(a.querySelector('textarea[name="message"]'), "Please enter your specific query or guidance request (minimum 5 characters).");
+      return;
+    }
+    if (sMessage.length > 5000) {
+      showError(a.querySelector('textarea[name="message"]'), "Please keep your query within 5,000 characters.");
       return;
     }
     if (!sConsent) {
@@ -329,11 +343,11 @@ async function ai(e) {
   // 3. REFERRAL FORM CLIENT VALIDATION
   if (isReferral) {
     const rName = String(o.referrer_name || "").trim();
-    const rPhone = String(o.referrer_phone || "").replace(/\D/g, "");
+    const rPhone = String(o.referrer_phone || "").trim();
     const rEmail = String(o.referrer_email || "").trim().toLowerCase();
     const rRelation = String(o.referrer_relation || "").trim();
     const candName = String(o.candidate_name || "").trim();
-    const candPhone = String(o.candidate_phone || "").replace(/\D/g, "");
+    const candPhone = String(o.candidate_phone || "").trim();
     const candEmail = String(o.candidate_email || "").trim().toLowerCase();
     const candLevel = String(o.candidate_level || "").trim();
     const candDept = String(o.candidate_course || "").trim();
@@ -342,7 +356,7 @@ async function ai(e) {
       showError(a.querySelector('input[name="referrer_name"]'), "Please enter your full name (referrer).");
       return;
     }
-    if (rPhone.length !== 10) {
+    if (!/^[0-9]{10}$/.test(rPhone)) {
       showError(a.querySelector('input[name="referrer_phone"]'), "Please enter your 10-digit mobile number.");
       return;
     }
@@ -365,7 +379,7 @@ async function ai(e) {
       showError(a.querySelector('input[name="candidate_name"]'), "Please enter candidate's full name.");
       return;
     }
-    if (candPhone.length !== 10) {
+    if (!/^[0-9]{10}$/.test(candPhone)) {
       showError(a.querySelector('input[name="candidate_phone"]'), "Please enter candidate's 10-digit mobile number.");
       return;
     }
@@ -415,6 +429,10 @@ async function ai(e) {
       course: o.level,
       department: o.course,
       city: o.city || "",
+      district: o.district || "",
+      state: o.state || "",
+      country: o.country || "",
+      academicQualificationMarks: o.qualification || "",
       source: "Website",
       remarks: o.message,
       consent: !!r.get("consent"),
@@ -7928,7 +7946,7 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
                 <label>Mobile Number <b>*</b>
                   <div class="phone-input-wrap">
                     <span class="phone-prefix">+91</span>
-                    <input type="tel" name="phone" placeholder="10 digit mobile" pattern="[0-9]{10}" maxlength="10" required>
+                    <input type="tel" name="phone" inputmode="numeric" placeholder="10 digit mobile" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" title="Enter 10 digits only" required>
                   </div>
                 </label>
                 ${oe("Email Address","email","email","Enter your email address")}
@@ -8060,7 +8078,7 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
     </section>
     <!-- Admin Console Modal Mount Container -->
     <div id="admin-console-modal-mount"></div>
-  </main>`}const oe=(e,a,i,t)=>`<label>${e} <b>*</b><input type="${i}" name="${a}" placeholder="${t}" required></label>`,ze=(e,a,i)=>`<label>${e} <b>*</b><select name="${a}" required><option value="">Select ${e}</option>${i.map(t=>`<option>${t}</option>`).join("")}</select></label>`,Je={college:{name:"Institute of Engineering and Technology",logo:"/new-site/brand/siet-logo.webp",heading:"Sri Shakthi Institute of Engineering and Technology",departments:[...Aa.map(e=>e.name),"Administration","Training and Placement","Physical Education","Library","IT Support","Other"],subtitle:"Autonomous Institution · Affiliated to Anna University",desc:"Aims to focus our attention towards research and industry need based education, we invite applications from the candidates who have a natural flair for research and would like to join our mission for the following positions.",cats:[["Leadership Position",["Principal","Director of Research"]],["College Teaching Positions",["Dean","Professor","Associate Professor","Assistant Professor"]],["School Teaching Positions",["English PGT","English TGT","Tamil TGT","Hindi TGT","French TGT","Maths PGT","Science PGT","Commerce PGT","Economics PGT"],"CBSE school requires motivated teachers for the following positions."],["Food Testing Lab",["Manager Operations (Authorized Signatory)","Manager Marketing","Marketing Executives","Food Analyst I","Food Analyst II","Lab Technician","Receptionist"],"Invites applications for our newly established state-of-the-art food testing laboratory with imported equipment including ICP-OES, GC-MS, HPLC and FTIR. The lab is established at a cost of Rs. 3 crores, partly funded by the Ministry of Food Processing Industries, Government of India."],["Career Oriented Specialists",["Quantitative Aptitude Trainer","Verbal Aptitude Trainer","BEC Certification Trainer","GATE Exam Trainer","IES Exam Trainer","GRE Exam Trainer","Bioinformatics Trainer","CAT Exam Trainer","C Trainer","Java Trainer","Machine Learning Trainer","LabVIEW Trainer","Entrepreneurship Lead","Embedded Trainer","VLSI Trainer"],"We offer support for a diverse range of career opportunities, from placement and higher-education preparation to entrepreneurial venture launch. Applicants with 3+ years of experience in a coaching centre are preferred."],["Managerial Positions",["Placement Officer","Placement Coordinator","Vigilance Officer","Operations and Infrastructure Lead","HR Manager","Admissions Manager","Social Media Manager","Brand Manager","Librarian"]],["Creative Positions",["Graphic Designer","2D & 3D Animator","Video Editor","Website Designer"],"Join our creative team to develop original brand collateral, brochures, posters, event-promotion materials, websites and compelling videos."],["Sports Coach Positions",["Cricket Coach","Tennis Coach","Hockey Coach","Football Coach","Volleyball Coach","Handball Coach","Swimming Coach (for Girls)","Kabaddi Coach","Gym Instructor","Yoga Trainer","Archery Coach"],"We are looking for part-time and full-time coaches for the following sports."],["Special Positions",["System Administration","Computer Lab Technicians","Tele Calling Executive"]]]},school:{name:"CBSE Senior Secondary School",logo:"/new-site/brand/sri-shakthi-school-logo.webp",heading:"Sri Shakthi International School",website:"www.srishakthi.ac.in",websiteUrl:"https://www.srishakthi.ac.in",departments:["English","Mathematics","Physics","Chemistry","Biology","Computer Science","Tamil","Hindi","Social Science","Primary Education","Kindergarten","Physical Education","Arts and Music","Administration","Other"],subtitle:"Affiliated to CBSE, New Delhi",desc:"Sri Shakthi International School is a premier residential institution built across a 25 eco-friendly acre campus located precisely between the two industrial districts of Coimbatore and Tiruppur. The school is home to a myriad number of flora and fauna. We are affiliated to CBSE and offer classes from Pre KG to Standard 12. We are committed to the cause of Powering the Youth to Empower the Nation.",cats:[["School Leadership Positions",["Principal / Vice Principal","Academic Coordinator","Section Head"]],["PGT & TGT Teachers",["English","Mathematics","Physics","Chemistry","Biology","Computer Science"]],["Primary & Kindergarten",["PRT Teachers","Montessori / Kindergarten Educators","Language Specialists"]],["Sports & Extracurricular",["Physical Education Director","Art & Craft Teacher","Music & Dance Instructor"]]]},lab:{name:"Food & Environmental Testing Laboratory",logo:"/new-site/brand/sri-shakthi-food-lab-logo.webp",heading:"Sri Shakthi Food Testing Laboratory",website:"www.foodtestinglab.in",websiteUrl:"https://www.foodtestinglab.in",departments:["Food Testing","Chemical Analysis","Microbiology","Quality Assurance","Sample Management","Administration","Other"],subtitle:"NABL Accredited Testing Facility",desc:"Invites Applications for our newly established state of the art food testing laboratory with imported equipments like ICP-OES, GC-MS, HPLC, & FTIR. The Lab is established at a cost of Rs. 3 crores partly funded by Ministry of Food Processing Industries, Government of India.",cats:[["Quality & Laboratory Management",["Quality Manager","Technical Manager","NABL Coordinator"]],["Analytical Specialists",["Senior Food Analyst","Chemical Analyst","Residue Analysis Specialist"]],["Microbiology Specialists",["Senior Microbiologist","Microbiology Analyst"]],["Technical Support",["Laboratory Technician","Sample Management Assistant"]]]}},la=e=>String(e).replace(/[&<>"']/g,a=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[a]),Ze=e=>e.map(a=>{const[i,t]=Array.isArray(a)?a:[a,a];return`<option value="${la(i)}">${la(t)}</option>`}).join(""),Te=(e,a,i=!1)=>`<label><span>${e}${i?" <b>*</b>":""}</span>${a}</label>`,ue=(e,a,i="text",t=!1,s="",n="")=>Te(e,`<input name="${a}" type="${i}" ${t?"required":""} placeholder="${s}" ${n}>`,t),ee=(e,a,i,t=!1,s="Please Select",n="")=>Te(e,`<select name="${a}" ${t?"required":""} ${n}>${s===null?"":`<option value="">${s}</option>`}${Ze(i)}</select>`,t),wt="AF AL DZ AS AD AO AI AQ AG AR AM AW AU AT AZ BS BH BD BB BY BE BZ BJ BM BT BO BQ BA BW BV BR IO BN BG BF BI CV KH CM CA KY CF TD CL CN CX CC CO KM CG CD CK CR CI HR CU CW CY CZ DK DJ DM DO EC EG SV GQ ER EE SZ ET FK FO FJ FI FR GF PF TF GA GM GE DE GH GI GR GL GD GP GU GT GG GN GW GY HT HM VA HN HK HU IS IN ID IR IQ IE IM IL IT JM JP JE JO KZ KE KI KP KR KW KG LA LV LB LS LR LY LI LT LU MO MG MW MY MV ML MT MH MQ MR MU YT MX FM MD MC MN ME MS MA MZ MM NA NR NP NL NC NZ NI NE NG NU NF MK MP NO OM PK PW PS PA PG PY PE PH PN PL PT PR QA RE RO RU RW BL SH KN LC MF PM VC WS SM ST SA SN RS SC SL SG SX SK SI SB SO ZA GS SS ES LK SD SR SJ SE CH SY TW TJ TZ TH TL TG TK TO TT TN TR TM TC TV UG UA AE GB US UM UY UZ VU VE VN VG VI WF EH YE ZM ZW".split(" "),kt=new Intl.DisplayNames(["en"],{type:"region"}),Tt=wt.map(e=>kt.of(e)).sort((e,a)=>e.localeCompare(a)),Mt=["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],da=["Below ₹10,000","₹10,000 – ₹20,000","₹20,001 – ₹30,000","₹30,001 – ₹40,000","₹40,001 – ₹50,000","₹50,001 – ₹75,000","₹75,001 – ₹1,00,000","Above ₹1,00,000"],Ge=[...Array.from({length:41},(e,a)=>String(a)),"40+"];function xt(e){return`<div class="career-field-column">
+  </main>`}const oe=(e,a,i,t)=>`<label>${e} <b>*</b><input type="${i}" name="${a}" placeholder="${t}" required></label>`,ze=(e,a,i)=>`<label>${e} <b>*</b><select name="${a}" required><option value="">Select ${e}</option>${i.map(t=>`<option>${t}</option>`).join("")}</select></label>`,Je={college:{name:"Institute of Engineering and Technology",logo:"/new-site/brand/siet-logo.webp",heading:"Sri Shakthi Institute of Engineering and Technology",departments:[...Aa.map(e=>e.name),"Administration","Training and Placement","Physical Education","Library","IT Support","Other"],subtitle:"Autonomous Institution · Affiliated to Anna University",desc:"Aims to focus our attention towards research and industry need based education, we invite applications from the candidates who have a natural flair for research and would like to join our mission for the following positions.",cats:[["Leadership Position",["Principal","Director of Research"]],["College Teaching Positions",["Dean","Professor","Associate Professor","Assistant Professor"]],["School Teaching Positions",["English PGT","English TGT","Tamil TGT","Hindi TGT","French TGT","Maths PGT","Science PGT","Commerce PGT","Economics PGT"],"CBSE school requires motivated teachers for the following positions."],["Food Testing Lab",["Manager Operations (Authorized Signatory)","Manager Marketing","Marketing Executives","Food Analyst I","Food Analyst II","Lab Technician","Receptionist"],"Invites applications for our newly established state-of-the-art food testing laboratory with imported equipment including ICP-OES, GC-MS, HPLC and FTIR. The lab is established at a cost of Rs. 3 crores, partly funded by the Ministry of Food Processing Industries, Government of India."],["Career Oriented Specialists",["Quantitative Aptitude Trainer","Verbal Aptitude Trainer","BEC Certification Trainer","GATE Exam Trainer","IES Exam Trainer","GRE Exam Trainer","Bioinformatics Trainer","CAT Exam Trainer","C Trainer","Java Trainer","Machine Learning Trainer","LabVIEW Trainer","Entrepreneurship Lead","Embedded Trainer","VLSI Trainer"],"We offer support for a diverse range of career opportunities, from placement and higher-education preparation to entrepreneurial venture launch. Applicants with 3+ years of experience in a coaching centre are preferred."],["Managerial Positions",["Placement Officer","Placement Coordinator","Vigilance Officer","Operations and Infrastructure Lead","HR Manager","Admissions Manager","Social Media Manager","Brand Manager","Librarian"]],["Creative Positions",["Graphic Designer","2D & 3D Animator","Video Editor","Website Designer"],"Join our creative team to develop original brand collateral, brochures, posters, event-promotion materials, websites and compelling videos."],["Sports Coach Positions",["Cricket Coach","Tennis Coach","Hockey Coach","Football Coach","Volleyball Coach","Handball Coach","Swimming Coach (for Girls)","Kabaddi Coach","Gym Instructor","Yoga Trainer","Archery Coach"],"We are looking for part-time and full-time coaches for the following sports."],["Special Positions",["System Administration","Computer Lab Technicians","Tele Calling Executive"]]]},school:{name:"CBSE Senior Secondary School",logo:"/new-site/brand/sri-shakthi-school-logo.webp",heading:"Sri Shakthi International School",website:"www.srishakthi.ac.in",websiteUrl:"https://www.srishakthi.ac.in",departments:["English","Mathematics","Physics","Chemistry","Biology","Computer Science","Tamil","Hindi","Social Science","Primary Education","Kindergarten","Physical Education","Arts and Music","Administration","Other"],subtitle:"Affiliated to CBSE, New Delhi",desc:"Sri Shakthi International School is a premier residential institution built across a 25 eco-friendly acre campus located precisely between the two industrial districts of Coimbatore and Tiruppur. The school is home to a myriad number of flora and fauna. We are affiliated to CBSE and offer classes from Pre KG to Standard 12. We are committed to the cause of Powering the Youth to Empower the Nation.",cats:[["School Leadership Positions",["Principal / Vice Principal","Academic Coordinator","Section Head"]],["PGT & TGT Teachers",["English","Mathematics","Physics","Chemistry","Biology","Computer Science"]],["Primary & Kindergarten",["PRT Teachers","Montessori / Kindergarten Educators","Language Specialists"]],["Sports & Extracurricular",["Physical Education Director","Art & Craft Teacher","Music & Dance Instructor"]]]},lab:{name:"Food & Environmental Testing Laboratory",logo:"/new-site/brand/sri-shakthi-food-lab-logo.webp",heading:"Sri Shakthi Food Testing Laboratory",website:"www.foodtestinglab.in",websiteUrl:"https://www.foodtestinglab.in",departments:["Food Testing","Chemical Analysis","Microbiology","Quality Assurance","Sample Management","Administration","Other"],subtitle:"NABL Accredited Testing Facility",desc:"Invites Applications for our newly established state of the art food testing laboratory with imported equipments like ICP-OES, GC-MS, HPLC, & FTIR. The Lab is established at a cost of Rs. 3 crores partly funded by Ministry of Food Processing Industries, Government of India.",cats:[["Quality & Laboratory Management",["Quality Manager","Technical Manager","NABL Coordinator"]],["Analytical Specialists",["Senior Food Analyst","Chemical Analyst","Residue Analysis Specialist"]],["Microbiology Specialists",["Senior Microbiologist","Microbiology Analyst"]],["Technical Support",["Laboratory Technician","Sample Management Assistant"]]]}},la=e=>String(e).replace(/[&<>"']/g,a=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[a]),Ze=e=>e.map(a=>{const[i,t]=Array.isArray(a)?a:[a,a];return`<option value="${la(i)}">${la(t)}</option>`}).join(""),Te=(e,a,i=!1)=>`<label><span>${e}${i?" <b>*</b>":""}</span>${a}</label>`,ue=(e,a,i="text",t=!1,s="",n="")=>Te(e,`<input name="${a}" type="${i}" ${t?"required":""} placeholder="${s}" ${i==="tel"?'inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" title="Enter 10 digits only"':""} ${n}>`,t),ee=(e,a,i,t=!1,s="Please Select",n="")=>Te(e,`<select name="${a}" ${t?"required":""} ${n}>${s===null?"":`<option value="">${s}</option>`}${Ze(i)}</select>`,t),wt="AF AL DZ AS AD AO AI AQ AG AR AM AW AU AT AZ BS BH BD BB BY BE BZ BJ BM BT BO BQ BA BW BV BR IO BN BG BF BI CV KH CM CA KY CF TD CL CN CX CC CO KM CG CD CK CR CI HR CU CW CY CZ DK DJ DM DO EC EG SV GQ ER EE SZ ET FK FO FJ FI FR GF PF TF GA GM GE DE GH GI GR GL GD GP GU GT GG GN GW GY HT HM VA HN HK HU IS IN ID IR IQ IE IM IL IT JM JP JE JO KZ KE KI KP KR KW KG LA LV LB LS LR LY LI LT LU MO MG MW MY MV ML MT MH MQ MR MU YT MX FM MD MC MN ME MS MA MZ MM NA NR NP NL NC NZ NI NE NG NU NF MK MP NO OM PK PW PS PA PG PY PE PH PN PL PT PR QA RE RO RU RW BL SH KN LC MF PM VC WS SM ST SA SN RS SC SL SG SX SK SI SB SO ZA GS SS ES LK SD SR SJ SE CH SY TW TJ TZ TH TL TG TK TO TT TN TR TM TC TV UG UA AE GB US UM UY UZ VU VE VN VG VI WF EH YE ZM ZW".split(" "),kt=new Intl.DisplayNames(["en"],{type:"region"}),Tt=wt.map(e=>kt.of(e)).sort((e,a)=>e.localeCompare(a)),Mt=["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],da=["Below ₹10,000","₹10,000 – ₹20,000","₹20,001 – ₹30,000","₹30,001 – ₹40,000","₹40,001 – ₹50,000","₹50,001 – ₹75,000","₹75,001 – ₹1,00,000","Above ₹1,00,000"],Ge=[...Array.from({length:41},(e,a)=>String(a)),"40+"];function xt(e){return`<div class="career-field-column">
     ${ue("Name","name","text",!0,"Enter name",'autocomplete="name"')}
     ${ue("Enter your Contact Number","phone","tel",!0,"Enter phone number",'autocomplete="tel"')}
     ${ue("Enter your Email Address","email","email",!0,"Enter email",'autocomplete="email"')}
@@ -8084,7 +8102,7 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
     ${ee("Total Industrial Experience (in years)","industrialExperience",Ge,!1,null)}
     ${ee("Total Research Experience (in years)","researchExperience",Ge,!1,null)}
     ${ee("How did you come to know about this Opening Position?","openingSource",["College Website","Job Portal","Newspaper","Social Media","Employee / Friend Referral","Other"])}
-    ${Te("Why am I looking for a change from my current position?",'<textarea name="message" rows="5" placeholder="Why am I looking for a change from my current position?"></textarea>')}
+    ${Te("Why am I looking for a change from my current position?",'<textarea name="message" rows="5" maxlength="2000" placeholder="Why am I looking for a change from my current position?" aria-describedby="career-message-help"></textarea><small id="career-message-help">Maximum 2,000 characters. Do not include passwords or sensitive personal data.</small>')}
     ${Te("Upload Resume (Max file size: 2 MB; PDF / DOC / DOCX / RTF)",'<input type="file" name="resume" accept=".pdf,.doc,.docx,.rtf" required aria-describedby="career-resume-help">',!0)}
     <small id="career-resume-help">Upload a PDF, Word document, or RTF file up to 2 MB.</small>
   </div>`}function Pt(e,a,i){if(!e)return;const t=e.elements,s=(n,r,o)=>{t[n].innerHTML=`<option value="">${o}</option>${Ze(r)}`,t[n].disabled=!r.length};t.institution.addEventListener("change",()=>i(t.institution.value)),t.category.addEventListener("change",()=>{const r=a[t.institution.value].cats.find(o=>o[0]===t.category.value);s("position",(r==null?void 0:r[1])||[],"Select a Position"),s("department",[],"Select a Department")}),t.position.addEventListener("change",()=>{s("department",t.position.value?a[t.institution.value].departments:[],"Select a Department")}),t.country.addEventListener("change",()=>{t.state.value="",t.city.value="",t.state.disabled=!t.country.value,t.city.disabled=!0,e.querySelector("#career-state-options").innerHTML=Ze(t.country.value==="India"?Mt:[])}),t.state.addEventListener("input",()=>{t.city.value="",t.city.disabled=!t.state.value.trim()}),t.resume.addEventListener("change", async () => {
@@ -8145,7 +8163,7 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
               <label>Email address <b>*</b><input type="email" name="email" placeholder="name@example.com" required></label>
             </div>
             <div class="contact-pro-field-row">
-              <label>Phone number <b>*</b><input type="tel" name="phone" placeholder="+91 98765 43210" required></label>
+              <label>Phone number <b>*</b><input type="tel" name="phone" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" placeholder="10 digit mobile" autocomplete="tel-national" title="Enter 10 digits only" required></label>
               <label>Enquiry category <b>*</b><select name="course" required><option value="">Select a category</option><option>Admissions</option><option>Academic Office</option><option>Examinations</option><option>Placements</option><option>Research and Industry</option><option>Campus and Transport</option><option>General Enquiry</option></select></label>
             </div>
             <label>Message <b>*</b><textarea name="message" rows="5" placeholder="Tell us how we can assist you" required></textarea></label>
@@ -11861,5 +11879,21 @@ if(typeof document!=="undefined"&&!window.__ACHIEVE_FILTER_INIT__){
         card.style.display="none";
       }
     });
+  });
+}
+
+if (typeof document !== "undefined" && !window.__SIET_PHONE_DIGITS_ONLY__) {
+  window.__SIET_PHONE_DIGITS_ONLY__ = true;
+  document.addEventListener("input", event => {
+    const input = event.target;
+    if (!(input instanceof HTMLInputElement) || input.type !== "tel") return;
+    if (!input.closest(".career-form, .apply-form-v3")) return;
+    const start = input.selectionStart;
+    const before = input.value;
+    input.value = before.replace(/[^0-9]/g, "").slice(0, 10);
+    if (start !== null && document.activeElement === input) {
+      const caret = Math.min(input.value.length, start - (before.slice(0, start).length - before.slice(0, start).replace(/[^0-9]/g, "").length));
+      input.setSelectionRange(caret, caret);
+    }
   });
 }
