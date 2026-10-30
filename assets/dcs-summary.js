@@ -150,12 +150,12 @@ function affiliationPageMarkup() {
               <button type="button" data-au-zoom-out aria-label="Zoom out">−</button>
               <span data-au-zoom-label>100%</span>
               <button type="button" data-au-zoom-in aria-label="Zoom in">+</button>
-              <a href="/new-site/brand/anna-university-affiliation.webp" download="anna-university-affiliation.jpg">Download</a>
+              <a href="/brand/anna-university-affiliation.webp" download="anna-university-affiliation.jpg">Download</a>
               <button class="au-modal-close" type="button" data-au-certificate-close aria-label="Close certificate">×</button>
             </div>
           </header>
           <div class="au-certificate-viewer" data-au-certificate-viewer>
-            <img src="/new-site/brand/anna-university-affiliation.webp" alt="Anna University affiliation certificates issued to Sri Shakthi Institute of Engineering and Technology" data-au-certificate-image loading="lazy" decoding="async" width="800">
+            <img src="/brand/anna-university-affiliation.webp" alt="Anna University affiliation certificates issued to Sri Shakthi Institute of Engineering and Technology" data-au-certificate-image loading="lazy" decoding="async" width="800">
           </div>
         </section>
       </div>
@@ -213,12 +213,12 @@ function nbaAccreditationPageMarkup() {
       <div class="au-certificate-modal" data-au-certificate-modal aria-hidden="true">
         <div class="au-certificate-backdrop" data-au-certificate-close></div>
         <section class="au-certificate-dialog" role="dialog" aria-modal="true" aria-labelledby="nba-certificate-modal-title">
-          <header class="au-certificate-toolbar"><div><small>NATIONAL BOARD OF ACCREDITATION</small><h2 id="nba-certificate-modal-title">Programme Accreditation Letter</h2></div><div class="au-certificate-actions"><button type="button" data-au-zoom-out aria-label="Zoom out">−</button><span data-au-zoom-label>100%</span><button type="button" data-au-zoom-in aria-label="Zoom in">+</button><a href="/new-site/brand/nba-accreditation-ece-agri-ft.webp" download="nba-accreditation-ece-agri-ft.jpg">Download</a><button class="au-modal-close" type="button" data-au-certificate-close aria-label="Close certificate">×</button></div></header>
+          <header class="au-certificate-toolbar"><div><small>NATIONAL BOARD OF ACCREDITATION</small><h2 id="nba-certificate-modal-title">Programme Accreditation Letter</h2></div><div class="au-certificate-actions"><button type="button" data-au-zoom-out aria-label="Zoom out">−</button><span data-au-zoom-label>100%</span><button type="button" data-au-zoom-in aria-label="Zoom in">+</button><a href="/brand/nba-accreditation-ece-agri-ft.webp" download="nba-accreditation-ece-agri-ft.jpg">Download</a><button class="au-modal-close" type="button" data-au-certificate-close aria-label="Close certificate">×</button></div></header>
           <div class="au-certificate-viewer nba-certificate-pages" data-au-certificate-viewer>
-            <figure><figcaption><span>Current Accreditation Letter</span><strong>ECE, Agricultural Engineering &amp; Food Technology — Page 1</strong></figcaption><img src="/new-site/brand/nba-accreditation-ece-agri-ft.webp" alt="NBA programme accreditation letter for ECE, Agricultural Engineering, and Food Technology, page 1" data-au-certificate-image loading="lazy" decoding="async" width="800"></figure>
-            <figure><figcaption><span>Current Accreditation Letter</span><strong>ECE, Agricultural Engineering &amp; Food Technology — Page 2</strong></figcaption><img src="/new-site/brand/nba-accreditation-ece-agri-ft-page-2.webp" alt="NBA programme accreditation letter continuation page" data-au-certificate-image loading="lazy"></figure>
-            <figure><figcaption><span>Official Annexure</span><strong>Food Technology — Revised Grades and Marks</strong></figcaption><img src="/new-site/brand/nba-accreditation-ece-agri-ft-annexure.webp" alt="NBA accreditation annexure for Food Technology" data-au-certificate-image loading="lazy"></figure>
-            <figure><figcaption><span>Accreditation Archive</span><strong>Mechanical Engineering — 2022 to 2025</strong></figcaption><img src="/new-site/brand/nba-accreditation-mechanical-engineering.webp" alt="NBA accreditation letter for Mechanical Engineering" data-au-certificate-image loading="lazy"></figure>
+            <figure><figcaption><span>Current Accreditation Letter</span><strong>ECE, Agricultural Engineering &amp; Food Technology — Page 1</strong></figcaption><img src="/brand/nba-accreditation-ece-agri-ft.webp" alt="NBA programme accreditation letter for ECE, Agricultural Engineering, and Food Technology, page 1" data-au-certificate-image loading="lazy" decoding="async" width="800"></figure>
+            <figure><figcaption><span>Current Accreditation Letter</span><strong>ECE, Agricultural Engineering &amp; Food Technology — Page 2</strong></figcaption><img src="/brand/nba-accreditation-ece-agri-ft-page-2.webp" alt="NBA programme accreditation letter continuation page" data-au-certificate-image loading="lazy"></figure>
+            <figure><figcaption><span>Official Annexure</span><strong>Food Technology — Revised Grades and Marks</strong></figcaption><img src="/brand/nba-accreditation-ece-agri-ft-annexure.webp" alt="NBA accreditation annexure for Food Technology" data-au-certificate-image loading="lazy"></figure>
+            <figure><figcaption><span>Accreditation Archive</span><strong>Mechanical Engineering — 2022 to 2025</strong></figcaption><img src="/brand/nba-accreditation-mechanical-engineering.webp" alt="NBA accreditation letter for Mechanical Engineering" data-au-certificate-image loading="lazy"></figure>
           </div>
         </section>
       </div>
@@ -634,13 +634,13 @@ function enhanceProgrammeAccreditation() {
       </div>
       <div class="programme-accreditation-cards">
         <a class="programme-accreditation-card" href="/nba" aria-label="View NBA accreditation details">
-          <span class="programme-accreditation-logo"><img src="/new-site/brand/nba-full-logo.webp" alt="National Board of Accreditation"></span>
-          <span><small>PROGRAMME ACCREDITATION</small><strong>NBA Accredited</strong><em>Eligible UG engineering programmes</em></span>
+          <span class="programme-accreditation-logo"><img src="/brand/nba-full-logo.webp" alt="National Board of Accreditation"></span>
+          <span><small>PROGRAMME ACCREDITATION</small><strong>NBA Accredited</strong></span>
           <b aria-hidden="true">→</b>
         </a>
         <a class="programme-accreditation-card" href="/naac" aria-label="View NAAC accreditation details">
-          <span class="programme-accreditation-logo"><img src="/new-site/brand/naac-grade-logo.webp" alt="NAAC Grade A"></span>
-          <span><small>INSTITUTIONAL ACCREDITATION</small><strong>NAAC Grade A</strong><em>National quality recognition</em></span>
+          <span class="programme-accreditation-logo"><img src="/brand/naac-grade-logo.webp" alt="NAAC Grade A"></span>
+          <span><small>INSTITUTIONAL ACCREDITATION</small><strong>NAAC Grade A</strong></span>
           <b aria-hidden="true">→</b>
         </a>
       </div>`;
@@ -648,8 +648,8 @@ function enhanceProgrammeAccreditation() {
     panel.classList.remove("programme-bottom-banner");
     const nbaLogo = panel.querySelector('a[href="/nba"] img');
     const naacLogo = panel.querySelector('a[href="/naac"] img');
-    if (nbaLogo) nbaLogo.src = "/new-site/brand/nba-full-logo.webp";
-    if (naacLogo) naacLogo.src = "/new-site/brand/naac-grade-logo.webp";
+    if (nbaLogo) nbaLogo.src = "/brand/nba-full-logo.webp";
+    if (naacLogo) naacLogo.src = "/brand/naac-grade-logo.webp";
   }
 
   const featureCard = document.querySelector(".programmes-feature-card");
@@ -699,7 +699,7 @@ function enhanceProgrammeDepartmentCards() {
     const metaMarkup = `
       ${facts.established ? `<span class="programme-fact"><small>EST.</small><b>${facts.established}</b></span>` : ""}
       <span class="programme-fact"><small>INTAKE</small><b>${facts.intake}</b></span>
-      ${facts.nba ? '<span class="programme-nba-badge"><img src="/new-site/brand/nba-logo.webp" alt=""> NBA Accredited</span>' : ""}`;
+      ${facts.nba ? '<span class="programme-nba-badge"><img src="/brand/nba-full-logo.webp" alt="NBA logo"> NBA Accredited</span>' : ""}`;
     if (meta.innerHTML !== metaMarkup) meta.innerHTML = metaMarkup;
     card.classList.toggle("is-nba-accredited", facts.nba);
   });

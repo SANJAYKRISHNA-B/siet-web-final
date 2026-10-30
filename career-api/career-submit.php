@@ -16,6 +16,14 @@ function respond(int $status, array $payload): void
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     respond(405, ['success' => false, 'message' => 'POST method required.']);
 }
+if (!empty($_SERVER['HTTP_ORIGIN'])) {
+    $originHost = parse_url((string)$_SERVER['HTTP_ORIGIN'], PHP_URL_HOST);
+    $originPort = parse_url((string)$_SERVER['HTTP_ORIGIN'], PHP_URL_PORT);
+    $requestHost = strtolower((string)($_SERVER['HTTP_HOST'] ?? ''));
+    if (!is_string($originHost) || strtolower($originHost . ($originPort ? ':' . $originPort : '')) !== $requestHost) {
+        respond(403, ['success' => false, 'message' => 'Cross-origin form submissions are not allowed.']);
+    }
+}
 
 /*
  * cPanel production connection order:
@@ -26,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
  */
 $config = [];
 $db = null;
-$publicHtmlDirectory = basename(dirname(__DIR__)) === 'new-site' ? dirname(__DIR__, 2) : dirname(__DIR__);
+$publicHtmlDirectory = dirname(__DIR__);
 $configPath = getenv('CAREER_CONFIG_PATH') ?: __DIR__ . '/career-config.php';
 if (is_file($configPath)) {
     $loadedConfig = require $configPath;
@@ -57,6 +65,17 @@ function value(string $newName, string $legacyName = ''): string
 {
     $raw = $_POST[$newName] ?? ($legacyName !== '' ? ($_POST[$legacyName] ?? '') : '');
     return trim(is_string($raw) ? $raw : '');
+}
+
+function textLength(string $value): int
+{
+    return function_exists('mb_strlen') ? mb_strlen($value, 'UTF-8') : strlen($value);
+}
+
+function hasControlCharacters(string $value, bool $allowNewlines = false): bool
+{
+    $pattern = $allowNewlines ? '/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/' : '/[\x00-\x1F\x7F]/';
+    return preg_match($pattern, $value) === 1;
 }
 
 function institutionCode(string $institution): string
@@ -126,41 +145,110 @@ $data = [
     'why_change' => value('message', 'why_change'),
     'source' => value('openingSource', 'source'),
     'institute' => value('institution', 'institute'),
+    'category' => value('category'),
 ];
 
-$required = ['fullname', 'dept', 'position', 'high_qualification', 'social_cat', 'country', 'mobile', 'email', 'dob', 'expected_salary_range', 'institute'];
+$required = ['fullname', 'dept', 'position', 'high_qualification', 'social_cat', 'country', 'state', 'city', 'mobile', 'email', 'dob', 'expected_salary_range', 'institute', 'category'];
 $missing = [];
 foreach ($required as $field) {
     if ($data[$field] === '') $missing[] = $field;
 }
 if ($missing) respond(422, ['success' => false, 'message' => 'Please complete all required fields.', 'fields' => $missing]);
 if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) respond(422, ['success' => false, 'message' => 'Enter a valid email address.']);
-if (!preg_match('/^\+?[0-9 ()-]{10,18}$/', $data['mobile'])) respond(422, ['success' => false, 'message' => 'Enter a valid contact number.']);
+if (!preg_match('/^[0-9]{10}$/D', $data['mobile'])) respond(422, ['success' => false, 'message' => 'Enter a 10-digit contact number using numbers only.']);
+if (!preg_match('/^[\p{L}\p{M} .\x27-]{2,100}$/u', $data['fullname'])) respond(422, ['success' => false, 'message' => 'Enter a valid full name using letters only.']);
+if (textLength($data['why_change']) > 2000 || hasControlCharacters($data['why_change'], true)) respond(422, ['success' => false, 'message' => 'The reason for changing position must be 2,000 characters or fewer.']);
+foreach (['dept', 'position', 'high_qualification', 'social_cat', 'country', 'state', 'city', 'current_institution', 'current_position', 'current_salary_range', 'expected_salary_range', 'notice_period', 'source', 'institute'] as $field) {
+    if (textLength($data[$field]) > 200 || hasControlCharacters($data[$field])) respond(422, ['success' => false, 'message' => 'One or more fields are too long or contain invalid control characters.']);
+}
 
 $date = DateTimeImmutable::createFromFormat('Y-m-d', $data['dob']);
 if (!$date) $date = DateTimeImmutable::createFromFormat('d/m/Y', $data['dob']);
 if (!$date) respond(422, ['success' => false, 'message' => 'Enter a valid date of birth.']);
 $data['dob'] = $date->format('Y-m-d');
+$today = new DateTimeImmutable('today');
+$age = $date->diff($today)->y;
+if ($age < 18) {
+    respond(422, ['success' => false, 'message' => 'Applicant must be at least 18 years of age to apply.']);
+}
 
 if (!isset($_FILES['resume']) || $_FILES['resume']['error'] !== UPLOAD_ERR_OK) {
     respond(422, ['success' => false, 'message' => 'Please upload your resume.']);
 }
 
 $resume = $_FILES['resume'];
-$maxBytes = (int)($config['max_upload_bytes'] ?? 2097152);
+$maxBytes = min(2097152, max(1, (int)($config['max_upload_bytes'] ?? 2097152)));
 if ((int)$resume['size'] > $maxBytes) respond(413, ['success' => false, 'message' => 'Resume must not exceed 2 MB.']);
+if ((int)$resume['size'] < 100) respond(422, ['success' => false, 'message' => 'Resume file is empty or corrupted (minimum 100 bytes required).']);
 
-$extension = strtolower(pathinfo((string)$resume['name'], PATHINFO_EXTENSION));
+$resumeName = (string)$resume['name'];
+$cleanResumeName = basename($resumeName);
+if (preg_match('/[\0<>:"\/\\|?*]/', $cleanResumeName)) {
+    respond(422, ['success' => false, 'message' => 'Resume filename contains invalid or dangerous characters.']);
+}
+
+// Block any executable, script or dangerous extensions anywhere in the filename (prevents double-extension exploits e.g. resume.pdf.exe)
+$forbiddenPattern = '/(?:^|\.)(?:exe|bat|cmd|sh|php|phtml|phar|vbs|js|jar|scr|pif|msi|dll|com|hta|ps1|apk|bin|cgi|pl|py|wsf|cpl|gadget|iso|dmg|vhd)(?:\.|$)/i';
+if (preg_match($forbiddenPattern, $cleanResumeName)) {
+    respond(422, ['success' => false, 'message' => 'Security Violation: Executable files (.exe, .bat, scripts) and malware are strictly prohibited.']);
+}
+
+$extension = strtolower(pathinfo($cleanResumeName, PATHINFO_EXTENSION));
 $allowedExtensions = ['pdf', 'doc', 'docx', 'rtf'];
-$allowedMimes = [
-    'pdf' => ['application/pdf'],
-    'doc' => ['application/msword', 'application/octet-stream'],
-    'docx' => ['application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/zip', 'application/octet-stream'],
-    'rtf' => ['application/rtf', 'text/rtf', 'text/plain', 'application/octet-stream'],
-];
-if (!in_array($extension, $allowedExtensions, true)) respond(422, ['success' => false, 'message' => 'Resume must be PDF, DOC, DOCX, or RTF.']);
-$detectedMime = (new finfo(FILEINFO_MIME_TYPE))->file((string)$resume['tmp_name']) ?: 'application/octet-stream';
-if (!in_array($detectedMime, $allowedMimes[$extension], true)) respond(422, ['success' => false, 'message' => 'The uploaded resume file type is invalid.']);
+if (!in_array($extension, $allowedExtensions, true)) {
+    respond(422, ['success' => false, 'message' => 'Resume must be PDF, DOC, DOCX, or RTF document.']);
+}
+
+// Deep Binary Magic Byte & Anti-Malware Inspection
+$fh = fopen((string)$resume['tmp_name'], 'rb');
+if (!$fh) respond(500, ['success' => false, 'message' => 'Unable to scan uploaded resume for security validation.']);
+$magicBytes = fread($fh, 1024);
+fclose($fh);
+
+if (strlen($magicBytes) < 100) {
+    respond(422, ['success' => false, 'message' => 'Resume file contains insufficient data (minimum 100 bytes required).']);
+}
+
+// 1. Block Windows / DOS PE Executable ('MZ' = 0x4D 0x5A)
+if (substr($magicBytes, 0, 2) === "MZ") {
+    respond(422, ['success' => false, 'message' => 'Security Violation: Windows executable (.exe) detected. Executable files and malware are strictly prohibited.']);
+}
+
+// 2. Block Linux ELF Executable (0x7F 'ELF')
+if (substr($magicBytes, 0, 4) === "\x7FELF") {
+    respond(422, ['success' => false, 'message' => 'Security Violation: ELF executable binary detected. Executable files and malware are strictly prohibited.']);
+}
+
+// 3. Block macOS Mach-O Executables
+$machoSignatures = ["\xFE\xED\xFA\xCE", "\xFE\xED\xFA\xCF", "\xCE\xFA\xED\xFE", "\xCF\xFA\xED\xFE", "\xCA\xFE\xBA\xBE"];
+if (in_array(substr($magicBytes, 0, 4), $machoSignatures, true)) {
+    respond(422, ['success' => false, 'message' => 'Security Violation: Executable binary detected.']);
+}
+
+// 4. Block Script Headers (shebang, PHP, HTML script tags)
+$headerLower = strtolower(substr($magicBytes, 0, 64));
+if (str_starts_with($headerLower, '#!') || str_starts_with($headerLower, '<?php') || str_starts_with($headerLower, '<?') || str_contains($headerLower, '<script') || str_starts_with($headerLower, '@echo')) {
+    respond(422, ['success' => false, 'message' => 'Security Violation: Script file detected. Scripts and malware are strictly prohibited.']);
+}
+
+// 5. Positive signature whitelist verification against declared extension
+if ($extension === 'pdf') {
+    if (!str_contains($magicBytes, '%PDF-')) {
+        respond(422, ['success' => false, 'message' => 'Invalid document: The file does not have a genuine PDF signature (%PDF-).']);
+    }
+} elseif ($extension === 'docx') {
+    if (substr($magicBytes, 0, 2) !== "PK") {
+        respond(422, ['success' => false, 'message' => 'Invalid document: The file does not have a genuine Word (DOCX) package signature.']);
+    }
+} elseif ($extension === 'doc') {
+    if (substr($magicBytes, 0, 4) !== "\xD0\xCF\x11\xE0") {
+        respond(422, ['success' => false, 'message' => 'Invalid document: The file does not have a genuine Word (DOC) binary signature.']);
+    }
+} elseif ($extension === 'rtf') {
+    if (!str_starts_with($headerLower, '{\\rtf')) {
+        respond(422, ['success' => false, 'message' => 'Invalid document: The file does not have a genuine RTF signature.']);
+    }
+}
 
 $uploadDir = rtrim((string)($config['upload_dir'] ?? $publicHtmlDirectory . '/webportal/resume'), '/\\');
 if (!is_dir($uploadDir) && !mkdir($uploadDir, 0750, true)) respond(500, ['success' => false, 'message' => 'Resume storage is unavailable.']);

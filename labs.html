@@ -9,7 +9,7 @@
   <meta property="og:description" content="7 state-of-the-art specialized research centers with authentic campus facilities, high-compute GPU clusters, ABB robotics, and industry EDA suites.">
   <meta property="og:image" content="/new-site/assets/images/site/ai.webp">
   <meta property="og:type" content="website">
-  <link rel="icon" href="/new-site/brand/siet-logo.webp" type="image/webp">
+  <link rel="icon" href="/brand/siet-logo.webp" type="image/webp">
   <link rel="alternate icon" href="/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
 
   <title>Specialized Research Laboratories | Sri Shakthi Institute of Engineering &amp; Technology</title>
 
-  <link rel="stylesheet" href="/new-site/assets/special-labs.css?v=20261030-v2">
+  <link rel="stylesheet" href="/assets/special-labs.css?v=20261030-v2">
 
   <style>
     :root {
@@ -637,17 +637,17 @@
     }
   </style>
   <script>
-    // Resilience fallback: automatically retry with /brand/ or /assets/ if /new-site/ prefix fails, or vice versa
+    // Resilience fallback: automatically retry with /brand/ or /assets/ if / prefix fails, or vice versa
     window.addEventListener('error', function(event) {
       if (event.target && event.target.tagName === 'IMG') {
         const img = event.target;
         if (img.dataset.hasFallenBack) return;
         img.dataset.hasFallenBack = 'true';
         const currentSrc = img.src || '';
-        if (currentSrc.includes('/new-site/assets/images/site/')) {
-          img.src = currentSrc.replace('/new-site/assets/images/site/', '/assets/images/site/');
+        if (currentSrc.includes('/assets/images/site/')) {
+          img.src = currentSrc.replace('/assets/images/site/', '/assets/images/site/');
         } else if (currentSrc.includes('/assets/images/site/')) {
-          img.src = currentSrc.replace('/assets/images/site/', '/new-site/assets/images/site/');
+          img.src = currentSrc.replace('/assets/images/site/', '/assets/images/site/');
         }
       }
     }, true);
@@ -674,7 +674,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="/#/">Home</a></li>
-      <li><a href="/new-site/#special-labs">All Labs</a></li>
+      <li><a href="/#special-labs">All Labs</a></li>
       <li><a href="/#facilities">Campus Facilities</a></li>
       <li><a href="/#academics">Academics</a></li>
       <li><a href="/#contact">Contact</a></li>
@@ -984,19 +984,19 @@
     <!-- 06. PCB Design & Assembly Lab -->
     <article class="lab-feature-card" data-category="hardware" id="pcb-design-assembly-lab">
       <div class="lab-feature-media">
-        <div class="lab-feature-main-img-wrap" data-img="/new-site/assets/images/site/lab-pcb-hd.webp" data-title="PCB Assembly Line" data-desc="Automated SMT pick-and-place machine and multi-zone conveyor line.">
-          <img src="/new-site/assets/images/site/lab-pcb-hd.webp" alt="SMT Pick and Place Machine" class="lab-feature-main-img" loading="lazy">
+        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/lab-pcb-hd.webp" data-title="PCB Assembly Line" data-desc="Automated SMT pick-and-place machine and multi-zone conveyor line.">
+          <img src="/assets/images/site/lab-pcb-hd.webp" alt="SMT Pick and Place Machine" class="lab-feature-main-img" loading="lazy">
           <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
         </div>
         <div class="lab-feature-thumbs-row">
-          <div class="lab-feature-thumb is-active" data-src="/new-site/assets/images/site/lab-pcb-hd.webp" data-title="SMT Pick & Place Machine" data-desc="High-speed surface mount technology placement system and conveyor.">
-            <img src="/new-site/assets/images/site/lab-pcb-hd.webp" alt="SMT Line">
+          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/lab-pcb-hd.webp" data-title="SMT Pick & Place Machine" data-desc="High-speed surface mount technology placement system and conveyor.">
+            <img src="/assets/images/site/lab-pcb-hd.webp" alt="SMT Line">
           </div>
-          <div class="lab-feature-thumb" data-src="/new-site/assets/images/site/lab-pcb-hd.webp" data-title="PCB Assembly Equipment" data-desc="Additional view of PCB assembly equipment.">
-            <img src="/new-site/assets/images/site/lab-pcb-hd.webp" alt="PCB assembly">
+          <div class="lab-feature-thumb" data-src="/assets/images/site/lab-pcb-hd.webp" data-title="PCB Assembly Equipment" data-desc="Additional view of PCB assembly equipment.">
+            <img src="/assets/images/site/lab-pcb-hd.webp" alt="PCB assembly">
           </div>
-          <div class="lab-feature-thumb" data-src="/new-site/assets/images/site/lab-pcb-hd.webp" data-title="PCB Design Workspace" data-desc="Equipment in the PCB design and assembly lab.">
-            <img src="/new-site/assets/images/site/lab-pcb-hd.webp" alt="PCB design">
+          <div class="lab-feature-thumb" data-src="/assets/images/site/lab-pcb-hd.webp" data-title="PCB Design Workspace" data-desc="Equipment in the PCB design and assembly lab.">
+            <img src="/assets/images/site/lab-pcb-hd.webp" alt="PCB design">
           </div>
         </div>
       </div>
