@@ -42,3 +42,7 @@ desktop.ini
 
 # Lab backup archive
 brand/special-labs/archive/
+
+# Large image backups retained only as local audit artifacts
+docs/content-archive/duplicate-images-backup/
+docs/content-archive/deduplication-archive-20261030/

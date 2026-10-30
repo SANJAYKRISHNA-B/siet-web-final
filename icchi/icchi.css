@@ -16,6 +16,7 @@
 
 /* ICCHI conference identity: retains the SIET template with a green event palette. */
 :root{--ink:#073b28;--navy:#003522;--blue:#087f58;--cyan:#19a977;--mint:#4bd09b;--paper:#f7fbf8;--muted:#587367;--line:#d7e9df}
+.portal-back-home{display:inline-flex;align-items:center;gap:8px;margin:0 0 24px;padding:7px 16px;border:1px solid rgba(255,255,255,.28);border-radius:30px;background:#ffffff14;color:#fff;font-size:13px;font-weight:800;text-decoration:none;transition:background .2s ease,color .2s ease,transform .2s ease}.portal-back-home:hover{transform:translateX(-3px);border-color:#f5bd43;background:#f5bd43;color:#073b28}
 html{scroll-padding-top:108px}
 .conference-hero{background:radial-gradient(circle at 74% 34%,rgba(18,137,95,.92) 0,transparent 34%),linear-gradient(128deg,#00291b 0%,#00452f 55%,#087451 100%)}
 .orb-one{background:#27ca91}.orb-two{background:#d4b62a}

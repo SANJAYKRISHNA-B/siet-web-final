@@ -25,6 +25,12 @@ DirectoryIndex index.html
   ExpiresByType image/webp "access plus 30 days"
 </IfModule>
 <IfModule mod_headers.c>
+  # The hosting account currently emits a restrictive default-src policy.
+  # Add a specific frame-src exception for the embedded Vigoe AI assistant.
+  # Apply to both normal and "always" response header tables used by Apache.
+  Header edit* Content-Security-Policy "default-src 'self'" "default-src 'self'; frame-src 'self' https://vigoe.ai"
+  Header always edit* Content-Security-Policy "default-src 'self'" "default-src 'self'; frame-src 'self' https://vigoe.ai"
+
   <FilesMatch "\.(avif|gif|jpe?g|png|svg|webp)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>

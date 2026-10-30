@@ -194,6 +194,29 @@
       z-index: 2;
     }
 
+    .portal-back-home {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 24px;
+      padding: 7px 16px;
+      border: 1px solid rgba(0, 77, 44, 0.25);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.55);
+      color: #004d2c;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+    }
+
+    .portal-back-home:hover {
+      transform: translateX(-3px);
+      border-color: #004d2c;
+      background: #004d2c;
+      color: #fff;
+    }
+
     .mdi-hero-badge-strip {
       display: flex;
       flex-wrap: wrap;
@@ -612,6 +635,8 @@
   <main>
     <section class="mdi-hero" id="home" aria-labelledby="hero-title">
       <div class="mdi-hero-shell">
+
+        <a class="portal-back-home" href="/" aria-label="Back to Home"><span aria-hidden="true">←</span> Back to Home</a>
 
         <div class="mdi-hero-badge-strip">
           <span class="mdi-badge-pill">★ SRI SHAKTHI INDIA LEADERSHIP &amp; CAREER CONCLAVE ★</span>

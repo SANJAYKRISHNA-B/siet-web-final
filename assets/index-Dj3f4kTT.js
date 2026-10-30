@@ -1211,7 +1211,7 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
         <!-- Card 06: Our Campus -->
         <div class="campus-card-v2 card-06 reveal" style="pointer-events: none; cursor: default;" aria-label="06 Our Campus - A greener, brighter tomorrow.">
           <span class="card-index">06</span>
-          <img src="/brand/campus-life/our-campus-full.webp?v=20261030-campus2" alt="Sri Shakthi Campus & Leadership" width="400" height="250" loading="lazy" decoding="async">
+          <img src="/brand/campus-life/our-campus-delegation.webp?v=20261030-delegation1" alt="Sri Shakthi Campus & Leadership" width="400" height="250" loading="lazy" decoding="async">
           <div class="card-bottom-overlay">
             <div class="card-info-side">
               <div class="card-title-row">
