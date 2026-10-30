@@ -105,9 +105,9 @@
   padding: 0 !important;
 }
 
-/* Line 4: AN AUTONOMOUS INSTITUTION (Bold, Uppercase, Yellow, Plain Text) */
+/* Line 4: AN AUTONOMOUS INSTITUTION highlighted in a yellow badge */
 .siet-brand-autonomous {
-  color: #ffd83d !important;
+  color: #003622 !important;
   font-family: Manrope, 'Plus Jakarta Sans', sans-serif !important;
   font-weight: 800 !important;
   font-size: clamp(8.8px, 0.65vw, 10.5px) !important;
@@ -115,13 +115,14 @@
   line-height: 1.18 !important;
   letter-spacing: 0.055em !important;
   white-space: nowrap !important;
-  background: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
-  padding: 0 !important;
+  background: #ffd83d !important;
+  border: 1px solid #ffe777 !important;
+  border-radius: 4px !important;
+  padding: 2px 6px !important;
   margin: 1px 0 0 0 !important;
-  display: block !important;
-  box-shadow: none !important;
+  display: inline-block !important;
+  width: max-content !important;
+  box-shadow: 0 2px 8px rgba(255, 216, 61, 0.2) !important;
 }
 
 /* Desktop Navigation Menu & Active Styling */
