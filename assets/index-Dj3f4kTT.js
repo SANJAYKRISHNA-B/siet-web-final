@@ -828,11 +828,11 @@ import{r as Ee,j as ce,c as $a,R as ja}from"./vendor-react-DhEz86-d.js";import{i
         <div class="campus-card-v2 card-04 reveal" style="pointer-events: none; cursor: default;" aria-label="04 Culture & Arts - Tradition. Creativity. Every performance.">
           <span class="card-index">04</span>
           <span class="card-floating-badge badge-sand">${v("masks")}</span>
-          <img src="/new-site/brand/campus-life/cultural.webp" alt="Culture & Arts" width="400" height="250" loading="lazy" decoding="async">
+          <img src="/new-site/brand/campus-life/cultural.jpeg?v=20261030-v6" alt="Culture & Arts" width="400" height="250" loading="lazy" decoding="async" style="object-fit: cover; object-position: center top;">
           <div class="card-bottom-overlay">
             <div class="card-info-side">
               <div class="card-title-row">
-                <i class="cat-accent-bar bar-orange"></i>
+                <i class="cat-accent-bar bar-amber"></i>
                 <h4 class="card-title">Culture & Arts</h4>
               </div>
               <p class="card-subtitle">Tradition. Creativity. Every performance.</p>
