@@ -292,3 +292,170 @@ html {
   padding: 0 !important;
   overflow: hidden !important;
 }
+
+/* ==========================================================================
+   Universal Hero Breadcrumb Navigation Bar (Matching Official Reference Image 2)
+   - Layout: Flex row with space-between
+   - Left: Home / [Section] / [Page Title in Gold]
+   - Right: Pill button "← Back to [Section]"
+   - Thin divider line below
+   ========================================================================== */
+.cf-breadcrumb-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 16px !important;
+  flex-wrap: wrap !important;
+  width: 100% !important;
+  grid-column: 1 / -1 !important;
+  box-sizing: border-box !important;
+  margin-bottom: 24px !important;
+  padding-bottom: 14px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.cf-breadcrumb-list {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  flex-wrap: wrap !important;
+}
+
+.cf-breadcrumb-list li {
+  display: inline-flex !important;
+  align-items: center !important;
+  color: inherit !important;
+}
+
+.cf-breadcrumb-list li a {
+  color: rgba(255, 255, 255, 0.8) !important;
+  text-decoration: none !important;
+  transition: color 0.18s ease !important;
+}
+
+.cf-breadcrumb-list li a:hover {
+  color: #ffd83d !important;
+}
+
+.cf-breadcrumb-list .sep {
+  opacity: 0.45 !important;
+  color: rgba(255, 255, 255, 0.6) !important;
+  user-select: none !important;
+}
+
+.cf-breadcrumb-list .active {
+  color: #ffd83d !important;
+  font-weight: 700 !important;
+}
+
+.cf-back-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 16px !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  border-radius: 999px !important;
+  color: #ffffff !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  transition: all 0.22s ease !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  white-space: nowrap !important;
+}
+
+.cf-back-btn:hover {
+  background: #ffd83d !important;
+  color: #002418 !important;
+  border-color: #ffd83d !important;
+  transform: translateX(-3px) !important;
+  box-shadow: 0 4px 14px rgba(255, 216, 61, 0.35) !important;
+}
+
+.cf-back-btn .back-arrow {
+  font-size: 15px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.cf-back-btn:hover .back-arrow {
+  transform: translateX(-2px) !important;
+}
+
+/* Ensure proper vertical breathing room on .siet-vm-hero */
+.siet-vm-hero {
+  padding-top: clamp(28px, 3.2vw, 38px) !important;
+  padding-bottom: clamp(28px, 3.2vw, 42px) !important;
+}
+
+
+
+/* ==========================================================================
+   Continuous Seamless Admissions Marquee & Divider Line
+   - Zero-gap infinite scroll with flawless -50% loop
+   - Unbroken solid gold divider line between notice strip and navbar
+   ========================================================================== */
+.notice.notice-home {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 40px !important;
+  background: #003423 !important;
+  border-bottom: 2px solid #ffd83d !important;
+  overflow: hidden !important;
+  position: relative !important;
+  z-index: 1001 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.home-notice-track {
+  display: flex !important;
+  align-items: center !important;
+  width: max-content !important;
+  will-change: transform !important;
+  animation: homeNoticeScroll 35s linear infinite !important;
+  animation-play-state: running !important;
+}
+
+.home-notice-track:hover {
+  animation-play-state: paused !important;
+}
+
+.home-notice-group {
+  display: flex !important;
+  align-items: center !important;
+  gap: 24px !important;
+  padding-left: 0 !important;
+  padding-right: 24px !important;
+  color: #fff !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+}
+
+.home-notice-group > i {
+  width: 2px !important;
+  height: 16px !important;
+  background: #ffd83d !important;
+  opacity: 0.7 !important;
+  flex: 0 0 auto !important;
+}
+
+@keyframes homeNoticeScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}

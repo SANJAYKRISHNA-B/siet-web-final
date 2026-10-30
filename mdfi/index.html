@@ -71,20 +71,29 @@
       border-bottom: 2px solid #ffd83d !important;
       display: flex;
       align-items: center;
+      justify-content: flex-start !important;
       overflow: hidden;
+      width: 100% !important;
     }
 
     .home-notice-track {
-      width: max-content;
+      width: max-content !important;
       display: flex;
       align-items: center;
-      animation: homeNoticeScroll 30s linear infinite;
+      animation: homeNoticeScroll 35s linear infinite !important;
+      animation-play-state: running !important;
+      will-change: transform !important;
     }
     .home-notice-track:hover {
       animation-play-state: paused;
     }
     @keyframes homeNoticeScroll {
-      to { transform: translateX(-50%); }
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
     }
 
     .home-notice-group {
@@ -418,6 +427,38 @@
   <div class="notice notice-home" role="region" aria-label="Admissions Announcements">
     <div class="home-notice-track">
       <div class="home-notice-group">
+        <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+        <span>Begin your journey at Sri Shakthi</span><i></i>
+        <a class="home-notice-open" href="/apply"><strong>ADMISSIONS 2026–27 NOW OPEN</strong></a><i></i>
+        <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+        <span>Begin your journey at Sri Shakthi</span><i></i>
+        <a class="home-notice-open" href="/apply"><strong>ADMISSIONS 2026–27 NOW OPEN</strong></a>
+      </div>
+      <div class="home-notice-group">
+        <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+        <span>Begin your journey at Sri Shakthi</span><i></i>
+        <a class="home-notice-open" href="/apply"><strong>ADMISSIONS 2026–27 NOW OPEN</strong></a><i></i>
+        <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+        <span>Begin your journey at Sri Shakthi</span><i></i>
+        <a class="home-notice-open" href="/apply"><strong>ADMISSIONS 2026–27 NOW OPEN</strong></a>
+      </div>
+      <div class="home-notice-group">
+        <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+        <span>Begin your journey at Sri Shakthi</span><i></i>
+        <a class="home-notice-open" href="/apply"><strong>ADMISSIONS 2026–27 NOW OPEN</strong></a><i></i>
+        <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+        <span>Begin your journey at Sri Shakthi</span><i></i>
+        <a class="home-notice-open" href="/apply"><strong>ADMISSIONS 2026–27 NOW OPEN</strong></a>
+      </div>
+      <div class="home-notice-group" aria-hidden="true">
+        <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+        <span>Begin your journey at Sri Shakthi</span><i></i>
+        <a class="home-notice-open" href="/apply"><strong>ADMISSIONS 2026–27 NOW OPEN</strong></a><i></i>
+        <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
+        <span>Begin your journey at Sri Shakthi</span><i></i>
+        <a class="home-notice-open" href="/apply"><strong>ADMISSIONS 2026–27 NOW OPEN</strong></a>
+      </div>
+      <div class="home-notice-group" aria-hidden="true">
         <span>Applications are invited for undergraduate and postgraduate engineering programmes</span><i></i>
         <span>Begin your journey at Sri Shakthi</span><i></i>
         <a class="home-notice-open" href="/apply"><strong>ADMISSIONS 2026–27 NOW OPEN</strong></a><i></i>

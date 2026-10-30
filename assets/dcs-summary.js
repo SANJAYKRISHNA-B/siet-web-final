@@ -51,6 +51,17 @@ function pageMarkup() {
         <div class="siet-vm-hero-orb orb-one" aria-hidden="true"></div>
         <div class="siet-vm-hero-orb orb-two" aria-hidden="true"></div>
         <div class="siet-vm-shell siet-vm-hero-content">
+          <nav class="cf-breadcrumb-bar reveal is-visible" aria-label="Breadcrumb">
+            <ol class="cf-breadcrumb-list">
+              <li><a href="#/">Home</a></li>
+              <li class="sep" aria-hidden="true">/</li>
+              <li class="active" aria-current="page">DCS Summary</li>
+            </ol>
+            <a href="#/" class="cf-back-btn" aria-label="Return to Home section">
+              <span class="back-arrow" aria-hidden="true">←</span>
+              <span>Back to Home</span>
+            </a>
+          </nav>
           <p class="siet-vm-kicker"><i></i> INSTITUTIONAL INFORMATION</p>
           <h1 id="dcs-summary-title">DCS <em>Summary</em></h1>
           <p class="siet-vm-intro">Access department-wise summary information for Biomedical Engineering, Biotechnology, and Civil Engineering.</p>
@@ -73,6 +84,19 @@ function affiliationPageMarkup() {
         <div class="siet-vm-hero-orb orb-one" aria-hidden="true"></div>
         <div class="siet-vm-hero-orb orb-two" aria-hidden="true"></div>
         <div class="siet-vm-shell siet-vm-hero-content">
+          <nav class="cf-breadcrumb-bar reveal is-visible" aria-label="Breadcrumb">
+            <ol class="cf-breadcrumb-list">
+              <li><a href="#/">Home</a></li>
+              <li class="sep" aria-hidden="true">/</li>
+              <li><a href="#/accreditation">Accreditation</a></li>
+              <li class="sep" aria-hidden="true">/</li>
+              <li class="active" aria-current="page">Anna University Affiliation</li>
+            </ol>
+            <a href="#/accreditation" class="cf-back-btn" aria-label="Return to Accreditation section">
+              <span class="back-arrow" aria-hidden="true">←</span>
+              <span>Back to Accreditation</span>
+            </a>
+          </nav>
           <p class="siet-vm-kicker"><i></i> UNIVERSITY AFFILIATION</p>
           <h1 id="au-affiliation-title">Anna University <em>Affiliation</em></h1>
           <p class="siet-vm-intro">Sri Shakthi Institute of Engineering and Technology is an autonomous institution affiliated to Anna University, Chennai.</p>
@@ -144,6 +168,19 @@ function nbaAccreditationPageMarkup() {
       <section class="siet-vm-hero" aria-labelledby="nba-accreditation-title">
         <div class="siet-vm-hero-grid" aria-hidden="true"></div><div class="siet-vm-hero-orb orb-one" aria-hidden="true"></div><div class="siet-vm-hero-orb orb-two" aria-hidden="true"></div>
         <div class="siet-vm-shell siet-vm-hero-content">
+          <nav class="cf-breadcrumb-bar reveal is-visible" aria-label="Breadcrumb">
+            <ol class="cf-breadcrumb-list">
+              <li><a href="#/">Home</a></li>
+              <li class="sep" aria-hidden="true">/</li>
+              <li><a href="#/accreditation">Accreditation</a></li>
+              <li class="sep" aria-hidden="true">/</li>
+              <li class="active" aria-current="page">NBA Tier-I Accreditation</li>
+            </ol>
+            <a href="#/accreditation" class="cf-back-btn" aria-label="Return to Accreditation section">
+              <span class="back-arrow" aria-hidden="true">←</span>
+              <span>Back to Accreditation</span>
+            </a>
+          </nav>
           <p class="siet-vm-kicker"><i></i> PROGRAMME ACCREDITATION</p>
           <h1 id="nba-accreditation-title">NBA <em>Accreditation</em></h1>
           <p class="siet-vm-intro">Tier-I accreditation by the National Board of Accreditation for eligible undergraduate engineering programmes at Sri Shakthi.</p>
