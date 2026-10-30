@@ -2,6 +2,8 @@ DirectoryIndex index.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  # The canonical SSSM route uses the same page rendered by the main SPA.
+  RewriteRule ^sssm/?$ index.html [L]
   # Serve real compiled assets, images, downloads and documents directly.
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

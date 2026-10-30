@@ -581,7 +581,7 @@ createServer((request, response) => {
     return;
   }
 
-  if (cleanPath === "sri-shakthi-space-mission" || cleanPath === "sri shakthi space mission" || cleanPath === "space-mission" || cleanPath === "ssm") {
+  if (["sri-shakthi-space-mission", "sri shakthi space mission", "sri-shakthi-space-mission.php", "space-mission", "space-whiz", "spacewhiz", "shakthisat", "srishakthisat", "space", "ssm"].includes(cleanPath)) {
     response.writeHead(302, { Location: "/new-site/sssm/" });
     response.end();
     return;
