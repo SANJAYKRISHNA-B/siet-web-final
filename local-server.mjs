@@ -338,8 +338,8 @@ createServer((request, response) => {
     return;
   }
 
-  if (cleanPath === "sri-shakthi-space-mission" || cleanPath === "sri shakthi space mission" || cleanPath === "space-mission") {
-    response.writeHead(302, { Location: "/ssm/" });
+  if (cleanPath === "sri-shakthi-space-mission" || cleanPath === "sri shakthi space mission" || cleanPath === "space-mission" || cleanPath === "ssm") {
+    response.writeHead(302, { Location: "/sssm/" });
     response.end();
     return;
   }
