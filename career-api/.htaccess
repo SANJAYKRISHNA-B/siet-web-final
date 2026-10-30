@@ -1,0 +1,9 @@
+Options -Indexes
+
+<FilesMatch "^(career-config|career-config\.example)\.php$">
+  Require all denied
+</FilesMatch>
+
+<FilesMatch "\.(sql|log)$">
+  Require all denied
+</FilesMatch>

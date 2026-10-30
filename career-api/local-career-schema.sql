@@ -1,0 +1,36 @@
+CREATE TABLE IF NOT EXISTS career_applications (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  application_no TEXT NOT NULL UNIQUE,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  email TEXT NOT NULL,
+  date_of_birth TEXT NOT NULL,
+  country TEXT NOT NULL,
+  state TEXT,
+  city TEXT,
+  institution TEXT NOT NULL,
+  category TEXT NOT NULL,
+  position TEXT NOT NULL,
+  department TEXT NOT NULL,
+  qualification TEXT NOT NULL,
+  social_category TEXT NOT NULL,
+  current_institution TEXT,
+  current_position TEXT,
+  current_salary TEXT,
+  expected_salary TEXT NOT NULL,
+  notice_period TEXT,
+  teaching_experience TEXT,
+  industrial_experience TEXT,
+  research_experience TEXT,
+  opening_source TEXT,
+  message TEXT,
+  resume_original_name TEXT NOT NULL,
+  resume_stored_name TEXT NOT NULL,
+  resume_mime_type TEXT NOT NULL,
+  resume_size INTEGER NOT NULL,
+  ip_address TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX IF NOT EXISTS idx_career_applications_email ON career_applications(email);
+CREATE INDEX IF NOT EXISTS idx_career_applications_created_at ON career_applications(created_at DESC);
