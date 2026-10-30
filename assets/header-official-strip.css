@@ -459,3 +459,16 @@ html {
     transform: translate3d(-50%, 0, 0);
   }
 }
+
+
+/* Freeze redirecting links for Campus Life section */
+.campus-section .campus-card-v2 {
+  cursor: default !important;
+}
+.campus-section .campus-btn-primary {
+  cursor: default !important;
+  pointer-events: none !important;
+}
+.campus-section .card-circle-arrow {
+  display: none !important;
+}

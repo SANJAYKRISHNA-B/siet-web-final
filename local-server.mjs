@@ -378,13 +378,29 @@ createServer((request, response) => {
     const directoryIndex = join(filePath, "index.html");
     filePath = existsSync(directoryIndex) ? directoryIndex : join(root, "index.html");
   } else if (safePath && !existsSync(filePath) && extname(safePath)) {
-    // Never serve the SPA HTML fallback for a missing JS/CSS/image request.
-    response.writeHead(404, {
-      "Content-Type": "text/plain; charset=utf-8",
-      "Cache-Control": "no-cache, no-store, must-revalidate",
-    });
-    response.end("Asset not found");
-    return;
+    // Transparent WebP fallback: if .png/.jpg was requested but only .webp exists, serve .webp seamlessly
+    const reqExt = extname(safePath).toLowerCase();
+    if (reqExt === ".png" || reqExt === ".jpg" || reqExt === ".jpeg") {
+      const webpCandidate = filePath.slice(0, -reqExt.length) + ".webp";
+      if (existsSync(webpCandidate)) {
+        filePath = webpCandidate;
+      } else {
+        response.writeHead(404, {
+          "Content-Type": "text/plain; charset=utf-8",
+          "Cache-Control": "no-cache, no-store, must-revalidate",
+        });
+        response.end("Asset not found");
+        return;
+      }
+    } else {
+      // Never serve the SPA HTML fallback for a missing JS/CSS/image request.
+      response.writeHead(404, {
+        "Content-Type": "text/plain; charset=utf-8",
+        "Cache-Control": "no-cache, no-store, must-revalidate",
+      });
+      response.end("Asset not found");
+      return;
+    }
   } else if (!safePath || !existsSync(filePath)) {
     filePath = join(root, "index.html");
   } else {
