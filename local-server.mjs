@@ -109,6 +109,11 @@ createServer((request, response) => {
     response.end();
     return;
   }
+  if (cleanPath === "labs" || cleanPath === "special-labs") {
+    response.writeHead(302, { Location: "/labs.html" });
+    response.end();
+    return;
+  }
   if (cleanPath === "sri-shakthi-space-mission" || cleanPath === "sri shakthi space mission" || cleanPath === "space-mission") {
     response.writeHead(302, { Location: "/ssm/" });
     response.end();

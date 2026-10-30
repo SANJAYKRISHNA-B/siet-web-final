@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#075b36">
+  <meta name="description" content="Explore Sri Shakthi Institute of Engineering & Technology's 7 world-class advanced research laboratories: AI, Cybersecurity, Embedded Systems & VLSI, AR/VR, Robotics, PCB Assembly, and IoT.">
+  <meta property="og:title" content="Specialized Research Laboratories | Sri Shakthi Institute of Engineering & Technology">
+  <meta property="og:description" content="7 state-of-the-art specialized research centers with authentic campus facilities, high-compute GPU clusters, ABB robotics, and industry EDA suites.">
+  <meta property="og:image" content="/assets/images/site/ai.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="/brand/siet-logo.webp" type="image/webp">
+  <link rel="alternate icon" href="/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800;900&family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <title>Specialized Research Laboratories | Sri Shakthi Institute of Engineering &amp; Technology</title>
+
+  <link rel="stylesheet" href="/assets/special-labs.css?v=20261030-v2">
+
+  <style>
+    :root {
+      --primary-green: #075b36;
+      --deep-forest: #043f27;
+      --accent-gold: #f3c515;
+      --emerald: #10b981;
+      --surface-light: #f8faf9;
+      --surface-white: #ffffff;
+      --border-subtle: #dbe7e1;
+      --text-dark: #123023;
+      --text-muted: #4e6a5c;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--surface-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Top Institutional Official Strip */
+    .top-official-strip {
+      background: #022315;
+      color: #d1fae5;
+      font-size: 12px;
+      padding: 6px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .top-official-strip span strong {
+      color: var(--accent-gold);
+    }
+
+    /* Main Navigation Bar */
+    .main-nav-bar {
+      background: var(--surface-white);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 14px 5vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .brand-logo-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .brand-logo-img {
+      height: 48px;
+      width: auto;
+    }
+
+    .brand-text-col {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-title {
+      font-family: 'League Spartan', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: var(--deep-forest);
+      letter-spacing: -0.2px;
+    }
+
+    .brand-sub {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-dark);
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: var(--primary-green);
+    }
+
+    .btn-apply-nav {
+      background: var(--primary-green);
+      color: #ffffff !important;
+      padding: 9px 20px;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+
+    .btn-apply-nav:hover {
+      background: var(--deep-forest);
+      transform: translateY(-1px);
+    }
+
+    /* Hero Banner Section */
+    .labs-hero {
+      background: linear-gradient(135deg, #032a19 0%, #075b36 70%, #0a693f 100%);
+      color: #ffffff;
+      padding: 60px 5vw 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .labs-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(243, 197, 21, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-kicker-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .hero-kicker-badge {
+      background: rgba(243, 197, 21, 0.2);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      font-size: 11.5px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 30px;
+    }
+
+    .hero-title {
+      font-family: 'League Spartan', sans-serif;
+      font-size: clamp(32px, 4.5vw, 52px);
+      font-weight: 800;
+      line-height: 1.12;
+      color: #ffffff;
+      margin-bottom: 16px;
+      max-width: 900px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(15px, 1.8vw, 18px);
+      color: #d1fae5;
+      max-width: 820px;
+      line-height: 1.55;
+      margin-bottom: 36px;
+    }
+
+    /* Stats Strip inside Hero */
+    .hero-stats-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      background: rgba(2, 34, 21, 0.55);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 20px 24px;
+    }
+
+    .hero-stat-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--accent-gold);
+      line-height: 1.1;
+    }
+
+    .hero-stat-label {
+      font-size: 12.5px;
+      color: #e2f4ea;
+      margin-top: 4px;
+      font-weight: 500;
+    }
+
+    /* Filter Strip */
+    .filter-section {
+      background: var(--surface-white);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 16px 5vw;
+      position: sticky;
+      top: 76px;
+      z-index: 90;
+    }
+
+    .filter-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .filter-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .filter-btn {
+      background: var(--surface-light);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-dark);
+      font-family: inherit;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 7px 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .filter-btn:hover {
+      background: #e6f4ec;
+      border-color: var(--primary-green);
+      color: var(--primary-green);
+    }
+
+    .filter-btn.active {
+      background: var(--primary-green) !important;
+      border-color: var(--primary-green) !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 12px rgba(7, 91, 54, 0.25);
+    }
+
+    .filter-hint {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Main Showcase Catalog Section */
+    .labs-catalog-section {
+      max-width: 1280px;
+      margin: 40px auto 80px;
+      padding: 0 5vw;
+    }
+
+    .lab-feature-card {
+      background: var(--surface-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .lab-feature-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(7, 91, 54, 0.1);
+    }
+
+    @media (max-width: 960px) {
+      .lab-feature-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Media Visual Side */
+    .lab-feature-media {
+      position: relative;
+      overflow: hidden;
+      background: #022215;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .lab-feature-main-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/10;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .lab-feature-main-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+    }
+
+    .lab-feature-main-img-wrap:hover .lab-feature-main-img {
+      transform: scale(1.05);
+      filter: saturate(1.1);
+    }
+
+    .lab-feature-zoom-hint {
+      position: absolute;
+      bottom: 14px;
+      right: 14px;
+      background: rgba(2, 34, 21, 0.75);
+      backdrop-filter: blur(6px);
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      pointer-events: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .lab-feature-thumbs-row {
+      display: flex;
+      gap: 10px;
+      padding: 12px 16px;
+      background: #021a10;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      overflow-x: auto;
+    }
+
+    .lab-feature-thumb {
+      width: 72px;
+      height: 48px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      opacity: 0.7;
+      transition: all 0.2s ease;
+      flex: none;
+    }
+
+    .lab-feature-thumb.is-active, .lab-feature-thumb:hover {
+      opacity: 1;
+      border-color: var(--accent-gold);
+      transform: scale(1.05);
+    }
+
+    .lab-feature-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Content Info Side */
+    .lab-feature-content {
+      padding: 32px 36px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .lab-meta-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .lab-id-badge {
+      font-family: 'League Spartan', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--primary-green);
+      background: #e6f4ec;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+
+    .lab-category-badge {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--text-muted);
+    }
+
+    .lab-title-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--deep-forest);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .lab-tagline-text {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--primary-green);
+      margin-bottom: 14px;
+    }
+
+    .lab-summary-para {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* Key Equipment Highlights */
+    .lab-specs-box {
+      background: var(--surface-light);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin-bottom: 24px;
+    }
+
+    .lab-specs-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--deep-forest);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lab-specs-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 14px;
+    }
+
+    @media (max-width: 600px) {
+      .lab-specs-list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .lab-specs-list li {
+      font-size: 12.5px;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .lab-specs-list li::before {
+      content: "✓";
+      color: var(--emerald);
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    /* Actions Footer */
+    .lab-feature-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .btn-explore-lab {
+      background: var(--primary-green);
+      color: #ffffff;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-explore-lab:hover {
+      background: var(--deep-forest);
+      transform: translateX(2px);
+    }
+
+    .btn-enquire-lab {
+      background: transparent;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-dark);
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-enquire-lab:hover {
+      border-color: var(--primary-green);
+      color: var(--primary-green);
+      background: #eef7f2;
+    }
+
+    /* Bottom Institutional CTA Section */
+    .labs-cta-section {
+      background: #022315;
+      color: #ffffff;
+      padding: 60px 5vw;
+      text-align: center;
+      position: relative;
+    }
+
+    .labs-cta-title {
+      font-family: 'League Spartan', sans-serif;
+      font-size: clamp(26px, 3.5vw, 40px);
+      font-weight: 800;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .labs-cta-sub {
+      font-size: 15px;
+      color: #d1fae5;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .labs-cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .btn-cta-gold {
+      background: var(--accent-gold);
+      color: var(--deep-forest);
+      font-weight: 800;
+      font-size: 14px;
+      padding: 12px 28px;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-cta-gold:hover {
+      background: #ffd84d;
+      transform: translateY(-2px);
+    }
+
+    .btn-cta-outline {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 14px;
+      padding: 12px 26px;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+    }
+
+    .btn-cta-outline:hover {
+      border-color: #ffffff;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Footer */
+    .labs-footer {
+      background: #01160d;
+      color: #9cb5a8;
+      font-size: 12.5px;
+      padding: 30px 5vw;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .labs-footer a {
+      color: var(--accent-gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Institutional Official Strip -->
+  <div class="top-official-strip">
+    <span>Sri Shakthi Institute of Engineering &amp; Technology (Autonomous) &bull; <strong>TNEA Code: 2727</strong></span>
+    <span>NAAC 'A' Grade &bull; NBA Accredited Programmes &bull; Anna University Affiliated</span>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <header class="main-nav-bar">
+    <div class="brand-logo-wrap">
+      <a href="/#/">
+        <img src="/brand/siet-logo.webp" alt="Sri Shakthi Logo" class="brand-logo-img" onerror="this.src='/brand/sietlogo.png'">
+      </a>
+      <div class="brand-text-col">
+        <span class="brand-title">SRI SHAKTHI</span>
+        <span class="brand-sub">RESEARCH &amp; ADVANCED LABS</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/#/">Home</a></li>
+      <li><a href="/#special-labs">All Labs</a></li>
+      <li><a href="/#facilities">Campus Facilities</a></li>
+      <li><a href="/#academics">Academics</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="/#/admissions-enquiry" class="btn-apply-nav">Admissions 2026</a></li>
+    </ul>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="labs-hero">
+    <div class="hero-container">
+      <div class="hero-kicker-row">
+        <span class="hero-kicker-badge">Authentic Campus Research Infrastructure</span>
+      </div>
+      <h1 class="hero-title">World-Class Specialized Research Laboratories</h1>
+      <p class="hero-subtitle">
+        Sri Shakthi fosters deep-tech innovation through 7 state-of-the-art specialized laboratories equipped with authentic industrial hardware, GPU supercomputing clusters, ABB mobile robotics, and automated electronics assembly suites.
+      </p>
+
+      <div class="hero-stats-strip">
+        <div class="hero-stat-card">
+          <span class="hero-stat-num">7</span>
+          <span class="hero-stat-label">Specialized Research Suites</span>
+        </div>
+        <div class="hero-stat-card">
+          <span class="hero-stat-num">256</span>
+          <span class="hero-stat-label">Xeon Compute Cores &amp; RTX GPUs</span>
+        </div>
+        <div class="hero-stat-card">
+          <span class="hero-stat-num">100%</span>
+          <span class="hero-stat-label">Industry-Grade EDA &amp; Hardware</span>
+        </div>
+        <div class="hero-stat-card">
+          <span class="hero-stat-num">16/5</span>
+          <span class="hero-stat-label">Extended Project Access Model</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter Strip -->
+  <nav class="filter-section" aria-label="Laboratory filter tabs">
+    <div class="filter-container">
+      <div class="filter-btn-group" role="tablist">
+        <button type="button" class="filter-btn active" data-filter="all">All 7 Laboratories</button>
+        <button type="button" class="filter-btn" data-filter="computing">AI &amp; Cyber Defense</button>
+        <button type="button" class="filter-btn" data-filter="hardware">VLSI, Embedded &amp; PCB</button>
+        <button type="button" class="filter-btn" data-filter="emerging">IoT &amp; Robotics</button>
+      </div>
+      <span class="filter-hint">Click any photo to zoom in high resolution</span>
+    </div>
+  </nav>
+
+  <!-- Main Showcase Catalog Section -->
+  <main class="labs-catalog-section">
+
+    <!-- 01. Artificial Intelligence Research Lab -->
+    <article class="lab-feature-card" data-category="computing" id="ai-lab">
+      <div class="lab-feature-media">
+        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/ai.webp" data-title="AI Lab - Computing Workspace" data-desc="High-compute GPU workstations running agentic AI and neural architectures.">
+          <img src="/assets/images/site/ai.webp" alt="AI Research Lab Workstations" class="lab-feature-main-img" loading="eager">
+          <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
+        </div>
+        <div class="lab-feature-thumbs-row">
+          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/ai.webp" data-title="AI Lab - Agentic AI Workstations" data-desc="Students working at dual-display stations with neural wall illumination.">
+            <img src="/assets/images/site/ai.webp" alt="AI Lab active">
+          </div>
+          <div class="lab-feature-thumb" data-src="/assets/images/site/ai1.webp" data-title="AI Lab - Wide Research Arena" data-desc="Wide-angle view of luxury marble workspace, acoustic panels, and compute nodes.">
+            <img src="/assets/images/site/ai1.webp" alt="AI Lab wide perspective">
+          </div>
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-ai-intel-partnership.webp" data-title="Intel AI Partnership Architecture" data-desc="Intel AI Lab partnership specifications with Xeon Gold clusters.">
+            <img src="/new-site/brand/special-labs/pptx-ai-intel-partnership.webp" alt="Intel AI Partnership">
+          </div>
+        </div>
+      </div>
+      <div class="lab-feature-content">
+        <div>
+          <div class="lab-meta-header">
+            <span class="lab-id-badge">LAB 01</span>
+            <span class="lab-category-badge">Emerging Technologies</span>
+          </div>
+          <h2 class="lab-title-text">Artificial Intelligence Research Lab</h2>
+          <p class="lab-tagline-text">AI / Gen AI / Edge AI &bull; Partnered with Intel® AI Lab</p>
+          <p class="lab-summary-para">
+            Equipped with 256 Intel Xeon cores, NVIDIA GeForce RTX 5070 GPUs, Alienware compute nodes, and NVIDIA Jetson edge inference systems. Focuses on Generative AI, LLM fine-tuning, computer vision, and autonomous agent workflows.
+          </p>
+          <div class="lab-specs-box">
+            <div class="lab-specs-title">⚡ Key Hardware &amp; Toolchains</div>
+            <ul class="lab-specs-list">
+              <li>256 Intel Xeon Cores</li>
+              <li>NVIDIA RTX 5070 GPUs</li>
+              <li>PyTorch &amp; TensorRT Stacks</li>
+              <li>LangChain &amp; Agentic AI</li>
+              <li>NVIDIA Jetson Edge Nodes</li>
+              <li>Intel RealSense Depth Vision</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lab-feature-actions">
+          <a href="/#/labs/ai-lab" class="btn-explore-lab">Explore Lab Profile &rarr;</a>
+          <a href="/#/admissions-enquiry" class="btn-enquire-lab">Enquire Admission</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 02. Cyber Security & Cloud Computing Research Lab -->
+    <article class="lab-feature-card" data-category="computing" id="cyber-cloud-lab">
+      <div class="lab-feature-media">
+        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/cyber2.webp" data-title="Cybersecurity Operations Console" data-desc="Active threat simulation, vulnerability assessment, and enterprise server monitoring.">
+          <img src="/assets/images/site/cyber2.webp" alt="Cybersecurity Lab Active Session" class="lab-feature-main-img" loading="lazy">
+          <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
+        </div>
+        <div class="lab-feature-thumbs-row">
+          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/cyber2.webp" data-title="Cybersecurity Lab - Threat Assessment" data-desc="Students actively coding and testing network telemetry.">
+            <img src="/assets/images/site/cyber2.webp" alt="Cybersecurity active">
+          </div>
+          <div class="lab-feature-thumb" data-src="/assets/images/site/cyber1.webp" data-title="Cybersecurity Lab - Dedicated Suite" data-desc="Illuminated identity panel and centralized SOC monitoring displays.">
+            <img src="/assets/images/site/cyber1.webp" alt="Cybersecurity lab front view">
+          </div>
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-cyber-security.webp" data-title="Research Hall of Fame" data-desc="Hall of Fame recognitions from Apple, Google, Microsoft, and NASA.">
+            <img src="/new-site/brand/special-labs/pptx-cyber-security.webp" alt="Cybersecurity achievements">
+          </div>
+        </div>
+      </div>
+      <div class="lab-feature-content">
+        <div>
+          <div class="lab-meta-header">
+            <span class="lab-id-badge">LAB 02</span>
+            <span class="lab-category-badge">Cloud &amp; Security Defense</span>
+          </div>
+          <h2 class="lab-title-text">Cyber Security &amp; Cloud Computing Lab</h2>
+          <p class="lab-tagline-text">Secure Cloud / DevSecOps &bull; 9 CVEs &amp; Global Hall of Fame</p>
+          <p class="lab-summary-para">
+            Enterprise cloud virtualization sandbox with dedicated intrusion detection racks, SIEM consoles, and isolated penetration testing testbeds. Students have earned recognitions from Apple, Google, Microsoft, and NASA.
+          </p>
+          <div class="lab-specs-box">
+            <div class="lab-specs-title">⚡ Key Hardware &amp; Toolchains</div>
+            <ul class="lab-specs-list">
+              <li>Enterprise Server Racks</li>
+              <li>SIEM &amp; SOC Analyst Stations</li>
+              <li>Vulnerability Scanners (Burp/Nessus)</li>
+              <li>AWS Enterprise Cloud Sandbox</li>
+              <li>Zero Trust Architecture (ZTA)</li>
+              <li>Red &amp; Blue Team Testing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lab-feature-actions">
+          <a href="/#/labs/cyber-cloud-lab" class="btn-explore-lab">Explore Lab Profile &rarr;</a>
+          <a href="/#/admissions-enquiry" class="btn-enquire-lab">Enquire Admission</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 03. Embedded Systems & VLSI Research Lab -->
+    <article class="lab-feature-card" data-category="hardware" id="embedded-systems-lab">
+      <div class="lab-feature-media">
+        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/embedded.webp" data-title="Embedded Design Lab Hardware Benches" data-desc="Oscilloscopes, STM32 development boards, and digital circuit analyzers.">
+          <img src="/assets/images/site/embedded.webp" alt="Embedded Design Lab" class="lab-feature-main-img" loading="lazy">
+          <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
+        </div>
+        <div class="lab-feature-thumbs-row">
+          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/embedded.webp" data-title="Embedded Systems Workbenches" data-desc="Microcontroller diagnostics and circuit capture.">
+            <img src="/assets/images/site/embedded.webp" alt="Embedded lab benches">
+          </div>
+          <div class="lab-feature-thumb" data-src="/assets/images/site/vlsi.webp" data-title="VLSI Silicon EDA Workstations" data-desc="Cadence and Synopsys dual-screen EDA suites for ASIC tape-outs.">
+            <img src="/assets/images/site/vlsi.webp" alt="VLSI lab workstations">
+          </div>
+          <div class="lab-feature-thumb" data-src="/assets/images/site/vlsi1.webp" data-title="Semiconductor Tape-Out Facility" data-desc="Spacious EDA suite displaying multi-layer silicon tape-outs.">
+            <img src="/assets/images/site/vlsi1.webp" alt="VLSI wide view">
+          </div>
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-embedded-hardware.webp" data-title="Automotive Hardware Testbenches" data-desc="Vehicle electronics diagnostics and CAN telemetry.">
+            <img src="/new-site/brand/special-labs/pptx-embedded-hardware.webp" alt="Automotive hardware">
+          </div>
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-vlsi-chip.webp" data-title="5 Proven ASIC Silicon Tape-Outs" data-desc="Cadence EDA workstations for 32-bit RISC-V processor cores.">
+            <img src="/new-site/brand/special-labs/pptx-vlsi-chip.webp" alt="ASIC tape-outs">
+          </div>
+        </div>
+      </div>
+      <div class="lab-feature-content">
+        <div>
+          <div class="lab-meta-header">
+            <span class="lab-id-badge">LAB 03</span>
+            <span class="lab-category-badge">Embedded Systems &amp; VLSI Design</span>
+          </div>
+          <h2 class="lab-title-text">Embedded Systems &amp; VLSI Research Lab</h2>
+          <p class="lab-tagline-text">Build. Integrate. Innovate &bull; AICTE Centre of Excellence for EDA</p>
+          <p class="lab-summary-para">
+            Comprehensive semiconductor and microcontroller research suite equipped with Cadence Virtuoso, Synopsys, STM32 ARM Cortex benches, and CAN-bus telemetry. Features 5 proven ASIC silicon tape-outs including 32-bit RISC-V processor cores.
+          </p>
+          <div class="lab-specs-box">
+            <div class="lab-specs-title">⚡ Key Hardware &amp; Toolchains</div>
+            <ul class="lab-specs-list">
+              <li>Cadence Virtuoso &amp; Innovus EDA</li>
+              <li>STM32 ARM Cortex M4/M7 Kits</li>
+              <li>32-bit RISC-V Silicon Tape-Outs</li>
+              <li>Digital Storage Oscilloscopes</li>
+              <li>Automotive CAN-Bus Telemetry</li>
+              <li>Xilinx Kintex-7 FPGA Systems</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lab-feature-actions">
+          <a href="/#/labs/embedded-systems-lab" class="btn-explore-lab">Explore Lab Profile &rarr;</a>
+          <a href="/#/admissions-enquiry" class="btn-enquire-lab">Enquire Admission</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 04. AR & VR Lab -->
+    <article class="lab-feature-card" data-category="emerging" id="ar-vr-lab">
+      <div class="lab-feature-media">
+        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/arvr.webp" data-title="AR/VR Spatial Computing Arena" data-desc="Students building and testing XR applications with Meta Quest 3 headsets.">
+          <img src="/assets/images/site/arvr.webp" alt="AR/VR Lab Session" class="lab-feature-main-img" loading="lazy">
+          <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
+        </div>
+        <div class="lab-feature-thumbs-row">
+          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/arvr.webp" data-title="AR/VR Active Testing" data-desc="Students engaged in spatial computing and mixed reality development.">
+            <img src="/assets/images/site/arvr.webp" alt="AR/VR active">
+          </div>
+          <div class="lab-feature-thumb" data-src="/assets/images/site/arvr1.webp" data-title="AR/VR Neon Suite" data-desc="Acoustically tuned testing arena with illuminated neon identity.">
+            <img src="/assets/images/site/arvr1.webp" alt="AR/VR neon studio">
+          </div>
+          <div class="lab-feature-thumb" data-src="/assets/images/site/arvr2.webp" data-title="AR/VR Robotics Interface" data-desc="Angled view showing glass partition to robotics lab.">
+            <img src="/assets/images/site/arvr2.webp" alt="AR/VR robotics view">
+          </div>
+        </div>
+      </div>
+      <div class="lab-feature-content">
+        <div>
+          <div class="lab-meta-header">
+            <span class="lab-id-badge">LAB 04</span>
+            <span class="lab-category-badge">Immersive XR &amp; Simulation</span>
+          </div>
+          <h2 class="lab-title-text">AR/VR &amp; Immersive Technology Lab</h2>
+          <p class="lab-tagline-text">Experience. Create. Go Beyond &bull; Spatial Computing Suites</p>
+          <p class="lab-summary-para">
+            Room-scale virtual reality arena configured for Unity, Unreal Engine, and WebXR development. Students deploy mixed reality industrial simulations, automotive training modules, and 3D spatial models on Meta Quest 3 and HTC Vive devices.
+          </p>
+          <div class="lab-specs-box">
+            <div class="lab-specs-title">⚡ Key Hardware &amp; Toolchains</div>
+            <ul class="lab-specs-list">
+              <li>Meta Quest 3 &amp; HTC Vive Pro</li>
+              <li>High-Refresh RTX Workstations</li>
+              <li>Unity &amp; Unreal Engine 5</li>
+              <li>LiDAR Spatial Scanning</li>
+              <li>Room-Scale Motion Tracking</li>
+              <li>WebXR Multi-Platform SDKs</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lab-feature-actions">
+          <a href="/#/labs/ar-vr-lab" class="btn-explore-lab">Explore Lab Profile &rarr;</a>
+          <a href="/#/admissions-enquiry" class="btn-enquire-lab">Enquire Admission</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 05. Robotics & Automation Research Lab -->
+    <article class="lab-feature-card" data-category="emerging" id="robotics-automation-lab">
+      <div class="lab-feature-media">
+        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/robo1.webp" data-title="Robotics & Automation Suite" data-desc="ABB Cobot-AMR mobile base, micromouse maze arena, and ROS2 stations.">
+          <img src="/assets/images/site/robo1.webp" alt="Robotics Lab Arena" class="lab-feature-main-img" loading="lazy">
+          <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
+        </div>
+        <div class="lab-feature-thumbs-row">
+          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/robo1.webp" data-title="Robotics Arena & Maze" data-desc="Wide perspective showing ABB Cobot-AMR and autonomous maze.">
+            <img src="/assets/images/site/robo1.webp" alt="Robotics arena">
+          </div>
+          <div class="lab-feature-thumb" data-src="/assets/images/site/robo.webp" data-title="ABB Cobot-AMR Mobile Robot" data-desc="Sri Shakthi branded collaborative robotic mobile manipulator.">
+            <img src="/assets/images/site/robo.webp" alt="ABB Cobot-AMR">
+          </div>
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-robotics-gantry.webp" data-title="6-Axis Gantry Platform" data-desc="Industrial precision gantry system for heavy-duty automation.">
+            <img src="/new-site/brand/special-labs/pptx-robotics-gantry.webp" alt="Gantry platform">
+          </div>
+        </div>
+      </div>
+      <div class="lab-feature-content">
+        <div>
+          <div class="lab-meta-header">
+            <span class="lab-id-badge">LAB 05</span>
+            <span class="lab-category-badge">Robotics &amp; Mechatronics</span>
+          </div>
+          <h2 class="lab-title-text">Robotics &amp; Automation Research Lab</h2>
+          <p class="lab-tagline-text">Ideate. Build. Automate &bull; Mobile Manipulation &amp; ROS2</p>
+          <p class="lab-summary-para">
+            Features an ABB Cobot-AMR mobile autonomous manipulator, industrial gantry pick-and-place robots, blue epoxy cleanroom flooring, and an autonomous micromouse maze arena. Focuses on ROS2 navigation, kinematics, and human-robot collaboration.
+          </p>
+          <div class="lab-specs-box">
+            <div class="lab-specs-title">⚡ Key Hardware &amp; Toolchains</div>
+            <ul class="lab-specs-list">
+              <li>ABB Cobot-AMR Mobile Base</li>
+              <li>6-Axis Articulated Gantry</li>
+              <li>ROS2 Autonomous Navigation</li>
+              <li>Autonomous Micromouse Maze Arena</li>
+              <li>Siemens PLC &amp; SCADA Benches</li>
+              <li>Torque-Sensing Cobot Arms</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lab-feature-actions">
+          <a href="/#/labs/robotics-automation-lab" class="btn-explore-lab">Explore Lab Profile &rarr;</a>
+          <a href="/#/admissions-enquiry" class="btn-enquire-lab">Enquire Admission</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 06. PCB Design & Assembly Lab -->
+    <article class="lab-feature-card" data-category="hardware" id="pcb-design-assembly-lab">
+      <div class="lab-feature-media">
+        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/embedded1.webp" data-title="PCB Assembly Line" data-desc="Automated SMT pick-and-place machine and multi-zone conveyor line.">
+          <img src="/assets/images/site/embedded1.webp" alt="SMT Pick and Place Machine" class="lab-feature-main-img" loading="lazy">
+          <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
+        </div>
+        <div class="lab-feature-thumbs-row">
+          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/embedded1.webp" data-title="SMT Pick & Place Machine" data-desc="High-speed surface mount technology placement system and conveyor.">
+            <img src="/assets/images/site/embedded1.webp" alt="SMT Line">
+          </div>
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-pcb-assembly.webp" data-title="Reflow Thermal Soldering" data-desc="Automated stencil printing and thermal reflow oven integration.">
+            <img src="/new-site/brand/special-labs/pptx-pcb-assembly.webp" alt="PCB assembly">
+          </div>
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-pcb-design.webp" data-title="Schematic Capture & Layout" data-desc="Multi-layer PCB layout using professional EDA suites.">
+            <img src="/new-site/brand/special-labs/pptx-pcb-design.webp" alt="PCB design">
+          </div>
+        </div>
+      </div>
+      <div class="lab-feature-content">
+        <div>
+          <div class="lab-meta-header">
+            <span class="lab-id-badge">LAB 06</span>
+            <span class="lab-category-badge">Electronics Manufacturing</span>
+          </div>
+          <h2 class="lab-title-text">PCB Design &amp; Assembly Lab</h2>
+          <p class="lab-tagline-text">From Design to Real-World Prototypes &bull; In-House SMT Line</p>
+          <p class="lab-summary-para">
+            In-house electronics prototyping and rapid assembly suite featuring automated SMT component pick-and-place machines, stencil printers, and multi-zone thermal reflow ovens. Enables fast hardware prototyping from circuit schematic to verified board in 24 hours.
+          </p>
+          <div class="lab-specs-box">
+            <div class="lab-specs-title">⚡ Key Hardware &amp; Toolchains</div>
+            <ul class="lab-specs-list">
+              <li>SMT Pick &amp; Place Machine</li>
+              <li>High-Precision Conveyor Track</li>
+              <li>Thermal Reflow Soldering Oven</li>
+              <li>Altium &amp; KiCad Multi-Layer EDA</li>
+              <li>Optical Inspection Benches</li>
+              <li>Rapid 24-Hour Hardware Turnaround</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lab-feature-actions">
+          <a href="/#/labs/pcb-design-assembly-lab" class="btn-explore-lab">Explore Lab Profile &rarr;</a>
+          <a href="/#/admissions-enquiry" class="btn-enquire-lab">Enquire Admission</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- 07. Internet of Things (IoT) Lab -->
+    <article class="lab-feature-card" data-category="emerging" id="iot-lab">
+      <div class="lab-feature-media">
+        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/iot.webp" data-title="IoT Lab Research Arena" data-desc="Smart grid mural, collaborative benches, and wireless telemetry testbeds.">
+          <img src="/assets/images/site/iot.webp" alt="IoT Lab Workstations" class="lab-feature-main-img" loading="lazy">
+          <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
+        </div>
+        <div class="lab-feature-thumbs-row">
+          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/iot.webp" data-title="IoT Lab Mural & Stations" data-desc="Active student benches equipped with smart grid mural and controllers.">
+            <img src="/assets/images/site/iot.webp" alt="IoT lab active">
+          </div>
+          <div class="lab-feature-thumb" data-src="/assets/images/site/iot1.webp" data-title="IoT Lab Collaboration View" data-desc="Wide perspective showing RF test stations and sensor integration benches.">
+            <img src="/assets/images/site/iot1.webp" alt="IoT lab wide view">
+          </div>
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-iot-sensors.webp" data-title="Sensor Array Ecosystem" data-desc="Multi-protocol telemetry modules including LoRaWAN and BLE.">
+            <img src="/new-site/brand/special-labs/pptx-iot-sensors.webp" alt="IoT sensors">
+          </div>
+        </div>
+      </div>
+      <div class="lab-feature-content">
+        <div>
+          <div class="lab-meta-header">
+            <span class="lab-id-badge">LAB 07</span>
+            <span class="lab-category-badge">Connected Devices &amp; Smart Grid</span>
+          </div>
+          <h2 class="lab-title-text">Internet of Things (IoT) Research Lab</h2>
+          <p class="lab-tagline-text">Connect Ideas to a Smarter World &bull; 5+ km LoRaWAN Campus Gateway</p>
+          <p class="lab-summary-para">
+            Multi-protocol wireless testing suite with LoRaWAN gateways, Zigbee mesh modules, and edge intelligence devices. Powers campus-wide telemetry, precision agricultural sensors, and industrial environmental monitoring grids.
+          </p>
+          <div class="lab-specs-box">
+            <div class="lab-specs-title">⚡ Key Hardware &amp; Toolchains</div>
+            <ul class="lab-specs-list">
+              <li>Campus-Wide LoRaWAN Gateway (5km)</li>
+              <li>ESP32 &amp; Raspberry Pi 4 Clusters</li>
+              <li>NVIDIA Jetson Nano Edge AI</li>
+              <li>Industrial Sensor Ecosystem</li>
+              <li>MQTT Cloud Broker Dashboard</li>
+              <li>Smart Campus Environmental Grid</li>
+            </ul>
+          </div>
+        </div>
+        <div class="lab-feature-actions">
+          <a href="/#/labs/iot-lab" class="btn-explore-lab">Explore Lab Profile &rarr;</a>
+          <a href="/#/admissions-enquiry" class="btn-enquire-lab">Enquire Admission</a>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Bottom Institutional CTA Section -->
+  <section class="labs-cta-section">
+    <h2 class="labs-cta-title">Power Your Engineering Ambitions at Sri Shakthi</h2>
+    <p class="labs-cta-sub">
+      Experience 7 specialized laboratories, hands-on mentorship, and an autonomous curriculum designed to prepare you for global technology breakthroughs.
+    </p>
+    <div class="labs-cta-btns">
+      <a href="/#/admissions-enquiry" class="btn-cta-gold">Apply for Admissions 2026 &rarr;</a>
+      <a href="/#/" class="btn-cta-outline">&larr; Return to Main Portal</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="labs-footer">
+    <p>&copy; 2026 Sri Shakthi Institute of Engineering and Technology (Autonomous). All rights reserved.</p>
+    <p style="margin-top: 6px;">Coimbatore - 641 062, Tamil Nadu, India &bull; Phone: <a href="tel:+917373744444">+91 73737 44444</a> &bull; Counselling Code: <strong>2727</strong></p>
+  </footer>
+
+  <!-- Lightbox DOM Container -->
+  <div id="labs-page-lightbox" class="siet-lab-lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="siet-lab-lightbox-content">
+      <button type="button" class="siet-lab-lightbox-close" aria-label="Close image preview">&times;</button>
+      <div class="siet-lab-lightbox-img-wrap">
+        <img id="lightbox-img" class="siet-lab-lightbox-img" src="" alt="">
+      </div>
+      <div class="siet-lab-lightbox-caption">
+        <div>
+          <h3 id="lightbox-title" class="siet-lab-lightbox-title"></h3>
+          <p id="lightbox-desc" class="siet-lab-lightbox-desc"></p>
+        </div>
+        <div style="font-size:12px;font-weight:700;color:#f3c515;background:rgba(255,255,255,0.08);padding:6px 12px;border-radius:6px;border:1px solid rgba(255,255,255,0.15);white-space:nowrap;">
+          Authentic Campus Lab
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Client Script -->
+  <script>
+    // 1. Thumbnail click switcher
+    document.querySelectorAll('.lab-feature-thumb').forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const card = thumb.closest('.lab-feature-card');
+        const mainImgWrap = card.querySelector('.lab-feature-main-img-wrap');
+        const mainImg = mainImgWrap.querySelector('.lab-feature-main-img');
+
+        const newSrc = thumb.dataset.src;
+        const newTitle = thumb.dataset.title;
+        const newDesc = thumb.dataset.desc;
+
+        mainImg.src = newSrc;
+        mainImgWrap.dataset.img = newSrc;
+        mainImgWrap.dataset.title = newTitle;
+        mainImgWrap.dataset.desc = newDesc;
+
+        card.querySelectorAll('.lab-feature-thumb').forEach(t => t.classList.remove('is-active'));
+        thumb.classList.add('is-active');
+      });
+    });
+
+    // 2. Lightbox Modal
+    const lightbox = document.getElementById('labs-page-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+    const lightboxClose = lightbox.querySelector('.siet-lab-lightbox-close');
+
+    function openLightbox(src, title, desc) {
+      lightboxImg.src = src;
+      lightboxTitle.textContent = title || 'Specialized Research Facility';
+      lightboxDesc.textContent = desc || 'Sri Shakthi Institute of Engineering and Technology';
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
+
+    document.querySelectorAll('.lab-feature-main-img-wrap').forEach(wrap => {
+      wrap.addEventListener('click', () => {
+        openLightbox(wrap.dataset.img, wrap.dataset.title, wrap.dataset.desc);
+      });
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    // 3. Category Filter Tabs
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const labCards = document.querySelectorAll('.lab-feature-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+        labCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'grid';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

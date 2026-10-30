@@ -36,3 +36,6 @@ desktop.ini
 .idea/
 *.sublime-project
 *.sublime-workspace
+
+# Lab backup archive
+brand/special-labs/archive/
