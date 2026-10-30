@@ -6,6 +6,8 @@ The actual form is rendered at `/careers`. It submits multipart data to the same
 POST /new-site/career-api/career-submit.php
 ```
 
+Application references use `SIET-{ENG|FTL|SCH}-YYYYMMDD-{database ID}`. The institution code is `ENG` for the engineering college, `FTL` for the food testing lab, and `SCH` for the school. The date uses India time, and the final number is the newly inserted applicant row ID padded to six digits (for example, `SIET-ENG-20261030-000123`).
+
 ## Local
 
 Run `node local-server.mjs`, open `http://127.0.0.1:4173/new-site/careers`, and submit the form. The local server intercepts the endpoint and saves to:

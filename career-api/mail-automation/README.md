@@ -105,8 +105,9 @@ These keys already match `career-submit.php`.
 6. Run **NPM Install** in cPanel.
 7. Copy `.env.example` to `.env` in the application directory and replace all placeholders. Alternatively, enter the values in cPanel's environment-variable interface. Never upload real SMTP passwords or webhook tokens to GitHub.
 8. Restart the application and open its `/health` URL.
-9. Set `CAREER_MAIL_WEBHOOK_URL` to the Node application's assigned URL ending in `/career-submission`; set the same `CAREER_MAIL_WEBHOOK_TOKEN` in the private PHP career configuration.
-10. Submit a test application and verify the HR email, applicant email, database record and resume.
+9. Check `/health`; its `ready` field should be `true` and `missing` should be empty. It never returns secret values.
+10. In `public_html/new-site/career-api/career-config.php`, set `mail_webhook_url` to the Node application's assigned URL ending in `/career-submission` and `mail_webhook_token` to the same token as the Node app. PHP cannot read the Node app's `.env` file.
+11. Submit a test application and verify the HR email, applicant email, database record and resume.
 
 ## Payload fields
 

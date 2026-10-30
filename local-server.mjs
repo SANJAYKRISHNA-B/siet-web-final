@@ -1,5 +1,6 @@
 import { createReadStream, existsSync, statSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { createServer } from "node:http";
+import { randomUUID } from "node:crypto";
 import { basename, extname, join, normalize } from "node:path";
 import { DatabaseSync } from "node:sqlite";
 
@@ -33,6 +34,21 @@ const insertCareerApplication = careerDb.prepare(`
 function sendJson(response, status, payload) {
   response.writeHead(status, { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" });
   response.end(JSON.stringify(payload));
+}
+
+function institutionCode(institution) {
+  const normalized = String(institution || "").trim().toLowerCase();
+  if (normalized.includes("food") || normalized.includes("lab")) return "FTL";
+  if (normalized.includes("school")) return "SCH";
+  return "ENG";
+}
+
+function indiaDateStamp() {
+  const parts = new Intl.DateTimeFormat("en-GB", {
+    timeZone: "Asia/Kolkata", year: "numeric", month: "2-digit", day: "2-digit"
+  }).formatToParts(new Date());
+  const dateParts = Object.fromEntries(parts.map(part => [part.type, part.value]));
+  return `${dateParts.year}${dateParts.month}${dateParts.day}`;
 }
 
 function parseMultipart(buffer, boundary) {
@@ -81,8 +97,8 @@ function handleLocalCareerSubmission(request, response) {
       if (resume.content.length > 2 * 1024 * 1024) return sendJson(response, 413, { success: false, message: "Resume must not exceed 2 MB" });
       const extension = extname(resume.filename).toLowerCase();
       if (![".pdf", ".doc", ".docx", ".rtf"].includes(extension)) return sendJson(response, 400, { success: false, message: "Resume must be PDF, DOC, DOCX, or RTF" });
-      const applicationNo = `SIET-CAR-${new Date().getFullYear()}-${Date.now().toString().slice(-8)}`;
-      const storedName = `${applicationNo}${extension}`;
+      const applicationNo = `PENDING-${randomUUID()}`;
+      const storedName = `career-${indiaDateStamp()}-${randomUUID()}${extension}`;
       writeFileSync(join(careerUploadDir, storedName), resume.content, { flag: "wx" });
       const values = {
         applicationNo, name: fields.name.trim(), phone: fields.phone.trim(), email: fields.email.trim().toLowerCase(),
@@ -97,6 +113,9 @@ function handleLocalCareerSubmission(request, response) {
         ipAddress: request.socket.remoteAddress || ""
       };
       const result = insertCareerApplication.run(values);
+      const applicationId = Number(result.lastInsertRowid);
+      const finalApplicationNo = `SIET-${institutionCode(values.institution)}-${indiaDateStamp()}-${String(applicationId).padStart(6, "0")}`;
+      careerDb.prepare("UPDATE career_applications SET application_no = ? WHERE id = ?").run(finalApplicationNo, applicationId);
       let mailQueued = false;
       const mailWebhookUrl = process.env.CAREER_MAIL_WEBHOOK_URL;
       const mailWebhookToken = process.env.CAREER_MAIL_WEBHOOK_TOKEN;
@@ -106,7 +125,7 @@ function handleLocalCareerSubmission(request, response) {
             method: "POST",
             headers: {"Content-Type":"application/json","X-Career-Mail-Token":mailWebhookToken},
             body: JSON.stringify({
-              applicationNo, fullname: values.name, email: values.email, mobile: values.phone,
+              applicationNo: finalApplicationNo, fullname: values.name, email: values.email, mobile: values.phone,
               institute: values.institution, dept: values.department, position: values.position,
               highQualification: values.qualification, city: values.city, state: values.state,
               country: values.country, teaching: values.teachingExperience,
@@ -121,7 +140,7 @@ function handleLocalCareerSubmission(request, response) {
           console.error("Career mail webhook error:", mailError.message);
         }
       }
-      return sendJson(response, 201, { success: true, message: "Your application has been saved successfully.", applicationNo, id: Number(result.lastInsertRowid), mailQueued });
+      return sendJson(response, 201, { success: true, message: "Your application has been saved successfully.", applicationNo: finalApplicationNo, id: applicationId, mailQueued });
     } catch (error) {
       console.error("Career application error:", error);
       return sendJson(response, 500, { success: false, message: "Unable to save the application" });

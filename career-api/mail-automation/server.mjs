@@ -27,6 +27,20 @@ function json(response, status, payload) {
   response.end(JSON.stringify(payload));
 }
 
+function mailConfigurationStatus() {
+  const required = ["SMTP_HOST", "SMTP_PORT", "SMTP_SECURE", "SMTP_USER", "SMTP_PASS", "CAREER_HR_EMAIL", "CAREER_MAIL_WEBHOOK_TOKEN"];
+  const isSet = name => {
+    const value = String(process.env[name] || "").trim();
+    return value !== "" && !/(example\.com|replace-with|your-test-email)/i.test(value);
+  };
+  const missing = required.filter(name => !isSet(name));
+  const sender = String(process.env.MAIL_FROM_EMAIL || process.env.SMTP_USER || "").trim();
+  const recipient = String(process.env.CAREER_HR_EMAIL || "").trim();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(sender) || /example\.com/i.test(sender)) missing.push("MAIL_FROM_EMAIL or SMTP_USER");
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(recipient) || /example\.com/i.test(recipient)) missing.push("CAREER_HR_EMAIL");
+  return { ready: missing.length === 0, missing };
+}
+
 function readJson(request) {
   return new Promise((resolve, reject) => {
     const chunks = [];
@@ -46,7 +60,10 @@ function readJson(request) {
 
 createServer(async (request, response) => {
   const url = new URL(request.url, `http://${request.headers.host}`);
-  if (request.method === "GET" && url.pathname === "/health") return json(response, 200, {success:true,service:"siet-career-mailer"});
+  if (request.method === "GET" && url.pathname === "/health") {
+    const config = mailConfigurationStatus();
+    return json(response, 200, {success:true,service:"siet-career-mailer",...config});
+  }
   if (request.method !== "POST" || url.pathname !== "/career-submission") return json(response, 404, {success:false,message:"Not found"});
   if (!process.env.CAREER_MAIL_WEBHOOK_TOKEN || request.headers["x-career-mail-token"] !== process.env.CAREER_MAIL_WEBHOOK_TOKEN) {
     return json(response, 401, {success:false,message:"Unauthorized"});

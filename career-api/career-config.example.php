@@ -10,7 +10,7 @@ return [
     'db_name' => 'CPANEL_USER_database_name',
     'db_user' => 'CPANEL_USER_database_user',
     'db_pass' => 'REPLACE_WITH_DATABASE_PASSWORD',
-    'upload_dir' => __DIR__ . '/../webportal/resume',
+    'upload_dir' => dirname(__DIR__, 2) . '/webportal/resume',
     'max_upload_bytes' => 2 * 1024 * 1024,
     'mail_webhook_url' => 'https://YOUR-NODE-APP-URL/career-submission',
     'mail_webhook_token' => 'REPLACE_WITH_THE_SAME_LONG_RANDOM_SECRET',

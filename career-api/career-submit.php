@@ -4,6 +4,7 @@ declare(strict_types=1);
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-Control: no-store');
 header('X-Content-Type-Options: nosniff');
+date_default_timezone_set('Asia/Kolkata');
 
 function respond(int $status, array $payload): void
 {
@@ -19,13 +20,19 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 /*
  * cPanel production connection order:
  * 1. Reuse the existing SIET connection at public_html/webportal/masterdb_config.php.
- * 2. Otherwise load a private config using CAREER_CONFIG_PATH.
- * This lets the uploaded handler work with the database connection already used
- * by the legacy recruitment page without exposing credentials in this folder.
+ * 2. Load career-config.php for webhook settings and as the database fallback.
+ * This lets the handler reuse the legacy database connection while still reading
+ * the mail webhook settings from its protected configuration file.
  */
 $config = [];
 $db = null;
 $publicHtmlDirectory = basename(dirname(__DIR__)) === 'new-site' ? dirname(__DIR__, 2) : dirname(__DIR__);
+$configPath = getenv('CAREER_CONFIG_PATH') ?: __DIR__ . '/career-config.php';
+if (is_file($configPath)) {
+    $loadedConfig = require $configPath;
+    if (is_array($loadedConfig)) $config = $loadedConfig;
+}
+
 $legacyConfigPath = $publicHtmlDirectory . '/webportal/masterdb_config.php';
 if (is_file($legacyConfigPath)) {
     require_once $legacyConfigPath;
@@ -35,12 +42,10 @@ if (is_file($legacyConfigPath)) {
 }
 
 if (!$db) {
-    $configPath = getenv('CAREER_CONFIG_PATH') ?: __DIR__ . '/career-config.php';
     if (!is_file($configPath)) {
         error_log('Career API database configuration was not found.');
         respond(500, ['success' => false, 'message' => 'Career service database is not configured.']);
     }
-    $config = require $configPath;
     foreach (['db_host', 'db_name', 'db_user', 'db_pass'] as $key) {
         if (!isset($config[$key]) || $config[$key] === '') {
             respond(500, ['success' => false, 'message' => 'Career service configuration is incomplete.']);
@@ -54,18 +59,33 @@ function value(string $newName, string $legacyName = ''): string
     return trim(is_string($raw) ? $raw : '');
 }
 
+function institutionCode(string $institution): string
+{
+    $normalized = strtolower(trim($institution));
+    if (str_contains($normalized, 'food') || str_contains($normalized, 'lab')) return 'FTL';
+    if (str_contains($normalized, 'school')) return 'SCH';
+    return 'ENG';
+}
+
 function notifyCareerMailer(array $application, array $config): bool
 {
     $url = getenv('CAREER_MAIL_WEBHOOK_URL') ?: ($config['mail_webhook_url'] ?? '');
     $token = getenv('CAREER_MAIL_WEBHOOK_TOKEN') ?: ($config['mail_webhook_token'] ?? '');
-    if ($url === '' || $token === '' || !function_exists('curl_init')) return false;
+    if ($url === '' || $token === '') {
+        error_log('Career mail webhook skipped: configure mail_webhook_url and mail_webhook_token in career-config.php or PHP environment variables.');
+        return false;
+    }
+    if (!function_exists('curl_init')) {
+        error_log('Career mail webhook skipped: PHP cURL extension is unavailable.');
+        return false;
+    }
 
     $curl = curl_init((string)$url);
     curl_setopt_array($curl, [
         CURLOPT_POST => true,
         CURLOPT_RETURNTRANSFER => true,
-        CURLOPT_CONNECTTIMEOUT => 2,
-        CURLOPT_TIMEOUT => 6,
+        CURLOPT_CONNECTTIMEOUT => 5,
+        CURLOPT_TIMEOUT => 20,
         CURLOPT_HTTPHEADER => [
             'Content-Type: application/json',
             'X-Career-Mail-Token: ' . $token,
@@ -172,7 +192,7 @@ try {
     );
     $stmt->execute();
     $id = $stmt->insert_id;
-    $applicationNo = 'SIET-CAR-' . date('Y') . '-' . str_pad((string)$id, 6, '0', STR_PAD_LEFT);
+    $applicationNo = sprintf('SIET-%s-%s-%06d', institutionCode($data['institute']), date('Ymd'), (int)$id);
     $mailQueued = notifyCareerMailer([
         'applicationNo' => $applicationNo,
         'fullname' => $data['fullname'],
