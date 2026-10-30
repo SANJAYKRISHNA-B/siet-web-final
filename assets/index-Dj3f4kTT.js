@@ -134,7 +134,339 @@ import{r as Ee,j as ce,c as $a,R as ja}from"./vendor-react-DhEz86-d.js";import{i
         <span>Zero Network Charges: All statuses and recordings are purely local software simulations. No carrier networks were contacted.</span>
       </div>
     </div>
-  `}function ei(e,a,i){if(!e||!a)return;e.innerHTML=_a(a,i);const t=a.callSid||a.id,s=e.querySelector("#live-status-badge"),n=e.querySelector("#live-status-text"),r=e.querySelector("#live-status-desc"),o=e.querySelector("#tracker-timer-display strong"),m=e.querySelector("#tracker-duration-display"),l=e.querySelector("#tracker-retry-btn"),c=e.querySelector("#stepper-step-queued"),g=e.querySelector("#stepper-step-ringing"),h=e.querySelector("#stepper-step-outcome"),R=e.querySelector("#stepper-outcome-label"),x=e.querySelector("#stepper-outcome-sub");let D=0;const y=setInterval(()=>{D++,o&&(o.textContent=`${D}s`)},1e3);let k=!0;async function F(){if(k)try{const A=await fetch(`/api/admission-enquiries/calls/${t}`);if(!A.ok)return;const I=await A.json();if(!I.success||!I.data)return;const S=I.data;$(S.status,S.durationSeconds,S.errorMessage),["completed","busy","no-answer","failed"].includes(S.status)&&(k=!1,clearInterval(y))}catch{}}function $(A,I,S){s&&(s.className=`live-status-pill status-${A}`,n.textContent=Ye(A),r.textContent=S||ka(A),c&&g&&h&&(A==="queued"?(c.className="stepper-step step-queued is-active",g.className="stepper-step step-ringing",h.className="stepper-step step-outcome"):A==="ringing"?(c.className="stepper-step step-queued is-done",g.className="stepper-step step-ringing is-active",h.className="stepper-step step-outcome"):(c.className="stepper-step step-queued is-done",g.className="stepper-step step-ringing is-done",h.className=`stepper-step step-outcome is-done is-${A}`,R&&(R.textContent=Ye(A)),x&&(x.textContent=A==="completed"?`${I||45}s talk time`:"Terminal status"))),m&&(A==="completed"&&I?(m.style.display="inline",m.querySelector("strong").textContent=`${I}s`):m.style.display="none"),l&&(["busy","no-answer","failed"].includes(A)?l.style.display="inline-flex":l.style.display="none"))}const C=setInterval(()=>{if(!k){clearInterval(C);return}F()},1500);e.querySelectorAll(".sim-btn[data-sim-outcome]").forEach(A=>{A.addEventListener("click",async()=>{const I=A.getAttribute("data-sim-outcome");try{A.disabled=!0;const M=await(await fetch(`/api/admission-enquiries/calls/${t}/simulate`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({outcome:I})})).json();M.success&&M.data&&(k=!1,clearInterval(y),clearInterval(C),$(M.data.status,M.data.durationSeconds,M.data.errorMessage))}catch(S){console.error("Simulation outcome error:",S)}finally{A.disabled=!1}})}),l&&l.addEventListener("click",async()=>{try{if(l.disabled=!0,l.textContent="Retrying…",(await(await fetch(`/api/admin/calls/${t}/retry`,{method:"POST",headers:{"Content-Type":"application/json","x-admin-key":"siet-admin-2026"}})).json()).success){k=!0,D=0,$("queued",0,null);const S=setInterval(()=>{D++,o&&(o.textContent=`${D}s`)},1e3),M=setInterval(async()=>{if(!k){clearInterval(M),clearInterval(S);return}F()},1500)}}catch(A){console.error("Retry error:",A)}finally{l.disabled=!1,l.innerHTML="<span>🔄 Retry Call</span>"}}),setTimeout(F,800)}function Ye(e){switch(e){case"ringing":return"Phone Ringing (Test Mode)";case"completed":return"Counselling Briefing Completed";case"busy":return"Line Busy (Simulated)";case"no-answer":return"No Answer (Timed Out)";case"failed":return"Simulated Call Failed";case"duplicate_prevented":return"Duplicate Call Suppressed";default:return"Call Queued in System"}}function ka(e){switch(e){case"ringing":return"Simulating ringing tone on test number. Connecting to virtual academic counsellor...";case"completed":return"Automated admissions counselling call completed successfully. Academic briefing audio delivered in free simulation mode.";case"busy":return"Simulated subscriber reported busy signal. Call logged for automated administrator retry.";case"no-answer":return"Simulated ringer rang for 45s without answer. Logged for automated administrator retry.";case"failed":return"Simulated carrier dropped connection. Logged for administrator review and retry.";case"duplicate_prevented":return"An application with this mobile number was recently submitted. Duplicate call was prevented to protect quotas.";default:return"Application validated. Mock call created in local database and queued for zero-cost automated testing."}}async function ai(e){var l,c,g;e.preventDefault();const a=e.currentTarget;if(a.dataset.submitting==="true")return;const i=f(".status",a),t=f('button[type="submit"], .career-submit',a),s=t==null?void 0:t.innerHTML,n=a.dataset.formType==="admission-enquiry",r=new FormData(a),o=Object.fromEntries(r);if(n&&!!!r.get("consent")){i&&(i.textContent="Please provide contact consent to submit your application.",i.style.color="#b3261e");return}a.dataset.submitting="true",i&&(i.textContent=n?"Saving admission enquiry…":"Submitting details…",i.style.color="#0b7a48"),t&&(t.disabled=!0,t.textContent=n?"Processing…":"Submitting…"),!o.name&&o.referrer_name&&(o.name=`${o.referrer_name} (Ref for: ${o.candidate_name||"Candidate"})`),!o.email&&(o.referrer_email||o.candidate_email)&&(o.email=o.referrer_email||o.candidate_email),!o.phone&&(o.referrer_phone||o.candidate_phone)&&(o.phone=o.referrer_phone||o.candidate_phone),!o.course&&o.candidate_course&&(o.course=o.candidate_course);const m=a.querySelector('input[type="file"]');(l=m==null?void 0:m.files)!=null&&l[0]&&(o.fileName=m.files[0].name,o.fileSize=`${Math.round(m.files[0].size/1024)} KB`);try{const h=a.dataset.apiEndpoint||"/api/enquiries",R=n?{studentName:o.name,mobileNumber:o.phone,email:o.email,previousQualification:o.previous_qualification||"",academicQualificationMarks:o.qualification||"",course:o.level,department:o.course,city:o.city||"",district:o.district||"",state:o.state||"",country:o.country||"",source:"Website",remarks:o.message,consent:!!r.get("consent"),desiredSimulation:o.desiredSimulation||"completed"}:o,x=a.dataset.careerApi==="true"?await fetch(h,{method:"POST",body:r}):await fetch(h,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(R)}),D=await x.json().catch(()=>({message:"The server returned an invalid response."}));a.dataset.careerApi==="true"&&x.ok&&showCareerSuccessModal(D,o),n&&x.ok&&showAdmissionSuccessModal(D,o);if(i&&(i.textContent=D.message||(x.ok?"Admission enquiry saved successfully":"Unable to save your enquiry."),i.style.color=x.ok?"#075b36":"#b3261e"),n&&x.ok&&((c=D==null?void 0:D.data)!=null&&c.id)){const y=document.getElementById("apply-call-tracker-mount");y&&(ii(y,D.data),setTimeout(()=>{y.scrollIntoView({behavior:"smooth",block:"start"})},150))}if(x.ok&&!((g=D.data)!=null&&g.isDuplicate)){a.reset();const y=a.querySelector("#apply-consent-checkbox");y&&(y.checked=!0)}}catch{i&&(i.textContent="Unable to save your enquiry. Please check your connection and try again.",i.style.color="#b3261e")}finally{a.dataset.submitting="false",t&&(t.disabled=!1,t.innerHTML=s||"Submit")}}function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****${t.slice(-2)}`:"";e.innerHTML=`
+
+`}function ei(e,a,i){if(!e||!a)return;e.innerHTML=_a(a,i);const t=a.callSid||a.id,s=e.querySelector("#live-status-badge"),n=e.querySelector("#live-status-text"),r=e.querySelector("#live-status-desc"),o=e.querySelector("#tracker-timer-display strong"),m=e.querySelector("#tracker-duration-display"),l=e.querySelector("#tracker-retry-btn"),c=e.querySelector("#stepper-step-queued"),g=e.querySelector("#stepper-step-ringing"),h=e.querySelector("#stepper-step-outcome"),R=e.querySelector("#stepper-outcome-label"),x=e.querySelector("#stepper-outcome-sub");let D=0;const y=setInterval(()=>{D++,o&&(o.textContent=`${D}s`)},1e3);let k=!0;async function F(){if(k)try{const A=await fetch(`/api/admission-enquiries/calls/${t}`);if(!A.ok)return;const I=await A.json();if(!I.success||!I.data)return;const S=I.data;$(S.status,S.durationSeconds,S.errorMessage),["completed","busy","no-answer","failed"].includes(S.status)&&(k=!1,clearInterval(y))}catch{}}function $(A,I,S){s&&(s.className=`live-status-pill status-${A}`,n.textContent=Ye(A),r.textContent=S||ka(A),c&&g&&h&&(A==="queued"?(c.className="stepper-step step-queued is-active",g.className="stepper-step step-ringing",h.className="stepper-step step-outcome"):A==="ringing"?(c.className="stepper-step step-queued is-done",g.className="stepper-step step-ringing is-active",h.className="stepper-step step-outcome"):(c.className="stepper-step step-queued is-done",g.className="stepper-step step-ringing is-done",h.className=`stepper-step step-outcome is-done is-${A}`,R&&(R.textContent=Ye(A)),x&&(x.textContent=A==="completed"?`${I||45}s talk time`:"Terminal status"))),m&&(A==="completed"&&I?(m.style.display="inline",m.querySelector("strong").textContent=`${I}s`):m.style.display="none"),l&&(["busy","no-answer","failed"].includes(A)?l.style.display="inline-flex":l.style.display="none"))}const C=setInterval(()=>{if(!k){clearInterval(C);return}F()},1500);e.querySelectorAll(".sim-btn[data-sim-outcome]").forEach(A=>{A.addEventListener("click",async()=>{const I=A.getAttribute("data-sim-outcome");try{A.disabled=!0;const M=await(await fetch(`/api/admission-enquiries/calls/${t}/simulate`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({outcome:I})})).json();M.success&&M.data&&(k=!1,clearInterval(y),clearInterval(C),$(M.data.status,M.data.durationSeconds,M.data.errorMessage))}catch(S){console.error("Simulation outcome error:",S)}finally{A.disabled=!1}})}),l&&l.addEventListener("click",async()=>{try{if(l.disabled=!0,l.textContent="Retrying…",(await(await fetch(`/api/admin/calls/${t}/retry`,{method:"POST",headers:{"Content-Type":"application/json","x-admin-key":"siet-admin-2026"}})).json()).success){k=!0,D=0,$("queued",0,null);const S=setInterval(()=>{D++,o&&(o.textContent=`${D}s`)},1e3),M=setInterval(async()=>{if(!k){clearInterval(M),clearInterval(S);return}F()},1500)}}catch(A){console.error("Retry error:",A)}finally{l.disabled=!1,l.innerHTML="<span>🔄 Retry Call</span>"}}),setTimeout(F,800)}function Ye(e){switch(e){case"ringing":return"Phone Ringing (Test Mode)";case"completed":return"Counselling Briefing Completed";case"busy":return"Line Busy (Simulated)";case"no-answer":return"No Answer (Timed Out)";case"failed":return"Simulated Call Failed";case"duplicate_prevented":return"Duplicate Call Suppressed";default:return"Call Queued in System"}}function ka(e){switch(e){case"ringing":return"Simulating ringing tone on test number. Connecting to virtual academic counsellor...";case"completed":return"Automated admissions counselling call completed successfully. Academic briefing audio delivered in free simulation mode.";case"busy":return"Simulated subscriber reported busy signal. Call logged for automated administrator retry.";case"no-answer":return"Simulated ringer rang for 45s without answer. Logged for automated administrator retry.";case"failed":return"Simulated carrier dropped connection. Logged for administrator review and retry.";case"duplicate_prevented":return"An application with this mobile number was recently submitted. Duplicate call was prevented to protect quotas.";default:return"Application validated. Mock call created in local database and queued for zero-cost automated testing."}}async function inspectResumeSecurity(file) {
+  if (!file) return { ok: false, error: "Please select your resume document." };
+  if (file.size < 100) return { ok: false, error: "The selected resume file is empty or corrupted (minimum 100 bytes required)." };
+  if (file.size > 2 * 1024 * 1024) return { ok: false, error: "Resume file size must not exceed 2 MB." };
+  const cleanName = file.name.trim().replace(/^.*[\\\/]/, "");
+  const forbiddenPattern = /(?:^|\.)(?:exe|bat|cmd|sh|php|phtml|phar|vbs|js|jar|scr|pif|msi|dll|com|hta|ps1|apk|bin|cgi|pl|py|wsf|cpl|gadget|iso|dmg|vhd)(?:\.|$)/i;
+  if (forbiddenPattern.test(cleanName)) {
+    return { ok: false, error: "Security Violation: Executable files (.exe, .bat, scripts) and malware are strictly prohibited. Please upload a genuine PDF or Word document." };
+  }
+  const extMatch = cleanName.match(/\.([a-zA-Z0-9]+)$/);
+  const ext = extMatch ? extMatch[1].toLowerCase() : "";
+  if (!["pdf", "doc", "docx", "rtf"].includes(ext)) {
+    return { ok: false, error: "Please upload your resume in PDF, DOC, DOCX, or RTF format." };
+  }
+  try {
+    const slice = file.slice(0, 64);
+    const buf = await slice.arrayBuffer();
+    const bytes = new Uint8Array(buf);
+    // Block DOS/PE Executable ('MZ')
+    if (bytes[0] === 0x4D && bytes[1] === 0x5A) {
+      return { ok: false, error: "Security Violation: Windows executable (.exe) binary detected. Executable files and malware are strictly blocked." };
+    }
+    // Block Linux ELF Executable
+    if (bytes[0] === 0x7F && bytes[1] === 0x45 && bytes[2] === 0x4C && bytes[3] === 0x46) {
+      return { ok: false, error: "Security Violation: ELF executable binary detected. Executables and malware are strictly prohibited." };
+    }
+    // Block Mach-O
+    if ((bytes[0] === 0xFE && bytes[1] === 0xED && bytes[2] === 0xFA) || (bytes[0] === 0xCA && bytes[1] === 0xFE && bytes[2] === 0xBA)) {
+      return { ok: false, error: "Security Violation: Executable binary detected." };
+    }
+    // Block Script Headers
+    const dec = new TextDecoder();
+    const str = dec.decode(bytes).toLowerCase();
+    if (str.startsWith("#!") || str.startsWith("<?php") || str.startsWith("<?") || str.includes("<script") || str.startsWith("@echo")) {
+      return { ok: false, error: "Security Violation: Script file detected. Scripts and malware are strictly prohibited." };
+    }
+    // Whitelist document signatures
+    if (ext === "pdf" && !str.includes("%pdf-")) {
+      return { ok: false, error: "Invalid document: The file does not have a genuine PDF signature (%PDF-)." };
+    }
+    if (ext === "docx" && (bytes[0] !== 0x50 || bytes[1] !== 0x4B)) {
+      return { ok: false, error: "Invalid document: The file does not have a genuine Word (DOCX) package signature." };
+    }
+    if (ext === "doc" && (bytes[0] !== 0xD0 || bytes[1] !== 0xCF || bytes[2] !== 0x11 || bytes[3] !== 0xE0)) {
+      return { ok: false, error: "Invalid document: The file does not have a genuine Word (DOC) binary signature." };
+    }
+    if (ext === "rtf" && !str.startsWith("{\\rtf")) {
+      return { ok: false, error: "Invalid document: The file does not have a genuine RTF signature." };
+    }
+  } catch(e) {}
+  return { ok: true, cleanName, ext };
+}
+
+async function ai(e) {
+  var l, c, g;
+  e.preventDefault();
+  const a = e.currentTarget;
+  if (a.dataset.submitting === "true") return;
+
+  const i = f(".status", a);
+  const t = f('button[type="submit"], .career-submit', a);
+  const s = t == null ? void 0 : t.innerHTML;
+  const n = a.dataset.formType === "admission-enquiry";
+  const isCareer = a.classList.contains("career-form") || a.dataset.careerApi === "true";
+  const isReferral = !n && !isCareer && !!a.querySelector('input[name="referrer_name"]');
+  const r = new FormData(a);
+  const o = Object.fromEntries(r);
+
+  function showError(fieldEl, message) {
+    if (i) {
+      i.textContent = message;
+      i.style.color = "#b3261e";
+    }
+    if (fieldEl) {
+      fieldEl.focus();
+      fieldEl.style.outline = "2px solid #b3261e";
+      setTimeout(() => { fieldEl.style.outline = ""; }, 3500);
+    }
+  }
+
+  // 1. CAREERS FORM CLIENT VALIDATION
+  if (isCareer) {
+    const cName = String(o.name || "").trim();
+    const cPhoneDigits = String(o.phone || "").replace(/\D/g, "");
+    const cEmail = String(o.email || "").trim().toLowerCase();
+    const cDob = String(o.dateOfBirth || "").trim();
+    const cCountry = String(o.country || "").trim();
+    const cState = String(o.state || "").trim();
+    const cCity = String(o.city || "").trim();
+    const cInstitution = String(o.institution || "").trim();
+    const cCategory = String(o.category || "").trim();
+    const cPosition = String(o.position || "").trim();
+    const cDepartment = String(o.department || "").trim();
+    const cQualification = String(o.qualification || "").trim();
+    const cSocial = String(o.socialCategory || "").trim();
+    const cSalary = String(o.expectedSalary || "").trim();
+    const resumeFile = a.elements.resume?.files?.[0];
+
+    if (!cName || cName.length < 2 || !/^[a-zA-Z\s\.\-']{2,100}$/.test(cName)) {
+      showError(a.elements.name, "Please enter your full name (letters only, minimum 2 characters).");
+      return;
+    }
+    if (cPhoneDigits.length < 10 || cPhoneDigits.length > 15) {
+      showError(a.elements.phone, "Please enter a valid 10 to 15 digit contact telephone number.");
+      return;
+    }
+    if (!cEmail || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(cEmail)) {
+      showError(a.elements.email, "Please enter a valid email address.");
+      return;
+    }
+    if (!cDob) {
+      showError(a.elements.dateOfBirth, "Please enter your date of birth.");
+      return;
+    }
+    const bday = new Date(cDob);
+    const today = new Date();
+    let age = today.getFullYear() - bday.getFullYear();
+    const m = today.getMonth() - bday.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < bday.getDate())) age--;
+    if (isNaN(bday.getTime()) || age < 18) {
+      showError(a.elements.dateOfBirth, "Applicant must be at least 18 years of age to apply.");
+      return;
+    }
+    if (!cCountry) { showError(a.elements.country, "Please select your country."); return; }
+    if (!cState) { showError(a.elements.state, "Please select or enter your state / region."); return; }
+    if (!cCity) { showError(a.elements.city, "Please enter your city."); return; }
+    if (!cInstitution) { showError(a.elements.institution, "Please select an institution."); return; }
+    if (!cCategory) { showError(a.elements.category, "Please select an application category."); return; }
+    if (!cPosition) { showError(a.elements.position, "Please select the position you are applying for."); return; }
+    if (!cDepartment) { showError(a.elements.department, "Please select your department."); return; }
+    if (!cQualification) { showError(a.elements.qualification, "Please select your highest qualification."); return; }
+    if (!cSocial) { showError(a.elements.socialCategory, "Please select your social category."); return; }
+    if (!cSalary) { showError(a.elements.expectedSalary, "Please select your expected salary range."); return; }
+
+    if (!resumeFile) {
+      showError(a.elements.resume, "Please upload your resume (PDF, DOC, DOCX, or RTF up to 2 MB).");
+      return;
+    }
+    const sec = await inspectResumeSecurity(resumeFile);
+    if (!sec.ok) {
+      showError(a.elements.resume, sec.error);
+      a.elements.resume.value = "";
+      return;
+    }
+  }
+
+  // 2. APPLY NOW (ADMISSION ENQUIRY) CLIENT VALIDATION
+  if (n) {
+    const sName = String(o.name || "").trim();
+    const sPhone = String(o.phone || "").replace(/\D/g, "");
+    const sEmail = String(o.email || "").trim().toLowerCase();
+    const sCourse = String(o.level || "").trim();
+    const sDept = String(o.course || "").trim();
+    const sPrevQual = String(o.previous_qualification || "").trim();
+    const sMessage = String(o.message || "").trim();
+    const sConsent = r.get("consent");
+
+    if (!sName || sName.length < 2 || !/^[a-zA-Z\s\.\-']{2,100}$/.test(sName)) {
+      showError(a.querySelector('input[name="name"]'), "Please enter your full name (minimum 2 characters, letters only).");
+      return;
+    }
+    if (sPhone.length !== 10) {
+      showError(a.querySelector('input[name="phone"]'), "Please enter a valid 10-digit mobile number.");
+      return;
+    }
+    if (!sEmail || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(sEmail)) {
+      showError(a.querySelector('input[name="email"]'), "Please enter a valid email address.");
+      return;
+    }
+    if (!sPrevQual) {
+      showError(a.querySelector('select[name="previous_qualification"]'), "Please select your previous qualification (12th or Diploma).");
+      return;
+    }
+    if (!sCourse) {
+      showError(a.querySelector('select[name="level"]'), "Please select your preferred course level (UG, PG, or Ph.D).");
+      return;
+    }
+    if (!sDept) {
+      showError(a.querySelector('select[name="course"]'), "Please select your preferred department.");
+      return;
+    }
+    if (!sMessage || sMessage.length < 5) {
+      showError(a.querySelector('textarea[name="message"]'), "Please enter your specific query or guidance request (minimum 5 characters).");
+      return;
+    }
+    if (!sConsent) {
+      showError(a.querySelector('#apply-consent-checkbox'), "Please provide contact consent to submit your application.");
+      return;
+    }
+  }
+
+  // 3. REFERRAL FORM CLIENT VALIDATION
+  if (isReferral) {
+    const rName = String(o.referrer_name || "").trim();
+    const rPhone = String(o.referrer_phone || "").replace(/\D/g, "");
+    const rEmail = String(o.referrer_email || "").trim().toLowerCase();
+    const rRelation = String(o.referrer_relation || "").trim();
+    const candName = String(o.candidate_name || "").trim();
+    const candPhone = String(o.candidate_phone || "").replace(/\D/g, "");
+    const candEmail = String(o.candidate_email || "").trim().toLowerCase();
+    const candLevel = String(o.candidate_level || "").trim();
+    const candDept = String(o.candidate_course || "").trim();
+
+    if (!rName || rName.length < 2) {
+      showError(a.querySelector('input[name="referrer_name"]'), "Please enter your full name (referrer).");
+      return;
+    }
+    if (rPhone.length !== 10) {
+      showError(a.querySelector('input[name="referrer_phone"]'), "Please enter your 10-digit mobile number.");
+      return;
+    }
+    if (!rEmail || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(rEmail)) {
+      showError(a.querySelector('input[name="referrer_email"]'), "Please enter your valid email address.");
+      return;
+    }
+    if (!rRelation) {
+      showError(a.querySelector('select[name="referrer_relation"]'), "Please select your relationship with SIET.");
+      return;
+    }
+    if (rRelation === "Current Student") {
+      const regNo = String(o.referrer_reg_no || "").trim();
+      if (regNo.length < 6) {
+        showError(a.querySelector('#referrer_reg_no'), "Please enter your valid student register number.");
+        return;
+      }
+    }
+    if (!candName || candName.length < 2) {
+      showError(a.querySelector('input[name="candidate_name"]'), "Please enter candidate's full name.");
+      return;
+    }
+    if (candPhone.length !== 10) {
+      showError(a.querySelector('input[name="candidate_phone"]'), "Please enter candidate's 10-digit mobile number.");
+      return;
+    }
+    if (!candEmail || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(candEmail)) {
+      showError(a.querySelector('input[name="candidate_email"]'), "Please enter candidate's valid email address.");
+      return;
+    }
+    if (!candLevel) {
+      showError(a.querySelector('select[name="candidate_level"]'), "Please select candidate's preferred course level.");
+      return;
+    }
+    if (!candDept) {
+      showError(a.querySelector('select[name="candidate_course"]'), "Please select candidate's preferred department.");
+      return;
+    }
+  }
+
+  // Submission execution
+  a.dataset.submitting = "true";
+  if (i) {
+    i.textContent = n ? "Saving application & launching call simulation…" : "Submitting details…";
+    i.style.color = "#0b7a48";
+  }
+  if (t) {
+    t.disabled = true;
+    t.textContent = n ? "Processing…" : "Submitting…";
+  }
+
+  if (!o.name && o.referrer_name) o.name = `${o.referrer_name} (Ref for: ${o.candidate_name || "Candidate"})`;
+  if (!o.email && (o.referrer_email || o.candidate_email)) o.email = o.referrer_email || o.candidate_email;
+  if (!o.phone && (o.referrer_phone || o.candidate_phone)) o.phone = o.referrer_phone || o.candidate_phone;
+  if (!o.course && o.candidate_course) o.course = o.candidate_course;
+
+  const m = a.querySelector('input[type="file"]');
+  if ((l = m == null ? void 0 : m.files) != null && l[0]) {
+    o.fileName = m.files[0].name;
+    o.fileSize = `${Math.round(m.files[0].size / 1024)} KB`;
+  }
+
+  try {
+    const h = a.dataset.apiEndpoint || "/api/enquiries";
+    const R = n ? {
+      studentName: o.name,
+      mobileNumber: o.phone,
+      email: o.email,
+      previousQualification: o.previous_qualification || "",
+      course: o.level,
+      department: o.course,
+      city: o.city || "",
+      source: "Website",
+      remarks: o.message,
+      consent: !!r.get("consent"),
+      desiredSimulation: o.desiredSimulation || "completed"
+    } : o;
+
+    const x = a.dataset.careerApi === "true"
+      ? await fetch(h, { method: "POST", body: r })
+      : await fetch(h, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(R) });
+
+    const D = await x.json().catch(() => ({ message: "The server returned an invalid response." }));
+
+    if (a.dataset.careerApi === "true" && x.ok) {
+      showCareerSuccessModal(D, o);
+    }
+    if (n && x.ok) {
+      showAdmissionSuccessModal(D, o);
+    }
+
+    if (i) {
+      i.textContent = D.message || (x.ok ? "Admission enquiry saved successfully." : "Unable to save your enquiry.");
+      i.style.color = x.ok ? "#075b36" : "#b3261e";
+    }
+
+    if (n && x.ok && ((c = D == null ? void 0 : D.data) != null && c.id)) {
+      const y = document.getElementById("apply-call-tracker-mount");
+      if (y) {
+        ii(y, D.data);
+        setTimeout(() => { y.scrollIntoView({ behavior: "smooth", block: "start" }); }, 150);
+      }
+    }
+
+    if (x.ok && !((g = D.data) != null && g.isDuplicate)) {
+      a.reset();
+      const y = a.querySelector("#apply-consent-checkbox");
+      if (y) y.checked = true;
+    }
+  } catch (err) {
+    if (i) {
+      i.textContent = "Unable to submit your application. Please check your connection and try again.";
+      i.style.color = "#b3261e";
+    }
+  } finally {
+    a.dataset.submitting = "false";
+    if (t) {
+      t.disabled = false;
+      t.innerHTML = s || "Submit";
+    }
+  }
+}
+
+function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****${t.slice(-2)}`:"";e.innerHTML=`
     <div class="test-call-consent-card" id="test-call-card-${i}">
       <div class="test-call-card-badge-row">
         <span class="test-call-chip">
@@ -2668,7 +3000,7 @@ import{r as Ee,j as ce,c as $a,R as ja}from"./vendor-react-DhEz86-d.js";import{i
         <div class="acad-ov-shell">
           <div class="acad-ov-section-head reveal">
             <span class="acad-ov-section-tag">02 / EXPERIMENTAL EXCELLENCE</span>
-            <h2 class="acad-ov-section-title light">8 Dedicated <em>Specialized Laboratories</em></h2>
+            <h2 class="acad-ov-section-title light">7 Dedicated <em>Specialized Laboratories</em></h2>
             <p class="acad-ov-section-desc light">
               Theory is tested and transformed into tangible prototypes across purpose-built research centers equipped with enterprise silicon, computing clusters, and precision prototyping instruments.
             </p>
@@ -7755,7 +8087,30 @@ import{r as Ee,j as ce,c as $a,R as ja}from"./vendor-react-DhEz86-d.js";import{i
     ${Te("Why am I looking for a change from my current position?",'<textarea name="message" rows="5" placeholder="Why am I looking for a change from my current position?"></textarea>')}
     ${Te("Upload Resume (Max file size: 2 MB; PDF / DOC / DOCX / RTF)",'<input type="file" name="resume" accept=".pdf,.doc,.docx,.rtf" required aria-describedby="career-resume-help">',!0)}
     <small id="career-resume-help">Upload a PDF, Word document, or RTF file up to 2 MB.</small>
-  </div>`}function Pt(e,a,i){if(!e)return;const t=e.elements,s=(n,r,o)=>{t[n].innerHTML=`<option value="">${o}</option>${Ze(r)}`,t[n].disabled=!r.length};t.institution.addEventListener("change",()=>i(t.institution.value)),t.category.addEventListener("change",()=>{const r=a[t.institution.value].cats.find(o=>o[0]===t.category.value);s("position",(r==null?void 0:r[1])||[],"Select a Position"),s("department",[],"Select a Department")}),t.position.addEventListener("change",()=>{s("department",t.position.value?a[t.institution.value].departments:[],"Select a Department")}),t.country.addEventListener("change",()=>{t.state.value="",t.city.value="",t.state.disabled=!t.country.value,t.city.disabled=!0,e.querySelector("#career-state-options").innerHTML=Ze(t.country.value==="India"?Mt:[])}),t.state.addEventListener("input",()=>{t.city.value="",t.city.disabled=!t.state.value.trim()}),t.resume.addEventListener("change",()=>{const n=t.resume.files[0],r=n?n.size>2*1024*1024?"Please choose a resume no larger than 2 MB.":/\.(pdf|docx?|rtf)$/i.test(n.name)?"":"Please choose a PDF, DOC, DOCX, or RTF file.":"";t.resume.setCustomValidity(r),r&&t.resume.reportValidity()}),e.addEventListener("reset",()=>{const n=t.institution.value;queueMicrotask(()=>{i(n),t.state.disabled=!0,t.city.disabled=!0,t.resume.setCustomValidity("")})})}function Lt(){const e=Je.college;return`<main class="careers-page">${Y("Careers","Careers",!1)}<section class="career-main"><div class="career-switcher"><div class="career-switcher-caption"><span>FIND YOUR PLACE</span><p>Three pathways. One shared purpose.</p></div><div class="career-tabs career-toggle" role="group" aria-label="Choose your career institution" style="--career-index: 0"><span class="career-toggle-track" aria-hidden="true"></span>${[["college","Engineering College","Inspire innovators","grad"],["school","CBSE School","Shape young minds","industry"],["lab","Food Testing Lab","Advance discovery","lab"]].map(([a,i,t,s],n)=>`<button class="${n===0?"active":""}" data-unit="${a}" type="button" aria-pressed="${n===0}"><span class="career-toggle-icon" aria-hidden="true">${s==="lab"?'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v7l-6 9a1.3 1.3 0 0 0 1 2h14a1.3 1.3 0 0 0 1-2l-6-9V3M7 15h10"/><path d="M10 18h.01M14 17h.01"/></svg>':v(s)}</span><span class="career-toggle-copy"><strong>${i}</strong><small>${t}</small></span><span class="career-toggle-dot" aria-hidden="true"></span></button>`).join("")}</div></div><div class="career-intro career-institution-banner"><div class="career-institution-logo"><img src="${e.logo}" alt="${e.heading} logo"></div><div class="career-institution-copy"><h2>${e.heading}</h2><p>${e.desc}</p></div></div><div class="career-application-layout"><form class="career-form js-form" data-career-api="true" data-api-endpoint="/new-site/career-api/career-submit.php" enctype="multipart/form-data"><div class="career-form-head"><small>APPLICATION FORM</small><h2>Faculty &amp; Professional Recruitment</h2></div><div class="career-fields">${xt(e)}</div><button class="career-submit" type="submit">Submit Application →</button><p class="status" aria-live="polite"></p></form><aside class="career-categories"><div class="career-side-title"><small>EXPLORE OPENINGS</small><h2>Application Categories</h2></div>${e.cats.map((a,i)=>`<details ${i===0?"open":""}><summary>${a[0]} ${v("down")}</summary><div>${a[2]?`<p>${a[2]}</p>`:""}${a[1].map(t=>`<span>${t}</span>`).join("")}</div></details>`).join("")}<div class="career-contact"><small>RECRUITMENT QUERIES</small><h3>Let’s build the future together.</h3><a href="mailto:careers@siet.ac.in">careers@siet.ac.in</a></div></aside></div></section></main>`}function Rt(){const e=a=>({phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>',mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>',clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'})[a];return`<main class="contact-pro-page">
+  </div>`}function Pt(e,a,i){if(!e)return;const t=e.elements,s=(n,r,o)=>{t[n].innerHTML=`<option value="">${o}</option>${Ze(r)}`,t[n].disabled=!r.length};t.institution.addEventListener("change",()=>i(t.institution.value)),t.category.addEventListener("change",()=>{const r=a[t.institution.value].cats.find(o=>o[0]===t.category.value);s("position",(r==null?void 0:r[1])||[],"Select a Position"),s("department",[],"Select a Department")}),t.position.addEventListener("change",()=>{s("department",t.position.value?a[t.institution.value].departments:[],"Select a Department")}),t.country.addEventListener("change",()=>{t.state.value="",t.city.value="",t.state.disabled=!t.country.value,t.city.disabled=!0,e.querySelector("#career-state-options").innerHTML=Ze(t.country.value==="India"?Mt:[])}),t.state.addEventListener("input",()=>{t.city.value="",t.city.disabled=!t.state.value.trim()}),t.resume.addEventListener("change", async () => {
+    const file = t.resume.files[0];
+    if (!file) {
+      t.resume.setCustomValidity("");
+      return;
+    }
+    const check = await inspectResumeSecurity(file);
+    if (!check.ok) {
+      t.resume.value = "";
+      t.resume.setCustomValidity(check.error);
+      t.resume.reportValidity();
+      const statusEl = e.querySelector(".status");
+      if (statusEl) {
+        statusEl.textContent = check.error;
+        statusEl.style.color = "#b3261e";
+      }
+    } else {
+      t.resume.setCustomValidity("");
+      const statusEl = e.querySelector(".status");
+      if (statusEl && statusEl.textContent.includes("Security Violation")) {
+        statusEl.textContent = "";
+      }
+    }
+  }),e.addEventListener("reset",()=>{const n=t.institution.value;queueMicrotask(()=>{i(n),t.state.disabled=!0,t.city.disabled=!0,t.resume.setCustomValidity("")})})}function Lt(){const e=Je.college;return`<main class="careers-page">${Y("Careers","Careers",!1)}<section class="career-main"><div class="career-switcher"><div class="career-switcher-caption"><span>FIND YOUR PLACE</span><p>Three pathways. One shared purpose.</p></div><div class="career-tabs career-toggle" role="group" aria-label="Choose your career institution" style="--career-index: 0"><span class="career-toggle-track" aria-hidden="true"></span>${[["college","Engineering College","Inspire innovators","grad"],["school","CBSE School","Shape young minds","industry"],["lab","Food Testing Lab","Advance discovery","lab"]].map(([a,i,t,s],n)=>`<button class="${n===0?"active":""}" data-unit="${a}" type="button" aria-pressed="${n===0}"><span class="career-toggle-icon" aria-hidden="true">${s==="lab"?'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10 3v7l-6 9a1.3 1.3 0 0 0 1 2h14a1.3 1.3 0 0 0 1-2l-6-9V3M7 15h10"/><path d="M10 18h.01M14 17h.01"/></svg>':v(s)}</span><span class="career-toggle-copy"><strong>${i}</strong><small>${t}</small></span><span class="career-toggle-dot" aria-hidden="true"></span></button>`).join("")}</div></div><div class="career-intro career-institution-banner"><div class="career-institution-logo"><img src="${e.logo}" alt="${e.heading} logo"></div><div class="career-institution-copy"><h2>${e.heading}</h2><p>${e.desc}</p></div></div><div class="career-application-layout"><form class="career-form js-form" data-career-api="true" data-api-endpoint="/new-site/career-api/career-submit.php" enctype="multipart/form-data"><div class="career-form-head"><small>APPLICATION FORM</small><h2>Faculty &amp; Professional Recruitment</h2></div><div class="career-fields">${xt(e)}</div><button class="career-submit" type="submit">Submit Application →</button><p class="status" aria-live="polite"></p></form><aside class="career-categories"><div class="career-side-title"><small>EXPLORE OPENINGS</small><h2>Application Categories</h2></div>${e.cats.map((a,i)=>`<details ${i===0?"open":""}><summary>${a[0]} ${v("down")}</summary><div>${a[2]?`<p>${a[2]}</p>`:""}${a[1].map(t=>`<span>${t}</span>`).join("")}</div></details>`).join("")}<div class="career-contact"><small>RECRUITMENT QUERIES</small><h3>Let’s build the future together.</h3><a href="mailto:careers@siet.ac.in">careers@siet.ac.in</a></div></aside></div></section></main>`}function Rt(){const e=a=>({phone:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.63a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.85.29 1.73.5 2.63.62A2 2 0 0 1 22 16.92z"/></svg>',mail:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',pin:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>',clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'})[a];return`<main class="contact-pro-page">
     <section class="siet-vm-hero contact-pro-hero">
       <div class="siet-vm-hero-grid"></div>
       <div class="siet-vm-hero-orb orb-one"></div>

@@ -141,6 +141,11 @@ $date = DateTimeImmutable::createFromFormat('Y-m-d', $data['dob']);
 if (!$date) $date = DateTimeImmutable::createFromFormat('d/m/Y', $data['dob']);
 if (!$date) respond(422, ['success' => false, 'message' => 'Enter a valid date of birth.']);
 $data['dob'] = $date->format('Y-m-d');
+$today = new DateTimeImmutable('today');
+$age = $date->diff($today)->y;
+if ($age < 18) {
+    respond(422, ['success' => false, 'message' => 'Applicant must be at least 18 years of age to apply.']);
+}
 
 if (!isset($_FILES['resume']) || $_FILES['resume']['error'] !== UPLOAD_ERR_OK) {
     respond(422, ['success' => false, 'message' => 'Please upload your resume.']);
@@ -149,18 +154,76 @@ if (!isset($_FILES['resume']) || $_FILES['resume']['error'] !== UPLOAD_ERR_OK) {
 $resume = $_FILES['resume'];
 $maxBytes = (int)($config['max_upload_bytes'] ?? 2097152);
 if ((int)$resume['size'] > $maxBytes) respond(413, ['success' => false, 'message' => 'Resume must not exceed 2 MB.']);
+if ((int)$resume['size'] < 100) respond(422, ['success' => false, 'message' => 'Resume file is empty or corrupted (minimum 100 bytes required).']);
 
-$extension = strtolower(pathinfo((string)$resume['name'], PATHINFO_EXTENSION));
+$resumeName = (string)$resume['name'];
+$cleanResumeName = basename($resumeName);
+if (preg_match('/[\0<>:"\/\\|?*]/', $cleanResumeName)) {
+    respond(422, ['success' => false, 'message' => 'Resume filename contains invalid or dangerous characters.']);
+}
+
+// Block any executable, script or dangerous extensions anywhere in the filename (prevents double-extension exploits e.g. resume.pdf.exe)
+$forbiddenPattern = '/(?:^|\.)(?:exe|bat|cmd|sh|php|phtml|phar|vbs|js|jar|scr|pif|msi|dll|com|hta|ps1|apk|bin|cgi|pl|py|wsf|cpl|gadget|iso|dmg|vhd)(?:\.|$)/i';
+if (preg_match($forbiddenPattern, $cleanResumeName)) {
+    respond(422, ['success' => false, 'message' => 'Security Violation: Executable files (.exe, .bat, scripts) and malware are strictly prohibited.']);
+}
+
+$extension = strtolower(pathinfo($cleanResumeName, PATHINFO_EXTENSION));
 $allowedExtensions = ['pdf', 'doc', 'docx', 'rtf'];
-$allowedMimes = [
-    'pdf' => ['application/pdf'],
-    'doc' => ['application/msword', 'application/octet-stream'],
-    'docx' => ['application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/zip', 'application/octet-stream'],
-    'rtf' => ['application/rtf', 'text/rtf', 'text/plain', 'application/octet-stream'],
-];
-if (!in_array($extension, $allowedExtensions, true)) respond(422, ['success' => false, 'message' => 'Resume must be PDF, DOC, DOCX, or RTF.']);
-$detectedMime = (new finfo(FILEINFO_MIME_TYPE))->file((string)$resume['tmp_name']) ?: 'application/octet-stream';
-if (!in_array($detectedMime, $allowedMimes[$extension], true)) respond(422, ['success' => false, 'message' => 'The uploaded resume file type is invalid.']);
+if (!in_array($extension, $allowedExtensions, true)) {
+    respond(422, ['success' => false, 'message' => 'Resume must be PDF, DOC, DOCX, or RTF document.']);
+}
+
+// Deep Binary Magic Byte & Anti-Malware Inspection
+$fh = fopen((string)$resume['tmp_name'], 'rb');
+if (!$fh) respond(500, ['success' => false, 'message' => 'Unable to scan uploaded resume for security validation.']);
+$magicBytes = fread($fh, 1024);
+fclose($fh);
+
+if (strlen($magicBytes) < 100) {
+    respond(422, ['success' => false, 'message' => 'Resume file contains insufficient data (minimum 100 bytes required).']);
+}
+
+// 1. Block Windows / DOS PE Executable ('MZ' = 0x4D 0x5A)
+if (substr($magicBytes, 0, 2) === "MZ") {
+    respond(422, ['success' => false, 'message' => 'Security Violation: Windows executable (.exe) detected. Executable files and malware are strictly prohibited.']);
+}
+
+// 2. Block Linux ELF Executable (0x7F 'ELF')
+if (substr($magicBytes, 0, 4) === "\x7FELF") {
+    respond(422, ['success' => false, 'message' => 'Security Violation: ELF executable binary detected. Executable files and malware are strictly prohibited.']);
+}
+
+// 3. Block macOS Mach-O Executables
+$machoSignatures = ["\xFE\xED\xFA\xCE", "\xFE\xED\xFA\xCF", "\xCE\xFA\xED\xFE", "\xCF\xFA\xED\xFE", "\xCA\xFE\xBA\xBE"];
+if (in_array(substr($magicBytes, 0, 4), $machoSignatures, true)) {
+    respond(422, ['success' => false, 'message' => 'Security Violation: Executable binary detected.']);
+}
+
+// 4. Block Script Headers (shebang, PHP, HTML script tags)
+$headerLower = strtolower(substr($magicBytes, 0, 64));
+if (str_starts_with($headerLower, '#!') || str_starts_with($headerLower, '<?php') || str_starts_with($headerLower, '<?') || str_contains($headerLower, '<script') || str_starts_with($headerLower, '@echo')) {
+    respond(422, ['success' => false, 'message' => 'Security Violation: Script file detected. Scripts and malware are strictly prohibited.']);
+}
+
+// 5. Positive signature whitelist verification against declared extension
+if ($extension === 'pdf') {
+    if (!str_contains($magicBytes, '%PDF-')) {
+        respond(422, ['success' => false, 'message' => 'Invalid document: The file does not have a genuine PDF signature (%PDF-).']);
+    }
+} elseif ($extension === 'docx') {
+    if (substr($magicBytes, 0, 2) !== "PK") {
+        respond(422, ['success' => false, 'message' => 'Invalid document: The file does not have a genuine Word (DOCX) package signature.']);
+    }
+} elseif ($extension === 'doc') {
+    if (substr($magicBytes, 0, 4) !== "\xD0\xCF\x11\xE0") {
+        respond(422, ['success' => false, 'message' => 'Invalid document: The file does not have a genuine Word (DOC) binary signature.']);
+    }
+} elseif ($extension === 'rtf') {
+    if (!str_starts_with($headerLower, '{\\rtf')) {
+        respond(422, ['success' => false, 'message' => 'Invalid document: The file does not have a genuine RTF signature.']);
+    }
+}
 
 $uploadDir = rtrim((string)($config['upload_dir'] ?? $publicHtmlDirectory . '/webportal/resume'), '/\\');
 if (!is_dir($uploadDir) && !mkdir($uploadDir, 0750, true)) respond(500, ['success' => false, 'message' => 'Resume storage is unavailable.']);

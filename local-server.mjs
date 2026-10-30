@@ -136,6 +136,69 @@ function parseMultipart(buffer, boundary) {
   return { fields, files };
 }
 
+function validateResumeContent(filename, buffer) {
+  if (!filename || typeof filename !== "string") {
+    return { valid: false, message: "Resume file is required." };
+  }
+  if (!buffer || buffer.length < 100) {
+    return { valid: false, message: "Resume file is empty or corrupted (minimum 100 bytes required)." };
+  }
+  if (buffer.length > 2 * 1024 * 1024) {
+    return { valid: false, message: "Resume must not exceed 2 MB." };
+  }
+  const cleanName = filename.trim().replace(/^.*[\\\/]/, "");
+  if (!cleanName || /[\0<>:"/\\|?*]/.test(cleanName)) {
+    return { valid: false, message: "Filename contains invalid or dangerous characters." };
+  }
+  const forbiddenExtPattern = /(?:^|\.)(?:exe|bat|cmd|sh|php|phtml|phar|vbs|js|jar|scr|pif|msi|dll|com|hta|ps1|apk|bin|cgi|pl|py|wsf|cpl|gadget|iso|dmg|vhd)(?:\.|$)/i;
+  if (forbiddenExtPattern.test(cleanName)) {
+    return { valid: false, message: "Security Violation: Executable files (.exe, .bat, scripts) and malware are strictly prohibited." };
+  }
+  const extMatch = cleanName.match(/\.([a-zA-Z0-9]+)$/);
+  const ext = extMatch ? extMatch[1].toLowerCase() : "";
+  if (!["pdf", "doc", "docx", "rtf"].includes(ext)) {
+    return { valid: false, message: "Resume must be a PDF, DOC, DOCX, or RTF document." };
+  }
+  const b0 = buffer[0], b1 = buffer[1], b2 = buffer[2], b3 = buffer[3];
+  // Reject Windows / DOS PE Executable ('MZ')
+  if (b0 === 0x4d && b1 === 0x5a) {
+    return { valid: false, message: "Security Violation: Executable (.exe) binary detected. Executable files and malware are strictly prohibited." };
+  }
+  // Reject Linux ELF Executable
+  if (b0 === 0x7f && b1 === 0x45 && b2 === 0x4c && b3 === 0x46) {
+    return { valid: false, message: "Security Violation: Binary executable detected. Executables and malware are strictly prohibited." };
+  }
+  // Reject Mach-O
+  if ((b0 === 0xfe && b1 === 0xed && b2 === 0xfa) || (b0 === 0xcf && b1 === 0xfa && b2 === 0xed) || (b0 === 0xca && b1 === 0xfe && b2 === 0xba)) {
+    return { valid: false, message: "Security Violation: Mach-O executable binary detected." };
+  }
+  // Reject Scripts
+  const headerAscii = buffer.slice(0, Math.min(buffer.length, 64)).toString("utf8").toLowerCase();
+  if (headerAscii.startsWith("#!") || headerAscii.startsWith("<?php") || headerAscii.startsWith("<?") || headerAscii.includes("<script") || headerAscii.startsWith("@echo")) {
+    return { valid: false, message: "Security Violation: Script file detected. Scripts and malware are strictly prohibited." };
+  }
+  // Whitelist signature verification
+  if (ext === "pdf") {
+    const pdfHeader = buffer.slice(0, Math.min(buffer.length, 1024)).toString("latin1");
+    if (!pdfHeader.includes("%PDF-")) {
+      return { valid: false, message: "Invalid document: The file does not have a valid PDF header (%PDF-)." };
+    }
+  } else if (ext === "docx") {
+    if (b0 !== 0x50 || b1 !== 0x4b) {
+      return { valid: false, message: "Invalid document: The file does not have a valid Word (DOCX) package header." };
+    }
+  } else if (ext === "doc") {
+    if (b0 !== 0xd0 || b1 !== 0xcf || b2 !== 0x11 || b3 !== 0xe0) {
+      return { valid: false, message: "Invalid document: The file does not have a valid Word (DOC) binary header." };
+    }
+  } else if (ext === "rtf") {
+    if (!headerAscii.startsWith("{\\rtf")) {
+      return { valid: false, message: "Invalid document: The file does not have a valid RTF header." };
+    }
+  }
+  return { valid: true, cleanName, ext };
+}
+
 function handleLocalCareerSubmission(request, response) {
   const contentType = request.headers["content-type"] || "";
   const boundary = contentType.match(/boundary=(?:"([^"]+)"|([^;]+))/i)?.slice(1).find(Boolean);
@@ -151,20 +214,60 @@ function handleLocalCareerSubmission(request, response) {
     try {
       const { fields, files } = parseMultipart(Buffer.concat(chunks), boundary);
       const resume = files.resume;
-      const required = ["name", "phone", "email", "dateOfBirth", "country", "institution", "category", "position", "department", "qualification", "socialCategory", "expectedSalary"];
+
+      // 1. Mandatory fields
+      const required = ["name", "phone", "email", "dateOfBirth", "country", "state", "city", "institution", "category", "position", "department", "qualification", "socialCategory", "expectedSalary"];
       const missing = required.filter(key => !String(fields[key] || "").trim());
-      if (missing.length) return sendJson(response, 400, { success: false, message: `Missing required fields: ${missing.join(", ")}` });
-      if (!/^\S+@\S+\.\S+$/.test(fields.email)) return sendJson(response, 400, { success: false, message: "Enter a valid email address" });
-      if (!resume) return sendJson(response, 400, { success: false, message: "Resume is required" });
-      if (resume.content.length > 2 * 1024 * 1024) return sendJson(response, 413, { success: false, message: "Resume must not exceed 2 MB" });
-      const extension = extname(resume.filename).toLowerCase();
-      if (![".pdf", ".doc", ".docx", ".rtf"].includes(extension)) return sendJson(response, 400, { success: false, message: "Resume must be PDF, DOC, DOCX, or RTF" });
-      const applicationNo = `PENDING-${randomUUID()}`;
-      const storedName = `career-${indiaDateStamp()}-${randomUUID()}${extension}`;
+      if (missing.length) return sendJson(response, 422, { success: false, message: `Please complete all required fields: ${missing.join(", ")}` });
+
+      // 2. Name validation
+      const name = String(fields.name || "").trim();
+      if (name.length < 2 || !/^[a-zA-Z\s\.\-']{2,100}$/.test(name)) {
+        return sendJson(response, 422, { success: false, message: "Enter a valid full name (letters only, minimum 2 characters)." });
+      }
+
+      // 3. Contact number validation
+      const phoneDigits = String(fields.phone || "").replace(/\D/g, "");
+      if (phoneDigits.length < 10 || phoneDigits.length > 15) {
+        return sendJson(response, 422, { success: false, message: "Enter a valid 10 to 15 digit contact telephone number." });
+      }
+
+      // 4. Email validation
+      const email = String(fields.email || "").trim().toLowerCase();
+      if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)) {
+        return sendJson(response, 422, { success: false, message: "Enter a valid email address." });
+      }
+
+      // 5. Date of Birth & Age validation (must be 18 to 75 years old)
+      const bday = new Date(fields.dateOfBirth);
+      if (isNaN(bday.getTime())) {
+        return sendJson(response, 422, { success: false, message: "Enter a valid Date of Birth (YYYY-MM-DD)." });
+      }
+      const today = new Date();
+      let age = today.getFullYear() - bday.getFullYear();
+      const m = today.getMonth() - bday.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < bday.getDate())) age--;
+      if (age < 18) {
+        return sendJson(response, 422, { success: false, message: "Applicant must be at least 18 years of age to apply." });
+      }
+
+      // 6. Resume file & anti-malware verification
+      if (!resume) {
+        return sendJson(response, 422, { success: false, message: "Resume document is required." });
+      }
+      const resumeCheck = validateResumeContent(resume.filename, resume.content);
+      if (!resumeCheck.valid) {
+        return sendJson(response, 422, { success: false, message: resumeCheck.message });
+      }
+
+      const extension = "." + resumeCheck.ext;
+      const applicationNo = `SIET-CAR-${new Date().getFullYear()}-${Date.now().toString().slice(-8)}`;
+      const storedName = `${applicationNo}${extension}`;
       writeFileSync(join(careerUploadDir, storedName), resume.content, { flag: "wx" });
+
       const values = {
-        applicationNo, name: fields.name.trim(), phone: fields.phone.trim(), email: fields.email.trim().toLowerCase(),
-        dateOfBirth: fields.dateOfBirth, country: fields.country, state: fields.state || "", city: fields.city || "",
+        applicationNo, name, phone: fields.phone.trim(), email,
+        dateOfBirth: fields.dateOfBirth, country: fields.country.trim(), state: fields.state.trim(), city: fields.city.trim(),
         institution: fields.institution, category: fields.category, position: fields.position, department: fields.department,
         qualification: fields.qualification, socialCategory: fields.socialCategory, currentInstitution: fields.currentInstitution || "",
         currentPosition: fields.currentPosition || "", currentSalary: fields.currentSalary || "", expectedSalary: fields.expectedSalary,
@@ -357,6 +460,49 @@ createServer((request, response) => {
 
     request.on("end", () => {
       if (destroyed) return;
+      let parsed = {};
+      try { parsed = JSON.parse(body); } catch(e) {}
+
+      // Validation for Admission Enquiries
+      const sName = String(parsed.studentName || parsed.name || "").trim();
+      const sPhone = String(parsed.mobileNumber || parsed.phone || "").replace(/\D/g, "");
+      const sEmail = String(parsed.email || "").trim().toLowerCase();
+      const sCourse = String(parsed.course || "").trim();
+      const sDept = String(parsed.department || "").trim();
+      const sConsent = parsed.consent === true || parsed.consent === "true" || parsed.consent === "on" || parsed.consent === 1;
+
+      if (!sName || sName.length < 2 || !/^[a-zA-Z\s\.\-']{2,100}$/.test(sName)) {
+        response.writeHead(422, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
+        response.end(JSON.stringify({ success: false, message: "Please enter your full name (minimum 2 characters, letters only)." }));
+        return;
+      }
+      if (sPhone.length !== 10) {
+        response.writeHead(422, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
+        response.end(JSON.stringify({ success: false, message: "Please enter a valid 10-digit mobile number." }));
+        return;
+      }
+      if (!sEmail || !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(sEmail)) {
+        response.writeHead(422, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
+        response.end(JSON.stringify({ success: false, message: "Please enter a valid email address." }));
+        return;
+      }
+      if (!sCourse) {
+        response.writeHead(422, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
+        response.end(JSON.stringify({ success: false, message: "Please select your preferred course level (UG, PG, or Ph.D)." }));
+        return;
+      }
+      if (!sDept) {
+        response.writeHead(422, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
+        response.end(JSON.stringify({ success: false, message: "Please select your preferred department." }));
+        return;
+      }
+      if (!sConsent) {
+        response.writeHead(422, { "Content-Type": "application/json; charset=utf-8", "Access-Control-Allow-Origin": "*" });
+        response.end(JSON.stringify({ success: false, message: "Please provide contact consent to submit your application." }));
+        return;
+      }
+
+      const enquiryId = Date.now();
       response.writeHead(200, {
         "Content-Type": "application/json; charset=utf-8",
         "Access-Control-Allow-Origin": "*"
@@ -365,10 +511,11 @@ createServer((request, response) => {
         success: true,
         message: "Thank you! Your admission enquiry has been recorded successfully. Our academic counseling team will contact you shortly.",
         data: {
-          id: Date.now(),
-          studentName: "Applicant",
-          course: "UG",
-          department: "Engineering"
+          id: enquiryId,
+          studentName: sName,
+          mobileNumber: sPhone,
+          course: sCourse,
+          department: sDept
         }
       }));
     });
