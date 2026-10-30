@@ -642,7 +642,7 @@ const v={about:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stro
         <!-- Official Result Portal Access Card -->
         <div class="coe-result-card-form reveal">
           <div class="result-card-header">
-            <img src="/brand/siet-logo.webp" alt="Sri Shakthi emblem" class="result-crest">
+            <img src="/brand/siet-logo.webp" alt="Sri Shakthi emblem" class="result-crest" loading="eager" decoding="async">
             <div>
               <span class="result-inst-sub">Autonomous Institution · Affiliated to Anna University</span>
               <h2>Office of the Controller of Examinations</h2>
@@ -1003,7 +1003,7 @@ const v={about:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stro
               <!-- Top Institutional Banner with Logo, Gold Typography and NAAC Medallion -->
               <div class="siet-table-card-top">
                 <div class="siet-icc-left-brand">
-                  <img src="/brand/siet-logo.webp" alt="Sri Shakthi Logo" class="siet-icc-logo" width="58" height="58">
+                  <img src="/brand/siet-logo.webp" alt="Sri Shakthi Logo" class="siet-icc-logo" width="58" height="58" loading="eager" decoding="async">
                   <div class="siet-icc-motto-wrap">
                     <span>POWERING THE YOUTH</span>
                     <span>EMPOWERING THE NATION</span>

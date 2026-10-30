@@ -35,3 +35,19 @@
     text-align: center !important;
   }
 }
+
+/* Keep the telephone label and extension badge aligned to the left edge of its column. */
+.home-admission-enquiry > .home-institution-meta > .home-meta-telephone {
+  justify-content: flex-start !important;
+}
+
+.home-admission-enquiry > .home-institution-meta > .home-meta-telephone > p {
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+.home-admission-enquiry > .home-institution-meta > .home-meta-telephone strong,
+.home-admission-enquiry > .home-institution-meta > .home-meta-telephone small,
+.home-admission-enquiry > .home-institution-meta > .home-meta-telephone b {
+  text-align: left !important;
+}

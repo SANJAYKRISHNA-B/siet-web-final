@@ -634,12 +634,12 @@ function enhanceProgrammeAccreditation() {
       </div>
       <div class="programme-accreditation-cards">
         <a class="programme-accreditation-card" href="/nba" aria-label="View NBA accreditation details">
-          <span class="programme-accreditation-logo"><img src="/brand/nba-full-logo.webp" alt="National Board of Accreditation"></span>
+          <span class="programme-accreditation-logo"><img src="/brand/nba-full-logo.webp" alt="National Board of Accreditation" loading="eager" decoding="async"></span>
           <span><small>PROGRAMME ACCREDITATION</small><strong>NBA Accredited</strong></span>
           <b aria-hidden="true">→</b>
         </a>
         <a class="programme-accreditation-card" href="/naac" aria-label="View NAAC accreditation details">
-          <span class="programme-accreditation-logo"><img src="/brand/naac-grade-logo.webp" alt="NAAC Grade A"></span>
+          <span class="programme-accreditation-logo"><img src="/brand/naac-grade-logo.webp" alt="NAAC Grade A" loading="eager" decoding="async"></span>
           <span><small>INSTITUTIONAL ACCREDITATION</small><strong>NAAC Grade A</strong></span>
           <b aria-hidden="true">→</b>
         </a>
@@ -699,7 +699,7 @@ function enhanceProgrammeDepartmentCards() {
     const metaMarkup = `
       ${facts.established ? `<span class="programme-fact"><small>EST.</small><b>${facts.established}</b></span>` : ""}
       <span class="programme-fact"><small>INTAKE</small><b>${facts.intake}</b></span>
-      ${facts.nba ? '<span class="programme-nba-badge"><img src="/brand/nba-full-logo.webp" alt="NBA logo"> NBA Accredited</span>' : ""}`;
+      ${facts.nba ? '<span class="programme-nba-badge"><img src="/brand/nba-full-logo.webp" alt="NBA logo" loading="eager" decoding="async"> NBA Accredited</span>' : ""}`;
     if (meta.innerHTML !== metaMarkup) meta.innerHTML = metaMarkup;
     card.classList.toggle("is-nba-accredited", facts.nba);
   });

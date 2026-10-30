@@ -1239,19 +1239,19 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
         <p style="margin-bottom: 16px;">In addition, the department actively conducts seminars, workshops, and technical training programs to strengthen students' practical knowledge and research skills. Students also gain valuable real-world experience through sandwich programmes and industry interactions, enabling them to connect academic learning with clinical and industrial practices.</p>
         <p style="margin-bottom: 24px;">Through these initiatives, the Biomedical Engineering program at SIET aims to produce competent engineers who are capable of innovating and contributing to the advancement of healthcare technologies.</p>
         <div style="margin-top: 24px; text-align: center;">
-          <img src="/assets/images/departments/biomedical/bme-why-students-lab.webp" alt="Biomedical Engineering students in clinical hospital laboratory" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 400px; object-fit: cover;">
+          <img src="/assets/images/departments/biomedical/bme-why-students-lab.webp" alt="Biomedical Engineering students in clinical hospital laboratory" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 400px; object-fit: cover;" loading="lazy" decoding="async">
         </div>
       `,"Laboratory Facility":`
         <h2 style="text-align: center; color: #167a39;"><u>LABORATORY FACILITY</u></h2>
         <div style="margin: 0 0 24px; text-align: center;">
-          <img src="/assets/images/departments/biomedical/bme-lab-facility-overview.webp" alt="Biomedical Engineering Laboratory Facility" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 380px; object-fit: cover;">
+          <img src="/assets/images/departments/biomedical/bme-lab-facility-overview.webp" alt="Biomedical Engineering Laboratory Facility" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 380px; object-fit: cover;" loading="lazy" decoding="async">
         </div>
         <p style="margin-bottom: 16px;">Our laboratories provide a real time working environment to our students and this practical training enables faster and better understanding of the theoretical concepts. All equipments are calibrated and maintained to enable our students to enjoy their learning experience.</p>
         <p style="margin-bottom: 16px;">One such lab is <strong>Hematology laboratory</strong>, where students can analyse blood samples in the same method like hospital does to analyze blood test report. The laboratory includes Laminar air flow chamber, spectrophotometry, calorimeter, centrifuge, incubator, microscope etc.</p>
         <p style="margin-bottom: 16px;">Students perform real time testing of blood samples to assess glucose level, cholesterol level, various serum protein level, creatinine and other blood components. Students can also research on the growth of various microorganisms via the usage of incubator, centrifuge, Spectrophotometer, Colorimeter, and microscope that are calibrated and maintained in proper conditions.</p>
         <p style="margin-bottom: 20px;">Another significant laboratory is our <strong>Advanced biomedical equipments laboratory</strong>, where high level, hospital - grade equipments are maintained and used for education. Equipments such as the Ultrasound scanner, Ventilator, Dialysis machine, Defibrillator, pacemaker etc are available to provide real time demo of the same for the students.</p>
         <div style="margin: 24px 0; text-align: center;">
-          <img src="/assets/images/departments/biomedical/bme-advanced-equipments-lab.webp" alt="Advanced Biomedical Equipments Laboratory" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 380px; object-fit: cover;">
+          <img src="/assets/images/departments/biomedical/bme-advanced-equipments-lab.webp" alt="Advanced Biomedical Equipments Laboratory" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); max-height: 380px; object-fit: cover;" loading="lazy" decoding="async">
         </div>
         <p style="margin-bottom: 16px;">The students are given hands on training to operate ultrasound scanner in its various mode. Different modes of Ultrasound scan and ultrasound probes along with their application are demonstrated in real time.</p>
         <p style="margin-bottom: 16px;">With the help of ventilator students are able to operate, modulate and check the functions of different modes of ventilation working function.</p>
@@ -1260,11 +1260,11 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
         <p style="margin-bottom: 24px;"><strong>Biomedical instrumentation laboratory</strong> has a wide range of medical diagnostic equipments used to analyse the parameters like EEG, ECG, ERG, EMG, SpO2 measurement, ultrasonic bloodflow meter etc. The students take measurements for themselves or their friends. They were taught to dismantle the equipment, trouble shoot the problem and assemble the setup again.</p>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-top: 24px;">
           <div style="text-align: center;">
-            <img src="/assets/images/departments/biomedical/bme-smart-glove-project.webp" alt="Smart Sensor Glove Project" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 4/3;">
+            <img src="/assets/images/departments/biomedical/bme-smart-glove-project.webp" alt="Smart Sensor Glove Project" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 4/3;" loading="lazy" decoding="async">
             <p style="font-size: 13px; font-weight: 600; color: #555; margin-top: 8px;">Smart Sensor Glove / Assistive Robotics Prototype</p>
           </div>
           <div style="text-align: center;">
-            <img src="/assets/images/departments/biomedical/bme-virtual-keyboard-project.webp" alt="Message Conveyor Virtual Keyboard Project" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 4/3;">
+            <img src="/assets/images/departments/biomedical/bme-virtual-keyboard-project.webp" alt="Message Conveyor Virtual Keyboard Project" style="width: 100%; border-radius: 8px; box-shadow: 0 4px 16px rgba(0,0,0,0.1); object-fit: cover; aspect-ratio: 4/3;" loading="lazy" decoding="async">
             <p style="font-size: 13px; font-weight: 600; color: #555; margin-top: 8px;">Message Conveyor Virtual Keyboard Diagnostic Unit</p>
           </div>
         </div>

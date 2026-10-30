@@ -12,3 +12,20 @@ DirectoryIndex index.html
   # Send clean application routes back to the React entry point.
   RewriteRule ^ index.html [L]
 </IfModule>
+
+
+# SIET image caching: keep photos cached locally so repeat visits load faster.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/avif "access plus 30 days"
+  ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(avif|gif|jpe?g|png|svg|webp)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
