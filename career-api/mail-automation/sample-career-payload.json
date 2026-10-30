@@ -1,0 +1,21 @@
+{
+  "applicationNo": "SIET-ENG-20261030-000001",
+  "fullname": "Sample Applicant",
+  "email": "applicant@example.com",
+  "mobile": "9876543210",
+  "institute": "Engineering College",
+  "dept": "Computer Science and Engineering",
+  "position": "Assistant Professor",
+  "highQualification": "Ph.D.",
+  "city": "Coimbatore",
+  "state": "Tamil Nadu",
+  "country": "India",
+  "teaching": "5 years",
+  "industry": "2 years",
+  "research": "4 years",
+  "expectedSalary": "As per institution norms",
+  "noticePeriod": "4 weeks",
+  "source": "College Website",
+  "message": "I am looking for a research-focused academic position.",
+  "resume": "career-20261030-sample.pdf"
+}

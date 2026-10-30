@@ -1,0 +1,13 @@
+{
+  "name": "siet-career-mail-automation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "test:mail": "node send-sample.mjs"
+  },
+  "dependencies": {
+    "nodemailer": "^10.3.1"
+  }
+}

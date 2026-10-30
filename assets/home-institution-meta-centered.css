@@ -1,0 +1,37 @@
+@media (min-width: 901px) {
+  .home-admission-enquiry > .home-institution-meta > div {
+    display: flex !important;
+    min-width: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+  }
+
+  .home-admission-enquiry > .home-institution-meta > div > p {
+    flex: 0 1 auto !important;
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: calc(100% - 40px) !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  .home-admission-enquiry > .home-institution-meta > div strong,
+  .home-admission-enquiry > .home-institution-meta > div small,
+  .home-admission-enquiry > .home-institution-meta > div b {
+    max-width: 100%;
+    white-space: normal !important;
+    text-align: center !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-admission-enquiry > .home-institution-meta > div {
+    justify-content: center !important;
+  }
+
+  .home-admission-enquiry > .home-institution-meta > div > p {
+    align-items: center !important;
+    text-align: center !important;
+  }
+}

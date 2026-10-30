@@ -1,0 +1,33 @@
+/* Doctoral programme additions for the homepage and Programme directory. */
+.siet-degree-badge.phd,
+.siet-prog-kicker .badge-accent.phd {
+  background: linear-gradient(135deg, #5b21b6, #7c3aed) !important;
+  color: #fff !important;
+  border-color: rgba(124, 58, 237, 0.35) !important;
+}
+
+.siet-prog-card.phd-card {
+  border-top-color: #7c3aed !important;
+}
+
+.siet-prog-card.phd-card:hover {
+  border-color: rgba(124, 58, 237, 0.55) !important;
+  box-shadow: 0 16px 38px rgba(76, 29, 149, 0.14) !important;
+}
+
+.phd-programme-card .prog-icon-wrap {
+  background: #f0eafe !important;
+  color: #6d28d9 !important;
+}
+
+@media (max-width: 640px) {
+  .programme-toggle-pill {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  .programme-toggle-pill .toggle-btn {
+    padding-inline: 8px !important;
+    font-size: 12px !important;
+  }
+}
