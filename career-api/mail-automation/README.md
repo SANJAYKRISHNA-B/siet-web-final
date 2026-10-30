@@ -21,6 +21,8 @@ Ask your cPanel/email administrator for:
 
 Every configurable value is documented in `.env.example`.
 
+The real `.env` is ignored by Git so SMTP passwords and webhook tokens are not included in GitHub ZIPs. The ZIP includes `.env.example`; after extracting it in cPanel, copy `.env.example` to `.env`, enter the real values, and restart the Node.js application. `server.mjs` loads `.env` automatically, while values set in cPanel's environment-variable panel take precedence.
+
 ## Local setup
 
 ```bash
@@ -96,14 +98,14 @@ These keys already match `career-submit.php`.
 ## cPanel Setup Node.js App
 
 1. Confirm your hosting plan includes **Setup Node.js App**. Without that feature, use PHPMailer instead.
-2. Upload `mail-automation` and the sibling `mail-templates` directory.
+2. Upload `mail-automation` and the sibling `mail-templates` directory under `public_html/new-site/career-api`.
 3. Create a Node.js 20+ application.
-4. Set Application Root to `career-api/mail-automation`.
+4. Set Application Root to `new-site/career-api/mail-automation` (relative to `public_html`).
 5. Set Startup File to `server.mjs`.
 6. Run **NPM Install** in cPanel.
-7. Add all variables from `.env.example` using the cPanel environment-variable interface. Do not upload a real `.env` containing passwords into public source control.
+7. Copy `.env.example` to `.env` in the application directory and replace all placeholders. Alternatively, enter the values in cPanel's environment-variable interface. Never upload real SMTP passwords or webhook tokens to GitHub.
 8. Restart the application and open its `/health` URL.
-9. Put the assigned HTTPS Node application URL and matching token into the private PHP career configuration.
+9. Set `CAREER_MAIL_WEBHOOK_URL` to the Node application's assigned URL ending in `/career-submission`; set the same `CAREER_MAIL_WEBHOOK_TOKEN` in the private PHP career configuration.
 10. Submit a test application and verify the HR email, applicant email, database record and resume.
 
 ## Payload fields

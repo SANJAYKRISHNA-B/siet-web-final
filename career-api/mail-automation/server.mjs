@@ -1,5 +1,23 @@
 import { createServer } from "node:http";
+import { existsSync, readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
 import { sendCareerEmails, validateApplication } from "./mailer-lib.mjs";
+
+const envPath = join(dirname(fileURLToPath(import.meta.url)), ".env");
+if (existsSync(envPath)) {
+  for (const line of readFileSync(envPath, "utf8").split(/\r?\n/)) {
+    const match = line.trim().match(/^(?:export\s+)?([A-Za-z_][A-Za-z0-9_]*)\s*=\s*(.*)$/);
+    if (!match || process.env[match[1]] !== undefined) continue;
+    let value = match[2].trim();
+    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+      value = value.slice(1, -1);
+    } else {
+      value = value.replace(/\s+#.*$/, "");
+    }
+    process.env[match[1]] = value;
+  }
+}
 
 const host = process.env.HOST || "0.0.0.0";
 const port = Number(process.env.PORT || 3000);

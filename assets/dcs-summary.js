@@ -359,7 +359,7 @@ function ensureHomeAdmissionEnquiry() {
       <div class="home-institution-meta">
         <div><span class="home-meta-symbol" aria-hidden="true">✓</span><p><strong>Approved by AICTE, New Delhi</strong><b>AUTONOMOUS INSTITUTION</b></p></div>
         <div><span class="home-meta-symbol" aria-hidden="true">▥</span><p><strong>Affiliated to Anna University, Chennai</strong><small>L&amp;T By-Pass, Chinniyampalayam, Coimbatore – 641062</small></p></div>
-        <div><span class="home-meta-symbol" aria-hidden="true">●</span><p><strong>Tel: +91 422 2369900</strong><b>100 LINES</b></p></div>
+        <div class="home-meta-telephone"><span class="home-meta-symbol" aria-hidden="true">●</span><p><strong>Tel: +91 422 2369900</strong><b>100 LINES</b></p></div>
       </div>
     </section>`;
   content.querySelector(".home-impact-rule")?.after(panel);
