@@ -53,10 +53,10 @@ Terminal 2 — website, SQLite and webhook caller:
 node --env-file=career-api/mail-automation/.env local-server.mjs
 ```
 
-Then open `http://127.0.0.1:4173/careers`, submit the form and verify:
+Then open `http://127.0.0.1:4173/new-site/careers`, submit the form and verify:
 
 1. Success modal and application reference appear.
-2. `http://127.0.0.1:4173/api/careers/applications` contains the row.
+2. `http://127.0.0.1:4173/new-site/api/careers/applications` contains the row.
 3. The resume exists in `data/career-resumes/`.
 4. HR and applicant/test recipient inboxes receive the messages.
 5. The form API response contains `mailQueued: true` in browser Network tools.

@@ -25,7 +25,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
  */
 $config = [];
 $db = null;
-$legacyConfigPath = dirname(__DIR__) . '/webportal/masterdb_config.php';
+$publicHtmlDirectory = basename(dirname(__DIR__)) === 'new-site' ? dirname(__DIR__, 2) : dirname(__DIR__);
+$legacyConfigPath = $publicHtmlDirectory . '/webportal/masterdb_config.php';
 if (is_file($legacyConfigPath)) {
     require_once $legacyConfigPath;
     if (isset($masterdb_con) && $masterdb_con instanceof mysqli) {
@@ -141,7 +142,7 @@ if (!in_array($extension, $allowedExtensions, true)) respond(422, ['success' => 
 $detectedMime = (new finfo(FILEINFO_MIME_TYPE))->file((string)$resume['tmp_name']) ?: 'application/octet-stream';
 if (!in_array($detectedMime, $allowedMimes[$extension], true)) respond(422, ['success' => false, 'message' => 'The uploaded resume file type is invalid.']);
 
-$uploadDir = rtrim((string)($config['upload_dir'] ?? dirname(__DIR__) . '/webportal/resume'), '/\\');
+$uploadDir = rtrim((string)($config['upload_dir'] ?? $publicHtmlDirectory . '/webportal/resume'), '/\\');
 if (!is_dir($uploadDir) && !mkdir($uploadDir, 0750, true)) respond(500, ['success' => false, 'message' => 'Resume storage is unavailable.']);
 $storedName = 'career-' . date('Ymd-His') . '-' . bin2hex(random_bytes(8)) . '.' . $extension;
 $storedPath = $uploadDir . DIRECTORY_SEPARATOR . $storedName;

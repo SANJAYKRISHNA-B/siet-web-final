@@ -1,11 +1,11 @@
 # cPanel deployment
 
-1. Upload the complete `career-api` directory to `public_html/career-api`.
+1. Upload the complete `career-api` directory to `public_html/new-site/career-api` so the careers form at `/new-site/careers` can reach `/new-site/career-api/career-submit.php`.
 2. Keep your existing database connection at `public_html/webportal/masterdb_config.php`. The new handler automatically includes it and uses its `$masterdb_con` connection.
 3. Keep or create `public_html/webportal/resume`. The handler automatically stores resumes there. Recommended directory permission is `0755` or the lowest permission that allows your cPanel PHP process to write; avoid `0777`.
-4. Upload `career.html` to `public_html/career.html`. The main website Careers page already posts to `/career-api/career-submit.php` as well.
+4. The main website Careers page is served by `/new-site/` and posts to `/new-site/career-api/career-submit.php`. If you maintain the legacy standalone `career.html` page, configure it separately to use the deployed API path.
 5. Your existing `applicant` table can be used directly when it contains the listed legacy columns. Only import `applicant-table.sql` when the table does not already exist.
-6. Open `https://YOUR-DOMAIN/career.html`, submit one application, and verify the new row in phpMyAdmin under `applicant` and the resume in `webportal/resume`.
+6. Open `https://YOUR-DOMAIN/new-site/careers`, submit one application, and verify the new row in phpMyAdmin under `applicant` and the resume in `webportal/resume`.
 
 If `webportal/masterdb_config.php` is unavailable on a different server, use the fallback: copy `career-config.example.php` to `career-config.php`, enter the database values, and rely on the included `.htaccess` rule to block direct web access. Storing it outside `public_html` through `CAREER_CONFIG_PATH` remains the most secure option.
 

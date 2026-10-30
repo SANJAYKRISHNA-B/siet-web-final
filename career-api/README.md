@@ -3,16 +3,16 @@
 The actual form is rendered at `/careers`. It submits multipart data to the same URL in both environments:
 
 ```text
-POST /career-api/career-submit.php
+POST /new-site/career-api/career-submit.php
 ```
 
 ## Local
 
-Run `node local-server.mjs`, open `http://127.0.0.1:4173/careers`, and submit the form. The local server intercepts the endpoint and saves to:
+Run `node local-server.mjs`, open `http://127.0.0.1:4173/new-site/careers`, and submit the form. The local server intercepts the endpoint and saves to:
 
 - SQLite: `data/career-applications.sqlite`
 - Resumes: `data/career-resumes/`
-- Record viewer: `http://127.0.0.1:4173/api/careers/applications`
+- Record viewer: `http://127.0.0.1:4173/new-site/api/careers/applications`
 
 ## cPanel
 

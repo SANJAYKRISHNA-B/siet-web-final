@@ -164,19 +164,24 @@ createServer((request, response) => {
 
   // Career Application Submissions
   const requestUrl = new URL(request.url, `http://${request.headers.host}`);
-  if (request.method === "POST" && requestUrl.pathname === "/career-api/career-submit.php") {
-    handleLocalCareerSubmission(request, response);
+  const localApiPath = requestUrl.pathname.replace(/^\/new-site(?=\/)/, "");
+  if (localApiPath === "/career-api/career-submit.php") {
+    if (request.method === "POST") {
+      handleLocalCareerSubmission(request, response);
+    } else {
+      sendJson(response, 405, { success: false, message: "POST method required" });
+    }
     return;
   }
 
-  if (request.method === "GET" && requestUrl.pathname === "/api/careers/applications") {
+  if (request.method === "GET" && localApiPath === "/api/careers/applications") {
     const applications = careerDb.prepare("SELECT id, application_no, name, email, phone, institution, category, position, department, qualification, resume_original_name, created_at FROM career_applications ORDER BY id DESC LIMIT 100").all();
     sendJson(response, 200, { success: true, count: applications.length, applications });
     return;
   }
 
   // 1. API Endpoint: Space Whiz 2026 Registration
-  if (request.url.startsWith("/api/space-whiz/register") || request.url.startsWith("/api/sssm/register")) {
+  if (localApiPath.startsWith("/api/space-whiz/register") || localApiPath.startsWith("/api/sssm/register")) {
     if (request.method !== "POST") {
       response.writeHead(405, { "Content-Type": "application/json" });
       response.end(JSON.stringify({ success: false, error: "Method not allowed. Use POST." }));
@@ -241,7 +246,7 @@ createServer((request, response) => {
   }
 
   // 2. API Endpoint: Admissions Enquiries
-  if (request.url.startsWith("/api/admission-enquiries") || request.url.startsWith("/api/enquiries")) {
+  if (localApiPath.startsWith("/api/admission-enquiries") || localApiPath.startsWith("/api/enquiries")) {
     if (request.method !== "POST") {
       response.writeHead(405, { "Content-Type": "application/json" });
       response.end(JSON.stringify({ success: false, error: "Method not allowed. Use POST." }));
@@ -310,14 +315,14 @@ createServer((request, response) => {
 
   // Legacy Aliases & Domain Redirections
   const legacyAliases = {
-    "superstars.jpg": "/brand/placement-superstars-2025-26.webp",
-    "superstars.webp": "/brand/placement-superstars-2025-26.webp",
-    "sietlogo.png": "/brand/siet-logo.png",
-    "sietlogo.webp": "/brand/siet-logo.webp",
-    "naac logo.jpg": "/brand/naac-grade-logo.webp",
-    "naac logo.webp": "/brand/naac-grade-logo.webp",
-    "nba logo.png": "/brand/nba-logo.webp",
-    "nba logo.webp": "/brand/nba-logo.webp"
+    "superstars.jpg": "/new-site/brand/placement-superstars-2025-26.webp",
+    "superstars.webp": "/new-site/brand/placement-superstars-2025-26.webp",
+    "sietlogo.png": "/new-site/brand/siet-logo.png",
+    "sietlogo.webp": "/new-site/brand/siet-logo.webp",
+    "naac logo.jpg": "/new-site/brand/naac-grade-logo.webp",
+    "naac logo.webp": "/new-site/brand/naac-grade-logo.webp",
+    "nba logo.png": "/new-site/brand/nba-logo.webp",
+    "nba logo.webp": "/new-site/brand/nba-logo.webp"
   };
 
   if (legacyAliases[cleanPath]) {
@@ -327,19 +332,19 @@ createServer((request, response) => {
   }
 
   if (cleanPath === "mydreamindia" || cleanPath === "my-dream-india") {
-    response.writeHead(302, { Location: "/mdfi/" });
+    response.writeHead(302, { Location: "/new-site/mdfi/" });
     response.end();
     return;
   }
 
   if (cleanPath === "labs" || cleanPath === "special-labs") {
-    response.writeHead(302, { Location: "/labs.html" });
+    response.writeHead(302, { Location: "/new-site/labs.html" });
     response.end();
     return;
   }
 
   if (cleanPath === "sri-shakthi-space-mission" || cleanPath === "sri shakthi space mission" || cleanPath === "space-mission" || cleanPath === "ssm") {
-    response.writeHead(302, { Location: "/sssm/" });
+    response.writeHead(302, { Location: "/new-site/sssm/" });
     response.end();
     return;
   }
@@ -384,7 +389,7 @@ createServer((request, response) => {
   });
   createReadStream(filePath).pipe(response);
 }).listen(port, () => {
-  console.log(`SIET local site: http://localhost:${port}/`);
-  console.log(`SIET local site: http://127.0.0.1:${port}/`);
-  console.log(`DCS Summary:    http://localhost:${port}/dcs-summary`);
+  console.log(`SIET local site: http://localhost:${port}/new-site/`);
+  console.log(`SIET local site: http://127.0.0.1:${port}/new-site/`);
+  console.log(`DCS Summary:    http://localhost:${port}/new-site/dcs-summary`);
 });
