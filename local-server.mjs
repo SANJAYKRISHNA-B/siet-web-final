@@ -298,7 +298,10 @@ createServer((request, response) => {
   // Intrusion & Sensitive Data Exposure Guard
   // Blocks access to .git, .gitignore, .vscode, data directory, scratch scripts, .env, and hidden dotfiles
   if (
-    cleanPath.startsWith(".git") ||
+    cleanPath &&
+    cleanPath !== "." &&
+    (
+      cleanPath.startsWith(".git") ||
     cleanPath.startsWith("data") ||
     cleanPath.startsWith("scratch") ||
     cleanPath.startsWith(".vscode") ||
@@ -307,6 +310,7 @@ createServer((request, response) => {
     cleanPath.includes("/.") ||
     cleanPath.includes("\\.") ||
     cleanPath.startsWith(".")
+    )
   ) {
     response.writeHead(403, { "Content-Type": "text/plain; charset=utf-8" });
     response.end("403 Forbidden: Access to sensitive path denied.");
