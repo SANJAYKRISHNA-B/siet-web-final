@@ -9,6 +9,9 @@ build/
 
 # Runtime and local storage
 data/
+.env
+.env.*
+!.env.example
 scratch/
 siet-web-final-main/
 chrome-profile*
