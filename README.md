@@ -19,11 +19,11 @@ This repository hosts the official high-performance web portal and affiliated mi
 
 | Route | Portal / Module | Description |
 | :--- | :--- | :--- |
-| **`/new-site/`** | **Institutional Portal** | Main university homepage, admissions enquiry, academic departments, faculty directory, placements, and campus life. |
-| **`/new-site/sssm/`** | **Sri Shakthi Space Mission (SSM)** | Sri Shakthi Space Mission and Space Whiz 2026 Online Quiz competition portal. |
-| **`/new-site/mdfi/`** | **My Dream India (MDFI)** | Sri Shakthi India Leadership & Cultural Centre (SSILCC) State-Level Essay Competition portal. |
-| **`/new-site/icchi/`** | **ICCHI 2027 Conference** | 7th International Conference on Computational and Healthcare Innovations portal. |
-| **`/new-site/dcs-summary`**| **DCS Governance Module** | Institutional statutory compliance and Departmental Coordination System summary. |
+| **`/`** | **Institutional Portal** | Main university homepage, admissions enquiry, academic departments, faculty directory, placements, and campus life. |
+| **`/sssm/`** | **Sri Shakthi Space Mission (SSM)** | Sri Shakthi Space Mission and Space Whiz 2026 Online Quiz competition portal. |
+| **`/mdfi/`** | **My Dream India (MDFI)** | Sri Shakthi India Leadership & Cultural Centre (SSILCC) State-Level Essay Competition portal. |
+| **`/icchi/`** | **ICCHI 2027 Conference** | 7th International Conference on Computational and Healthcare Innovations portal. |
+| **`/dcs-summary`**| **DCS Governance Module** | Institutional statutory compliance and Departmental Coordination System summary. |
 
 ---
 
@@ -109,11 +109,11 @@ $env:PORT="5000"; node local-server.mjs
 
 Once running, access the portals locally at:
 
-- Institutional Portal: [http://localhost:4173/new-site/](http://localhost:4173/new-site/)
-- Sri Shakthi Space Mission: [http://localhost:4173/new-site/sssm/](http://localhost:4173/new-site/sssm/)
-- My Dream India: [http://localhost:4173/new-site/mdfi/](http://localhost:4173/new-site/mdfi/)
-- ICCHI 2027 Conference: [http://localhost:4173/new-site/icchi/](http://localhost:4173/new-site/icchi/)
-- DCS Governance Summary: [http://localhost:4173/new-site/dcs-summary](http://localhost:4173/new-site/dcs-summary)
+- Institutional Portal: [http://localhost:4173/](http://localhost:4173/)
+- Sri Shakthi Space Mission: [http://localhost:4173/sssm/](http://localhost:4173/sssm/)
+- My Dream India: [http://localhost:4173/mdfi/](http://localhost:4173/mdfi/)
+- ICCHI 2027 Conference: [http://localhost:4173/icchi/](http://localhost:4173/icchi/)
+- DCS Governance Summary: [http://localhost:4173/dcs-summary](http://localhost:4173/dcs-summary)
 
 ---
 

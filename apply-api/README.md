@@ -1,7 +1,7 @@
 # Admission enquiry API
 
-The `/apply` enquiry form submits JSON to `/new-site/apply-api/apply-submit.php`.
-On cPanel, upload this folder to `public_html/new-site/apply-api/`. The handler
+The `/apply` enquiry form submits JSON to `/apply-api/apply-submit.php`.
+On cPanel, upload this folder to `public_html/apply-api/`. The handler
 reuses the existing `public_html/webportal/masterdb_config.php` connection and
 inserts into the existing `sietasru_masterdb.application` table.
 

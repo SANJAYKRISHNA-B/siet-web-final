@@ -1,6 +1,6 @@
 # QA, Functional & Intrusion Penetration Test Report
 **Target Application:** Sri Shakthi Institute of Engineering & Technology (SIET) Web Platform  
-**Target Hosts:** `http://127.0.0.1:4173/new-site/` (Local Node.js Test Harness) | `https://www.siet.ac.in/new-site/` (Production)  
+**Target Hosts:** `http://127.0.0.1:4173/` (Local Node.js Test Harness) | `https://www.siet.ac.in/` (Production)
 **Audit Scope:** Quality Assurance (Q&A), Functional Routing, Directory & Path Traversal, Sensitive Asset Perimeter, Buffer Overflows (DoS), and SQL Injection (SQLi)  
 **Classification:** Confidential Technical Assessment & Verification Report  
 **Date of Audit:** October 30, 2026  
@@ -33,10 +33,10 @@ The application serves both a client-side Single Page Application (React / Vanil
 ```mermaid
 flowchart TD
     UserReq["Incoming HTTP Request"] --> Router{"Path Evaluation"}
-    Router -->|"/new-site/labs.html"| StandaloneLabs["Serve Standalone 7-Labs Portal (HTTP 200)"]
-    Router -->|"/new-site/special-labs"| RedirectLabs["302 Found Redirect -> /labs.html"]
-    Router -->|"/new-site/assets/*"| StaticAssets["Serve Cache-Busted WebP/CSS/JS (HTTP 200)"]
-    Router -->|"/new-site/#/labs/*"| SPARoute["Load SPA & Mount Specific Lab Profile (HTTP 200)"]
+    Router -->|"/labs.html"| StandaloneLabs["Serve Standalone 7-Labs Portal (HTTP 200)"]
+    Router -->|"/special-labs"| RedirectLabs["302 Found Redirect -> /labs.html"]
+    Router -->|"/assets/*"| StaticAssets["Serve Cache-Busted WebP/CSS/JS (HTTP 200)"]
+    Router -->|"/#/labs/*"| SPARoute["Load SPA & Mount Specific Lab Profile (HTTP 200)"]
     Router -->|Sensitive Path| PerimeterGuard["403 Forbidden Access Guard"]
 ```
 
@@ -44,10 +44,10 @@ flowchart TD
 
 | Test ID | Test Target | Description | Expected Status | Observed Status | Audit Verdict |
 | :---: | :--- | :--- | :---: | :---: | :---: |
-| **QA-01** | `/new-site/` | Root application landing page | HTTP 200 | HTTP 200 OK | **PASS** |
-| **QA-02** | `/new-site/labs.html` | Standalone 7-Laboratories directory | HTTP 200 | HTTP 200 OK | **PASS** |
-| **QA-03** | `/new-site/labs` | Aliased laboratories URL | HTTP 302 | HTTP 302 Redirect | **PASS** |
-| **QA-04** | `/new-site/special-labs` | Legacy specialized laboratories shortcut | HTTP 302 | HTTP 302 Redirect | **PASS** |
+| **QA-01** | `/` | Root application landing page | HTTP 200 | HTTP 200 OK | **PASS** |
+| **QA-02** | `/labs.html` | Standalone 7-Laboratories directory | HTTP 200 | HTTP 200 OK | **PASS** |
+| **QA-03** | `/labs` | Aliased laboratories URL | HTTP 302 | HTTP 302 Redirect | **PASS** |
+| **QA-04** | `/special-labs` | Legacy specialized laboratories shortcut | HTTP 302 | HTTP 302 Redirect | **PASS** |
 | **QA-05** | `assets/images/site/ai.webp` | Authentic AI Research Lab photo | HTTP 200 | HTTP 200 (`image/webp`) | **PASS** |
 | **QA-06** | `assets/images/site/cyber2.webp` | Authentic Cybersecurity Lab photo | HTTP 200 | HTTP 200 (`image/webp`) | **PASS** |
 | **QA-07** | `assets/images/site/embedded.webp`| Authentic Embedded Systems Lab photo | HTTP 200 | HTTP 200 (`image/webp`) | **PASS** |
@@ -63,7 +63,7 @@ flowchart TD
 ### 2.3 Key Q&A Improvements Implemented
 1. **Accurate Laboratory Count:** Corrected legacy labels from "All 8 Laboratories" to "All 7 Laboratories" across the Academic Overview, navigation pagination, and directory filters.
 2. **Hero Image Layout Fix:** Fixed laboratory detail page hero card layout by setting `aspect-ratio: 16/10` with `object-fit: cover`, eliminating bottom dark-green blank blocks.
-3. **Asset Fallback Logic:** Implemented universal client-side image error recovery retrying `/new-site/brand/special-labs/` and `/assets/images/site/` to guarantee image availability across local, staging, and cPanel environments.
+3. **Asset Fallback Logic:** Implemented universal client-side image error recovery retrying `/brand/special-labs/` and `/assets/images/site/` to guarantee image availability across local, staging, and cPanel environments.
 4. **Cache Invalidation:** Incremented asset cache-buster hashes (`v=20261030-v33`) to prevent stale browser caching.
 
 ---

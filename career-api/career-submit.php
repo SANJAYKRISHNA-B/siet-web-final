@@ -34,7 +34,7 @@ if (!empty($_SERVER['HTTP_ORIGIN'])) {
  */
 $config = [];
 $db = null;
-$publicHtmlDirectory = basename(dirname(__DIR__)) === 'new-site' ? dirname(__DIR__, 2) : dirname(__DIR__);
+$publicHtmlDirectory = dirname(__DIR__);
 $configPath = getenv('CAREER_CONFIG_PATH') ?: __DIR__ . '/career-config.php';
 if (is_file($configPath)) {
     $loadedConfig = require $configPath;

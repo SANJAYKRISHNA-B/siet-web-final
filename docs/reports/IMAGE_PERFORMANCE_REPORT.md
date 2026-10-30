@@ -92,11 +92,11 @@ Using Node.js and `sharp` (libvips), all 523 raster images were processed with h
 ### 3.2 HTML & Head Optimization (`index.html`)
 - **Preloading Critical LCP Hero Image:**
   ```html
-  <link rel="preload" as="image" href="/new-site/brand/techpark-hero-wide.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/brand/techpark-hero-wide.webp" type="image/webp" fetchpriority="high">
   ```
 - **Preloading Critical Above-the-Fold Brand Logo:**
   ```html
-  <link rel="preload" as="image" href="/new-site/brand/siet-institution-logo.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="/brand/siet-institution-logo.webp" type="image/webp" fetchpriority="high">
   ```
 - **Modern Favicon & OpenGraph References:**
   Updated `favicon.ico` fallback and set WebP icon / OG image.
@@ -107,7 +107,7 @@ Using Node.js and `sharp` (libvips), all 523 raster images were processed with h
   ```css
   @media (max-width: 768px) {
     .home-impact-photo {
-      background-image: url(/new-site/brand/techpark-hero-wide-mobile.webp) !important;
+      background-image: url(/brand/techpark-hero-wide-mobile.webp) !important;
     }
   }
   ```

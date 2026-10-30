@@ -55,10 +55,10 @@ Terminal 2 — website, SQLite and webhook caller:
 node --env-file=career-api/mail-automation/.env local-server.mjs
 ```
 
-Then open `http://127.0.0.1:4173/new-site/careers`, submit the form and verify:
+Then open `http://127.0.0.1:4173/careers`, submit the form and verify:
 
 1. Success modal and application reference appear.
-2. `http://127.0.0.1:4173/new-site/api/careers/applications` contains the row.
+2. `http://127.0.0.1:4173/api/careers/applications` contains the row.
 3. The resume exists in `data/career-resumes/`.
 4. HR and applicant/test recipient inboxes receive the messages.
 5. The form API response contains `mailQueued: true` in browser Network tools.
@@ -98,15 +98,15 @@ These keys already match `career-submit.php`.
 ## cPanel Setup Node.js App
 
 1. Confirm your hosting plan includes **Setup Node.js App**. Without that feature, use PHPMailer instead.
-2. Upload `mail-automation` and the sibling `mail-templates` directory under `public_html/new-site/career-api`.
+2. Upload `mail-automation` and the sibling `mail-templates` directory under `public_html/career-api`.
 3. Create a Node.js 20+ application.
-4. Set Application Root to `new-site/career-api/mail-automation` (relative to `public_html`).
+4. Set Application Root to `career-api/mail-automation` (relative to `public_html`).
 5. Set Startup File to `server.mjs`.
 6. Run **NPM Install** in cPanel.
 7. Copy `.env.example` to `.env` in the application directory and replace all placeholders. Alternatively, enter the values in cPanel's environment-variable interface. Never upload real SMTP passwords or webhook tokens to GitHub.
 8. Restart the application and open its `/health` URL.
 9. Check `/health`; its `ready` field should be `true` and `missing` should be empty. It never returns secret values.
-10. In `public_html/new-site/career-api/career-config.php`, set `mail_webhook_url` to the Node application's assigned URL ending in `/career-submission` and `mail_webhook_token` to the same token as the Node app. PHP cannot read the Node app's `.env` file.
+10. In `public_html/career-api/career-config.php`, set `mail_webhook_url` to the Node application's assigned URL ending in `/career-submission` and `mail_webhook_token` to the same token as the Node app. PHP cannot read the Node app's `.env` file.
 11. Submit a test application and verify the HR email, applicant email, database record and resume.
 
 ## Payload fields

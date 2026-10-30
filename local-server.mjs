@@ -381,7 +381,7 @@ createServer((request, response) => {
 
   // Career Application Submissions
   const requestUrl = new URL(request.url, `http://${request.headers.host}`);
-  const localApiPath = requestUrl.pathname.replace(/^\/new-site(?=\/)/, "");
+  const localApiPath = requestUrl.pathname;
   if (localApiPath === "/apply-api/apply-submit.php") {
     if (!isSameOriginRequest(request)) sendJson(response, 403, { success: false, message: "Cross-origin form submissions are not allowed." });
     else if (request.method === "POST") handleLocalApplySubmission(request, response);
@@ -559,7 +559,7 @@ createServer((request, response) => {
 
   // 3. Static File & Path Routing
   const requestPath = decodeURIComponent(new URL(request.url, `http://${request.headers.host}`).pathname);
-  const relativePath = requestPath.replace(/^\/new-site\/?/, "");
+  const relativePath = requestPath.replace(/^\/+/, "");
   const safePath = normalize(relativePath).replace(/^(\.\.(\/|\\|$))+/, "");
   const cleanPath = safePath.toLowerCase().replace(/^[\\/]+|[\\/]+$/g, "");
 
@@ -588,14 +588,14 @@ createServer((request, response) => {
 
   // Legacy Aliases & Domain Redirections
   const legacyAliases = {
-    "superstars.jpg": "/new-site/brand/placement-superstars-2025-26.webp",
-    "superstars.webp": "/new-site/brand/placement-superstars-2025-26.webp",
-    "sietlogo.png": "/new-site/brand/siet-logo.png",
-    "sietlogo.webp": "/new-site/brand/siet-logo.webp",
-    "naac logo.jpg": "/new-site/brand/naac-grade-logo.webp",
-    "naac logo.webp": "/new-site/brand/naac-grade-logo.webp",
-    "nba logo.png": "/new-site/brand/nba-logo.webp",
-    "nba logo.webp": "/new-site/brand/nba-logo.webp"
+    "superstars.jpg": "/brand/placement-superstars-2025-26.webp",
+    "superstars.webp": "/brand/placement-superstars-2025-26.webp",
+    "sietlogo.png": "/brand/siet-logo.png",
+    "sietlogo.webp": "/brand/siet-logo.webp",
+    "naac logo.jpg": "/brand/naac-grade-logo.webp",
+    "naac logo.webp": "/brand/naac-grade-logo.webp",
+    "nba logo.png": "/brand/nba-logo.webp",
+    "nba logo.webp": "/brand/nba-logo.webp"
   };
 
   if (legacyAliases[cleanPath]) {
@@ -605,19 +605,19 @@ createServer((request, response) => {
   }
 
   if (cleanPath === "mydreamindia" || cleanPath === "my-dream-india") {
-    response.writeHead(302, { Location: "/new-site/mdfi/" });
+    response.writeHead(302, { Location: "/mdfi/" });
     response.end();
     return;
   }
 
   if (cleanPath === "labs" || cleanPath === "special-labs") {
-    response.writeHead(302, { Location: "/new-site/labs.html" });
+    response.writeHead(302, { Location: "/labs.html" });
     response.end();
     return;
   }
 
   if (["sri-shakthi-space-mission", "sri shakthi space mission", "sri-shakthi-space-mission.php", "space-mission", "space-whiz", "spacewhiz", "shakthisat", "srishakthisat", "space", "ssm"].includes(cleanPath)) {
-    response.writeHead(302, { Location: "/new-site/sssm/" });
+    response.writeHead(302, { Location: "/sssm/" });
     response.end();
     return;
   }
@@ -662,7 +662,7 @@ createServer((request, response) => {
   });
   createReadStream(filePath).pipe(response);
 }).listen(port, () => {
-  console.log(`SIET local site: http://localhost:${port}/new-site/`);
-  console.log(`SIET local site: http://127.0.0.1:${port}/new-site/`);
-  console.log(`DCS Summary:    http://localhost:${port}/new-site/dcs-summary`);
+  console.log(`SIET local site: http://localhost:${port}/`);
+  console.log(`SIET local site: http://127.0.0.1:${port}/`);
+  console.log(`DCS Summary:    http://localhost:${port}/dcs-summary`);
 });

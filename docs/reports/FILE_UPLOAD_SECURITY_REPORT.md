@@ -179,7 +179,7 @@ A test suite of 12 distinct attack and legitimate document scenarios was execute
 ## 6. Storage Isolation & Hardening Controls
 
 To prevent post-upload exploitation (e.g., executing an uploaded file via a direct web request):
-1. **Isolated Storage Path:** Uploaded resumes are saved to `data/career-resumes/`, located entirely outside the public web root (`/new-site/` or public HTML).
+1. **Isolated Storage Path:** Uploaded resumes are saved to `data/career-resumes/`, located entirely outside the public web root (`/` or public HTML).
 2. **Perimeter Block:** Any HTTP request targeting `/data/` is blocked with **`HTTP 403 Forbidden`** by the server perimeter guard.
 3. **Randomized File Renaming:** Files are never saved using applicant-supplied filenames. Resumes are renamed to `SIET-ENG-YYYYMMDD-SERIAL.ext`, preventing path traversal (`../../`) and file overwrite attacks.
 4. **Execution Permissions Disabled:** Storage directory flags and `.htaccess` disable script execution:

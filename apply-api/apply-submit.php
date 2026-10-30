@@ -134,7 +134,7 @@ foreach ([$name, $email, $location, $department, $previousQualification, $level,
     if (hasControlCharacters($value)) respond(422, ['success' => false, 'message' => 'Remove control characters from the form fields.']);
 }
 
-$publicHtmlDirectory = basename(dirname(__DIR__)) === 'new-site' ? dirname(__DIR__, 2) : dirname(__DIR__);
+$publicHtmlDirectory = dirname(__DIR__);
 $legacyConfigPath = $publicHtmlDirectory . '/webportal/masterdb_config.php';
 if (!is_file($legacyConfigPath)) {
     error_log('Apply API could not find public_html/webportal/masterdb_config.php.');
