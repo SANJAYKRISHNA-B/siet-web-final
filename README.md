@@ -48,7 +48,9 @@ siet-website-portal/
 ├── docs/                        # Institutional documentation and reports
 │   ├── content-archive/         # Content audit records and source asset collections
 │   └── reports/                 # Technical audits and optimization reports
-│       └── IMAGE_PERFORMANCE_REPORT.md  # Core Web Vitals & WebP audit report
+│       ├── IMAGE_PERFORMANCE_REPORT.md  # Core Web Vitals & WebP audit report
+│       ├── QA_AND_INTRUSION_TEST_REPORT.md # Functional Q&A, perimeter guard & SQLi audit
+│       └── FILE_UPLOAD_SECURITY_REPORT.md  # File upload anti-malware & binary header report
 ├── downloads/                   # Public institutional documents & syllabi
 │   ├── anna-univ-affiliation/   # Anna University affiliation approvals
 │   ├── mandatory-disclosure/    # AICTE mandatory public disclosures
