@@ -7,9 +7,9 @@
   <meta name="description" content="Explore Sri Shakthi Institute of Engineering & Technology's 7 world-class advanced research laboratories: AI, Cybersecurity, Embedded Systems & VLSI, AR/VR, Robotics, PCB Assembly, and IoT.">
   <meta property="og:title" content="Specialized Research Laboratories | Sri Shakthi Institute of Engineering & Technology">
   <meta property="og:description" content="7 state-of-the-art specialized research centers with authentic campus facilities, high-compute GPU clusters, ABB robotics, and industry EDA suites.">
-  <meta property="og:image" content="/assets/images/site/ai.webp">
+  <meta property="og:image" content="/new-site/brand/special-labs/lab-ai-hd.webp">
   <meta property="og:type" content="website">
-  <link rel="icon" href="/brand/siet-logo.webp" type="image/webp">
+  <link rel="icon" href="/new-site/brand/siet-logo.webp" type="image/webp">
   <link rel="alternate icon" href="/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
 
   <title>Specialized Research Laboratories | Sri Shakthi Institute of Engineering &amp; Technology</title>
 
-  <link rel="stylesheet" href="/assets/special-labs.css?v=20261030-v2">
+  <link rel="stylesheet" href="/new-site/assets/special-labs.css?v=20261030-v2">
 
   <style>
     :root {
@@ -636,6 +636,22 @@
       color: var(--accent-gold);
     }
   </style>
+  <script>
+    // Resilience fallback: automatically retry with /brand/ or /assets/ if /new-site/ prefix fails, or vice versa
+    window.addEventListener('error', function(event) {
+      if (event.target && event.target.tagName === 'IMG') {
+        const img = event.target;
+        if (img.dataset.hasFallenBack) return;
+        img.dataset.hasFallenBack = 'true';
+        const currentSrc = img.src || '';
+        if (currentSrc.includes('/new-site/brand/special-labs/')) {
+          img.src = currentSrc.replace('/new-site/brand/special-labs/', '/brand/special-labs/');
+        } else if (currentSrc.includes('/brand/special-labs/')) {
+          img.src = currentSrc.replace('/brand/special-labs/', '/new-site/brand/special-labs/');
+        }
+      }
+    }, true);
+  </script>
 </head>
 <body>
 
@@ -649,7 +665,7 @@
   <header class="main-nav-bar">
     <div class="brand-logo-wrap">
       <a href="/#/">
-        <img src="/brand/siet-logo.webp" alt="Sri Shakthi Logo" class="brand-logo-img" onerror="this.src='/brand/sietlogo.png'">
+        <img src="/new-site/brand/siet-logo.webp" alt="Sri Shakthi Logo" class="brand-logo-img" onerror="this.src='/new-site/brand/sietlogo.png'">
       </a>
       <div class="brand-text-col">
         <span class="brand-title">SRI SHAKTHI</span>
@@ -658,7 +674,7 @@
     </div>
     <ul class="nav-links">
       <li><a href="/#/">Home</a></li>
-      <li><a href="/#special-labs">All Labs</a></li>
+      <li><a href="/new-site/#special-labs">All Labs</a></li>
       <li><a href="/#facilities">Campus Facilities</a></li>
       <li><a href="/#academics">Academics</a></li>
       <li><a href="/#contact">Contact</a></li>
@@ -717,16 +733,16 @@
     <!-- 01. Artificial Intelligence Research Lab -->
     <article class="lab-feature-card" data-category="computing" id="ai-lab">
       <div class="lab-feature-media">
-        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/ai.webp" data-title="AI Lab - Computing Workspace" data-desc="High-compute GPU workstations running agentic AI and neural architectures.">
-          <img src="/assets/images/site/ai.webp" alt="AI Research Lab Workstations" class="lab-feature-main-img" loading="eager">
+        <div class="lab-feature-main-img-wrap" data-img="/new-site/brand/special-labs/lab-ai-hd.webp" data-title="AI Lab - Computing Workspace" data-desc="High-compute GPU workstations running agentic AI and neural architectures.">
+          <img src="/new-site/brand/special-labs/lab-ai-hd.webp" alt="AI Research Lab Workstations" class="lab-feature-main-img" loading="eager">
           <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
         </div>
         <div class="lab-feature-thumbs-row">
-          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/ai.webp" data-title="AI Lab - Agentic AI Workstations" data-desc="Students working at dual-display stations with neural wall illumination.">
-            <img src="/assets/images/site/ai.webp" alt="AI Lab active">
+          <div class="lab-feature-thumb is-active" data-src="/new-site/brand/special-labs/lab-ai-hd.webp" data-title="AI Lab - Agentic AI Workstations" data-desc="Students working at dual-display stations with neural wall illumination.">
+            <img src="/new-site/brand/special-labs/lab-ai-hd.webp" alt="AI Lab active">
           </div>
-          <div class="lab-feature-thumb" data-src="/assets/images/site/ai1.webp" data-title="AI Lab - Wide Research Arena" data-desc="Wide-angle view of luxury marble workspace, acoustic panels, and compute nodes.">
-            <img src="/assets/images/site/ai1.webp" alt="AI Lab wide perspective">
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/ai1.webp" data-title="AI Lab - Wide Research Arena" data-desc="Wide-angle view of luxury marble workspace, acoustic panels, and compute nodes.">
+            <img src="/new-site/brand/special-labs/ai1.webp" alt="AI Lab wide perspective">
           </div>
           <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-ai-intel-partnership.webp" data-title="Intel AI Partnership Architecture" data-desc="Intel AI Lab partnership specifications with Xeon Gold clusters.">
             <img src="/new-site/brand/special-labs/pptx-ai-intel-partnership.webp" alt="Intel AI Partnership">
@@ -766,16 +782,16 @@
     <!-- 02. Cyber Security & Cloud Computing Research Lab -->
     <article class="lab-feature-card" data-category="computing" id="cyber-cloud-lab">
       <div class="lab-feature-media">
-        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/cyber2.webp" data-title="Cybersecurity Operations Console" data-desc="Active threat simulation, vulnerability assessment, and enterprise server monitoring.">
-          <img src="/assets/images/site/cyber2.webp" alt="Cybersecurity Lab Active Session" class="lab-feature-main-img" loading="lazy">
+        <div class="lab-feature-main-img-wrap" data-img="/new-site/brand/special-labs/lab-cyber-cloud-hd.webp" data-title="Cybersecurity Operations Console" data-desc="Active threat simulation, vulnerability assessment, and enterprise server monitoring.">
+          <img src="/new-site/brand/special-labs/lab-cyber-cloud-hd.webp" alt="Cybersecurity Lab Active Session" class="lab-feature-main-img" loading="lazy">
           <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
         </div>
         <div class="lab-feature-thumbs-row">
-          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/cyber2.webp" data-title="Cybersecurity Lab - Threat Assessment" data-desc="Students actively coding and testing network telemetry.">
-            <img src="/assets/images/site/cyber2.webp" alt="Cybersecurity active">
+          <div class="lab-feature-thumb is-active" data-src="/new-site/brand/special-labs/lab-cyber-cloud-hd.webp" data-title="Cybersecurity Lab - Threat Assessment" data-desc="Students actively coding and testing network telemetry.">
+            <img src="/new-site/brand/special-labs/lab-cyber-cloud-hd.webp" alt="Cybersecurity active">
           </div>
-          <div class="lab-feature-thumb" data-src="/assets/images/site/cyber1.webp" data-title="Cybersecurity Lab - Dedicated Suite" data-desc="Illuminated identity panel and centralized SOC monitoring displays.">
-            <img src="/assets/images/site/cyber1.webp" alt="Cybersecurity lab front view">
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/cyber1.webp" data-title="Cybersecurity Lab - Dedicated Suite" data-desc="Illuminated identity panel and centralized SOC monitoring displays.">
+            <img src="/new-site/brand/special-labs/cyber1.webp" alt="Cybersecurity lab front view">
           </div>
           <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-cyber-security.webp" data-title="Research Hall of Fame" data-desc="Hall of Fame recognitions from Apple, Google, Microsoft, and NASA.">
             <img src="/new-site/brand/special-labs/pptx-cyber-security.webp" alt="Cybersecurity achievements">
@@ -815,19 +831,19 @@
     <!-- 03. Embedded Systems & VLSI Research Lab -->
     <article class="lab-feature-card" data-category="hardware" id="embedded-systems-lab">
       <div class="lab-feature-media">
-        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/embedded.webp" data-title="Embedded Design Lab Hardware Benches" data-desc="Oscilloscopes, STM32 development boards, and digital circuit analyzers.">
-          <img src="/assets/images/site/embedded.webp" alt="Embedded Design Lab" class="lab-feature-main-img" loading="lazy">
+        <div class="lab-feature-main-img-wrap" data-img="/new-site/brand/special-labs/lab-embedded-hd.webp" data-title="Embedded Design Lab Hardware Benches" data-desc="Oscilloscopes, STM32 development boards, and digital circuit analyzers.">
+          <img src="/new-site/brand/special-labs/lab-embedded-hd.webp" alt="Embedded Design Lab" class="lab-feature-main-img" loading="lazy">
           <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
         </div>
         <div class="lab-feature-thumbs-row">
-          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/embedded.webp" data-title="Embedded Systems Workbenches" data-desc="Microcontroller diagnostics and circuit capture.">
-            <img src="/assets/images/site/embedded.webp" alt="Embedded lab benches">
+          <div class="lab-feature-thumb is-active" data-src="/new-site/brand/special-labs/lab-embedded-hd.webp" data-title="Embedded Systems Workbenches" data-desc="Microcontroller diagnostics and circuit capture.">
+            <img src="/new-site/brand/special-labs/lab-embedded-hd.webp" alt="Embedded lab benches">
           </div>
-          <div class="lab-feature-thumb" data-src="/assets/images/site/vlsi.webp" data-title="VLSI Silicon EDA Workstations" data-desc="Cadence and Synopsys dual-screen EDA suites for ASIC tape-outs.">
-            <img src="/assets/images/site/vlsi.webp" alt="VLSI lab workstations">
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/vlsi.webp" data-title="VLSI Silicon EDA Workstations" data-desc="Cadence and Synopsys dual-screen EDA suites for ASIC tape-outs.">
+            <img src="/new-site/brand/special-labs/vlsi.webp" alt="VLSI lab workstations">
           </div>
-          <div class="lab-feature-thumb" data-src="/assets/images/site/vlsi1.webp" data-title="Semiconductor Tape-Out Facility" data-desc="Spacious EDA suite displaying multi-layer silicon tape-outs.">
-            <img src="/assets/images/site/vlsi1.webp" alt="VLSI wide view">
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/vlsi1.webp" data-title="Semiconductor Tape-Out Facility" data-desc="Spacious EDA suite displaying multi-layer silicon tape-outs.">
+            <img src="/new-site/brand/special-labs/vlsi1.webp" alt="VLSI wide view">
           </div>
           <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-embedded-hardware.webp" data-title="Automotive Hardware Testbenches" data-desc="Vehicle electronics diagnostics and CAN telemetry.">
             <img src="/new-site/brand/special-labs/pptx-embedded-hardware.webp" alt="Automotive hardware">
@@ -870,19 +886,19 @@
     <!-- 04. AR & VR Lab -->
     <article class="lab-feature-card" data-category="emerging" id="ar-vr-lab">
       <div class="lab-feature-media">
-        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/arvr.webp" data-title="AR/VR Spatial Computing Arena" data-desc="Students building and testing XR applications with Meta Quest 3 headsets.">
-          <img src="/assets/images/site/arvr.webp" alt="AR/VR Lab Session" class="lab-feature-main-img" loading="lazy">
+        <div class="lab-feature-main-img-wrap" data-img="/new-site/brand/special-labs/lab-ar-vr-hd.webp" data-title="AR/VR Spatial Computing Arena" data-desc="Students building and testing XR applications with Meta Quest 3 headsets.">
+          <img src="/new-site/brand/special-labs/lab-ar-vr-hd.webp" alt="AR/VR Lab Session" class="lab-feature-main-img" loading="lazy">
           <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
         </div>
         <div class="lab-feature-thumbs-row">
-          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/arvr.webp" data-title="AR/VR Active Testing" data-desc="Students engaged in spatial computing and mixed reality development.">
-            <img src="/assets/images/site/arvr.webp" alt="AR/VR active">
+          <div class="lab-feature-thumb is-active" data-src="/new-site/brand/special-labs/lab-ar-vr-hd.webp" data-title="AR/VR Active Testing" data-desc="Students engaged in spatial computing and mixed reality development.">
+            <img src="/new-site/brand/special-labs/lab-ar-vr-hd.webp" alt="AR/VR active">
           </div>
-          <div class="lab-feature-thumb" data-src="/assets/images/site/arvr1.webp" data-title="AR/VR Neon Suite" data-desc="Acoustically tuned testing arena with illuminated neon identity.">
-            <img src="/assets/images/site/arvr1.webp" alt="AR/VR neon studio">
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/arvr1.webp" data-title="AR/VR Neon Suite" data-desc="Acoustically tuned testing arena with illuminated neon identity.">
+            <img src="/new-site/brand/special-labs/arvr1.webp" alt="AR/VR neon studio">
           </div>
-          <div class="lab-feature-thumb" data-src="/assets/images/site/arvr2.webp" data-title="AR/VR Robotics Interface" data-desc="Angled view showing glass partition to robotics lab.">
-            <img src="/assets/images/site/arvr2.webp" alt="AR/VR robotics view">
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/arvr2.webp" data-title="AR/VR Robotics Interface" data-desc="Angled view showing glass partition to robotics lab.">
+            <img src="/new-site/brand/special-labs/arvr2.webp" alt="AR/VR robotics view">
           </div>
         </div>
       </div>
@@ -919,16 +935,16 @@
     <!-- 05. Robotics & Automation Research Lab -->
     <article class="lab-feature-card" data-category="emerging" id="robotics-automation-lab">
       <div class="lab-feature-media">
-        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/robo1.webp" data-title="Robotics & Automation Suite" data-desc="ABB Cobot-AMR mobile base, micromouse maze arena, and ROS2 stations.">
-          <img src="/assets/images/site/robo1.webp" alt="Robotics Lab Arena" class="lab-feature-main-img" loading="lazy">
+        <div class="lab-feature-main-img-wrap" data-img="/new-site/brand/special-labs/lab-robotics-hd.webp" data-title="Robotics & Automation Suite" data-desc="ABB Cobot-AMR mobile base, micromouse maze arena, and ROS2 stations.">
+          <img src="/new-site/brand/special-labs/lab-robotics-hd.webp" alt="Robotics Lab Arena" class="lab-feature-main-img" loading="lazy">
           <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
         </div>
         <div class="lab-feature-thumbs-row">
-          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/robo1.webp" data-title="Robotics Arena & Maze" data-desc="Wide perspective showing ABB Cobot-AMR and autonomous maze.">
-            <img src="/assets/images/site/robo1.webp" alt="Robotics arena">
+          <div class="lab-feature-thumb is-active" data-src="/new-site/brand/special-labs/lab-robotics-hd.webp" data-title="Robotics Arena & Maze" data-desc="Wide perspective showing ABB Cobot-AMR and autonomous maze.">
+            <img src="/new-site/brand/special-labs/lab-robotics-hd.webp" alt="Robotics arena">
           </div>
-          <div class="lab-feature-thumb" data-src="/assets/images/site/robo.webp" data-title="ABB Cobot-AMR Mobile Robot" data-desc="Sri Shakthi branded collaborative robotic mobile manipulator.">
-            <img src="/assets/images/site/robo.webp" alt="ABB Cobot-AMR">
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/robo.webp" data-title="ABB Cobot-AMR Mobile Robot" data-desc="Sri Shakthi branded collaborative robotic mobile manipulator.">
+            <img src="/new-site/brand/special-labs/robo.webp" alt="ABB Cobot-AMR">
           </div>
           <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-robotics-gantry.webp" data-title="6-Axis Gantry Platform" data-desc="Industrial precision gantry system for heavy-duty automation.">
             <img src="/new-site/brand/special-labs/pptx-robotics-gantry.webp" alt="Gantry platform">
@@ -968,13 +984,13 @@
     <!-- 06. PCB Design & Assembly Lab -->
     <article class="lab-feature-card" data-category="hardware" id="pcb-design-assembly-lab">
       <div class="lab-feature-media">
-        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/embedded1.webp" data-title="PCB Assembly Line" data-desc="Automated SMT pick-and-place machine and multi-zone conveyor line.">
-          <img src="/assets/images/site/embedded1.webp" alt="SMT Pick and Place Machine" class="lab-feature-main-img" loading="lazy">
+        <div class="lab-feature-main-img-wrap" data-img="/new-site/brand/special-labs/lab-pcb-hd.webp" data-title="PCB Assembly Line" data-desc="Automated SMT pick-and-place machine and multi-zone conveyor line.">
+          <img src="/new-site/brand/special-labs/lab-pcb-hd.webp" alt="SMT Pick and Place Machine" class="lab-feature-main-img" loading="lazy">
           <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
         </div>
         <div class="lab-feature-thumbs-row">
-          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/embedded1.webp" data-title="SMT Pick & Place Machine" data-desc="High-speed surface mount technology placement system and conveyor.">
-            <img src="/assets/images/site/embedded1.webp" alt="SMT Line">
+          <div class="lab-feature-thumb is-active" data-src="/new-site/brand/special-labs/lab-pcb-hd.webp" data-title="SMT Pick & Place Machine" data-desc="High-speed surface mount technology placement system and conveyor.">
+            <img src="/new-site/brand/special-labs/lab-pcb-hd.webp" alt="SMT Line">
           </div>
           <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-pcb-assembly.webp" data-title="Reflow Thermal Soldering" data-desc="Automated stencil printing and thermal reflow oven integration.">
             <img src="/new-site/brand/special-labs/pptx-pcb-assembly.webp" alt="PCB assembly">
@@ -1017,16 +1033,16 @@
     <!-- 07. Internet of Things (IoT) Lab -->
     <article class="lab-feature-card" data-category="emerging" id="iot-lab">
       <div class="lab-feature-media">
-        <div class="lab-feature-main-img-wrap" data-img="/assets/images/site/iot.webp" data-title="IoT Lab Research Arena" data-desc="Smart grid mural, collaborative benches, and wireless telemetry testbeds.">
-          <img src="/assets/images/site/iot.webp" alt="IoT Lab Workstations" class="lab-feature-main-img" loading="lazy">
+        <div class="lab-feature-main-img-wrap" data-img="/new-site/brand/special-labs/lab-iot-hd.webp" data-title="IoT Lab Research Arena" data-desc="Smart grid mural, collaborative benches, and wireless telemetry testbeds.">
+          <img src="/new-site/brand/special-labs/lab-iot-hd.webp" alt="IoT Lab Workstations" class="lab-feature-main-img" loading="lazy">
           <span class="lab-feature-zoom-hint">🔍 Click to zoom</span>
         </div>
         <div class="lab-feature-thumbs-row">
-          <div class="lab-feature-thumb is-active" data-src="/assets/images/site/iot.webp" data-title="IoT Lab Mural & Stations" data-desc="Active student benches equipped with smart grid mural and controllers.">
-            <img src="/assets/images/site/iot.webp" alt="IoT lab active">
+          <div class="lab-feature-thumb is-active" data-src="/new-site/brand/special-labs/lab-iot-hd.webp" data-title="IoT Lab Mural & Stations" data-desc="Active student benches equipped with smart grid mural and controllers.">
+            <img src="/new-site/brand/special-labs/lab-iot-hd.webp" alt="IoT lab active">
           </div>
-          <div class="lab-feature-thumb" data-src="/assets/images/site/iot1.webp" data-title="IoT Lab Collaboration View" data-desc="Wide perspective showing RF test stations and sensor integration benches.">
-            <img src="/assets/images/site/iot1.webp" alt="IoT lab wide view">
+          <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/iot1.webp" data-title="IoT Lab Collaboration View" data-desc="Wide perspective showing RF test stations and sensor integration benches.">
+            <img src="/new-site/brand/special-labs/iot1.webp" alt="IoT lab wide view">
           </div>
           <div class="lab-feature-thumb" data-src="/new-site/brand/special-labs/pptx-iot-sensors.webp" data-title="Sensor Array Ecosystem" data-desc="Multi-protocol telemetry modules including LoRaWAN and BLE.">
             <img src="/new-site/brand/special-labs/pptx-iot-sensors.webp" alt="IoT sensors">
