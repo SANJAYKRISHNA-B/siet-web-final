@@ -1,101 +1,377 @@
 # =============================================================================
-# SIET APACHE CONFIGURATION (.htaccess)
+# .htaccess — Security Hardening for siet.ac.in
+# Server: Apache + PHP + MySQL
+# =============================================================================
+# INSTRUCTIONS:
+#   1. Place this file in your website root (public_html / www / htdocs)
+#   2. Ensure mod_rewrite and mod_headers are enabled on your Apache server
+#   3. Test in staging before deploying to production
+#   4. Review the IP block list monthly and remove expired entries
 # =============================================================================
 
-# Disable directory browsing and mod_negotiation MultiViews
-Options -Indexes -MultiViews
+Options -Indexes -ExecCGI
+ServerSignature Off
 
-# Default index file
-DirectoryIndex index.html
+# -----------------------------------------------------------------------------
+# SECTION 1 — BLOCK CONFIRMED MALICIOUS IPs (from log analysis)
+# -----------------------------------------------------------------------------
+# These IPs were identified as high-volume attackers in the 19–20 Mar 2026 logs.
+# Re-evaluate this list monthly — cloud IPs rotate.
 
-# Fallback error document to ensure SPA catches any uncaught routes
-ErrorDocument 404 /index.html
+<RequireAll>
+    Require all granted
+
+    # --- Webshell probe IPs (Bangladesh / South Asia) ---
+    Require not ip 103.77.107.132
+    Require not ip 157.66.56.188
+    Require not ip 103.65.237.158
+
+    # --- High-volume scanner bots (Azure US, DigitalOcean, Psychz Networks) ---
+    Require not ip 20.220.232.240
+    Require not ip 172.93.212.236
+    Require not ip 142.93.211.25
+    Require not ip 52.169.148.186
+
+    # --- Form flooding IPs ---
+    Require not ip 91.103.248.60
+    Require not ip 98.70.243.25
+    Require not ip 137.59.47.47
+    Require not ip 137.59.47.73
+    Require not ip 147.45.79.175
+    Require not ip 176.222.54.229
+    Require not ip 45.135.3.205
+    Require not ip 89.167.37.217
+    Require not ip 179.61.129.188
+    Require not ip 45.153.34.43
+    Require not ip 149.102.225.182
+    Require not ip 194.26.192.111
+    Require not ip 141.98.11.17
+
+    # --- Bulletproof / suspicious hosting ---
+    Require not ip 51.79.128.217
+    Require not ip 163.252.83.164
+</RequireAll>
+
+# -----------------------------------------------------------------------------
+# SECTION 2 — BLOCK WEBSHELL & BACKDOOR PATHS
+# Patterns identified directly from your logs: ALFA, LEVIATHAN, RIMURU, Escobar
+# These are known PHP webshell signatures. Block them before they hit PHP.
+# -----------------------------------------------------------------------------
 
 <IfModule mod_rewrite.c>
-  RewriteEngine On
-  RewriteBase /
+    RewriteEngine On
 
-  # Redirect HTTP to HTTPS (enable after confirming TLS on all subdomains)
-  # RewriteCond %{HTTPS} off
-  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+    # Block known webshell toolkit paths (case-insensitive)
+    RewriteRule ^(.*)alfacgiapi(.*)$            - [F,L,NC]
+    RewriteRule ^(.*)haxorcgiapi(.*)$           - [F,L,NC]
+    RewriteRule ^(.*)rimurucgiapi(.*)$          - [F,L,NC]
+    RewriteRule ^(.*)ALFA_DATA(.*)$             - [F,L,NC]
+    RewriteRule ^(.*)LEVIATHAN(.*)$             - [F,L,NC]
+    RewriteRule ^(.*)RIMURU(.*)$                - [F,L,NC]
+    RewriteRule ^(.*)Escobar(.*)$               - [F,L,NC]
+    RewriteRule ^(.*)1337_DATA(.*)$             - [F,L,NC]
+    RewriteRule ^(.*)jancox(.*)$                - [F,L,NC]
+    RewriteRule ^(.*)perl\.alfa(.*)$            - [F,L,NC]
+    RewriteRule ^(.*)perl\.haxor(.*)$           - [F,L,NC]
+    RewriteRule ^(.*)perl\.rimuru(.*)$          - [F,L,NC]
 
-  # The canonical SSSM route uses the same page rendered by the main SPA.
-  RewriteRule ^sssm/?$ /index.html [L]
+    # Block direct access to shell/script file extensions in upload dirs
+    RewriteRule ^uploads/.*\.(php|phtml|php3|php4|php5|php7|phar|shtml|pl|cgi|sh)$ - [F,L,NC]
+    RewriteRule ^images/.*\.(php|phtml|phar|pl|cgi|sh)$                            - [F,L,NC]
+    RewriteRule ^img/.*\.(php|phtml|phar|pl|cgi|sh)$                               - [F,L,NC]
 
-  # Keep old COE links working while all current links use /downloads/.
-  RewriteRule ^download/(.*)$ /downloads/$1 [R=302,L,NE]
+    # Block common WordPress exploit paths (probed even on non-WP sites)
+    RewriteRule ^wp-admin/(.*)$                 - [F,L,NC]
+    RewriteRule ^wp-content/(.*)$               - [F,L,NC]
+    RewriteRule ^wp-includes/(.*)$              - [F,L,NC]
+    RewriteRule ^xmlrpc\.php$                   - [F,L,NC]
+    RewriteRule ^wp-login\.php$                 - [F,L,NC]
 
-  # Redirect removed duplicate filenames to their retained canonical PDF.
-  RewriteRule ^downloads/(CIA-II-semester-VII-UG-Rescheduled|CIA-II-semester-VII-UG|SIET-Brochure|sample-syllabus|Regulation-2021-UG)\.pdf$ /downloads/Regulation%202021%20UG.pdf [R=302,L,NE]
-  RewriteRule ^downloads/Transcript-application-form\.pdf$ /downloads/Transcript%20application%20form.pdf [R=302,L,NE]
-  RewriteRule ^downloads/Duplicate-Certificate-Form\.pdf$ /downloads/Duplicate%20Certificate%20Form.pdf [R=302,L,NE]
-  RewriteRule ^downloads/Revaluation-form\.pdf$ /downloads/Revaluation%20form.pdf [R=302,L,NE]
-  RewriteRule ^downloads/Revaluation-Script-Valuation-form\.pdf$ /downloads/Revaluation-Script%20Valuation%20form.pdf [R=302,L,NE]
-  RewriteRule ^downloads/Regulation-2021-PG\.pdf$ /downloads/Regulation%202021%20PG.pdf [R=302,L,NE]
-  RewriteRule ^downloads/R2021-UG-AMENDMENT-I\.pdf$ /downloads/R2021%20UG-AMENDMENT%20-%20I%20SIET.pdf [R=302,L,NE]
-  RewriteRule ^downloads/R2021-UG-AMENDMENT-II\.pdf$ /downloads/R2021%20UG-AMENDMENT%20-%20II%20SIET.pdf [R=302,L,NE]
+    # Block common PHP info / config exposure probes
+    RewriteRule ^phpinfo\.php$                  - [F,L,NC]
+    RewriteRule ^php-info\.php$                 - [F,L,NC]
+    RewriteRule ^info\.php$                     - [F,L,NC]
+    RewriteRule ^test\.php$                     - [F,L,NC]
+    RewriteRule ^\.env$                         - [F,L,NC]
+    RewriteRule ^\.git/(.*)$                    - [F,L,NC]
+    RewriteRule ^config\.php$                   - [F,L,NC]
+    RewriteRule ^configuration\.php$            - [F,L,NC]
+    RewriteRule ^db\.php$                       - [F,L,NC]
+    RewriteRule ^database\.php$                 - [F,L,NC]
 
-  # If index.html is directly requested, stop rewriting
-  RewriteRule ^index\.html$ - [L]
+    # Block path traversal attempts
+    RewriteCond %{QUERY_STRING} (\.\./|\.\.%2F|%2E%2E%2F) [NC]
+    RewriteRule .* - [F,L]
 
-  # Serve real compiled assets, images, downloads, and PHP scripts directly.
-  RewriteCond %{REQUEST_FILENAME} -f
-  RewriteRule ^ - [L]
+    # Block null byte injection
+    RewriteCond %{QUERY_STRING} %00 [NC]
+    RewriteRule .* - [F,L]
 
-  # Serve real directories only if they contain an index.html file (e.g. /, /icchi/, /mdfi/)
-  RewriteCond %{REQUEST_FILENAME} -d
-  RewriteCond %{REQUEST_FILENAME}/index.html -f
-  RewriteRule ^ - [L]
+    # Block base64-encoded exploit payloads in query strings
+    RewriteCond %{QUERY_STRING} (base64_encode|base64_decode)\s*\( [NC]
+    RewriteRule .* - [F,L]
 
-  # Send all clean SPA application routes back to the React entry point.
-  RewriteRule . /index.html [L]
+    # Block eval/exec injection in query strings
+    RewriteCond %{QUERY_STRING} (eval\(|passthru\(|shell_exec\(|system\(|popen\(|proc_open\() [NC]
+    RewriteRule .* - [F,L]
+
+    # Block SQL injection patterns in query strings
+    RewriteCond %{QUERY_STRING} (union(\s|%20)+(all(\s|%20)+)?select|information_schema|load_file\s*\() [NC,OR]
+    RewriteCond %{QUERY_STRING} (sleep\s*\(\s*[0-9]|benchmark\s*\(|extractvalue\s*\() [NC]
+    RewriteRule .* - [F,L]
+
+    
 </IfModule>
 
+# -----------------------------------------------------------------------------
+# SECTION 3 — BLOCK MALICIOUS & SCANNER USER AGENTS
+# Automated scanners and exploit tools identified in the logs
+# -----------------------------------------------------------------------------
 
-# SIET image caching: keep photos cached locally so repeat visits load faster.
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType image/avif "access plus 30 days"
-  ExpiresByType image/gif "access plus 30 days"
-  ExpiresByType image/jpeg "access plus 30 days"
-  ExpiresByType image/png "access plus 30 days"
-  ExpiresByType image/svg+xml "access plus 30 days"
-  ExpiresByType image/webp "access plus 30 days"
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block known attack tools and scanners
+    RewriteCond %{HTTP_USER_AGENT} (zgrab|masscan|nuclei|sqlmap|nikto|nmap|dirbuster|gobuster|wfuzz|hydra|medusa) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (acunetix|nessus|openvas|burpsuite|havij|pangolin|whcc) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (python-requests|python-urllib|python-httpx|libwww-perl|LWP::) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (curl\/[0-9]|Wget\/[0-9]) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (MJ12bot|AhrefsBot|SemrushBot|DotBot|PetalBot|coccocbot) [NC,OR]
+    RewriteCond %{HTTP_USER_AGENT} (^-$|^$) [NC]
+    RewriteRule .* - [F,L]
+
+    # Note: Googlebot and ClaudeBot appear in logs — they are legitimate crawlers.
+    # If you want to block ALL bots including legitimate ones, add:
+    #   RewriteCond %{HTTP_USER_AGENT} (bot|crawler|spider) [NC]
+    # Not recommended unless under active DDoS.
+
 </IfModule>
 
-# =============================================================================
-# SECURITY HEADERS  (VAPT remediation 2026-10-31)
-# =============================================================================
+# -----------------------------------------------------------------------------
+# SECTION 4 — PROTECT SENSITIVE FILES
+# Prevent direct browser access to config, log, and database files
+# -----------------------------------------------------------------------------
+
+<FilesMatch "\.(env|log|sql|bak|backup|tar|gz|zip|htpasswd|htaccess|ini|cfg|conf|pem|key|crt|csr|pfx|p12|swp|swo|orig|old|tmp|cache)$">
+    Require all denied
+</FilesMatch>
+
+# Protect PHP config files specifically
+<FilesMatch "^(config|configuration|database|db|settings|wp-config|local)\.php$">
+    Require all denied
+</FilesMatch>
+
+# Prevent access to hidden files/directories (dotfiles)
+<FilesMatch "^\.">
+    Require all denied
+</FilesMatch>
+
+# Prevent listing of directory contents
+Options -Indexes
+
+# Prevent access to PHP error logs if they land in webroot
+<FilesMatch "error_log">
+    Require all denied
+</FilesMatch>
+
+# -----------------------------------------------------------------------------
+# SECTION 5 — HTTP SECURITY HEADERS
+# Adds browser-level protections against XSS, clickjacking, MIME sniffing
+# -----------------------------------------------------------------------------
+
 <IfModule mod_headers.c>
-  # 1. HTTP Strict Transport Security (1 year)
-  Header always set Strict-Transport-Security "max-age=31536000"
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
 
-  # 2. Content Security Policy
-  #    frame-src & connect-src: permits self and Vigoe AI assistant.
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://encrypted-tbn0.gstatic.com; connect-src 'self' https://vigoe.ai https://*.vigoe.ai; media-src 'self'; frame-src 'self' https://vigoe.ai https://*.vigoe.ai; frame-ancestors 'self'; form-action 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"
+    # Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
 
-  # 3. Prevent MIME-type sniffing
-  Header always set X-Content-Type-Options "nosniff"
+    # Enable XSS protection in older browsers
+    Header always set X-XSS-Protection "1; mode=block"
 
-  # 4. Clickjacking protection (belt-and-suspenders alongside CSP frame-ancestors)
-  Header always set X-Frame-Options "SAMEORIGIN"
+    # Referrer policy — limit referrer leakage
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
-  # 5. Referrer leakage control
-  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Basic Content Security Policy — adjust to your CDN/fonts as needed
+    # Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; frame-ancestors 'none';"
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://ajax.googleapis.com https://maxcdn.bootstrapcdn.com https://www.googletagmanager.com https://connect.facebook.net https://static.cloudflareinsights.com https://secure.trust-provider.com https://vigoe.ai; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://maxcdn.bootstrapcdn.com https://stackpath.bootstrapcdn.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://maxcdn.bootstrapcdn.com https://cdnjs.cloudflare.com data:; frame-src *; connect-src 'self' https://vigoe.ai; frame-ancestors 'self';"
 
-  # 6. Disable powerful browser features not used by this site
-  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()"
+    # Remove server version info
+    Header always unset X-Powered-By
+    Header always unset Server
 
-  # 7. Cross-Origin isolation (safe for public static site)
-  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
-  Header always set Cross-Origin-Resource-Policy "cross-origin"
+    # Permissions policy — disable unnecessary browser APIs
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
 
-  # 8. Remove server version banner (information disclosure)
-  Header always unset X-Powered-By
-  Header always unset Server
+    # HSTS — force HTTPS for 1 year (enable only if HTTPS is fully working)
+    # Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
 
-  # Image caching headers
-  <FilesMatch "\.(avif|gif|jpe?g|png|svg|webp)$">
-    Header set Cache-Control "public, max-age=2592000"
-  </FilesMatch>
+# -----------------------------------------------------------------------------
+# SECTION 6 — PREVENT PHP EXECUTION IN UPLOAD DIRECTORIES
+# Critical: stops uploaded webshells from running even if one gets uploaded
+# -----------------------------------------------------------------------------
+
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+
+# Use this block for upload, images, img directories
+# Add a separate .htaccess inside each upload directory with:
+#   php_flag engine off
+#   Options -ExecCGI
+#   AddType text/plain .php .phtml .phar .pl .cgi .sh
+
+# -----------------------------------------------------------------------------
+# SECTION 7 — REQUEST SIZE LIMITS
+# Limits oversized POST bodies that could be used for DoS or file upload exploits
+# -----------------------------------------------------------------------------
+
+<IfModule mod_php.c>
+    php_value upload_max_filesize 5M
+    php_value post_max_size 8M
+    php_value max_execution_time 30
+    php_value max_input_time 30
+    php_value memory_limit 128M
+</IfModule>
+
+LimitRequestBody 10485760
+
+# -----------------------------------------------------------------------------
+# SECTION 8 — CUSTOM ERROR PAGES
+# Return minimal error responses — don't expose server/framework info in errors
+# -----------------------------------------------------------------------------
+
+ErrorDocument 400 /error/400.html
+ErrorDocument 403 /error/403.html
+ErrorDocument 404 /error/404.html
+ErrorDocument 500 /error/500.html
+
+# =============================================================================
+# END OF FILE
+# Review and update monthly. Log any changes with date and reason.
+# =============================================================================
+
+RewriteOptions inherit
+RewriteEngine On
+
+<IfModule mod_rewrite.c>
+RewriteCond %{HTTPS} off [OR]
+    RewriteCond %{HTTP_HOST} !^www\. [NC]
+    RewriteCond %{HTTP_HOST} ^(.*)$  [NC]
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+    RewriteRule (.*) https://www.siet.ac.in/$1 [L,R=301]
+</IfModule>
+
+RewriteCond %{HTTPS} !=on
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L] 
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteRule ^(webportal|agrifest|media|kalam)($|/) - [L]
+RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/cpanel-dcv/[0-9a-zA-Z_-]+$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/(?:\ Ballot169)?
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+Redirect 301 /idea-tender /idea-tender_page
+Redirect 301 /agricultural-engineering /best-agricultural-engineering-college-in-coimbatore
+Redirect 301 /biomedical-engineering /top-biomedical-engineering-college-in-tamilnadu
+Redirect 301 /biotechnology /best-biotechnology-college-in-coimbatore-india
+Redirect 301 /civil-engineering /best-civil-engineering-college-in-tamilnadu-coimbatore
+Redirect 301 /electrical-and-electronics-engineering /best-electrical-and-electronics-engineering-college-in-coimbatore
+Redirect 301 /mechanical-engineering /top-mechanical-engineering-college-in-coimbatore-tamilnadu
+Redirect 301 /chemistry /chemistry-department
+Redirect 301 /english /english-department
+Redirect 301 /maths /mathematics-department
+Redirect 301 /physics /physics-department
+Redirect 301 /aicte /aicte-approval
+Redirect 301 /anna-university /anna-university-affiliation
+Redirect 301 /aravalli /all-terrain-vehicle-championship
+Redirect 301 /bio-air-filter /a-novel-system-and-method-of-oxyserve-bio-air-filter
+Redirect 301 /chairman /the-chairmans-desk
+Redirect 301 /drum-seeder /modification-and-evaluation-of-cultivator-mounted-with-rotary-drum-seeder-with-different-crops
+Redirect 301 /ethics-handbook /professional-ethics-handbook
+Redirect 301 /food-technology /best-food-technology-college-in-coimbatore
+Redirect 301 /grievance /grievance-submission-forms
+Redirect 301 /ieee-sb /ieee-student-branch
+Redirect 301 /information-technology /best-information-technology-college-in-tamilnadu
+Redirect 301 /ipr /intellectual-property-rights-cell
+Redirect 301 /jaggery-maker /semi-automated-palm-jaggery-making-unit
+Redirect 301 /jobs /faculty-recuritment-form
+Redirect 301 /mou /industry-connectivity
+Redirect 301 /nba /nba-accrediation
+Redirect 301 /nirf /nirf-report
+Redirect 301 /rotaract /rotaract-club
+Redirect 301 /vac /value-added-courses
+Redirect 301 /centre-for-geoinformatics-and-water-technology /centre-of-geoinformatics-and-water-technology
+Redirect 301 /computer-science-and-engineering /best-computer-science-and-engineering-college-in-coimbatore-tamilnadu-india
+Redirect 301 /electronics-and-communication-engineering /top-electronics-and-communication-engineering-college-in-tamilnadu
+Redirect 301 /principal /from-the-principal
+Redirect 301 /sssm /sri-shakthi-space-mission
+Redirect 301 /sssm-result /sri-shakthi-space-mission-quiz-result
+Redirect 301 /mdfi /myDreamIndia
+Redirect 301 /ssilcc /sri-shakthi-india-leadership-career-conclave
+Redirect 301 /ssc /sri-shakthi-summer-camp-2023
+Redirect 301 /ssp /sri-Shakthi-Inter-School-Science-Project-Expo
+Redirect 301 /sst /sri-shakthi-trophy-inter-school-sports-meet
+Redirect 301 /sietInfrastructure /sietInfrastructure
+Redirect 301 /sietctm /SIET-chithirai-thiruvizha-marathon
+Redirect 301 /pc /SIET-Project-Tech
+Redirect 301 /bta /best-teachers-award
+
+ RewriteRule ^(.*)index([\.php]*)$ /$1 [R=302,L] 
+  #RewriteRule ^(.*)index([\.html]*)$ /$1 [R=302,L]
+
+<Files 403.shtml>
+order allow,deny
+allow from all
+</Files>
+
+# deny deprecated
+
+# deny from 20.220.232.240
+# deny from 172.93.212.236
+# deny from 142.93.211.25
+# deny from 103.77.107.132
+# deny from 157.66.56.188
+# deny from 103.65.237.158
+# deny from 52.169.148.186
+# deny from 91.103.248.60
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82___lsphp .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
+
+
+
+# --------------------------------------------------
+# Fix React page refresh - SIET website
+# --------------------------------------------------
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Skip existing files and directories
+    RewriteCond %{REQUEST_FILENAME} -f [OR]
+    RewriteCond %{REQUEST_FILENAME} -d
+    RewriteRule ^ - [L]
+
+    # Send frontend routes to index.html
+    RewriteRule ^ index.html [L]
 </IfModule>
