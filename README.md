@@ -114,6 +114,10 @@ Once running, access the portals locally at:
 - My Dream India: [http://localhost:4173/mdfi/](http://localhost:4173/mdfi/)
 - ICCHI 2027 Conference: [http://localhost:4173/icchi/](http://localhost:4173/icchi/)
 - DCS Governance Summary: [http://localhost:4173/dcs-summary](http://localhost:4173/dcs-summary)
+- Apply form: [http://localhost:4173/apply](http://localhost:4173/apply)
+
+The local Apply form saves test submissions to `data/apply-applications.sqlite`.
+View the latest 100 records at [http://localhost:4173/api/apply/applications](http://localhost:4173/api/apply/applications).
 
 ---
 

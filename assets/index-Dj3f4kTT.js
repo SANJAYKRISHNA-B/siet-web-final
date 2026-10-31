@@ -453,16 +453,10 @@ async function ai(e) {
     }
 
     if (i) {
-      i.textContent = D.message || (x.ok ? "Admission enquiry saved successfully." : "Unable to save your enquiry.");
+      i.textContent = n && x.ok
+        ? "Your admission enquiry has been submitted successfully. Our admissions team will contact you shortly."
+        : D.message || (x.ok ? "Admission enquiry saved successfully." : "Unable to save your enquiry.");
       i.style.color = x.ok ? "#075b36" : "#b3261e";
-    }
-
-    if (n && x.ok && ((c = D == null ? void 0 : D.data) != null && c.id)) {
-      const y = document.getElementById("apply-call-tracker-mount");
-      if (y) {
-        ii(y, D.data);
-        setTimeout(() => { y.scrollIntoView({ behavior: "smooth", block: "start" }); }, 150);
-      }
     }
 
     if (x.ok && !((g = D.data) != null && g.isDuplicate)) {
@@ -484,55 +478,7 @@ async function ai(e) {
   }
 }
 
-function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****${t.slice(-2)}`:"";e.innerHTML=`
-    <div class="test-call-consent-card" id="test-call-card-${i}">
-      <div class="test-call-card-badge-row">
-        <span class="test-call-chip">
-          <span class="pulse-dot"></span> EXOTEL OUTBOUND CALL AUTOMATION
-        </span>
-        <span class="free-mode-chip">Official SIET Voice Service</span>
-      </div>
-
-      <div class="test-call-header">
-        <h3>Application Saved (Ref: #${i})</h3>
-        <p class="test-call-applicant-summary">
-          Thank you, <strong>${a.studentName}</strong>! Your admission enquiry for <strong>${a.department||"Engineering"} (${a.course||"UG"})</strong> has been recorded in our official admissions database.
-        </p>
-      </div>
-
-      <div class="official-greeting-preview-box">
-        <div class="greeting-box-header">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
-            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
-          </svg>
-          <strong>Configured Audio Call Greeting:</strong>
-        </div>
-        <blockquote class="official-greeting-text">
-          "Thank you for your interest in Sri Shakthi Institute of Engineering and Technology. We have received your admission enquiry."
-        </blockquote>
-      </div>
-
-      <div class="test-call-action-area">
-        <label class="test-call-checkbox-label">
-          <input type="checkbox" id="test-call-explicit-consent-${i}" checked>
-          <span>I give explicit consent to initiate a one-time test automated call to my registered number (<strong>${s}</strong>).</span>
-        </label>
-
-        <div class="test-call-button-row">
-          <button type="button" class="button test-automated-call-btn" id="trigger-test-call-btn-${i}">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-            <span>Test Automated Call</span>
-          </button>
-          <div class="test-call-note">Explicit, consent-based verification. Public submissions never dial arbitrary numbers.</div>
-        </div>
-
-        <div class="test-call-feedback" id="test-call-feedback-${i}" style="display: none;"></div>
-      </div>
-    </div>
-  `;const n=e.querySelector(`#trigger-test-call-btn-${i}`),r=e.querySelector(`#test-call-explicit-consent-${i}`),o=e.querySelector(`#test-call-feedback-${i}`);n&&n.addEventListener("click",async()=>{if(!(r!=null&&r.checked)){o&&(o.style.display="block",o.className="test-call-feedback error",o.textContent="Please check the consent box to confirm you want to receive the automated test call.");return}n.disabled=!0;const m=n.innerHTML;n.innerHTML="<span>Connecting Automated Call…</span>";try{const l=await fetch(`/api/admission-enquiries/${i}/test-call`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({consent:!0})}),c=await l.json();if(!l.ok||!c.success)throw new Error(c.message||"Unable to initiate test call.");ei(e,c.data.call,a),e.scrollIntoView({behavior:"smooth",block:"start"})}catch(l){n.disabled=!1,n.innerHTML=m,o&&(o.style.display="block",o.className="test-call-feedback error",o.textContent=l.message||"Error initiating test call.")}})}function ti(){return`
+function ti(){return`
     <div class="admin-console-backdrop" id="admin-console-modal" role="dialog" aria-modal="true" aria-labelledby="admin-console-title">
       <div class="admin-console-card">
         <!-- Modal Header -->
@@ -1418,7 +1364,6 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
   </div>
 
   <div class="labs-section-footer" aria-hidden="true">
-    <span>A STRONGER TOMORROW THROUGH INNOVATION</span>
     <span class="footer-gold-bar"></span>
   </div>
 </section>
@@ -2066,7 +2011,7 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
         </div>
         <h4>Official Regulation Document</h4>
         <div style="margin-top: 10px;">
-          <a href="/brand/Regulation 2021 UG.pdf" target="_blank" rel="noopener" download="Regulation 2021 UG.pdf" class="curr-download-btn" style="padding: 10px 18px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+          <a href="/downloads/Regulation 2021 UG.pdf" target="_blank" rel="noopener" download="Regulation 2021 UG.pdf" class="curr-download-btn" style="padding: 10px 18px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
             <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             <span>Download Regulation 2021 (UG) PDF</span>
           </a>
@@ -2096,7 +2041,7 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
       </div>
       <div class="curr-sem-actions">
         <span class="curr-credits-pill">Total Credits: <b id="active-sem-credits">${s.credits}</b></span>
-        <a class="curr-download-btn curr-download-sem" href="/downloads/sample-syllabus.pdf" download="${t.id}-${i}-semester-${a}-syllabus-sample.pdf" aria-label="Download ${i.toUpperCase()} sample syllabus for ${t.name}, ${s.name}">
+        <a class="curr-download-btn curr-download-sem" href="/downloads/Regulation 2021 UG.pdf" download="${t.id}-${i}-semester-${a}-syllabus-sample.pdf" aria-label="Download ${i.toUpperCase()} sample syllabus for ${t.name}, ${s.name}">
           <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></svg>
           <span>Semester Syllabus</span>
         </a>
@@ -2126,7 +2071,7 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
               <td class="td-credit">${o.t}</td>
               <td class="td-credit">${o.p}</td>
               <td class="td-credit"><b>${o.c}</b></td>
-              <td class="td-download"><a class="curr-download-btn curr-download-course" href="/downloads/sample-syllabus.pdf" download="${t.id}-${i}-${o.code}-syllabus-sample.pdf" aria-label="Download ${i.toUpperCase()} sample syllabus for ${o.code} ${o.title}" title="Download ${o.code} sample syllabus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></svg><span>PDF</span></a></td>
+              <td class="td-download"><a class="curr-download-btn curr-download-course" href="/downloads/Regulation 2021 UG.pdf" download="${t.id}-${i}-${o.code}-syllabus-sample.pdf" aria-label="Download ${i.toUpperCase()} sample syllabus for ${o.code} ${o.title}" title="Download ${o.code} sample syllabus"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></svg><span>PDF</span></a></td>
             </tr>
           `).join("")}
         </tbody>
@@ -7950,8 +7895,8 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
                 </label>
                 ${oe("Email Address","email","email","Enter your email address")}
                 ${ze("Country","country",Tt)}
-                ${oe("State / Province","state","text","Enter your state or province")}
-                ${oe("District","district","text","Enter your district")}
+                ${locationFieldMarkup("State / Province","state","Enter your state or province")}
+                ${locationFieldMarkup("City / District","district","Enter your city or district")}
                 ${ze("Previous Qualification","previous_qualification",["12th","Diploma"])}
               </div>
             </div>
@@ -8003,8 +7948,6 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
             <p class="status" aria-live="polite"></p>
           </form>
 
-          <!-- Call Simulation Tracker Mount Point -->
-          <div id="apply-call-tracker-mount"></div>
         </div>
       </div>
 
@@ -8077,7 +8020,7 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
     </section>
     <!-- Admin Console Modal Mount Container -->
     <div id="admin-console-modal-mount"></div>
-  </main>`}const oe=(e,a,i,t)=>`<label>${e} <b>*</b><input type="${i}" name="${a}" placeholder="${t}" required></label>`,ze=(e,a,i)=>`<label>${e} <b>*</b><select name="${a}" required><option value="">Select ${e}</option>${i.map(t=>`<option>${t}</option>`).join("")}</select></label>`,Je={college:{name:"Institute of Engineering and Technology",logo:"/brand/siet-logo.webp",heading:"Sri Shakthi Institute of Engineering and Technology",departments:[...Aa.map(e=>e.name),"Administration","Training and Placement","Physical Education","Library","IT Support","Other"],subtitle:"Autonomous Institution · Affiliated to Anna University",desc:"Aims to focus our attention towards research and industry need based education, we invite applications from the candidates who have a natural flair for research and would like to join our mission for the following positions.",cats:[["Leadership Position",["Principal","Director of Research"]],["College Teaching Positions",["Dean","Professor","Associate Professor","Assistant Professor"]],["School Teaching Positions",["English PGT","English TGT","Tamil TGT","Hindi TGT","French TGT","Maths PGT","Science PGT","Commerce PGT","Economics PGT"],"CBSE school requires motivated teachers for the following positions."],["Food Testing Lab",["Manager Operations (Authorized Signatory)","Manager Marketing","Marketing Executives","Food Analyst I","Food Analyst II","Lab Technician","Receptionist"],"Invites applications for our newly established state-of-the-art food testing laboratory with imported equipment including ICP-OES, GC-MS, HPLC and FTIR. The lab is established at a cost of Rs. 3 crores, partly funded by the Ministry of Food Processing Industries, Government of India."],["Career Oriented Specialists",["Quantitative Aptitude Trainer","Verbal Aptitude Trainer","BEC Certification Trainer","GATE Exam Trainer","IES Exam Trainer","GRE Exam Trainer","Bioinformatics Trainer","CAT Exam Trainer","C Trainer","Java Trainer","Machine Learning Trainer","LabVIEW Trainer","Entrepreneurship Lead","Embedded Trainer","VLSI Trainer"],"We offer support for a diverse range of career opportunities, from placement and higher-education preparation to entrepreneurial venture launch. Applicants with 3+ years of experience in a coaching centre are preferred."],["Managerial Positions",["Placement Officer","Placement Coordinator","Vigilance Officer","Operations and Infrastructure Lead","HR Manager","Admissions Manager","Social Media Manager","Brand Manager","Librarian"]],["Creative Positions",["Graphic Designer","2D & 3D Animator","Video Editor","Website Designer"],"Join our creative team to develop original brand collateral, brochures, posters, event-promotion materials, websites and compelling videos."],["Sports Coach Positions",["Cricket Coach","Tennis Coach","Hockey Coach","Football Coach","Volleyball Coach","Handball Coach","Swimming Coach (for Girls)","Kabaddi Coach","Gym Instructor","Yoga Trainer","Archery Coach"],"We are looking for part-time and full-time coaches for the following sports."],["Special Positions",["System Administration","Computer Lab Technicians","Tele Calling Executive"]]]},school:{name:"CBSE Senior Secondary School",logo:"/brand/sri-shakthi-school-logo.webp",heading:"Sri Shakthi International School",website:"www.srishakthi.ac.in",websiteUrl:"https://www.srishakthi.ac.in",departments:["English","Mathematics","Physics","Chemistry","Biology","Computer Science","Tamil","Hindi","Social Science","Primary Education","Kindergarten","Physical Education","Arts and Music","Administration","Other"],subtitle:"Affiliated to CBSE, New Delhi",desc:"Sri Shakthi International School is a premier residential institution built across a 25 eco-friendly acre campus located precisely between the two industrial districts of Coimbatore and Tiruppur. The school is home to a myriad number of flora and fauna. We are affiliated to CBSE and offer classes from Pre KG to Standard 12. We are committed to the cause of Powering the Youth to Empower the Nation.",cats:[["School Leadership Positions",["Principal / Vice Principal","Academic Coordinator","Section Head"]],["PGT & TGT Teachers",["English","Mathematics","Physics","Chemistry","Biology","Computer Science"]],["Primary & Kindergarten",["PRT Teachers","Montessori / Kindergarten Educators","Language Specialists"]],["Sports & Extracurricular",["Physical Education Director","Art & Craft Teacher","Music & Dance Instructor"]]]},lab:{name:"Food & Environmental Testing Laboratory",logo:"/brand/sri-shakthi-food-lab-logo.webp",heading:"Sri Shakthi Food Testing Laboratory",website:"www.foodtestinglab.in",websiteUrl:"https://www.foodtestinglab.in",departments:["Food Testing","Chemical Analysis","Microbiology","Quality Assurance","Sample Management","Administration","Other"],subtitle:"NABL Accredited Testing Facility",desc:"Invites Applications for our newly established state of the art food testing laboratory with imported equipments like ICP-OES, GC-MS, HPLC, & FTIR. The Lab is established at a cost of Rs. 3 crores partly funded by Ministry of Food Processing Industries, Government of India.",cats:[["Quality & Laboratory Management",["Quality Manager","Technical Manager","NABL Coordinator"]],["Analytical Specialists",["Senior Food Analyst","Chemical Analyst","Residue Analysis Specialist"]],["Microbiology Specialists",["Senior Microbiologist","Microbiology Analyst"]],["Technical Support",["Laboratory Technician","Sample Management Assistant"]]]}},la=e=>String(e).replace(/[&<>"']/g,a=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[a]),Ze=e=>e.map(a=>{const[i,t]=Array.isArray(a)?a:[a,a];return`<option value="${la(i)}">${la(t)}</option>`}).join(""),Te=(e,a,i=!1)=>`<label><span>${e}${i?" <b>*</b>":""}</span>${a}</label>`,ue=(e,a,i="text",t=!1,s="",n="")=>Te(e,`<input name="${a}" type="${i}" ${t?"required":""} placeholder="${s}" ${i==="tel"?'inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" title="Enter 10 digits only"':""} ${n}>`,t),ee=(e,a,i,t=!1,s="Please Select",n="")=>Te(e,`<select name="${a}" ${t?"required":""} ${n}>${s===null?"":`<option value="">${s}</option>`}${Ze(i)}</select>`,t),wt="AF AL DZ AS AD AO AI AQ AG AR AM AW AU AT AZ BS BH BD BB BY BE BZ BJ BM BT BO BQ BA BW BV BR IO BN BG BF BI CV KH CM CA KY CF TD CL CN CX CC CO KM CG CD CK CR CI HR CU CW CY CZ DK DJ DM DO EC EG SV GQ ER EE SZ ET FK FO FJ FI FR GF PF TF GA GM GE DE GH GI GR GL GD GP GU GT GG GN GW GY HT HM VA HN HK HU IS IN ID IR IQ IE IM IL IT JM JP JE JO KZ KE KI KP KR KW KG LA LV LB LS LR LY LI LT LU MO MG MW MY MV ML MT MH MQ MR MU YT MX FM MD MC MN ME MS MA MZ MM NA NR NP NL NC NZ NI NE NG NU NF MK MP NO OM PK PW PS PA PG PY PE PH PN PL PT PR QA RE RO RU RW BL SH KN LC MF PM VC WS SM ST SA SN RS SC SL SG SX SK SI SB SO ZA GS SS ES LK SD SR SJ SE CH SY TW TJ TZ TH TL TG TK TO TT TN TR TM TC TV UG UA AE GB US UM UY UZ VU VE VN VG VI WF EH YE ZM ZW".split(" "),kt=new Intl.DisplayNames(["en"],{type:"region"}),Tt=wt.map(e=>kt.of(e)).sort((e,a)=>e.localeCompare(a)),Mt=["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],da=["Below ₹10,000","₹10,000 – ₹20,000","₹20,001 – ₹30,000","₹30,001 – ₹40,000","₹40,001 – ₹50,000","₹50,001 – ₹75,000","₹75,001 – ₹1,00,000","Above ₹1,00,000"],Ge=[...Array.from({length:41},(e,a)=>String(a)),"40+"];function xt(e){return`<div class="career-field-column">
+  </main>`}const oe=(e,a,i,t)=>`<label>${e} <b>*</b><input type="${i}" name="${a}" placeholder="${t}" required></label>`,locationFieldMarkup=(label,name,placeholder)=>`<label>${label} <b>*</b><span data-apply-location-control="${name}" style="display:block"><input name="${name}" placeholder="${placeholder}" autocomplete="${name==="state"?"address-level1":"address-level2"}" required></span></label>`,ze=(e,a,i)=>`<label>${e} <b>*</b><select name="${a}" required><option value="">Select ${e}</option>${i.map(t=>`<option>${t}</option>`).join("")}</select></label>`,Je={college:{name:"Institute of Engineering and Technology",logo:"/brand/siet-logo.webp",heading:"Sri Shakthi Institute of Engineering and Technology",departments:[...Aa.map(e=>e.name),"Administration","Training and Placement","Physical Education","Library","IT Support","Other"],subtitle:"Autonomous Institution · Affiliated to Anna University",desc:"Aims to focus our attention towards research and industry need based education, we invite applications from the candidates who have a natural flair for research and would like to join our mission for the following positions.",cats:[["Leadership Position",["Principal","Director of Research"]],["College Teaching Positions",["Dean","Professor","Associate Professor","Assistant Professor"]],["School Teaching Positions",["English PGT","English TGT","Tamil TGT","Hindi TGT","French TGT","Maths PGT","Science PGT","Commerce PGT","Economics PGT"],"CBSE school requires motivated teachers for the following positions."],["Food Testing Lab",["Manager Operations (Authorized Signatory)","Manager Marketing","Marketing Executives","Food Analyst I","Food Analyst II","Lab Technician","Receptionist"],"Invites applications for our newly established state-of-the-art food testing laboratory with imported equipment including ICP-OES, GC-MS, HPLC and FTIR. The lab is established at a cost of Rs. 3 crores, partly funded by the Ministry of Food Processing Industries, Government of India."],["Career Oriented Specialists",["Quantitative Aptitude Trainer","Verbal Aptitude Trainer","BEC Certification Trainer","GATE Exam Trainer","IES Exam Trainer","GRE Exam Trainer","Bioinformatics Trainer","CAT Exam Trainer","C Trainer","Java Trainer","Machine Learning Trainer","LabVIEW Trainer","Entrepreneurship Lead","Embedded Trainer","VLSI Trainer"],"We offer support for a diverse range of career opportunities, from placement and higher-education preparation to entrepreneurial venture launch. Applicants with 3+ years of experience in a coaching centre are preferred."],["Managerial Positions",["Placement Officer","Placement Coordinator","Vigilance Officer","Operations and Infrastructure Lead","HR Manager","Admissions Manager","Social Media Manager","Brand Manager","Librarian"]],["Creative Positions",["Graphic Designer","2D & 3D Animator","Video Editor","Website Designer"],"Join our creative team to develop original brand collateral, brochures, posters, event-promotion materials, websites and compelling videos."],["Sports Coach Positions",["Cricket Coach","Tennis Coach","Hockey Coach","Football Coach","Volleyball Coach","Handball Coach","Swimming Coach (for Girls)","Kabaddi Coach","Gym Instructor","Yoga Trainer","Archery Coach"],"We are looking for part-time and full-time coaches for the following sports."],["Special Positions",["System Administration","Computer Lab Technicians","Tele Calling Executive"]]]},school:{name:"CBSE Senior Secondary School",logo:"/brand/sri-shakthi-school-logo.webp",heading:"Sri Shakthi International School",website:"www.srishakthi.ac.in",websiteUrl:"https://www.srishakthi.ac.in",departments:["English","Mathematics","Physics","Chemistry","Biology","Computer Science","Tamil","Hindi","Social Science","Primary Education","Kindergarten","Physical Education","Arts and Music","Administration","Other"],subtitle:"Affiliated to CBSE, New Delhi",desc:"Sri Shakthi International School is a premier residential institution built across a 25 eco-friendly acre campus located precisely between the two industrial districts of Coimbatore and Tiruppur. The school is home to a myriad number of flora and fauna. We are affiliated to CBSE and offer classes from Pre KG to Standard 12. We are committed to the cause of Powering the Youth to Empower the Nation.",cats:[["School Leadership Positions",["Principal / Vice Principal","Academic Coordinator","Section Head"]],["PGT & TGT Teachers",["English","Mathematics","Physics","Chemistry","Biology","Computer Science"]],["Primary & Kindergarten",["PRT Teachers","Montessori / Kindergarten Educators","Language Specialists"]],["Sports & Extracurricular",["Physical Education Director","Art & Craft Teacher","Music & Dance Instructor"]]]},lab:{name:"Food & Environmental Testing Laboratory",logo:"/brand/sri-shakthi-food-lab-logo.webp",heading:"Sri Shakthi Food Testing Laboratory",website:"www.foodtestinglab.in",websiteUrl:"https://www.foodtestinglab.in",departments:["Food Testing","Chemical Analysis","Microbiology","Quality Assurance","Sample Management","Administration","Other"],subtitle:"NABL Accredited Testing Facility",desc:"Invites Applications for our newly established state of the art food testing laboratory with imported equipments like ICP-OES, GC-MS, HPLC, & FTIR. The Lab is established at a cost of Rs. 3 crores partly funded by Ministry of Food Processing Industries, Government of India.",cats:[["Quality & Laboratory Management",["Quality Manager","Technical Manager","NABL Coordinator"]],["Analytical Specialists",["Senior Food Analyst","Chemical Analyst","Residue Analysis Specialist"]],["Microbiology Specialists",["Senior Microbiologist","Microbiology Analyst"]],["Technical Support",["Laboratory Technician","Sample Management Assistant"]]]}},la=e=>String(e).replace(/[&<>"']/g,a=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"})[a]),Ze=e=>e.map(a=>{const[i,t]=Array.isArray(a)?a:[a,a];return`<option value="${la(i)}">${la(t)}</option>`}).join(""),Te=(e,a,i=!1)=>`<label><span>${e}${i?" <b>*</b>":""}</span>${a}</label>`,ue=(e,a,i="text",t=!1,s="",n="")=>Te(e,`<input name="${a}" type="${i}" ${t?"required":""} placeholder="${s}" ${i==="tel"?'inputmode="numeric" pattern="[0-9]{10}" maxlength="10" autocomplete="tel-national" title="Enter 10 digits only"':""} ${n}>`,t),ee=(e,a,i,t=!1,s="Please Select",n="")=>Te(e,`<select name="${a}" ${t?"required":""} ${n}>${s===null?"":`<option value="">${s}</option>`}${Ze(i)}</select>`,t),wt="AF AL DZ AS AD AO AI AQ AG AR AM AW AU AT AZ BS BH BD BB BY BE BZ BJ BM BT BO BQ BA BW BV BR IO BN BG BF BI CV KH CM CA KY CF TD CL CN CX CC CO KM CG CD CK CR CI HR CU CW CY CZ DK DJ DM DO EC EG SV GQ ER EE SZ ET FK FO FJ FI FR GF PF TF GA GM GE DE GH GI GR GL GD GP GU GT GG GN GW GY HT HM VA HN HK HU IS IN ID IR IQ IE IM IL IT JM JP JE JO KZ KE KI KP KR KW KG LA LV LB LS LR LY LI LT LU MO MG MW MY MV ML MT MH MQ MR MU YT MX FM MD MC MN ME MS MA MZ MM NA NR NP NL NC NZ NI NE NG NU NF MK MP NO OM PK PW PS PA PG PY PE PH PN PL PT PR QA RE RO RU RW BL SH KN LC MF PM VC WS SM ST SA SN RS SC SL SG SX SK SI SB SO ZA GS SS ES LK SD SR SJ SE CH SY TW TJ TZ TH TL TG TK TO TT TN TR TM TC TV UG UA AE GB US UM UY UZ VU VE VN VG VI WF EH YE ZM ZW".split(" "),kt=new Intl.DisplayNames(["en"],{type:"region"}),Tt=wt.map(e=>kt.of(e)).sort((e,a)=>e.localeCompare(a)),Mt=["Andaman and Nicobar Islands","Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chandigarh","Chhattisgarh","Dadra and Nagar Haveli and Daman and Diu","Delhi","Goa","Gujarat","Haryana","Himachal Pradesh","Jammu and Kashmir","Jharkhand","Karnataka","Kerala","Ladakh","Lakshadweep","Madhya Pradesh","Maharashtra","Manipur","Meghalaya","Mizoram","Nagaland","Odisha","Puducherry","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Tripura","Uttar Pradesh","Uttarakhand","West Bengal"],da=["Below ₹10,000","₹10,000 – ₹20,000","₹20,001 – ₹30,000","₹30,001 – ₹40,000","₹40,001 – ₹50,000","₹50,001 – ₹75,000","₹75,001 – ₹1,00,000","Above ₹1,00,000"],Ge=[...Array.from({length:41},(e,a)=>String(a)),"40+"];function xt(e){return`<div class="career-field-column">
     ${ue("Name","name","text",!0,"Enter name",'autocomplete="name"')}
     ${ue("Enter your Contact Number","phone","tel",!0,"Enter phone number",'autocomplete="tel"')}
     ${ue("Enter your Email Address","email","email",!0,"Enter email",'autocomplete="email"')}
@@ -8104,7 +8047,50 @@ function ii(e,a){const i=a.id,t=a.mobileNumber||"",s=t?`+91 ${t.slice(0,3)}*****
     ${Te("Why am I looking for a change from my current position?",'<textarea name="message" rows="5" maxlength="2000" placeholder="Why am I looking for a change from my current position?" aria-describedby="career-message-help"></textarea><small id="career-message-help">Maximum 2,000 characters. Do not include passwords or sensitive personal data.</small>')}
     ${Te("Upload Resume (Max file size: 2 MB; PDF / DOC / DOCX / RTF)",'<input type="file" name="resume" accept=".pdf,.doc,.docx,.rtf" required aria-describedby="career-resume-help">',!0)}
     <small id="career-resume-help">Upload a PDF, Word document, or RTF file up to 2 MB.</small>
-  </div>`}function Pt(e,a,i){if(!e)return;const t=e.elements,s=(n,r,o)=>{t[n].innerHTML=`<option value="">${o}</option>${Ze(r)}`,t[n].disabled=!r.length};t.institution.addEventListener("change",()=>i(t.institution.value)),t.category.addEventListener("change",()=>{const r=a[t.institution.value].cats.find(o=>o[0]===t.category.value);s("position",(r==null?void 0:r[1])||[],"Select a Position"),s("department",[],"Select a Department")}),t.position.addEventListener("change",()=>{s("department",t.position.value?a[t.institution.value].departments:[],"Select a Department")}),t.country.addEventListener("change",()=>{t.state.value="",t.city.value="",t.state.disabled=!t.country.value,t.city.disabled=!0,e.querySelector("#career-state-options").innerHTML=Ze(t.country.value==="India"?Mt:[])}),t.state.addEventListener("input",()=>{t.city.value="",t.city.disabled=!t.state.value.trim()}),t.resume.addEventListener("change", async () => {
+  </div>`}const applyIndiaCities={
+  "Andaman and Nicobar Islands":["Port Blair","Diglipur","Mayabunder","Rangat","Car Nicobar"],
+  "Andhra Pradesh":["Visakhapatnam","Vijayawada","Guntur","Tirupati","Nellore","Kurnool","Rajamahendravaram","Kakinada","Anantapur","Kadapa"],
+  "Arunachal Pradesh":["Itanagar","Naharlagun","Tawang","Pasighat","Ziro","Tezu","Bomdila"],
+  "Assam":["Guwahati","Silchar","Dibrugarh","Jorhat","Nagaon","Tinsukia","Tezpur","Dhubri"],
+  "Bihar":["Patna","Gaya","Bhagalpur","Muzaffarpur","Darbhanga","Purnia","Bihar Sharif","Arrah"],
+  "Chandigarh":["Chandigarh"],
+  "Chhattisgarh":["Raipur","Bhilai","Bilaspur","Korba","Durg","Rajnandgaon","Jagdalpur","Raigarh"],
+  "Dadra and Nagar Haveli and Daman and Diu":["Silvassa","Daman","Diu"],
+  "Delhi":["New Delhi","Central Delhi","North Delhi","South Delhi","East Delhi","West Delhi","Shahdara"],
+  "Goa":["Panaji","Margao","Vasco da Gama","Mapusa","Ponda"],
+  "Gujarat":["Ahmedabad","Surat","Vadodara","Rajkot","Gandhinagar","Bhavnagar","Jamnagar","Junagadh","Anand"],
+  "Haryana":["Gurugram","Faridabad","Panipat","Ambala","Hisar","Karnal","Rohtak","Sonipat"],
+  "Himachal Pradesh":["Shimla","Dharamshala","Mandi","Solan","Kullu","Hamirpur","Una","Chamba"],
+  "Jammu and Kashmir":["Srinagar","Jammu","Anantnag","Baramulla","Udhampur","Kathua","Pulwama"],
+  "Jharkhand":["Ranchi","Jamshedpur","Dhanbad","Bokaro","Deoghar","Hazaribagh","Giridih"],
+  "Karnataka":["Bengaluru","Mysuru","Mangaluru","Hubballi-Dharwad","Belagavi","Kalaburagi","Davangere","Shivamogga","Tumakuru"],
+  "Kerala":["Thiruvananthapuram","Kochi","Kozhikode","Thrissur","Kollam","Kannur","Alappuzha","Palakkad","Kottayam"],
+  "Ladakh":["Leh","Kargil"],
+  "Lakshadweep":["Kavaratti","Agatti","Andrott","Minicoy"],
+  "Madhya Pradesh":["Bhopal","Indore","Jabalpur","Gwalior","Ujjain","Sagar","Rewa","Satna","Dewas"],
+  "Maharashtra":["Mumbai","Pune","Nagpur","Nashik","Thane","Chhatrapati Sambhajinagar","Kolhapur","Solapur","Navi Mumbai"],
+  "Manipur":["Imphal","Thoubal","Bishnupur","Churachandpur","Ukhrul"],
+  "Meghalaya":["Shillong","Tura","Jowai","Nongstoin","Williamnagar"],
+  "Mizoram":["Aizawl","Lunglei","Champhai","Serchhip","Kolasib"],
+  "Nagaland":["Kohima","Dimapur","Mokokchung","Tuensang","Wokha","Mon"],
+  "Odisha":["Bhubaneswar","Cuttack","Rourkela","Sambalpur","Berhampur","Puri","Balasore","Baripada"],
+  "Puducherry":["Puducherry","Karaikal","Mahe","Yanam"],
+  "Punjab":["Ludhiana","Amritsar","Jalandhar","Patiala","Bathinda","Mohali","Hoshiarpur","Pathankot"],
+  "Rajasthan":["Jaipur","Jodhpur","Udaipur","Kota","Ajmer","Bikaner","Bharatpur","Alwar"],
+  "Sikkim":["Gangtok","Namchi","Gyalshing","Mangan","Pakyong"],
+  "Tamil Nadu":["Chennai","Coimbatore","Madurai","Tiruchirappalli","Salem","Tiruppur","Erode","Tirunelveli","Vellore","Thoothukudi","Thanjavur","Dindigul","Cuddalore","Kancheepuram","Kanyakumari","Karur","Krishnagiri","Namakkal","Nilgiris","Sivaganga","Virudhunagar","Ramanathapuram","Dharmapuri","Ariyalur","Perambalur","Nagapattinam","Tenkasi","Tirupathur","Ranipet","Chengalpattu","Mayiladuthurai","Kallakurichi","Tiruvallur","Tiruvannamalai","Villupuram","Theni","Pudukkottai"],
+  "Telangana":["Hyderabad","Warangal","Karimnagar","Nizamabad","Khammam","Ramagundam","Mahbubnagar","Suryapet"],
+  "Tripura":["Agartala","Udaipur","Dharmanagar","Kailashahar","Belonia"],
+  "Uttar Pradesh":["Lucknow","Kanpur","Varanasi","Agra","Prayagraj","Ghaziabad","Noida","Meerut","Gorakhpur","Bareilly","Aligarh"],
+  "Uttarakhand":["Dehradun","Haridwar","Roorkee","Haldwani","Rudrapur","Kashipur","Rishikesh","Nainital"],
+  "West Bengal":["Kolkata","Howrah","Siliguri","Durgapur","Asansol","Kharagpur","Darjeeling","Bardhaman","Malda"]
+};
+function replaceApplyLocationControl(form,name,control){const wrapper=form.querySelector(`[data-apply-location-control="${name}"]`);if(wrapper)wrapper.replaceChildren(control)}
+function makeApplyLocationInput(name,placeholder,autocomplete){const input=document.createElement("input");input.name=name;input.placeholder=placeholder;input.autocomplete=autocomplete;input.required=true;return input}
+function makeApplyLocationSelect(name,placeholder,values,disabled=false){const select=document.createElement("select");select.name=name;select.required=true;select.disabled=disabled;const first=document.createElement("option");first.value="";first.textContent=placeholder;select.append(first);values.forEach(value=>{const option=document.createElement("option");option.value=value;option.textContent=value;select.append(option)});return select}
+function initApplyLocationDropdowns(form){const country=form.elements.country;if(!country||form.dataset.locationDropdownsReady)return;form.dataset.locationDropdownsReady="true";country.addEventListener("change",()=>{const india=country.value==="India";if(india){replaceApplyLocationControl(form,"state",makeApplyLocationSelect("state","Select a State / Province",Mt));replaceApplyLocationControl(form,"district",makeApplyLocationSelect("district","Select a City / District",[],true))}else{replaceApplyLocationControl(form,"state",makeApplyLocationInput("state","Enter your state or province","address-level1"));replaceApplyLocationControl(form,"district",makeApplyLocationInput("district","Enter your city or district","address-level2"))}});form.addEventListener("change",event=>{if(event.target.name!=="state"||country.value!=="India")return;const cities=applyIndiaCities[event.target.value]||[];replaceApplyLocationControl(form,"district",makeApplyLocationSelect("district","Select a City / District",cities,!cities.length))});form.addEventListener("reset",()=>setTimeout(()=>country.dispatchEvent(new Event("change",{bubbles:true})),0))}
+document.addEventListener("focusin",event=>{const form=event.target.closest("form.apply-form-v3");if(form)initApplyLocationDropdowns(form)});
+function Pt(e,a,i){if(!e)return;const t=e.elements,s=(n,r,o)=>{t[n].innerHTML=`<option value="">${o}</option>${Ze(r)}`,t[n].disabled=!r.length};t.institution.addEventListener("change",()=>i(t.institution.value)),t.category.addEventListener("change",()=>{const r=a[t.institution.value].cats.find(o=>o[0]===t.category.value);s("position",(r==null?void 0:r[1])||[],"Select a Position"),s("department",[],"Select a Department")}),t.position.addEventListener("change",()=>{s("department",t.position.value?a[t.institution.value].departments:[],"Select a Department")}),t.country.addEventListener("change",()=>{t.state.value="",t.city.value="",t.state.disabled=!t.country.value,t.city.disabled=!0,e.querySelector("#career-state-options").innerHTML=Ze(t.country.value==="India"?Mt:[])}),t.state.addEventListener("input",()=>{t.city.value="",t.city.disabled=!t.state.value.trim()}),t.resume.addEventListener("change", async () => {
     const file = t.resume.files[0];
     if (!file) {
       t.resume.setCustomValidity("");
@@ -11071,7 +11057,7 @@ function admPageMarkup() {
           </div>
 
           <div class="admission-hero-actions">
-            <a class="admission-brochure-btn" href="/downloads/SIET-Brochure.pdf" target="_blank" rel="noopener noreferrer">
+            <a class="admission-brochure-btn" href="/downloads/Regulation 2021 UG.pdf" target="_blank" rel="noopener noreferrer">
               <span>Click here to View College Brochure</span>
               <i>↓</i>
             </a>

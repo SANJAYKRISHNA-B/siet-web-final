@@ -4,6 +4,17 @@ DirectoryIndex index.html
   RewriteEngine On
   # The canonical SSSM route uses the same page rendered by the main SPA.
   RewriteRule ^sssm/?$ index.html [L]
+  # Keep old COE links working while all current links use /downloads/.
+  RewriteRule ^download/(.*)$ /downloads/$1 [R=302,L,NE]
+  # Redirect removed duplicate filenames to their retained canonical PDF.
+  RewriteRule ^downloads/(CIA-II-semester-VII-UG-Rescheduled|CIA-II-semester-VII-UG|SIET-Brochure|sample-syllabus|Regulation-2021-UG)\.pdf$ /downloads/Regulation%202021%20UG.pdf [R=302,L,NE]
+  RewriteRule ^downloads/Transcript-application-form\.pdf$ /downloads/Transcript%20application%20form.pdf [R=302,L,NE]
+  RewriteRule ^downloads/Duplicate-Certificate-Form\.pdf$ /downloads/Duplicate%20Certificate%20Form.pdf [R=302,L,NE]
+  RewriteRule ^downloads/Revaluation-form\.pdf$ /downloads/Revaluation%20form.pdf [R=302,L,NE]
+  RewriteRule ^downloads/Revaluation-Script-Valuation-form\.pdf$ /downloads/Revaluation-Script%20Valuation%20form.pdf [R=302,L,NE]
+  RewriteRule ^downloads/Regulation-2021-PG\.pdf$ /downloads/Regulation%202021%20PG.pdf [R=302,L,NE]
+  RewriteRule ^downloads/R2021-UG-AMENDMENT-I\.pdf$ /downloads/R2021%20UG-AMENDMENT%20-%20I%20SIET.pdf [R=302,L,NE]
+  RewriteRule ^downloads/R2021-UG-AMENDMENT-II\.pdf$ /downloads/R2021%20UG-AMENDMENT%20-%20II%20SIET.pdf [R=302,L,NE]
   # Serve real compiled assets, images, downloads and documents directly.
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
