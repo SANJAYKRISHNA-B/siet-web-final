@@ -31,8 +31,6 @@ This repository hosts the official high-performance web portal and affiliated mi
 
 ```text
 siet-website-portal/
-├── .github/                     # GitHub workflows and CI configurations
-├── .vscode/                     # Recommended IDE workspace settings
 ├── assets/                      # Production scripts, styles, and module bundles
 │   ├── *.js                     # Modular JavaScript logic and page controllers
 │   ├── *.css                    # Scoped and global stylesheets
@@ -45,12 +43,6 @@ siet-website-portal/
 │   ├── placement-records/       # Highest package highlights and placement banners
 │   ├── special-labs/            # 7 Advanced Research Laboratories showcase imagery
 │   └── *.webp, *.png, *.svg     # Crests, logos, headers, and hero banners
-├── docs/                        # Institutional documentation and reports
-│   ├── content-archive/         # Content audit records and source asset collections
-│   └── reports/                 # Technical audits and optimization reports
-│       ├── IMAGE_PERFORMANCE_REPORT.md  # Core Web Vitals & WebP audit report
-│       ├── QA_AND_INTRUSION_TEST_REPORT.md # Functional Q&A, perimeter guard & SQLi audit
-│       └── FILE_UPLOAD_SECURITY_REPORT.md  # File upload anti-malware & binary header report
 ├── downloads/                   # Public institutional documents & syllabi
 │   ├── anna-univ-affiliation/   # Anna University affiliation approvals
 │   ├── mandatory-disclosure/    # AICTE mandatory public disclosures
@@ -76,8 +68,8 @@ siet-website-portal/
 │   └── index.html               # Conference proceedings, committee, and call-for-papers
 ├── mdfi/                        # My Dream India (SSILCC) portal
 │   └── index.html               # State-Level Essay Competition information and entry
-├── ssm/                         # Sri Shakthi Space Mission portal
-│   └── index.html               # Space Mission highlights and Space Whiz 2026 registration
+├── sssm/                        # Sri Shakthi Space Mission portal
+│   └── space-whiz-poster.png    # Space Mission highlights and Space Whiz 2026 poster
 ├── .gitignore                   # Standard Git ignore rules for build artifacts & temp files
 ├── .htaccess                    # Apache HTTP Server production rewrite & caching rules
 ├── favicon.ico                  # Institutional tab favicon
@@ -116,9 +108,6 @@ Once running, access the portals locally at:
 - DCS Governance Summary: [http://localhost:4173/dcs-summary](http://localhost:4173/dcs-summary)
 - Apply form: [http://localhost:4173/apply](http://localhost:4173/apply)
 
-The local Apply form saves test submissions to `data/apply-applications.sqlite`.
-View the latest 100 records at [http://localhost:4173/api/apply/applications](http://localhost:4173/api/apply/applications).
-
 ---
 
 ## 🎨 Asset Management Guidelines
@@ -141,7 +130,7 @@ To maintain speed, low bandwidth consumption, and top-tier Core Web Vitals:
 
 ## 🛡️ Production Deployment
 
-The project is configured for deployment on any modern web server or static CDN:
+The project is configured for deployment on any modern web server:
 
 - **Apache HTTP Server**: `.htaccess` provides URL rewrite rules for Single Page Application (SPA) routes and static asset caching.
 - **Nginx**: Configure `try_files $uri $uri/ /index.html;` for client-side routing.

@@ -7,14 +7,25 @@ node_modules/
 dist/
 build/
 
-# Runtime and local storage
+# Runtime, local storage and databases
 data/
+*.sqlite
+*.sqlite3
+*.sqlite-journal
+*.db
+*.sql
 .env
 .env.*
 !.env.example
+career-api/career-config.php
 scratch/
 siet-web-final-main/
 chrome-profile*
+
+# Security Reports and Audit Evidence (Private - never expose to public GitHub)
+reports/
+docs/reports/
+test/
 
 # Logs
 *.log
@@ -32,7 +43,8 @@ Thumbs.db
 ehthumbs.db
 desktop.ini
 
-# Editor temporary files
+# Editor & IDE settings
+.vscode/
 *.swp
 *.swo
 *~
