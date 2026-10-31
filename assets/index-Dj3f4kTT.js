@@ -1003,7 +1003,7 @@ function ti(){return`
         </p>
         <div class="programme-toggle-pill">
           <button class="toggle-btn active" data-level="UG" type="button">UG Programmes</button>
-          <button class="toggle-btn" data-level="PG" type="button">PG &amp; Ph.D Programmes</button>
+          <button class="toggle-btn" data-level="PG" type="button">PG Programmes</button>
           <button class="toggle-btn" data-level="PHD" type="button">Ph.D Programmes</button>
         </div>
         <div style="margin-top: 14px;">
