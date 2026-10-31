@@ -51,3 +51,9 @@
 .home-admission-enquiry > .home-institution-meta > .home-meta-telephone b {
   text-align: left !important;
 }
+
+/* Guarantee telephone number remains on a single line */
+.home-admission-enquiry > .home-institution-meta > .home-meta-telephone strong {
+  white-space: nowrap !important;
+  font-size: clamp(10.5px, 0.85vw, 12px) !important;
+}

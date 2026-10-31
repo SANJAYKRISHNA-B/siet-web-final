@@ -394,9 +394,9 @@ function ensureHomeAdmissionEnquiry() {
         <a class="home-contact-item home-contact-email" href="mailto:admissions@siet.ac.in"><span aria-hidden="true">✉</span><div><strong>admissions@siet.ac.in</strong><small>Send us your queries</small></div></a>
       </div>
       <div class="home-institution-meta">
-        <div><span class="home-meta-symbol" aria-hidden="true">✓</span><p><strong>Approved by AICTE, New Delhi</strong><b>AUTONOMOUS INSTITUTION</b></p></div>
+        <div><span class="home-meta-symbol" aria-hidden="true">✓</span><p><strong style="white-space:nowrap;line-height:1.25;">Approved by AICTE,<br><span style="white-space:nowrap">New Delhi</span></strong><b>AUTONOMOUS INSTITUTION</b></p></div>
         <div><span class="home-meta-symbol" aria-hidden="true">▥</span><p><strong>Affiliated to Anna University, Chennai</strong><small>L&amp;T By-Pass, Chinniyampalayam, Coimbatore – 641062</small></p></div>
-        <div class="home-meta-telephone"><span class="home-meta-symbol" aria-hidden="true">●</span><p><strong>Tel: +91 422 2369900</strong><b>100 LINES</b></p></div>
+        <div class="home-meta-telephone"><span class="home-meta-symbol" aria-hidden="true">●</span><p><strong style="white-space:nowrap !important;">Tel: +91 422 2369900</strong><b>100 LINES</b></p></div>
       </div>
     </section>`;
   content.querySelector(".home-impact-rule")?.after(panel);

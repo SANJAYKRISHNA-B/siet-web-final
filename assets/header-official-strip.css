@@ -534,8 +534,14 @@ html {
   align-items: center !important;
   width: max-content !important;
   will-change: transform !important;
-  animation: homeNoticeScroll 35s linear infinite !important;
+  animation: homeNoticeScroll 80s linear infinite !important;
   animation-play-state: running !important;
+}
+
+@media (max-width: 768px) {
+  .home-notice-track {
+    animation-duration: 85s !important;
+  }
 }
 
 .home-notice-track:hover {
