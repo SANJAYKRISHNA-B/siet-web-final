@@ -13,9 +13,69 @@ function respond(int $status, array $payload): void
     exit;
 }
 
+function getClientIp(): string
+{
+    $remote = (string)($_SERVER['REMOTE_ADDR'] ?? '127.0.0.1');
+    $trustedProxies = ['127.0.0.1', '::1'];
+    $envProxies = getenv('TRUSTED_PROXIES');
+    if ($envProxies) {
+        $trustedProxies = array_merge($trustedProxies, array_map('trim', explode(',', $envProxies)));
+    }
+    if (in_array($remote, $trustedProxies, true)) {
+        if (!empty($_SERVER['HTTP_CF_CONNECTING_IP'])) {
+            $cfIp = trim((string)$_SERVER['HTTP_CF_CONNECTING_IP']);
+            if (filter_var($cfIp, FILTER_VALIDATE_IP)) return $cfIp;
+        }
+        if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ips = explode(',', (string)$_SERVER['HTTP_X_FORWARDED_FOR']);
+            $first = trim($ips[0]);
+            if (filter_var($first, FILTER_VALIDATE_IP)) return $first;
+        }
+    }
+    return filter_var($remote, FILTER_VALIDATE_IP) ? $remote : '127.0.0.1';
+}
+
+function enforceRateLimit(string $endpointKey, int $maxAttempts = 3, int $decaySeconds = 900): void
+{
+    $ip = getClientIp();
+    $cacheDir = sys_get_temp_dir() . DIRECTORY_SEPARATOR . 'siet_rate_limits';
+    if (!is_dir($cacheDir)) {
+        @mkdir($cacheDir, 0700, true);
+    }
+    $hashKey = hash('sha256', $endpointKey . '|' . $ip);
+    $filePath = $cacheDir . DIRECTORY_SEPARATOR . 'rl_' . $hashKey . '.json';
+    $now = time();
+    $data = ['count' => 0, 'reset' => $now + $decaySeconds];
+    if (is_file($filePath)) {
+        $raw = @file_get_contents($filePath);
+        $decoded = $raw ? json_decode($raw, true) : null;
+        if (is_array($decoded) && isset($decoded['reset']) && $decoded['reset'] > $now) {
+            $data = $decoded;
+        }
+    }
+    $data['count'] = (int)($data['count'] ?? 0) + 1;
+    if (!isset($data['reset']) || $data['reset'] <= $now) {
+        $data['reset'] = $now + $decaySeconds;
+    }
+    @file_put_contents($filePath, json_encode($data), LOCK_EX);
+    if ($data['count'] > $maxAttempts) {
+        $retryAfter = max(1, $data['reset'] - $now);
+        header('Retry-After: ' . $retryAfter);
+        http_response_code(429);
+        echo json_encode([
+            'success' => false,
+            'message' => 'Too many requests. You have exceeded the resume submission limit. Please try again in ' . $retryAfter . ' seconds.'
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        exit;
+    }
+}
+
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     respond(405, ['success' => false, 'message' => 'POST method required.']);
 }
+
+// Enforce per-IP rate limiting: maximum 3 career resume submissions per 15 minutes (SIET-SEC-006 Remediation)
+enforceRateLimit('career_submit', 3, 900);
 if (!empty($_SERVER['HTTP_ORIGIN'])) {
     $originHost = parse_url((string)$_SERVER['HTTP_ORIGIN'], PHP_URL_HOST);
     $originPort = parse_url((string)$_SERVER['HTTP_ORIGIN'], PHP_URL_PORT);

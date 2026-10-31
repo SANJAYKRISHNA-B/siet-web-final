@@ -1,11 +1,30 @@
+# =============================================================================
+# SIET APACHE CONFIGURATION (.htaccess)
+# =============================================================================
+
+# Disable directory browsing and mod_negotiation MultiViews
+Options -Indexes -MultiViews
+
+# Default index file
 DirectoryIndex index.html
+
+# Fallback error document to ensure SPA catches any uncaught routes
+ErrorDocument 404 /index.html
 
 <IfModule mod_rewrite.c>
   RewriteEngine On
+  RewriteBase /
+
+  # Redirect HTTP to HTTPS (enable after confirming TLS on all subdomains)
+  # RewriteCond %{HTTPS} off
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
   # The canonical SSSM route uses the same page rendered by the main SPA.
-  RewriteRule ^sssm/?$ index.html [L]
+  RewriteRule ^sssm/?$ /index.html [L]
+
   # Keep old COE links working while all current links use /downloads/.
   RewriteRule ^download/(.*)$ /downloads/$1 [R=302,L,NE]
+
   # Redirect removed duplicate filenames to their retained canonical PDF.
   RewriteRule ^downloads/(CIA-II-semester-VII-UG-Rescheduled|CIA-II-semester-VII-UG|SIET-Brochure|sample-syllabus|Regulation-2021-UG)\.pdf$ /downloads/Regulation%202021%20UG.pdf [R=302,L,NE]
   RewriteRule ^downloads/Transcript-application-form\.pdf$ /downloads/Transcript%20application%20form.pdf [R=302,L,NE]
@@ -15,13 +34,21 @@ DirectoryIndex index.html
   RewriteRule ^downloads/Regulation-2021-PG\.pdf$ /downloads/Regulation%202021%20PG.pdf [R=302,L,NE]
   RewriteRule ^downloads/R2021-UG-AMENDMENT-I\.pdf$ /downloads/R2021%20UG-AMENDMENT%20-%20I%20SIET.pdf [R=302,L,NE]
   RewriteRule ^downloads/R2021-UG-AMENDMENT-II\.pdf$ /downloads/R2021%20UG-AMENDMENT%20-%20II%20SIET.pdf [R=302,L,NE]
-  # Serve real compiled assets, images, downloads and documents directly.
-  RewriteCond %{REQUEST_FILENAME} -f [OR]
-  RewriteCond %{REQUEST_FILENAME} -d
+
+  # If index.html is directly requested, stop rewriting
+  RewriteRule ^index\.html$ - [L]
+
+  # Serve real compiled assets, images, downloads, and PHP scripts directly.
+  RewriteCond %{REQUEST_FILENAME} -f
   RewriteRule ^ - [L]
 
-  # Send clean application routes back to the React entry point.
-  RewriteRule ^ index.html [L]
+  # Serve real directories only if they contain an index.html file (e.g. /, /icchi/, /mdfi/)
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteCond %{REQUEST_FILENAME}/index.html -f
+  RewriteRule ^ - [L]
+
+  # Send all clean SPA application routes back to the React entry point.
+  RewriteRule . /index.html [L]
 </IfModule>
 
 
@@ -35,13 +62,39 @@ DirectoryIndex index.html
   ExpiresByType image/svg+xml "access plus 30 days"
   ExpiresByType image/webp "access plus 30 days"
 </IfModule>
-<IfModule mod_headers.c>
-  # The hosting account currently emits a restrictive default-src policy.
-  # Add a specific frame-src exception for the embedded Vigoe AI assistant.
-  # Apply to both normal and "always" response header tables used by Apache.
-  Header edit* Content-Security-Policy "default-src 'self'" "default-src 'self'; frame-src 'self' https://vigoe.ai"
-  Header always edit* Content-Security-Policy "default-src 'self'" "default-src 'self'; frame-src 'self' https://vigoe.ai"
 
+# =============================================================================
+# SECURITY HEADERS  (VAPT remediation 2026-10-31)
+# =============================================================================
+<IfModule mod_headers.c>
+  # 1. HTTP Strict Transport Security (1 year)
+  Header always set Strict-Transport-Security "max-age=31536000"
+
+  # 2. Content Security Policy
+  #    frame-src & connect-src: permits self and Vigoe AI assistant.
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://encrypted-tbn0.gstatic.com; connect-src 'self' https://vigoe.ai https://*.vigoe.ai; media-src 'self'; frame-src 'self' https://vigoe.ai https://*.vigoe.ai; frame-ancestors 'self'; form-action 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"
+
+  # 3. Prevent MIME-type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # 4. Clickjacking protection (belt-and-suspenders alongside CSP frame-ancestors)
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # 5. Referrer leakage control
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # 6. Disable powerful browser features not used by this site
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()"
+
+  # 7. Cross-Origin isolation (safe for public static site)
+  Header always set Cross-Origin-Opener-Policy "same-origin-allow-popups"
+  Header always set Cross-Origin-Resource-Policy "cross-origin"
+
+  # 8. Remove server version banner (information disclosure)
+  Header always unset X-Powered-By
+  Header always unset Server
+
+  # Image caching headers
   <FilesMatch "\.(avif|gif|jpe?g|png|svg|webp)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
