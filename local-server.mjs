@@ -26,11 +26,67 @@ mkdirSync(careerUploadDir, { recursive: true });
 
 const careerDb = new DatabaseSync(join(careerDataDir, "career-applications.sqlite"));
 
-careerDb.exec(readFileSync(join(root, "career-api", "local-career-schema.sql"), "utf8"));
+const defaultCareerSchema = `
+CREATE TABLE IF NOT EXISTS career_applications (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  application_no TEXT NOT NULL UNIQUE,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  email TEXT NOT NULL,
+  date_of_birth TEXT NOT NULL,
+  country TEXT NOT NULL,
+  state TEXT,
+  city TEXT,
+  institution TEXT NOT NULL,
+  category TEXT NOT NULL,
+  position TEXT NOT NULL,
+  department TEXT NOT NULL,
+  qualification TEXT NOT NULL,
+  social_category TEXT NOT NULL,
+  current_institution TEXT,
+  current_position TEXT,
+  current_salary TEXT,
+  expected_salary TEXT NOT NULL,
+  notice_period TEXT,
+  teaching_experience TEXT,
+  industrial_experience TEXT,
+  research_experience TEXT,
+  opening_source TEXT,
+  message TEXT,
+  resume_original_name TEXT NOT NULL,
+  resume_stored_name TEXT NOT NULL,
+  resume_mime_type TEXT NOT NULL,
+  resume_size INTEGER NOT NULL,
+  ip_address TEXT,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+CREATE INDEX IF NOT EXISTS idx_career_applications_email ON career_applications(email);
+CREATE INDEX IF NOT EXISTS idx_career_applications_created_at ON career_applications(created_at DESC);
+`;
+
+const careerSchemaPath = join(root, "career-api", "local-career-schema.sql");
+careerDb.exec(existsSync(careerSchemaPath) ? readFileSync(careerSchemaPath, "utf8") : defaultCareerSchema);
 
 const applyDb = new DatabaseSync(join(careerDataDir, "apply-applications.sqlite"));
 
-applyDb.exec(readFileSync(join(root, "apply-api", "local-application-schema.sql"), "utf8"));
+const defaultApplySchema = `
+CREATE TABLE IF NOT EXISTS applications (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  name VARCHAR(50) NOT NULL,
+  mobile VARCHAR(20) NOT NULL,
+  email VARCHAR(50) NOT NULL,
+  location VARCHAR(50) NOT NULL,
+  course VARCHAR(30) NOT NULL,
+  message TEXT NOT NULL,
+  other VARCHAR(30) NOT NULL,
+  previous_qualification VARCHAR(150) DEFAULT NULL,
+  course_level VARCHAR(100) DEFAULT NULL,
+  academic_qualification_marks VARCHAR(150) DEFAULT NULL
+);
+`;
+
+const applySchemaPath = join(root, "apply-api", "local-application-schema.sql");
+applyDb.exec(existsSync(applySchemaPath) ? readFileSync(applySchemaPath, "utf8") : defaultApplySchema);
 
 const insertApplyApplication = applyDb.prepare(`
 
