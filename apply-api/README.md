@@ -21,3 +21,23 @@ the existing 50-character `location` field. `other` records the source as
 For local development, `local-server.mjs` intercepts the same endpoint and
 saves submissions to the ignored `data/apply-applications.sqlite` database.
 That SQLite database mirrors the pictured table; it does not affect cPanel.
+
+## Local testing
+
+Start the site from the repository root:
+
+```bash
+node local-server.mjs
+```
+
+Open `http://127.0.0.1:4173/apply` and submit the form. The local server
+validates and saves the enquiry in SQLite, without sending it to cPanel or
+changing the production MySQL database. Review the latest 100 local submissions
+at:
+
+```text
+http://127.0.0.1:4173/api/apply/applications
+```
+
+The response includes the generated local row ID and the saved fields. The
+database file is `data/apply-applications.sqlite`; it is ignored by Git.

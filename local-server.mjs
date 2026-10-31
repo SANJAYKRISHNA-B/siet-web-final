@@ -404,6 +404,12 @@ createServer((request, response) => {
     return;
   }
 
+  if (request.method === "GET" && localApiPath === "/api/apply/applications") {
+    const applications = applyDb.prepare("SELECT id, name, mobile, email, location, course, message, other, previous_qualification, course_level, academic_qualification_marks FROM applications ORDER BY id DESC LIMIT 100").all();
+    sendJson(response, 200, { success: true, count: applications.length, applications });
+    return;
+  }
+
   // 1. API Endpoint: Space Whiz 2026 Registration
   if (localApiPath.startsWith("/api/space-whiz/register") || localApiPath.startsWith("/api/sssm/register")) {
     if (request.method !== "POST") {
@@ -559,6 +565,27 @@ createServer((request, response) => {
 
   // 3. Static File & Path Routing
   const requestPath = decodeURIComponent(new URL(request.url, `http://${request.headers.host}`).pathname);
+  const legacyDownloadAliases = new Map([
+    ["/downloads/cia-ii-semester-vii-ug-rescheduled.pdf", "/downloads/Regulation 2021 UG.pdf"],
+    ["/downloads/cia-ii-semester-vii-ug.pdf", "/downloads/Regulation 2021 UG.pdf"],
+    ["/downloads/siet-brochure.pdf", "/downloads/Regulation 2021 UG.pdf"],
+    ["/downloads/sample-syllabus.pdf", "/downloads/Regulation 2021 UG.pdf"],
+    ["/downloads/regulation-2021-ug.pdf", "/downloads/Regulation 2021 UG.pdf"],
+    ["/downloads/transcript-application-form.pdf", "/downloads/Transcript application form.pdf"],
+    ["/downloads/duplicate-certificate-form.pdf", "/downloads/Duplicate Certificate Form.pdf"],
+    ["/downloads/revaluation-form.pdf", "/downloads/Revaluation form.pdf"],
+    ["/downloads/revaluation-script-valuation-form.pdf", "/downloads/Revaluation-Script Valuation form.pdf"],
+    ["/downloads/regulation-2021-pg.pdf", "/downloads/Regulation 2021 PG.pdf"],
+    ["/downloads/r2021-ug-amendment-i.pdf", "/downloads/R2021 UG-AMENDMENT - I SIET.pdf"],
+    ["/downloads/r2021-ug-amendment-ii.pdf", "/downloads/R2021 UG-AMENDMENT - II SIET.pdf"],
+  ]);
+  const normalizedDownloadPath = requestPath.replace(/^\/download\//i, "/downloads/");
+  const canonicalDownloadPath = legacyDownloadAliases.get(normalizedDownloadPath.toLowerCase()) || normalizedDownloadPath;
+  if (canonicalDownloadPath !== requestPath) {
+    response.writeHead(302, { Location: encodeURI(canonicalDownloadPath), "Cache-Control": "no-cache" });
+    response.end();
+    return;
+  }
   const relativePath = requestPath.replace(/^\/+/, "");
   const safePath = normalize(relativePath).replace(/^(\.\.(\/|\\|$))+/, "");
   const cleanPath = safePath.toLowerCase().replace(/^[\\/]+|[\\/]+$/g, "");
