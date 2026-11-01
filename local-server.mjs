@@ -234,6 +234,8 @@ function handleLocalApplySubmission(request, response) {
 
         academicMarks: String(input.academicQualificationMarks || "").trim(),
 
+        department,
+
         district: String(input.district || "").trim(), state: String(input.state || "").trim(), country: String(input.country || "").trim()
 
       };
@@ -266,7 +268,19 @@ function handleLocalApplySubmission(request, response) {
 
       if (input.consent !== true) return sendJson(response, 422, { success: false, message: "Please provide consent to submit your enquiry." });
 
-      const result = insertApplyApplication.run(values);
+      const dbParams = {
+        name: values.name,
+        mobile: values.mobile,
+        email: values.email,
+        location: values.location,
+        course: values.course,
+        message: values.message,
+        other: values.other,
+        previousQualification: values.previousQualification,
+        courseLevel: values.courseLevel,
+        academicMarks: values.academicMarks
+      };
+      const result = insertApplyApplication.run(dbParams);
 
       const id = Number(result.lastInsertRowid);
 
@@ -1335,6 +1349,7 @@ createServer((request, response) => {
   const safePath = normalize(relativePath).replace(/^(\.\.(\/|\\|$))+/, "");
 
   const cleanPath = safePath.toLowerCase().replace(/^[\\/]+|[\\/]+$/g, "");
+  const forwardCleanPath = cleanPath.replace(/\\/g, "/");
 
 
 
@@ -1432,14 +1447,16 @@ createServer((request, response) => {
 
 
 
-  if (cleanPath === "labs" || cleanPath === "special-labs") {
-
-    response.writeHead(302, { Location: "/labs.html" });
-
+  if (cleanPath === "special-labs" || forwardCleanPath === "labs.html") {
+    response.writeHead(301, { Location: "/labs/" });
     response.end();
-
     return;
+  }
 
+  if (cleanPath === "labs" && !requestPath.endsWith("/")) {
+    response.writeHead(301, { Location: "/labs/" });
+    response.end();
+    return;
   }
 
 
@@ -1453,6 +1470,26 @@ createServer((request, response) => {
     return;
 
   }
+
+  
+  if (forwardCleanPath === "icchi/icchi.css") {
+    response.writeHead(301, { Location: "/icchi/css/icchi.css" });
+    response.end();
+    return;
+  }
+
+  if (forwardCleanPath === "icchi/icchi.js") {
+    response.writeHead(301, { Location: "/icchi/js/icchi.js" });
+    response.end();
+    return;
+  }
+  if (forwardCleanPath === "mdfi/mdfi.js") {
+    response.writeHead(301, { Location: "/mdfi/js/mdfi.js" });
+    response.end();
+    return;
+  }
+
+
 
 
 

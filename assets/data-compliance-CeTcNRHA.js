@@ -320,7 +320,7 @@ const v={about:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stro
                   <div style="font-size: 13.5px; font-weight: 750; color: #003c24; letter-spacing: 0.5px;">S, A+, A, B+, B, C+, C</div>
                   <small style="color: #64748b; font-size: 11.5px;">10-Point Scale: S(10), A+(9), A(8), B+(7), B(6.5), C+(6), C(5)</small>
                 </div>
-                <a href="#/curriculum" class="button" style="width: 100%; justify-content: center; font-size: 13px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                <a href="/curriculum" class="button" style="width: 100%; justify-content: center; font-size: 13px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
                   <span>Explore Department Syllabi &amp; Curriculum →</span>
                 </a>
               </div>
@@ -630,7 +630,7 @@ const v={about:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stro
     <section class="coe-portal-banner">
       <div class="coe-portal-banner-shell">
         <div class="coe-hero-breadcrumb">
-          <a href="#/">Home</a><span>/</span><a href="#/coe">COE</a><span>/</span><b>Examination Results</b>
+          <a href="/">Home</a><span>/</span><a href="/coe">COE</a><span>/</span><b>Examination Results</b>
         </div>
         <h1>End Semester Examination Results</h1>
         <p>Official Autonomous Examination &amp; Evaluation Results Portal</p>
@@ -680,7 +680,7 @@ const v={about:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stro
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                   <span>Check Result</span>
                 </button>
-                <a href="#/coe" class="button button-outline" style="text-decoration: none;">← Back to COE Portal</a>
+                <a href="/coe" class="button button-outline" style="text-decoration: none;">← Back to COE Portal</a>
               </div>
             </form>
 
@@ -764,7 +764,7 @@ const v={about:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stro
           <div style="display: flex; justify-content: space-between; align-items: center; background: #eef7f2; padding: 10px 14px; border-radius: 6px; font-weight: 750; color: #004d2e; flex-wrap: wrap; gap: 8px;">
             <span>Semester GPA (SGPA): <strong style="color: #0b7041; font-size: 15px;">8.94</strong> / 10.0</span>
             <span>Overall Status: <strong style="color: #0b7041;">PASS IN ALL COURSES</strong></span>
-            <button type="button" onclick="window.print()" class="button button-outline" style="font-size: 12px; padding: 4px 10px;">🖨 Print Grade Statement</button>
+            <button type="button" class="button button-outline js-print-grade-btn" style="font-size: 12px; padding: 4px 10px;">🖨 Print Grade Statement</button>
           </div>
           <p style="font-size: 11px; color: #64748b; margin: 8px 0 0; font-style: italic;">
             * This is an official computer-generated autonomous provisional statement of grades. Official signed physical grade sheets are issued through the departmental office.
@@ -1538,7 +1538,7 @@ const v={about:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stro
                 <div class="stat-panel-footer">
                   <div class="stat-contact-info">
                     <strong>Chief Controller: Dr. N. M. Saravana Kumar (Principal)</strong>
-                    <span>COE: Dr. K. E. Kannammal | <a href="#/coe?tab=committee" style="color: #005a36; text-decoration: underline; font-weight: 750;">Full COE Portal →</a></span>
+                    <span>COE: Dr. K. E. Kannammal | <a href="/coe?tab=committee" style="color: #005a36; text-decoration: underline; font-weight: 750;">Full COE Portal →</a></span>
                   </div>
                   <button type="button" class="stat-roster-toggle-btn" data-roster-toggle="exam">
                     <span>View Roster (7)</span>
@@ -1588,7 +1588,7 @@ const v={about:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stro
               <p>Active co-curricular and safety clubs empowering students to lead community drives, emergency response, women leadership, and narcotics-free lifestyle advocacy.</p>
             </div>
             <div>
-              <a href="#/clubs" class="comm-phone-btn" title="Explore all 26+ Student Clubs">
+              <a href="/clubs" class="comm-phone-btn" title="Explore all 26+ Student Clubs">
                 Explore All 26+ Student Clubs →
               </a>
             </div>
@@ -1617,7 +1617,7 @@ const v={about:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stro
                         ${e.ctaText} →
                       </button>
                     `:`
-                      <a href="#/clubs" class="gov-club-link">
+                      <a href="/clubs" class="gov-club-link">
                         ${e.ctaText} →
                       </a>
                     `}
@@ -1638,10 +1638,10 @@ const v={about:'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stro
             <span>Synchronized with official portal data at <a href="https://www.siet.ac.in/committees.php" target="_blank" rel="noopener noreferrer">siet.ac.in/committees.php</a> (AY 2024–25).</span>
           </div>
           <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-            <a href="#/mandatory-disclosure" class="comm-phone-btn">
+            <a href="/mandatory-disclosure" class="comm-phone-btn">
               AICTE Mandatory Disclosure →
             </a>
-            <a href="#/statutory-declaration" class="comm-phone-btn" style="background: #ffffff; color: #005a36; border: 1.5px solid #005a36;">
+            <a href="/statutory-declaration" class="comm-phone-btn" style="background: #ffffff; color: #005a36; border: 1.5px solid #005a36;">
               RTI Statutory Declaration →
             </a>
           </div>

@@ -211,8 +211,16 @@ LimitRequestBody 10485760
     RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/
     RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
 
+    # Legacy microsite asset redirects
+    RewriteRule ^icchi/icchi\.css$ /icchi/css/icchi.css [R=301,L]
+    RewriteRule ^icchi/icchi\.js$ /icchi/js/icchi.js [R=301,L]
+    RewriteRule ^mdfi/mdfi\.js$ /mdfi/js/mdfi.js [R=301,L]
+
     # Specific microsite exceptions and downloads
-    RewriteRule ^sssm/?$ /index.html [L]
+    # RewriteRule ^sssm/?$ /index.html [L] (SSSM standalone portal now active)
+    RewriteRule ^(space-mission|space-whiz|srishakthisat|shakthisat)/?$ /sssm/ [R=302,L]
+    RewriteRule ^labs\.html$ /labs/ [R=301,L]
+    RewriteRule ^(labs|special-labs)/?$ /labs/ [R=301,L]
     RewriteRule ^download/(.*)$ /downloads/$1 [R=302,L,NE]
     RewriteRule ^downloads/(CIA-II-semester-VII-UG-Rescheduled|CIA-II-semester-VII-UG|SIET-Brochure|sample-syllabus|Regulation-2021-UG)\.pdf$ /downloads/Regulation%202021%20UG.pdf [R=302,L,NE]
     RewriteRule ^downloads/Transcript-application-form\.pdf$ /downloads/Transcript%20application%20form.pdf [R=302,L,NE]

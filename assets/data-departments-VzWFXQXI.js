@@ -210,7 +210,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
       `,Feedback:`
         <h2>Feedback</h2>
         <p class="dept-lead-text">We welcome feedback from students, parents, alumni, and industry partners to help us continuously elevate our curriculum, laboratory facilities, and student learning experience.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-grid">
             <div class="dept-form-group">
               <label>Your Name *</label>
@@ -678,7 +678,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
       `,Feedback:`
         <h2>Feedback</h2>
         <p class="dept-lead-text">We welcome feedback from students, parents, alumni, and industry partners to help us continuously elevate our curriculum, laboratory facilities, and student learning experience.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-grid">
             <div class="dept-form-group">
               <label>Your Name *</label>
@@ -1120,7 +1120,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
       `,Feedback:`
         <h2>Feedback</h2>
         <p class="dept-lead-text">We welcome feedback from students, parents, alumni, and industry partners to help us continuously elevate our curriculum, laboratory facilities, and student learning experience.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-grid">
             <div class="dept-form-group">
               <label>Your Name *</label>
@@ -1694,7 +1694,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
       `,Feedback:`
         <h2 style="text-align: center; color: #167a39;"><u>DEPARTMENT FEEDBACK</u></h2>
         <p>We value your suggestions to enhance our clinical labs, curriculum, and research initiatives. Please submit your feedback below.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-grid">
             <div class="dept-form-group">
               <label>Full Name *</label>
@@ -2288,19 +2288,19 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
             <span class="dept-obj-tag">LATEST ISSUE</span>
             <h4>BIOPULSE Vol. 8 - Issue 2 (2024)</h4>
             <p>Featuring Dr. S. Shanmugasundaram's microbial robotics research, synthetic enzyme design by student teams, and national conference achievements.</p>
-            <p style="margin-top: 10px;"><a href="#/contact" style="color:#167a39; font-weight:700;">Download e-Copy (PDF) &rarr;</a></p>
+            <p style="margin-top: 10px;"><a href="/contact" style="color:#167a39; font-weight:700;">Download e-Copy (PDF) &rarr;</a></p>
           </div>
           <div class="dept-obj-card">
             <span class="dept-obj-tag">ARCHIVE</span>
             <h4>BIOPULSE Vol. 8 - Issue 1 (2024)</h4>
             <p>Spotlight on student MS fellowship at East China University and Monash University international research internships.</p>
-            <p style="margin-top: 10px;"><a href="#/contact" style="color:#167a39; font-weight:700;">Download e-Copy (PDF) &rarr;</a></p>
+            <p style="margin-top: 10px;"><a href="/contact" style="color:#167a39; font-weight:700;">Download e-Copy (PDF) &rarr;</a></p>
           </div>
         </div>
       `,Feedback:`
         <h2 style="text-align: center; color: #167a39;"><u>DEPARTMENT FEEDBACK</u></h2>
         <p>Your valuable suggestions help us advance our research facilities, curriculum, and industry training. Please submit your feedback below.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-grid">
             <div class="dept-form-group">
               <label>Full Name *</label>
@@ -3321,7 +3321,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
           </table>
         </div>`,Feedback:`<h2 style="text-align: center; color: #167a39;"><u>FEEDBACK</u></h2>
         <p class="dept-lead-text" style="text-align: center; margin-bottom: 24px;">We value your constructive feedback to continuously enhance our academic quality and learning ecosystem.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-group">
             <label>Full Name *</label>
             <input type="text" required placeholder="Enter your full name" />
@@ -3851,7 +3851,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
           </table>
         </div>`,Feedback:`<h2 style="text-align: center; color: #167a39;"><u>FEEDBACK</u></h2>
         <p class="dept-lead-text" style="text-align: center; margin-bottom: 24px;">We value your constructive feedback to continuously enhance our academic quality and learning ecosystem.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-group">
             <label>Full Name *</label>
             <input type="text" required placeholder="Enter your full name" />
@@ -4532,7 +4532,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
           </table>
         </div>`,Feedback:`<h2 style="text-align: center; color: #167a39;"><u>FEEDBACK</u></h2>
         <p class="dept-lead-text" style="text-align: center; margin-bottom: 24px;">We value your constructive feedback to continuously enhance our academic quality and learning ecosystem.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-group">
             <label>Full Name *</label>
             <input type="text" required placeholder="Enter your full name" />
@@ -5082,7 +5082,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
           </table>
         </div>`,Feedback:`<h2 style="text-align: center; color: #167a39;"><u>FEEDBACK</u></h2>
         <p class="dept-lead-text" style="text-align: center; margin-bottom: 24px;">We value your constructive feedback to continuously enhance our academic quality and learning ecosystem.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-group">
             <label>Full Name *</label>
             <input type="text" required placeholder="Enter your full name" />
@@ -5543,7 +5543,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
           </table>
         </div>`,Feedback:`<h2 style="text-align: center; color: #167a39;"><u>FEEDBACK</u></h2>
         <p class="dept-lead-text" style="text-align: center; margin-bottom: 24px;">We value your constructive feedback to continuously enhance our academic quality and learning ecosystem.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-group">
             <label>Full Name *</label>
             <input type="text" required placeholder="Enter your full name" />
@@ -6205,7 +6205,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
           </table>
         </div>`,Feedback:`<h2 style="text-align: center; color: #167a39;"><u>FEEDBACK</u></h2>
         <p class="dept-lead-text" style="text-align: center; margin-bottom: 24px;">We value your constructive feedback to continuously enhance our academic quality and learning ecosystem.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-group">
             <label>Full Name *</label>
             <input type="text" required placeholder="Enter your full name" />
@@ -6819,7 +6819,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
           </table>
         </div>`,Feedback:`<h2 style="text-align: center; color: #167a39;"><u>FEEDBACK</u></h2>
         <p class="dept-lead-text" style="text-align: center; margin-bottom: 24px;">We value your constructive feedback to continuously enhance our academic quality and learning ecosystem.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-group">
             <label>Full Name *</label>
             <input type="text" required placeholder="Enter your full name" />
@@ -7287,7 +7287,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
       `,Feedback:`
         <h2 style="text-align: center; color: #167a39;"><u>FEEDBACK</u></h2>
         <p class="dept-lead-text" style="text-align: center; margin-bottom: 24px;">We value your constructive feedback to continuously enhance our academic quality and cybersecurity learning ecosystem.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-group">
             <label>Full Name *</label>
             <input type="text" required placeholder="Enter your full name" />
@@ -7475,7 +7475,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
       `,Feedback:`
         <h2 style="text-align: center; color: #167a39;"><u>FEEDBACK</u></h2>
         <p class="dept-lead-text" style="text-align: center; margin-bottom: 24px;">We value your constructive feedback to continuously enhance our academic quality and learning ecosystem.</p>
-        <form class="dept-feedback-form" onsubmit="event.preventDefault(); this.querySelector('.feedback-success').style.display='block'; this.reset();">
+        <form class="dept-feedback-form">
           <div class="dept-form-group">
             <label>Full Name *</label>
             <input type="text" required placeholder="Enter your full name" />
@@ -7504,4 +7504,4 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
             ✓ Thank you! Your feedback has been submitted successfully to the VLSI Design department.
           </div>
         </form>
-      `}},default:{courses:[],overview:"The department combines strong academic foundations with practical laboratory learning, industry exposure, project work and research. Experienced faculty members guide students to solve real-world engineering problems and build careers for a changing world."}};t["Electrical & Electronics"]=t["Electrical and Electronics Engineering"];t["Electronics & Communication"]=t["Electronics and Communication Engineering"];t["Artificial Intelligence and Data Science"]=t["Artificial Intelligence and Data Science"];t["Artificial Intelligence and Machine Learning"]=t["Artificial Intelligence and Machine Learning"];t["Computer Science and Engineering"]=t["Computer Science and Engineering"];t["Computer Science and Engineering (Cyber Security)"]=t["Computer Science and Engineering (Cyber Security)"];t["Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["Computer Science (Cyber Security)"]=t["Computer Science and Engineering (Cyber Security)"];t["Computer Science and Engineering ( Cyber Security )"]=t["Computer Science and Engineering (Cyber Security)"];t["Cse Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["CSE-Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["Cad Cam"]=t["Mechanical Engineering"];t["CAD/CAM"]=t["Mechanical Engineering"];t["Cad/Cam"]=t["Mechanical Engineering"];t["Embedded System Technologies"]=t["Electrical and Electronics Engineering"];t["Structural Engineering"]=t["Civil Engineering"];t["Farm Machinery"]=t["Agricultural Engineering"];t["Vlsi Design"]=t["VLSI Design"];t["Electronics Engineering (VLSI Design & Technology)"]=t["VLSI Design"];t["Electronics Engineering ( VLSI Design & Technology)"]=t["VLSI Design"];t["Management Studies"]={courses:[["MBA - Master of Business Administration","60"]],overview:"<p>The Department of Management Studies (MBA) at Sri Shakthi Institute of Engineering and Technology is dedicated to developing ethical business leaders, strategic managers, and entrepreneurial visionaries. Offering an autonomous two-year MBA programme affiliated to Anna University and approved by AICTE, the curriculum integrates case-based learning, business simulations, executive guest lectures, and corporate internships across Finance, Marketing, Human Resources, Systems, Business Analytics, and Operations Management.</p><p>Backed by extensive industry partnerships, startup incubation support, and corporate mentoring, our MBA graduates consistently secure prestigious career opportunities with leading multinational enterprises, financial institutions, and global consulting firms.</p>"};t.MBA=t["Management Studies"];t.Mba=t["Management Studies"];t["Master of Business Administration"]=t["Management Studies"];t["Master of Business Administration (MBA)"]=t["Management Studies"];t["Master Of Business Administration (Mba)"]=t["Management Studies"];t["Computer Applications"]={courses:[["MCA - Master of Computer Applications","60"]],overview:"<p>The Department of Computer Applications (MCA) at Sri Shakthi Institute of Engineering and Technology offers an advanced postgraduate programme designed to develop high-calibre software architects, full-stack engineers, cloud specialists, and technology leaders. Affiliated to Anna University and approved by AICTE, the curriculum provides deep expertise in modern software engineering, cloud platforms, enterprise database systems, mobile development, data intelligence, and cybersecurity.</p><p>With dedicated high-performance computing laboratories, software incubation centres, and active industry collaborations with premier IT corporations, students gain intensive hands-on experience that leads to outstanding campus placements and impactful technology careers.</p>"};t.MCA=t["Computer Applications"];t.Mca=t["Computer Applications"];t["Master of Computer Applications"]=t["Computer Applications"];t["Master of Computer Applications (MCA)"]=t["Computer Applications"];t["Master Of Computer Applications (Mca)"]=t["Computer Applications"];a.forEach(([e,n])=>{t[e]||(t[e]={courses:[["B.E - "+e,"60"]],overview:"The "+e+" department at Sri Shakthi Institute of Engineering and Technology develops practical expertise through laboratory learning, industry exposure, projects and research. "+n})});export{l as a,c as b,t as c,i as d,o as e,s as i,d as p,a as u,r as v};
+      `}},default:{courses:[],overview:"The department combines strong academic foundations with practical laboratory learning, industry exposure, project work and research. Experienced faculty members guide students to solve real-world engineering problems and build careers for a changing world."}};t["Electrical & Electronics"]=t["Electrical and Electronics Engineering"];t["Electronics & Communication"]=t["Electronics and Communication Engineering"];t["Artificial Intelligence and Data Science"]=t["Artificial Intelligence and Data Science"];t["Artificial Intelligence and Machine Learning"]=t["Artificial Intelligence and Machine Learning"];t["Computer Science and Engineering"]=t["Computer Science and Engineering"];t["Computer Science and Engineering (Cyber Security)"]=t["Computer Science and Engineering (Cyber Security)"];t["Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["Computer Science (Cyber Security)"]=t["Computer Science and Engineering (Cyber Security)"];t["Computer Science and Engineering ( Cyber Security )"]=t["Computer Science and Engineering (Cyber Security)"];t["Cse Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["CSE-Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["Cad Cam"]=t["Mechanical Engineering"];t["CAD/CAM"]=t["Mechanical Engineering"];t["Cad/Cam"]=t["Mechanical Engineering"];t["Embedded System Technologies"]=t["Electrical and Electronics Engineering"];t["Structural Engineering"]=t["Civil Engineering"];t["Farm Machinery"]=t["Agricultural Engineering"];t["Vlsi Design"]=t["VLSI Design"];t["Electronics Engineering (VLSI Design & Technology)"]=t["VLSI Design"];t["Electronics Engineering ( VLSI Design & Technology)"]=t["VLSI Design"];t["Management Studies"]={courses:[["MBA - Master of Business Administration","60"]],overview:"<p>The Department of Management Studies (MBA) at Sri Shakthi Institute of Engineering and Technology is dedicated to developing ethical business leaders, strategic managers, and entrepreneurial visionaries. Offering an autonomous two-year MBA programme affiliated to Anna University and approved by AICTE, the curriculum integrates case-based learning, business simulations, executive guest lectures, and corporate internships across Finance, Marketing, Human Resources, Systems, Business Analytics, and Operations Management.</p><p>Backed by extensive industry partnerships, startup incubation support, and corporate mentoring, our MBA graduates consistently secure prestigious career opportunities with leading multinational enterprises, financial institutions, and global consulting firms.</p>"};t.MBA=t["Management Studies"];t.Mba=t["Management Studies"];t["Master of Business Administration"]=t["Management Studies"];t["Master of Business Administration (MBA)"]=t["Management Studies"];t["Master Of Business Administration (Mba)"]=t["Management Studies"];t["Computer Applications"]={courses:[["MCA - Master of Computer Applications","60"]],overview:"<p>The Department of Computer Applications (MCA) at Sri Shakthi Institute of Engineering and Technology offers an advanced postgraduate programme designed to develop high-calibre software architects, full-stack engineers, cloud specialists, and technology leaders. Affiliated to Anna University and approved by AICTE, the curriculum provides deep expertise in modern software engineering, cloud platforms, enterprise database systems, mobile development, data intelligence, and cybersecurity.</p><p>With dedicated high-performance computing laboratories, software incubation centres, and active industry collaborations with premier IT corporations, students gain intensive hands-on experience that leads to outstanding campus placements and impactful technology careers.</p>"};t.MCA=t["Computer Applications"];t.Mca=t["Computer Applications"];t["Master of Computer Applications"]=t["Computer Applications"];t["Master of Computer Applications (MCA)"]=t["Computer Applications"];t["Master Of Computer Applications (Mca)"]=t["Computer Applications"];const __deptAliases={"aids":"Artificial Intelligence and Data Science","ai-ds":"Artificial Intelligence and Data Science","aiml":"Artificial Intelligence and Machine Learning","ai-ml":"Artificial Intelligence and Machine Learning","cyber":"Computer Science and Engineering (Cyber Security)","cyber-security":"Computer Science and Engineering (Cyber Security)","cse-cyber-security":"Computer Science and Engineering (Cyber Security)","cse":"Computer Science and Engineering","it":"Information Technology","mech":"Mechanical Engineering","eee":"Electrical and Electronics Engineering","ece":"Electronics and Communication Engineering","ece-vlsi":"Electronics and Communication Engineering","agri":"Agricultural Engineering","biotech":"Biotechnology","bme":"Biomedical Engineering","civil":"Civil Engineering","food":"Food Technology","food-tech":"Food Technology","vlsi":"VLSI Design"};Object.entries(__deptAliases).forEach(([k,v])=>{if(t[v]){t[k]=t[v];t[k.toUpperCase()]=t[v];}});a.forEach(([e,n])=>{t[e]||(t[e]={courses:[["B.E - "+e,"60"]],overview:"The "+e+" department at Sri Shakthi Institute of Engineering and Technology develops practical expertise through laboratory learning, industry exposure, projects and research. "+n})});export{l as a,c as b,t as c,i as d,o as e,s as i,d as p,a as u,r as v};

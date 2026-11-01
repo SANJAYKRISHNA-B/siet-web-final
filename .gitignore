@@ -58,3 +58,15 @@ brand/special-labs/archive/
 # Large image backups retained only as local audit artifacts
 docs/content-archive/duplicate-images-backup/
 docs/content-archive/deduplication-archive-20261030/
+# Temporary backup files and editor backups
+*.bak
+*.backup
+*.backup.*
+
+# Python scripts
+*.py
+
+# Migration backups and temporary scratch archives in docs
+docs/content-archive/backup-*/
+!docs/content-archive/backup-campus-life/
+docs/content-archive/scratch-cleanup-backup/

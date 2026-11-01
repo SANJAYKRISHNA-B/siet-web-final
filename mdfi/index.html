@@ -7,7 +7,7 @@
   <meta name="description" content="My Dream India — Sri Shakthi India Leadership & Career Conclave (SSILCC) State-Level Essay Competition. Top 100 students win a fully sponsored leadership expedition to The Madras Regimental Centre, Wellington via the Nilgiri Mountain Train!">
   <meta property="og:title" content="My Dream India | Sri Shakthi India Leadership & Career Conclave">
   <meta property="og:description" content="State-level essay and leadership competition for 10th, 11th & 12th students. 100% sponsored Wellington Nilgiri Mountain Railway trip for top 100 ranking students!">
-  <meta property="og:image" content="/brand/dream-india-poster.png">
+  <meta property="og:image" content="/mdfi/assets/dream-india-poster.png">
   <meta property="og:type" content="website">
   <link rel="icon" href="/brand/siet-logo.webp" type="image/webp">
   <link rel="alternate icon" href="/favicon.ico">
@@ -15,444 +15,13 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=League+Spartan:wght@700;800;900&display=swap" rel="stylesheet">
   <title>My Dream India | Sri Shakthi India Leadership &amp; Career Conclave (SSILCC) | SIET</title>
+  <link rel="canonical" href="https://siet.ac.in/mdfi/">
 
   <link rel="stylesheet" crossorigin href="/assets/index-BOwYVr40.css?v=20261029-v8">
   <link rel="stylesheet" href="/assets/space-mission.css?v=20261029-v12">
   <link rel="stylesheet" href="/assets/footer-map.css?v=20261029-v10">
 
-  <style>
-    /* =========================================================
-       MY DREAM INDIA (MDFI) WARM INSTITUTIONAL THEME (MATCHING SSSM)
-       Palette: Warm Sand (#f1eadb), Ivory Surface (#fffaf0),
-       Forest Green (#004d2c), Solar Gold (#ffd12e), Muted Slate (#ded2bb)
-       ========================================================= */
-    :root {
-      --space-bg-deep: #f1eadb;
-      --space-bg-surface: #fffaf0;
-      --space-bg-card: #fffaf0;
-      --space-border: #ded2bb;
-      --space-green: #004d2c;
-      --space-green-light: #067242;
-      --space-gold: #d97706;
-      --space-gold-accent: #ffd12e;
-      --space-text-bright: #123c29;
-      --space-text-dim: #5c7063;
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-      color: #123c29;
-      background-color: #f1eadb;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    .siet-brand-autonomous {
-      display: inline-block !important;
-      width: max-content !important;
-      margin-top: 3px !important;
-      padding: 2px 6px !important;
-      border: 1px solid #ffe777 !important;
-      border-radius: 4px !important;
-      background: #ffd83d !important;
-      color: #003622 !important;
-      box-shadow: 0 2px 8px rgba(255, 216, 61, .2) !important;
-      font-size: 9px !important;
-      line-height: 1.15 !important;
-      letter-spacing: .04em !important;
-    }
-
-    body.mdi-loading {
-      overflow: hidden;
-    }
-
-    /* REMOVE FIXED STATE FROM HEADER & NOTICE: Sits naturally at top */
-    .siet-fixed-header-wrapper,
-    .institution-header-v4.exact-image-header,
-    .notice.notice-home {
-      position: static !important;
-      top: auto !important;
-      transform: none !important;
-    }
-
-    .notice.notice-home {
-      height: 40px !important;
-      background: #003423 !important;
-      border-bottom: 2px solid #ffd83d !important;
-      display: flex;
-      align-items: center;
-      justify-content: flex-start !important;
-      overflow: hidden;
-      width: 100% !important;
-    }
-
-    .home-notice-track {
-      width: max-content !important;
-      display: flex;
-      align-items: center;
-      animation: homeNoticeScroll 35s linear infinite !important;
-      animation-play-state: running !important;
-      will-change: transform !important;
-    }
-    .home-notice-track:hover {
-      animation-play-state: paused;
-    }
-    @keyframes homeNoticeScroll {
-      0% {
-        transform: translate3d(0, 0, 0);
-      }
-      100% {
-        transform: translate3d(-50%, 0, 0);
-      }
-    }
-
-    .home-notice-group {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      padding-right: 24px;
-      white-space: nowrap;
-      font-size: 13px;
-      font-weight: 700;
-      color: #ffffff;
-    }
-    .home-notice-group span { display: inline-flex; align-items: center; gap: 8px; }
-    .home-notice-group i { display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: #ffd83d; }
-    .home-notice-open {
-      display: inline-flex;
-      align-items: center;
-      padding: 3px 12px;
-      border-radius: 999px;
-      background: #ffd83d;
-      color: #003423 !important;
-      font-weight: 800;
-      text-decoration: none;
-      font-size: 11.5px;
-      letter-spacing: 0.04em;
-    }
-
-    .institution-header-v4.exact-image-header {
-      background: #004d2c !important;
-      border-bottom: 2px solid #ffd12e !important;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15) !important;
-      z-index: 100;
-    }
-
-    /* Dropdown menu hover display for static page */
-    .institution-nav-group {
-      position: relative;
-    }
-    .institution-nav-group > div {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      min-width: 210px;
-      background: #00381e;
-      border: 1px solid rgba(255, 209, 46, 0.3);
-      border-radius: 8px;
-      padding: 8px 0;
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
-      z-index: 1000;
-    }
-    .institution-nav-group:hover > div,
-    .institution-nav-group.open > div {
-      display: flex;
-      flex-direction: column;
-    }
-    .institution-nav-group > div a {
-      padding: 9px 18px;
-      color: #ffffff;
-      font-size: 13.5px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: background 0.15s ease, color 0.15s ease;
-    }
-    .institution-nav-group > div a:hover {
-      background: rgba(255, 209, 46, 0.15);
-      color: #ffd12e;
-    }
-
-    /* HERO SECTION (ONLY SECTION) - Warm Palette like SSSM */
-    .mdi-hero {
-      position: relative;
-      background: linear-gradient(145deg, #fff7df 0%, #f3ead3 48%, #e6eddf 100%);
-      border-bottom: 1px solid #d8c9aa;
-      padding: 64px 24px 76px;
-      overflow: hidden;
-    }
-
-    .mdi-hero-shell {
-      max-width: 1200px;
-      margin: 0 auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    .portal-back-home {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin: 0 0 24px;
-      padding: 7px 16px;
-      border: 1px solid rgba(0, 77, 44, 0.25);
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.55);
-      color: #004d2c;
-      font-size: 13px;
-      font-weight: 800;
-      text-decoration: none;
-      transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-    }
-
-    .portal-back-home:hover {
-      transform: translateX(-3px);
-      border-color: #004d2c;
-      background: #004d2c;
-      color: #fff;
-    }
-
-    .mdi-hero-badge-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 22px;
-    }
-
-    .mdi-badge-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 18px;
-      border-radius: 9999px;
-      font-size: 11.5px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      background: rgba(255, 250, 240, 0.95);
-      color: #004d2c;
-      border: 1.5px solid #004d2c;
-    }
-    .mdi-badge-pill.saffron {
-      color: #b8610b;
-      border-color: #b8610b;
-    }
-
-    .mdi-hero-title {
-      font-family: 'League Spartan', 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(44px, 6vw, 76px);
-      font-weight: 900;
-      line-height: 1.05;
-      letter-spacing: -0.02em;
-      margin: 0 0 10px;
-      color: #123c29;
-      text-transform: uppercase;
-    }
-
-    .mdi-hero-title em {
-      font-style: normal;
-      background: linear-gradient(135deg, #004d2c 0%, #b77900 58%, #c2410c 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-    }
-
-    .mdi-hero-tamil-subtitle {
-      font-size: clamp(16px, 2vw, 22px);
-      font-weight: 700;
-      color: #067242;
-      margin-bottom: 20px;
-      letter-spacing: -0.01em;
-    }
-
-    .mdi-hero-lead {
-      max-width: 740px;
-      font-size: clamp(15px, 1.5vw, 17px);
-      line-height: 1.65;
-      color: #314a3d;
-      margin: 0 0 32px;
-    }
-
-    .mdi-hero-lead strong {
-      color: #004d2c;
-    }
-
-    .mdi-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      margin-bottom: 48px;
-      align-items: center;
-    }
-
-    .mdi-btn-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: linear-gradient(135deg, #004d2c 0%, #03361e 100%);
-      color: #ffffff;
-      font-weight: 800;
-      font-size: 15px;
-      padding: 14px 28px;
-      border-radius: 9999px;
-      text-decoration: none;
-      box-shadow: 0 8px 24px rgba(0, 77, 44, 0.28);
-      border: 1px solid rgba(255, 209, 46, 0.4);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .mdi-btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 30px rgba(0, 77, 44, 0.4);
-      color: #ffd12e;
-    }
-
-    .mdi-btn-outline {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #fffaf0;
-      color: #004d2c;
-      font-weight: 800;
-      font-size: 15px;
-      padding: 13px 26px;
-      border-radius: 9999px;
-      text-decoration: none;
-      border: 2px solid #004d2c;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
-    }
-    .mdi-btn-outline:hover {
-      background: #004d2c;
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
-
-    /* Poster Preview in Hero */
-    .mdi-hero-poster {
-      position: absolute;
-      top: 10px;
-      right: 0;
-      width: 285px;
-      overflow: hidden;
-      border: 6px solid #fffaf0;
-      border-radius: 20px;
-      background: #fffaf0;
-      box-shadow: 0 22px 48px rgba(54, 40, 14, 0.24);
-      color: #17432f;
-      text-decoration: none;
-      transform: rotate(1.5deg);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-    }
-    .mdi-hero-poster:hover {
-      transform: rotate(0) translateY(-6px);
-      box-shadow: 0 28px 58px rgba(54, 40, 14, 0.32);
-    }
-    .mdi-hero-poster img {
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 400px;
-      object-fit: contain;
-    }
-    .mdi-hero-poster span {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 11px 16px;
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      border-top: 1px solid #ded2bb;
-    }
-    .mdi-hero-poster b { color: #b77900; }
-
-    @media (min-width: 1121px) {
-      .mdi-hero-shell { padding-right: 320px; }
-    }
-    @media (max-width: 1120px) {
-      .mdi-hero-poster {
-        position: relative;
-        top: auto;
-        right: auto;
-        display: block;
-        width: min(290px, 86vw);
-        margin: 0 auto 36px;
-      }
-    }
-
-    /* Facts Grid */
-    .mdi-facts-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 16px;
-      background: #fffaf0;
-      border: 1px solid #ded2bb;
-      border-radius: 18px;
-      padding: 24px;
-      box-shadow: 0 12px 36px rgba(54, 40, 14, 0.08);
-      position: relative;
-      z-index: 2;
-    }
-
-    .mdi-fact-card {
-      padding: 12px 14px;
-      border-right: 1px solid #e8dec8;
-    }
-    .mdi-fact-card:last-child {
-      border-right: none;
-    }
-    @media (max-width: 768px) {
-      .mdi-fact-card { border-right: none; border-bottom: 1px solid #e8dec8; padding-bottom: 16px; }
-      .mdi-fact-card:last-child { border-bottom: none; }
-    }
-
-    .mdi-fact-label {
-      font-size: 11px;
-      font-weight: 800;
-      color: #b8610b;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .mdi-fact-value {
-      font-size: 18px;
-      font-weight: 900;
-      color: #123c29;
-      line-height: 1.25;
-      margin-bottom: 4px;
-    }
-
-    .mdi-fact-sub {
-      font-size: 12.5px;
-      color: #5c7063;
-      font-weight: 500;
-    }
-
-    /* CONTINUOUS DECORATIVE WAVE TO FOOTER */
-    .siet-curr-bottom-decor {
-      background: #f1eadb !important;
-      position: relative;
-      overflow: hidden;
-      margin-top: 0;
-    }
-    .siet-curr-bottom-wave {
-      display: block;
-      width: 100%;
-      height: 90px;
-    }
-    .siet-curr-bottom-wave svg {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-  </style>
+  <link rel="stylesheet" href="/mdfi/css/mdfi.css?v=20261101-v1">
 </head>
 <body class="mdi-loading">
   <div class="siet-logo-splash" id="mdi-page-loader" role="status" aria-label="Loading My Dream India website">
@@ -549,8 +118,8 @@
             </button>
             <div>
               <a href="/vision-mission">Vision &amp; Mission</a>
-              <a href="/chairmans-desk">The Chairman's Desk</a>
-              <a href="/principals-desk">From The Principal</a>
+              <a href="/chairman">The Chairman's Desk</a>
+              <a href="/principal">From The Principal</a>
             </div>
           </div>
 
@@ -662,13 +231,13 @@
           <a href="https://docs.google.com/forms/d/e/1FAIpQLSfNR52tMtgpJom85_jCxyUdIbt2RabJ9cLQ7rbo8eqY5rkaMg/viewform?usp=publish-editor" target="_blank" rel="noopener noreferrer" class="mdi-btn-outline">
             Already Registered? Upload Essay ↗
           </a>
-          <a href="/brand/dream-india-poster.png" target="_blank" rel="noopener noreferrer" class="mdi-btn-outline">
+          <a href="/mdfi/assets/dream-india-poster.png" target="_blank" rel="noopener noreferrer" class="mdi-btn-outline">
             View Official Poster 📜
           </a>
         </div>
 
-        <a class="mdi-hero-poster" href="/brand/dream-india-poster.png" target="_blank" rel="noopener noreferrer" aria-label="View the official Dream India Essay Contest 2026 poster">
-          <img src="/brand/dream-india-poster.png" alt="Official Dream India Essay Contest 2026 poster" width="1056" height="1479" fetchpriority="high" loading="eager" decoding="async">
+        <a class="mdi-hero-poster" href="/mdfi/assets/dream-india-poster.png" target="_blank" rel="noopener noreferrer" aria-label="View the official Dream India Essay Contest 2026 poster">
+          <img src="/mdfi/assets/dream-india-poster.png" alt="Official Dream India Essay Contest 2026 poster" width="1056" height="1479" fetchpriority="high" loading="eager" decoding="async">
           <span>Official Contest Poster <b>View ↗</b></span>
         </a>
 
@@ -715,7 +284,7 @@
   <footer class="site-footer footer-reference">
     <div class="footer-top">
       <div class="footer-brand">
-        <a class="mark" href="/#/">
+        <a class="mark" href="/">
           <img src="/brand/siet-institution-logo.webp" alt="Sri Shakthi emblem" width="48" height="48" loading="lazy" decoding="async">
           <span>
             <b>SRI SHAKTHI</b>
@@ -773,49 +342,49 @@
       <div class="footer-sitemap">
         <div class="footer-link-group">
           <b>About</b>
-          <a href="/#/vision-mission"><span>›</span>Vision And Mission</a>
-          <a href="/#/chairmans-desk"><span>›</span>The Chairman's desk</a>
-          <a href="/#/principals-desk"><span>›</span>From the Principal</a>
+          <a href="/vision-mission"><span>›</span>Vision And Mission</a>
+          <a href="/chairman"><span>›</span>The Chairman's desk</a>
+          <a href="/principal"><span>›</span>From the Principal</a>
         </div>
         <div class="footer-link-group">
           <b>Academics</b>
-          <a href="/#/programmes"><span>›</span>UG &amp; PG Programmes</a>
-          <a href="/#/curriculum"><span>›</span>Curriculum</a>
-          <a href="/#/library"><span>›</span>Library</a>
+          <a href="/programmes"><span>›</span>UG &amp; PG Programmes</a>
+          <a href="/curriculum"><span>›</span>Curriculum</a>
+          <a href="/library"><span>›</span>Library</a>
           <a href="/downloads/siet-faculty-list-au-affiliation-2026-27.pdf" target="_blank" rel="noopener noreferrer"><span>›</span>Faculty List</a>
         </div>
         <div class="footer-link-group">
           <b>Accreditation</b>
-          <a href="/#/governance"><span>›</span>Governance / Committees</a>
-          <a href="/#/mandatory-disclosure"><span>›</span>Mandatory Disclosure</a>
-          <a href="/#/statutory-declaration"><span>›</span>Statutory Declaration</a>
-          <a href="/#/nirf"><span>›</span>NIRF</a>
-          <a href="/#/naac"><span>›</span>NAAC</a>
-          <a href="/#/nba"><span>›</span>NBA</a>
-          <a href="/#/iqac"><span>›</span>IQAC</a>
-          <a href="/#/ariia"><span>›</span>ARIIA Report</a>
-          <a href="/#/anna-university-affiliation"><span>›</span>Anna University Affiliation</a>
+          <a href="/governance"><span>›</span>Governance / Committees</a>
+          <a href="/mandatory-disclosure"><span>›</span>Mandatory Disclosure</a>
+          <a href="/statutory-declaration"><span>›</span>Statutory Declaration</a>
+          <a href="/nirf"><span>›</span>NIRF</a>
+          <a href="/naac"><span>›</span>NAAC</a>
+          <a href="/nba"><span>›</span>NBA</a>
+          <a href="/iqac"><span>›</span>IQAC</a>
+          <a href="/ariia"><span>›</span>ARIIA Report</a>
+          <a href="/anna-university-affiliation"><span>›</span>Anna University Affiliation</a>
         </div>
         <div class="footer-link-group">
           <b>Explore</b>
           <a href="/sssm/"><span>›</span>Sri Shakthi Space Mission (SSSM)</a>
           <a href="/mdfi/"><span>›</span>My Dream India (MDFI)</a>
           <a href="/icchi/"><span>›</span>ICCHI 2027 Conference</a>
-          <a href="/#/training"><span>›</span>Career Development</a>
-          <a href="/#/research"><span>›</span>Research &amp; Development</a>
-          <a href="/#/innovation"><span>›</span>Innovation &amp; Incubation</a>
-          <a href="/#/centres-of-excellence"><span>›</span>Centres of Excellence</a>
-          <a href="/#/alumni"><span>›</span>Alumni</a>
-          <a href="/#/contact"><span>›</span>Contact Us</a>
+          <a href="/training"><span>›</span>Career Development</a>
+          <a href="/research"><span>›</span>Research &amp; Development</a>
+          <a href="/innovation"><span>›</span>Innovation &amp; Incubation</a>
+          <a href="/centres-of-excellence"><span>›</span>Centres of Excellence</a>
+          <a href="/alumni"><span>›</span>Alumni</a>
+          <a href="/contact"><span>›</span>Contact Us</a>
         </div>
         <div class="footer-link-group">
           <b>COE</b>
-          <a href="/#/coe"><span>›</span>COE Portal</a>
-          <a href="/#/coe?tab=forms"><span>›</span>Downloads &amp; Forms</a>
-          <a href="/#/coe?tab=regulations"><span>›</span>Regulations</a>
-          <a href="/#/coe?tab=results"><span>›</span>Results</a>
-          <a href="/#/coe?tab=transcripts"><span>›</span>Transcripts</a>
-          <a href="/#/coe?tab=schedules"><span>›</span>Exam Schedules</a>
+          <a href="/coe"><span>›</span>COE Portal</a>
+          <a href="/coe?tab=forms"><span>›</span>Downloads &amp; Forms</a>
+          <a href="/coe?tab=regulations"><span>›</span>Regulations</a>
+          <a href="/coe?tab=results"><span>›</span>Results</a>
+          <a href="/coe?tab=transcripts"><span>›</span>Transcripts</a>
+          <a href="/coe?tab=schedules"><span>›</span>Exam Schedules</a>
         </div>
       </div>
     </div>
@@ -827,7 +396,7 @@
     </div>
   </footer>
 
-  <script src="/mdfi/mdfi.js" defer></script>
+  <script src="/mdfi/js/mdfi.js" defer></script>
 
 </body>
 </html>

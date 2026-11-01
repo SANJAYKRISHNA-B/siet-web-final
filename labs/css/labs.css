@@ -1,0 +1,318 @@
+/* ==========================================================================
+   SIET Specialized Laboratories - Authentic High-Tech Facility Styling
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Homepage Lab Cards (Image 1 Fix: No sticker symbols, no arrow marks)
+   -------------------------------------------------------------------------- */
+.lab-card {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 20px !important;
+  aspect-ratio: 177 / 163 !important;
+  background: #022215 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease !important;
+}
+
+.lab-card:hover {
+  transform: translateY(-5px) !important;
+  box-shadow: 0 18px 36px rgba(4, 63, 39, 0.25) !important;
+  border-color: rgba(243, 197, 21, 0.5) !important;
+}
+
+.lab-card img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: inherit !important;
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease !important;
+}
+
+.lab-card:hover img {
+  transform: scale(1.05) !important;
+  filter: saturate(1.08) brightness(1.02) !important;
+}
+
+/* Explicitly hide all sticking symbol badges, arrow buttons, and number pills */
+.lab-card .card-floating-badge,
+.lab-card .card-circle-arrow,
+.lab-card .card-index {
+  display: none !important;
+}
+
+/* Clean, elegant bottom title gradient */
+.lab-card .card-bottom-overlay {
+  position: absolute !important;
+  inset: auto 0 0 0 !important;
+  z-index: 3 !important;
+  padding: 36px 16px 14px !important;
+  background: linear-gradient(180deg, transparent 0%, rgba(2, 34, 21, 0.68) 45%, rgba(1, 24, 15, 0.95) 100%) !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: flex-start !important;
+  color: #ffffff !important;
+  pointer-events: none !important;
+}
+
+.lab-card .card-info-side {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.lab-card .card-title-row {
+  display: flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  margin-bottom: 3px !important;
+}
+
+.lab-card .cat-accent-bar {
+  display: inline-block !important;
+  width: 3px !important;
+  height: 14px !important;
+  border-radius: 2px !important;
+  flex: none !important;
+}
+.cat-accent-bar.bar-emerald { background: #10b981 !important; }
+.cat-accent-bar.bar-blue { background: #0ea5e9 !important; }
+.cat-accent-bar.bar-teal { background: #14b8a6 !important; }
+.cat-accent-bar.bar-purple { background: #8b5cf6 !important; }
+.cat-accent-bar.bar-pink { background: #ec4899 !important; }
+
+.lab-card .card-title {
+  margin: 0 !important;
+  font-family: "Montserrat", sans-serif !important;
+  font-size: 15px !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  line-height: 1.2 !important;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7) !important;
+}
+
+.lab-card .card-subtitle {
+  margin: 0 !important;
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  color: #d1fae5 !important;
+  line-height: 1.35 !important;
+  max-width: 100% !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7) !important;
+}
+
+/* --------------------------------------------------------------------------
+   2. Lab Detail Hero Media Frame (Image 2 Fix: 100% FULL image edge-to-edge)
+   -------------------------------------------------------------------------- */
+.lab-hero-media-wrap {
+  width: 100% !important;
+  max-width: 580px !important;
+  margin-inline: auto !important;
+}
+
+.lab-hero-media-frame {
+  position: relative !important;
+  width: 100% !important;
+  aspect-ratio: 16 / 10 !important;
+  height: auto !important;
+  min-height: 320px !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  box-shadow: 0 18px 45px rgba(6, 78, 50, 0.18) !important;
+  border: 1px solid #d9e6df !important;
+  background: #022215 !important;
+}
+
+.lab-hero-media-frame .lab-hero-img {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: unset !important;
+  object-fit: cover !important;
+  display: block !important;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.lab-hero-media-frame:hover .lab-hero-img {
+  transform: scale(1.03) !important;
+}
+
+/* Hide duplicate top badges and bottom caption bars inside hero image */
+.lab-hero-media-frame .lab-media-top-badge,
+.lab-hero-media-frame .lab-media-caption-bar {
+  display: none !important;
+}
+
+/* Tasteful, elegant verified status pill */
+.lab-hero-media-frame .lab-media-status-badge {
+  position: absolute !important;
+  top: 14px !important;
+  right: 16px !important;
+  z-index: 5 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  padding: 6px 14px !important;
+  border-radius: 30px !important;
+  background: rgba(2, 34, 21, 0.74) !important;
+  border: 1px solid rgba(255, 255, 255, 0.22) !important;
+  backdrop-filter: blur(8px) !important;
+  color: #ffffff !important;
+  font-size: 11.5px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+.pulse-dot {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #10b981 !important;
+  box-shadow: 0 0 8px #10b981 !important;
+  display: inline-block !important;
+}
+
+/* --------------------------------------------------------------------------
+   3. Gallery Cards & Lightbox
+   -------------------------------------------------------------------------- */
+.lab-gallery-card {
+  position: relative;
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+  cursor: pointer;
+}
+
+.lab-gallery-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(6, 78, 50, 0.12) !important;
+}
+
+.lab-gallery-card .gallery-media-wrap img {
+  transition: transform 0.5s ease;
+}
+
+.lab-gallery-card:hover .gallery-media-wrap img {
+  transform: scale(1.04);
+}
+
+/* Fullscreen Lightbox Modal */
+.siet-lab-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(4, 30, 18, 0.94);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.siet-lab-lightbox.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.siet-lab-lightbox-content {
+  max-width: 1100px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #072a19;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+}
+
+.siet-lab-lightbox-img-wrap {
+  position: relative;
+  width: 100%;
+  height: 65vh;
+  background: #01180d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.siet-lab-lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.siet-lab-lightbox-caption {
+  padding: 20px 24px;
+  background: #032314;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.siet-lab-lightbox-title {
+  margin: 0 0 4px 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f3c515;
+}
+
+.siet-lab-lightbox-desc {
+  margin: 0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-size: 13.5px;
+  color: #d1fae5;
+  line-height: 1.5;
+}
+
+.siet-lab-lightbox-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.siet-lab-lightbox-close:hover {
+  background: #f3c515;
+  color: #043f27;
+  transform: rotate(90deg);
+}
+
+@media (max-width: 768px) {
+  .siet-lab-lightbox-caption {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .siet-lab-lightbox-img-wrap {
+    height: 50vh;
+  }
+}

@@ -53,11 +53,11 @@ function pageMarkup() {
         <div class="siet-vm-shell siet-vm-hero-content">
           <nav class="cf-breadcrumb-bar reveal is-visible" aria-label="Breadcrumb">
             <ol class="cf-breadcrumb-list">
-              <li><a href="#/">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li class="sep" aria-hidden="true">/</li>
               <li class="active" aria-current="page">DCS Summary</li>
             </ol>
-            <a href="#/" class="cf-back-btn" aria-label="Return to Home section">
+            <a href="/" class="cf-back-btn" aria-label="Return to Home section">
               <span class="back-arrow" aria-hidden="true">←</span>
               <span>Back to Home</span>
             </a>
@@ -86,13 +86,13 @@ function affiliationPageMarkup() {
         <div class="siet-vm-shell siet-vm-hero-content">
           <nav class="cf-breadcrumb-bar reveal is-visible" aria-label="Breadcrumb">
             <ol class="cf-breadcrumb-list">
-              <li><a href="#/">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li class="sep" aria-hidden="true">/</li>
-              <li><a href="#/accreditation">Accreditation</a></li>
+              <li><a href="/accreditation">Accreditation</a></li>
               <li class="sep" aria-hidden="true">/</li>
               <li class="active" aria-current="page">Anna University Affiliation</li>
             </ol>
-            <a href="#/accreditation" class="cf-back-btn" aria-label="Return to Accreditation section">
+            <a href="/accreditation" class="cf-back-btn" aria-label="Return to Accreditation section">
               <span class="back-arrow" aria-hidden="true">←</span>
               <span>Back to Accreditation</span>
             </a>
@@ -170,13 +170,13 @@ function nbaAccreditationPageMarkup() {
         <div class="siet-vm-shell siet-vm-hero-content">
           <nav class="cf-breadcrumb-bar reveal is-visible" aria-label="Breadcrumb">
             <ol class="cf-breadcrumb-list">
-              <li><a href="#/">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li class="sep" aria-hidden="true">/</li>
-              <li><a href="#/accreditation">Accreditation</a></li>
+              <li><a href="/accreditation">Accreditation</a></li>
               <li class="sep" aria-hidden="true">/</li>
               <li class="active" aria-current="page">NBA Tier-I Accreditation</li>
             </ol>
-            <a href="#/accreditation" class="cf-back-btn" aria-label="Return to Accreditation section">
+            <a href="/accreditation" class="cf-back-btn" aria-label="Return to Accreditation section">
               <span class="back-arrow" aria-hidden="true">←</span>
               <span>Back to Accreditation</span>
             </a>
@@ -243,7 +243,7 @@ function renderDcsSummary() {
 
   document.title = "DCS Summary | Sri Shakthi Institute of Engineering & Technology";
   document
-    .querySelectorAll('.institution-nav-link[href="#/dcs-summary"], .mobile-nav-link[href="#/dcs-summary"]')
+    .querySelectorAll('.institution-nav-link[href="/dcs-summary"], .mobile-nav-link[href="/dcs-summary"]')
     .forEach((link) => link.classList.add("is-active-nav"));
 }
 
@@ -340,7 +340,7 @@ function ensureApplyEnquiryOnly() {
     return;
   }
 
-  document.querySelectorAll('a[href="#/admission-referral"], a[href="/admission-referral"], a[href="#/referral"], a[href="/referral"]').forEach((link) => {
+  document.querySelectorAll('a[href="/admission-referral"], a[href="/admission-referral"], a[href="/referral"], a[href="/referral"]').forEach((link) => {
     link.setAttribute("href", "/apply");
   });
 
@@ -486,8 +486,8 @@ function ensureAdmissionNav() {
       const currentLinks = dropDiv ? [...dropDiv.querySelectorAll("a")] : [];
       if (dropDiv && currentLinks.length !== 2) {
         dropDiv.innerHTML = `
-          <a href="#/admission">Admission Overview</a>
-          <a href="#/apply">Admission Enquiry</a>
+          <a href="/admission">Admission Overview</a>
+          <a href="/apply">Admission Enquiry</a>
         `;
       }
     } else {
@@ -505,15 +505,15 @@ function ensureAdmissionNav() {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="13" height="13" style="margin-left:4px;"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div>
-          <a href="#/admission">Admission Overview</a>
-          <a href="#/apply">Admission Enquiry</a>
+          <a href="/admission">Admission Overview</a>
+          <a href="/apply">Admission Enquiry</a>
         </div>
       `;
 
       if (aboutGroup) {
         aboutGroup.after(admGroup);
       } else {
-        const homeLink = desktopMenu.querySelector('a[href="#/"]');
+        const homeLink = desktopMenu.querySelector('a[href="/"]');
         if (homeLink) homeLink.after(admGroup);
         else desktopMenu.prepend(admGroup);
       }
@@ -568,8 +568,8 @@ function ensureAdmissionNav() {
       const currentMobileLinks = mobileSub ? [...mobileSub.querySelectorAll("a")] : [];
       if (mobileSub && currentMobileLinks.length !== 2) {
         mobileSub.innerHTML = `
-          <a href="#/admission" class="mobile-nav-sublink">Admission Overview</a>
-          <a href="#/apply" class="mobile-nav-sublink">Admission Enquiry</a>
+          <a href="/admission" class="mobile-nav-sublink">Admission Overview</a>
+          <a href="/apply" class="mobile-nav-sublink">Admission Enquiry</a>
         `;
       }
     } else {
@@ -586,8 +586,8 @@ function ensureAdmissionNav() {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="m6 9 6 6 6-6"/></svg>
         </button>
         <div class="mobile-nav-subitems">
-          <a href="#/admission" class="mobile-nav-sublink">Admission Overview</a>
-          <a href="#/apply" class="mobile-nav-sublink">Admission Enquiry</a>
+          <a href="/admission" class="mobile-nav-sublink">Admission Overview</a>
+          <a href="/apply" class="mobile-nav-sublink">Admission Enquiry</a>
         </div>
       `;
 
