@@ -677,3 +677,129 @@
   color: #ffffff !important;
   opacity: 1 !important;
 }
+
+
+/* ==========================================================================
+   Chairman Desk Exact Compact Section & Authentic Portrait Framing
+   - Preserves compact section height (~250-280px on desktop)
+   - Features emerald bokeh background & golden ring inside portrait
+   ========================================================================== */
+.chairman-page .siet-cd-hero {
+  position: relative !important;
+  min-height: 250px !important;
+  max-height: 310px !important;
+  padding: 16px 0 !important;
+  overflow: hidden !important;
+  background: 
+    radial-gradient(circle at 18% 50%, rgba(16, 120, 72, 0.45) 0%, transparent 48%),
+    radial-gradient(circle at 85% 15%, rgba(10, 85, 52, 0.3) 0%, transparent 42%),
+    linear-gradient(110deg, #012215 0%, #033621 38%, #022a1a 72%, #01190f 100%) !important;
+  display: flex !important;
+  align-items: center !important;
+  border-bottom: 1px solid rgba(255, 209, 46, 0.16) !important;
+}
+.chairman-page .siet-cd-hero .siet-cd-shell {
+  width: min(1340px, 92vw) !important;
+  margin: 0 auto !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+.chairman-page .siet-cd-hero-layout {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+  gap: 16px !important;
+}
+@media (min-width: 851px) {
+  .chairman-page .siet-cd-hero {
+    max-height: 310px !important;
+    padding: 16px 0 !important;
+  }
+  .chairman-page .siet-cd-hero-layout {
+    display: grid !important;
+    grid-template-columns: 320px 1fr !important;
+    gap: clamp(24px, 3.5vw, 60px) !important;
+    align-items: center !important;
+    text-align: left !important;
+  }
+}
+.chairman-page .siet-cd-portrait {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 245px !important;
+  width: 100% !important;
+  max-width: 320px !important;
+  margin: 0 auto !important;
+}
+.chairman-page .siet-cd-portrait-frame {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+  max-height: 245px !important;
+  width: auto !important;
+}
+.chairman-page .siet-cd-portrait-frame img {
+  height: 100% !important;
+  max-height: 245px !important;
+  width: auto !important;
+  object-fit: contain !important;
+  display: block !important;
+  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.35)) !important;
+}
+.chairman-page .siet-cd-portrait-ring {
+  display: none !important;
+}
+.chairman-page .siet-cd-name.sr-only,
+.chairman-page .siet-cd-portrait ~ .siet-cd-name {
+  display: none !important;
+}
+.chairman-page .siet-cd-hero-copy {
+  align-self: center !important;
+  max-width: 760px !important;
+}
+.chairman-page .siet-cd-kicker {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 0 0 8px !important;
+  color: #ffd83d !important;
+  font-size: 13px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+}
+.chairman-page .siet-cd-hero-copy h1 {
+  font-family: 'Playfair Display', Georgia, serif !important;
+  font-size: clamp(26px, 2.5vw, 38px) !important;
+  font-weight: 700 !important;
+  line-height: 1.18 !important;
+  color: #ffffff !important;
+  margin: 0 0 10px !important;
+}
+.chairman-page .siet-cd-hero-copy h1 em {
+  font-style: italic !important;
+  color: #ffd83d !important;
+  font-weight: 700 !important;
+}
+.chairman-page .siet-cd-hero-copy p {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: clamp(14px, 1.1vw, 16px) !important;
+  line-height: 1.55 !important;
+  margin: 0 !important;
+}
+.chairman-page .siet-cd-arc {
+  position: absolute !important;
+  top: -30% !important;
+  left: 28% !important;
+  width: 500px !important;
+  height: 500px !important;
+  border-radius: 50% !important;
+  border: 36px solid rgba(255, 255, 255, 0.025) !important;
+  box-shadow: 0 0 0 28px rgba(255, 255, 255, 0.015) !important;
+  pointer-events: none !important;
+}
