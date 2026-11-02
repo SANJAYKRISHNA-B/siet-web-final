@@ -6427,150 +6427,151 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
             <div><strong>PSO3:</strong> Career and Entrepreneurship: The ability to employ modern technologies to produce new or value added products in the area of food process Engineering / Food Technology.</div>
           </li>
         </ul>
-    `,"Faculty Profile":`<h2 style="text-align: center; color: #167a39;"><u>FACULTY LIST</u></h2>
+    `,"Faculty Profile":`<h2 class="dept-faculty-title"><u>FACULTY LIST</u></h2>
         <div class="dept-table-wrapper">
-          <table class="dept-data-table">
+          <table class="dept-data-table faculty-profile-table">
             <thead>
               <tr>
-                <th style="width: 60px; text-align: center;">S.No</th>
+                <th style="width: 55px;" class="center-align">S.No</th>
                 <th>Name</th>
                 <th>Designation</th>
                 <th>Qualification</th>
+                <th style="width: 100px;" class="center-align">Photo<br><small style="font-size:11px; font-weight:normal;">(Passport Size)</small></th>
               </tr>
             </thead>
             <tbody>
-              
               <tr>
-                <td style="text-align: center; font-weight: 600;">1</td>
+                <td class="center-align" style="font-weight: 600;">1</td>
                 <td><strong>Dr. G. Sarojini</strong></td>
                 <td>Associate Professor and Head</td>
                 <td>M.E., Ph.D</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/g-sarojini.png" alt="Dr. G. Sarojini" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">2</td>
+                <td class="center-align" style="font-weight: 600;">2</td>
                 <td><strong>Dr.N.Sridhar</strong></td>
                 <td>Professor</td>
                 <td>M.E.,Ph.D</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/n-sridhar.png" alt="Dr.N.Sridhar" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">3</td>
+                <td class="center-align" style="font-weight: 600;">3</td>
                 <td><strong>Dr.S.Geetapriya</strong></td>
                 <td>Professor</td>
                 <td>M.Tech., Ph.D</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/s-geetapriya.png" alt="Dr.S.Geetapriya" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">4</td>
+                <td class="center-align" style="font-weight: 600;">4</td>
                 <td><strong>Dr. A. Allwyn Sundarraj</strong></td>
                 <td>Associate Professor</td>
                 <td>M.Tech., Ph.D</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/a-allwyn-sundarraj.png" alt="Dr. A. Allwyn Sundarraj" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">5</td>
+                <td class="center-align" style="font-weight: 600;">5</td>
                 <td><strong>Dr. G. Pratap Kumar</strong></td>
                 <td>Associate Professor</td>
                 <td>M.Tech., Ph.D</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/g-pratap-kumar.png" alt="Dr. G. Pratap Kumar" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">6</td>
+                <td class="center-align" style="font-weight: 600;">6</td>
                 <td><strong>Dr. J. Srimathi</strong></td>
                 <td>Assistant Professor</td>
                 <td>M.Tech., Ph.D</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/j-srimathi.png" alt="Dr. J. Srimathi" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">7</td>
+                <td class="center-align" style="font-weight: 600;">7</td>
                 <td><strong>Dr.Ramesh Sharma</strong></td>
                 <td>Assistant professor</td>
                 <td>M.Tech., Ph.D</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/ramesh-sharma.png" alt="Dr.Ramesh Sharma" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">8</td>
+                <td class="center-align" style="font-weight: 600;">8</td>
                 <td><strong>Mrs.S. Shamily</strong></td>
                 <td>Assistant Professor</td>
                 <td>M.Tech</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/s-shamily.png" alt="Mrs.S. Shamily" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">9</td>
+                <td class="center-align" style="font-weight: 600;">9</td>
                 <td><strong>Mr.KR.Rakhavan</strong></td>
                 <td>Assistant Professor</td>
                 <td>M.Tech</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/kr-rakhavan.png" alt="Mr.KR.Rakhavan" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">10</td>
+                <td class="center-align" style="font-weight: 600;">10</td>
                 <td><strong>Mr.K.Krishna Kumar</strong></td>
                 <td>Assistant Professor</td>
                 <td>M.Tech</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/k-krishna-kumar.png" alt="Mr.K.Krishna Kumar" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">11</td>
+                <td class="center-align" style="font-weight: 600;">11</td>
                 <td><strong>Mr. V.Hariharan</strong></td>
                 <td>Assistant Professor</td>
                 <td>M. Tech</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/v-hariharan.png" alt="Mr. V.Hariharan" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">12</td>
+                <td class="center-align" style="font-weight: 600;">12</td>
                 <td><strong>Ms.E.Swetha</strong></td>
                 <td>Assistant Professor</td>
                 <td>M.Tech</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/e-swetha.png" alt="Ms.E.Swetha" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">13</td>
+                <td class="center-align" style="font-weight: 600;">13</td>
                 <td><strong>Mr. S. Tamilselvan</strong></td>
                 <td>Assistant Professor</td>
                 <td>M. Tech</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/s-tamilselvan.png" alt="Mr. S. Tamilselvan" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">14</td>
+                <td class="center-align" style="font-weight: 600;">14</td>
                 <td><strong>Ms. K.S.Krithiga</strong></td>
                 <td>Assistant Professor</td>
                 <td>M.Tech</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/k-s-krithiga.png" alt="Ms. K.S.Krithiga" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">15</td>
+                <td class="center-align" style="font-weight: 600;">15</td>
                 <td><strong>Mrs. A. Mathivani</strong></td>
                 <td>Assistant Professor</td>
                 <td>M.E., (Ph.D)</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/a-mathivani.png" alt="Mrs. A. Mathivani" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">16</td>
+                <td class="center-align" style="font-weight: 600;">16</td>
                 <td><strong>Ms. S.Keerthana</strong></td>
                 <td>Assistant Professor</td>
                 <td>M.Tech</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/s-keerthana.png" alt="Ms. S.Keerthana" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">17</td>
+                <td class="center-align" style="font-weight: 600;">17</td>
                 <td><strong>Ms. J. Thiruppavai</strong></td>
                 <td>Assistant Professor</td>
                 <td>M.E.</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/j-thiruppavai.png" alt="Ms. J. Thiruppavai" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">18</td>
+                <td class="center-align" style="font-weight: 600;">18</td>
                 <td><strong>Dr. G.Buvaneshwari</strong></td>
                 <td>Assistant Professor</td>
                 <td>M.Sc., Ph.D</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/g-buvaneshwari.png" alt="Dr. G.Buvaneshwari" class="faculty-passport-img" loading="lazy"></td>
               </tr>
-
               <tr>
-                <td style="text-align: center; font-weight: 600;">19</td>
+                <td class="center-align" style="font-weight: 600;">19</td>
                 <td><strong>Mrs. R. Sinthiya</strong></td>
                 <td>Assistant professor</td>
                 <td>M.Tech., (Ph.D)</td>
+                <td class="center-align"><img src="/faculty/food-faculty-images/r-sinthiya.png" alt="Mrs. R. Sinthiya" class="faculty-passport-img" loading="lazy"></td>
               </tr>
             </tbody>
           </table>
@@ -7504,4 +7505,4 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
             ✓ Thank you! Your feedback has been submitted successfully to the VLSI Design department.
           </div>
         </form>
-      `}},default:{courses:[],overview:"The department combines strong academic foundations with practical laboratory learning, industry exposure, project work and research. Experienced faculty members guide students to solve real-world engineering problems and build careers for a changing world."}};t["Electrical & Electronics"]=t["Electrical and Electronics Engineering"];t["Electronics & Communication"]=t["Electronics and Communication Engineering"];t["Artificial Intelligence and Data Science"]=t["Artificial Intelligence and Data Science"];t["Artificial Intelligence and Machine Learning"]=t["Artificial Intelligence and Machine Learning"];t["Computer Science and Engineering"]=t["Computer Science and Engineering"];t["Computer Science and Engineering (Cyber Security)"]=t["Computer Science and Engineering (Cyber Security)"];t["Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["Computer Science (Cyber Security)"]=t["Computer Science and Engineering (Cyber Security)"];t["Computer Science and Engineering ( Cyber Security )"]=t["Computer Science and Engineering (Cyber Security)"];t["Cse Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["CSE-Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["Cad Cam"]=t["Mechanical Engineering"];t["CAD/CAM"]=t["Mechanical Engineering"];t["Cad/Cam"]=t["Mechanical Engineering"];t["Embedded System Technologies"]=t["Electrical and Electronics Engineering"];t["Structural Engineering"]=t["Civil Engineering"];t["Farm Machinery"]=t["Agricultural Engineering"];t["Vlsi Design"]=t["VLSI Design"];t["Electronics Engineering (VLSI Design & Technology)"]=t["VLSI Design"];t["Electronics Engineering ( VLSI Design & Technology)"]=t["VLSI Design"];t["Management Studies"]={courses:[["MBA - Master of Business Administration","60"]],overview:"<p>The Department of Management Studies (MBA) at Sri Shakthi Institute of Engineering and Technology is dedicated to developing ethical business leaders, strategic managers, and entrepreneurial visionaries. Offering an autonomous two-year MBA programme affiliated to Anna University and approved by AICTE, the curriculum integrates case-based learning, business simulations, executive guest lectures, and corporate internships across Finance, Marketing, Human Resources, Systems, Business Analytics, and Operations Management.</p><p>Backed by extensive industry partnerships, startup incubation support, and corporate mentoring, our MBA graduates consistently secure prestigious career opportunities with leading multinational enterprises, financial institutions, and global consulting firms.</p>"};t.MBA=t["Management Studies"];t.Mba=t["Management Studies"];t["Master of Business Administration"]=t["Management Studies"];t["Master of Business Administration (MBA)"]=t["Management Studies"];t["Master Of Business Administration (Mba)"]=t["Management Studies"];t["Computer Applications"]={courses:[["MCA - Master of Computer Applications","60"]],overview:"<p>The Department of Computer Applications (MCA) at Sri Shakthi Institute of Engineering and Technology offers an advanced postgraduate programme designed to develop high-calibre software architects, full-stack engineers, cloud specialists, and technology leaders. Affiliated to Anna University and approved by AICTE, the curriculum provides deep expertise in modern software engineering, cloud platforms, enterprise database systems, mobile development, data intelligence, and cybersecurity.</p><p>With dedicated high-performance computing laboratories, software incubation centres, and active industry collaborations with premier IT corporations, students gain intensive hands-on experience that leads to outstanding campus placements and impactful technology careers.</p>"};t.MCA=t["Computer Applications"];t.Mca=t["Computer Applications"];t["Master of Computer Applications"]=t["Computer Applications"];t["Master of Computer Applications (MCA)"]=t["Computer Applications"];t["Master Of Computer Applications (Mca)"]=t["Computer Applications"];const __deptAliases={"aids":"Artificial Intelligence and Data Science","ai-ds":"Artificial Intelligence and Data Science","aiml":"Artificial Intelligence and Machine Learning","ai-ml":"Artificial Intelligence and Machine Learning","cyber":"Computer Science and Engineering (Cyber Security)","cyber-security":"Computer Science and Engineering (Cyber Security)","cse-cyber-security":"Computer Science and Engineering (Cyber Security)","cse":"Computer Science and Engineering","it":"Information Technology","mech":"Mechanical Engineering","eee":"Electrical and Electronics Engineering","ece":"Electronics and Communication Engineering","ece-vlsi":"Electronics and Communication Engineering","agri":"Agricultural Engineering","biotech":"Biotechnology","bme":"Biomedical Engineering","civil":"Civil Engineering","food":"Food Technology","food-tech":"Food Technology","vlsi":"VLSI Design"};Object.entries(__deptAliases).forEach(([k,v])=>{if(t[v]){t[k]=t[v];t[k.toUpperCase()]=t[v];}});a.forEach(([e,n])=>{t[e]||(t[e]={courses:[["B.E - "+e,"60"]],overview:"The "+e+" department at Sri Shakthi Institute of Engineering and Technology develops practical expertise through laboratory learning, industry exposure, projects and research. "+n})});export{l as a,c as b,t as c,i as d,o as e,s as i,d as p,a as u,r as v};
+      `}},default:{courses:[],overview:"The department combines strong academic foundations with practical laboratory learning, industry exposure, project work and research. Experienced faculty members guide students to solve real-world engineering problems and build careers for a changing world."}};t["Electrical & Electronics"]=t["Electrical and Electronics Engineering"];t["Electronics & Communication"]=t["Electronics and Communication Engineering"];t["Artificial Intelligence and Data Science"]=t["Artificial Intelligence and Data Science"];t["Artificial Intelligence and Machine Learning"]=t["Artificial Intelligence and Machine Learning"];t["Computer Science and Engineering"]=t["Computer Science and Engineering"];t["Computer Science and Engineering (Cyber Security)"]=t["Computer Science and Engineering (Cyber Security)"];t["Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["Computer Science (Cyber Security)"]=t["Computer Science and Engineering (Cyber Security)"];t["Computer Science and Engineering ( Cyber Security )"]=t["Computer Science and Engineering (Cyber Security)"];t["Cse Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["CSE-Cyber Security"]=t["Computer Science and Engineering (Cyber Security)"];t["Cad Cam"]=t["Mechanical Engineering"];t["CAD/CAM"]=t["Mechanical Engineering"];t["Cad/Cam"]=t["Mechanical Engineering"];t["Embedded System Technologies"]=t["Electrical and Electronics Engineering"];t["Structural Engineering"]=t["Civil Engineering"];t["Farm Machinery"]=t["Agricultural Engineering"];t["Vlsi Design"]=t["VLSI Design"];t["Electronics Engineering (VLSI Design & Technology)"]=t["VLSI Design"];t["Electronics Engineering ( VLSI Design & Technology)"]=t["VLSI Design"];t["Management Studies"]={courses:[["MBA - Master of Business Administration","60"]],overview:"<p>The Department of Management Studies (MBA) at Sri Shakthi Institute of Engineering and Technology is dedicated to developing ethical business leaders, strategic managers, and entrepreneurial visionaries. Offering an autonomous two-year MBA programme affiliated to Anna University and approved by AICTE, the curriculum integrates case-based learning, business simulations, executive guest lectures, and corporate internships across Finance, Marketing, Human Resources, Systems, Business Analytics, and Operations Management.</p><p>Backed by extensive industry partnerships, startup incubation support, and corporate mentoring, our MBA graduates consistently secure prestigious career opportunities with leading multinational enterprises, financial institutions, and global consulting firms.</p>"};t.MBA=t["Management Studies"];t.Mba=t["Management Studies"];t["Master of Business Administration"]=t["Management Studies"];t["Master of Business Administration (MBA)"]=t["Management Studies"];t["Master Of Business Administration (Mba)"]=t["Management Studies"];t["Computer Applications"]={courses:[["MCA - Master of Computer Applications","60"]],overview:"<p>The Department of Computer Applications (MCA) at Sri Shakthi Institute of Engineering and Technology offers an advanced postgraduate programme designed to develop high-calibre software architects, full-stack engineers, cloud specialists, and technology leaders. Affiliated to Anna University and approved by AICTE, the curriculum provides deep expertise in modern software engineering, cloud platforms, enterprise database systems, mobile development, data intelligence, and cybersecurity.</p><p>With dedicated high-performance computing laboratories, software incubation centres, and active industry collaborations with premier IT corporations, students gain intensive hands-on experience that leads to outstanding campus placements and impactful technology careers.</p>"};t.MCA=t["Computer Applications"];t.Mca=t["Computer Applications"];t["Master of Computer Applications"]=t["Computer Applications"];t["Master of Computer Applications (MCA)"]=t["Computer Applications"];t["Master Of Computer Applications (Mca)"]=t["Computer Applications"];const __deptAliases={"aids":"Artificial Intelligence and Data Science","ai-ds":"Artificial Intelligence and Data Science","aiml":"Artificial Intelligence and Machine Learning","ai-ml":"Artificial Intelligence and Machine Learning","cyber":"Computer Science and Engineering (Cyber Security)","cyber-security":"Computer Science and Engineering (Cyber Security)","cse-cyber-security":"Computer Science and Engineering (Cyber Security)","cse":"Computer Science and Engineering","it":"Information Technology","mech":"Mechanical Engineering","eee":"Electrical and Electronics Engineering","ece":"Electronics and Communication Engineering","ece-vlsi":"Electronics and Communication Engineering","agri":"Agricultural Engineering","biotech":"Biotechnology","bme":"Biomedical Engineering","civil":"Civil Engineering","food":"Food Technology","food-tech":"Food Technology","vlsi":"VLSI Design"};Object.entries(__deptAliases).forEach(([k,v])=>{if(t[v]){t[k]=t[v];t[k.toUpperCase()]=t[v];}});a.forEach(([e,n])=>{t[e]||(t[e]={courses:[["B.E - "+e,"60"]],overview:"The "+e+" department at Sri Shakthi Institute of Engineering and Technology develops practical expertise through laboratory learning, industry exposure, projects and research. "+n})});const deptAliases={"eee":"Electrical and Electronics Engineering","Eee":"Electrical and Electronics Engineering","electrical-and-electronics":"Electrical and Electronics Engineering","ece":"Electronics and Communication Engineering","Ece":"Electronics and Communication Engineering","electronics-and-communication":"Electronics and Communication Engineering","food-tech":"Food Technology","Food Tech":"Food Technology","food":"Food Technology","Food":"Food Technology","food-technology":"Food Technology","cse":"Computer Science and Engineering","Cse":"Computer Science and Engineering","computer-science-and-engineering":"Computer Science and Engineering","mech":"Mechanical Engineering","Mech":"Mechanical Engineering","mechanical-engineering":"Mechanical Engineering","civil":"Civil Engineering","Civil":"Civil Engineering","civil-engineering":"Civil Engineering","bme":"Biomedical Engineering","Bme":"Biomedical Engineering","biomedical-engineering":"Biomedical Engineering","agri":"Agricultural Engineering","Agri":"Agricultural Engineering","agricultural-engineering":"Agricultural Engineering","biotech":"Biotechnology","Biotech":"Biotechnology","it":"Information Technology","It":"Information Technology","information-technology":"Information Technology","aiml":"Artificial Intelligence and Machine Learning","Aiml":"Artificial Intelligence and Machine Learning","artificial-intelligence-and-machine-learning":"Artificial Intelligence and Machine Learning","aids":"Artificial Intelligence and Data Science","Aids":"Artificial Intelligence and Data Science","artificial-intelligence-and-data-science":"Artificial Intelligence and Data Science","cyber":"Computer Science and Engineering (Cyber Security)","Cyber":"Computer Science and Engineering (Cyber Security)","cyber-security":"Computer Science and Engineering (Cyber Security)","ece-vlsi":"VLSI Design","vlsi":"VLSI Design","Vlsi":"VLSI Design","vlsi-design":"VLSI Design"};for(const[k,v]of Object.entries(deptAliases)){if(t[v])t[k]=t[v]};export{l as a,c as b,t as c,i as d,o as e,s as i,d as p,a as u,r as v};
