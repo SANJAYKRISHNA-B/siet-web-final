@@ -462,12 +462,13 @@
   transform: scale(1.08) !important;
 }
 
-/* 5. Navigation Columns: Top-aligned, compact vertical gaps, thin vertical dividers */
+/* 5. Navigation Columns: Centered text, balanced spacing, clean dividers */
 .footer-reference .footer-link-group {
   padding: 0 16px !important;
   border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
   box-sizing: border-box !important;
   min-width: 0 !important;
+  text-align: center !important;
 }
 
 .footer-reference .footer-link-group:last-child {
@@ -484,6 +485,7 @@
   min-height: auto !important;
   margin-bottom: 8px !important;
   display: block !important;
+  text-align: center !important;
 }
 
 .footer-reference .footer-link-group > b:after {
@@ -491,7 +493,7 @@
   display: block !important;
   width: 22px !important;
   height: 2px !important;
-  margin-top: 6px !important;
+  margin: 6px auto 0 !important;
   background: #f3c515 !important;
 }
 
@@ -501,20 +503,24 @@
   font-weight: 500 !important;
   line-height: 1.35 !important;
   margin-bottom: 7px !important;
-  display: block !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
   transition: color 0.18s ease, transform 0.18s ease !important;
 }
 
 .footer-reference .footer-link-group > a:hover {
   color: #f3c515 !important;
-  transform: translateX(2px) !important;
+  transform: translateY(-1px) !important;
 }
 
 /* 6. Compact Legal / Copyright Section */
 .footer-reference .footer-legal {
   display: flex !important;
-  justify-content: space-between !important;
+  justify-content: center !important;
   align-items: center !important;
+  text-align: center !important;
   padding: 14px 0 16px !important;
   min-height: auto !important;
   border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -578,7 +584,7 @@
   }
 }
 
-/* 8. Mobile Layout (<= 768px) */
+/* 8. Mobile Layout (<= 768px): Fully Centered Footer Navigation */
 @media (max-width: 768px) {
   .footer-location-section {
     grid-template-columns: 1fr !important;
@@ -600,15 +606,82 @@
   }
 
   .footer-reference .footer-sitemap {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 24px 12px !important;
+    grid-template-columns: 1fr !important;
+    gap: 24px 0 !important;
+    text-align: center !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+
+  .footer-reference .footer-link-group {
+    text-align: center !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 0 0 20px !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .footer-reference .footer-link-group:last-child {
+    border-bottom: none !important;
+  }
+
+  .footer-reference .footer-link-group > b {
+    text-align: center !important;
+    margin: 0 auto 10px !important;
+    font-size: 13px !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .footer-reference .footer-link-group > b:after {
+    margin: 6px auto 0 !important;
+  }
+
+  .footer-reference .footer-link-group > a {
+    text-align: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 auto 9px !important;
+    display: inline-flex !important;
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+    width: auto !important;
+  }
+
+  .footer-reference .footer-link-group > a:hover {
+    transform: none !important;
   }
 
   .footer-reference .footer-legal {
     flex-direction: column !important;
-    align-items: flex-start !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
     gap: 10px !important;
-    padding-block: 14px !important;
+    padding-block: 16px !important;
+    width: 100% !important;
+  }
+
+  .footer-reference .footer-legal small {
+    text-align: center !important;
+    margin-inline: auto !important;
+    display: block !important;
+    width: 100% !important;
+  }
+
+  .footer-reference .footer-brand .mark {
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  .footer-reference .footer-brand .mark > span {
+    text-align: center !important;
   }
 }
 
@@ -616,7 +689,10 @@
 @media (max-width: 480px) {
   .footer-reference .footer-sitemap {
     grid-template-columns: 1fr !important;
-    gap: 20px 0 !important;
+    gap: 22px 0 !important;
+  }
+  .footer-reference .footer-link-group {
+    padding-bottom: 18px !important;
   }
 }
 
