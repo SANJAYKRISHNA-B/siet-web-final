@@ -216,6 +216,10 @@ LimitRequestBody 10485760
     RewriteRule ^icchi/icchi\.js$ /icchi/js/icchi.js [R=301,L]
     RewriteRule ^mdfi/mdfi\.js$ /mdfi/js/mdfi.js [R=301,L]
 
+    # Canonical My Dream India route: keep /mdfi/ live and retire the legacy slug
+    RewriteRule ^(myDreamIndia|my-dream-india)/?$ /mdfi/ [R=301,L,NC]
+    RewriteRule ^mdfi/?$ - [END]
+
     # Specific microsite exceptions and downloads
     # RewriteRule ^sssm/?$ /index.html [L] (SSSM standalone portal now active)
     RewriteRule ^(space-mission|space-whiz|srishakthisat|shakthisat)/?$ /sssm/ [R=302,L]
