@@ -6848,7 +6848,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
           <div class="feedback-success" style="display:none; margin-top:16px; padding:14px 18px; background:#e8f5e9; border:1px solid #4caf50; border-radius:8px; color:#2e7d32; font-weight:600;">
             ✓ Thank you! Your feedback has been submitted successfully to the Food Technology department.
           </div>
-        </form>`}},"Computer Science and Engineering (Cyber Security)":{courses:[["B.E - Computer Science and Engineering (Cyber Security)","120"]],overview:"<p>Established in 2022, the Computer Science and Engineering (Cyber Security) Department is dedicated to equipping students with specialized knowledge in the rapidly evolving field of cybersecurity. We offer a comprehensive 4-year B.E. Computer Science and Engineering (Cyber Security) program designed to provide both theoretical and practical expertise.</p><p>Our department boasts a passionate team of faculty members with extensive experience across various cybersecurity domains and features state-of-the-art facilities for hands-on learning and smart classroom experiences.</p><p>As the global demand for cybersecurity professionals continues to soar, our graduates are well-positioned to take advantage of a thriving job market. The intersection of cybersecurity with fields like AI and data science further enhances career prospects, providing students with numerous opportunities for rewarding and dynamic career growth.</p>",sectionsList:["About the Department","Why Cyber Security at SIET","Unique Facilities","Vision & Mission","Programme Educational Objectives","Programme Specific Outcomes","Faculty Profile","PAC Members","Curriculum","Feedback"],sections:{"About the Department":`
+        </form>`}},"Computer Science and Engineering (Cyber Security)":{courses:[["B.E - Computer Science and Engineering (Cyber Security)","120"]],overview:"<p>Established in 2022, the Computer Science and Engineering (Cyber Security) Department is dedicated to equipping students with specialized knowledge in the rapidly evolving field of cybersecurity. We offer a comprehensive 4-year B.E. Computer Science and Engineering (Cyber Security) program designed to provide both theoretical and practical expertise.</p><p>Our department boasts a passionate team of faculty members with extensive experience across various cybersecurity domains and features state-of-the-art facilities for hands-on learning and smart classroom experiences.</p><p>As the global demand for cybersecurity professionals continues to soar, our graduates are well-positioned to take advantage of a thriving job market. The intersection of cybersecurity with fields like AI and data science further enhances career prospects, providing students with numerous opportunities for rewarding and dynamic career growth.</p>",sectionsList:["About the Department","Why Cyber Security at SIET","Unique Facilities","Vision & Mission","Programme Educational Objectives","Programme Specific Outcomes","Faculty Profile","Curriculum","Feedback"],sections:{"About the Department":`
         <div style="display: flex; justify-content: flex-end; margin-bottom: 20px;">
           <div style="border: 2px solid #167a39; overflow: hidden; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
             <table style="border-collapse: collapse; margin: 0; min-width: 280px;">
@@ -7197,95 +7197,7 @@ const s=e=>e==="menu"?'<svg class="ui-icon-svg menu-svg" width="24" height="24" 
             </tbody>
           </table>
         </div>
-      `,"PAC Members":`
-        <h2 style="text-align: center; color: #167a39;"><u>PROGRAMME ADVISORY COMMITTEE (PAC)</u></h2>
-        <div class="dept-table-wrapper">
-          <table class="dept-data-table">
-            <thead>
-              <tr>
-                <th style="width: 60px; text-align: center;">S.No</th>
-                <th>Name</th>
-                <th>Designation / Organization</th>
-                <th>Category</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">1</td>
-                <td><strong>Mr. R. Karthiban</strong></td>
-                <td>Associate Professor &amp; Head</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#e8f5e9; color:#2e7d32; border:1px solid #a5d6a7;">Chairman / Faculty</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">2</td>
-                <td><strong>Dr. K. E. Kannammal</strong></td>
-                <td>Professor &amp; Head</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#e8f5e9; color:#2e7d32; border:1px solid #a5d6a7;">Faculty</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">3</td>
-                <td><strong>Dr. R. SenthilKumar</strong></td>
-                <td>Professor</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#e8f5e9; color:#2e7d32; border:1px solid #a5d6a7;">Faculty</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">4</td>
-                <td><strong>Mr. E. Subramaniyan</strong></td>
-                <td>Associate Professor</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#e8f5e9; color:#2e7d32; border:1px solid #a5d6a7;">Faculty</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">5</td>
-                <td><strong>Mr. S. Yaswanthraj</strong></td>
-                <td>Assistant Professor</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#e8f5e9; color:#2e7d32; border:1px solid #a5d6a7;">Faculty</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">6</td>
-                <td><strong>Gowtham M G</strong></td>
-                <td>Mobile Lead, Uni cards &amp; Powerup Money</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#f5f5f5; color:#424242; border:1px solid #e0e0e0;">Alumni</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">7</td>
-                <td><strong>Alphin Jude</strong></td>
-                <td>Designer &amp; Developer, ZyNerd</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#f5f5f5; color:#424242; border:1px solid #e0e0e0;">Alumni</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">8</td>
-                <td><strong>Mr. Saravanan</strong></td>
-                <td>Senior Software Engineer, Ducen Ind. Pvt. Ltd.</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#fff3e0; color:#e65100; border:1px solid #ffcc80;">Industry Expert</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">9</td>
-                <td><strong>Sankarraj Subramanian</strong></td>
-                <td>CEO, Prompt Infotech</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#fff3e0; color:#e65100; border:1px solid #ffcc80;">Industry Expert</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">10</td>
-                <td><strong>Senthil Kumar</strong></td>
-                <td>Business</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#f5f5f5; color:#424242; border:1px solid #e0e0e0;">Parent</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">11</td>
-                <td><strong>Selva Kumar</strong></td>
-                <td>Business</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#f5f5f5; color:#424242; border:1px solid #e0e0e0;">Parent</span></td>
-              </tr>
-              <tr>
-                <td style="text-align: center; font-weight: 600;">12</td>
-                <td><strong>Baskaran S</strong></td>
-                <td>Civil Engineer</td>
-                <td><span style="display:inline-block; padding:3px 10px; border-radius:4px; font-weight:700; font-size:12px; background:#f5f5f5; color:#424242; border:1px solid #e0e0e0;">Parent</span></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      `,Feedback:`
+      ``,Feedback:`
         <h2 style="text-align: center; color: #167a39;"><u>FEEDBACK</u></h2>
         <p class="dept-lead-text" style="text-align: center; margin-bottom: 24px;">We value your constructive feedback to continuously enhance our academic quality and cybersecurity learning ecosystem.</p>
         <form class="dept-feedback-form">

@@ -389,8 +389,8 @@ function ensureHomeAdmissionEnquiry() {
         <div><h2 id="home-admission-title">Admission <em style="color:#ffd12e;font-style:normal">Enquiry</em></h2><p>Get in touch for admissions, courses and more.</p></div>
       </div>
       <div class="home-admission-contacts">
-        <a class="home-contact-item" href="tel:+917373744444"><span aria-hidden="true">☎</span><div><strong>+91 73737 44444</strong><small>Call for quick assistance</small></div></a>
-        <a class="home-contact-item" href="https://wa.me/917373744444" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span><div><strong>+91 73737 44444</strong><small>Chat on WhatsApp</small></div></a>
+        <a class="home-contact-item" href="tel:+919444620505"><span aria-hidden="true">☎</span><div><strong>+91 94446 20505</strong><small>Call for quick assistance</small></div></a>
+        <a class="home-contact-item" href="https://wa.me/917504169999" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">◉</span><div><strong>+91 75041 69999</strong><small>Chat on WhatsApp</small></div></a>
         <a class="home-contact-item home-contact-email" href="mailto:admissions@siet.ac.in"><span aria-hidden="true">✉</span><div><strong>admissions@siet.ac.in</strong><small>Send us your queries</small></div></a>
       </div>
       <div class="home-institution-meta">
