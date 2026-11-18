@@ -135,7 +135,7 @@ ErrorDocument 404 /index.html
     Require all denied
 </FilesMatch>
 
-<FilesMatch "^(config|configuration|database|db|settings|wp-config|local|career-config)\.php$">
+<FilesMatch "^(config|configuration|database|db|settings|wp-config|local|career-config|masterdb_config)\.php$">
     Require all denied
 </FilesMatch>
 
